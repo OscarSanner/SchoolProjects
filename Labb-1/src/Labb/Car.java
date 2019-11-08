@@ -127,6 +127,11 @@ public abstract class Car implements Movable {
         currentDirection = findNextDirection(directionArrayRight);
     }
 
+    /**
+     *
+     * @param dirArr
+     * @return
+     */
     private Direction findNextDirection(Direction[] dirArr) {
         Direction nextDirection = null;
         for (int i = 0; i < dirArr.length; i++) {
