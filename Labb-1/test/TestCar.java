@@ -1,4 +1,5 @@
 
+import org.junit.After;
 import org.junit.Before;
 import Labb.*;
 import org.junit.Test;
@@ -12,6 +13,29 @@ public class TestCar {
     public void createCar(){
         this.saab = new Saab95();
         this.volvo = new Volvo240();
+    }
+
+    @Test
+    public void testTurboSaab(){
+        Saab95 saabTurbo = new Saab95();
+        Saab95 saabNatural  = new Saab95();
+        saabTurbo.startEngine();
+        saabNatural.startEngine();
+        double safeCheck = saabTurbo.getCurrentSpeed();
+        double safeCheck1 = saabNatural.getCurrentSpeed();
+        saabTurbo.setTurboOn();
+        saabTurbo.gas(1);
+        saabNatural.gas(1);
+        double speedcheckT = saabTurbo.getCurrentSpeed();
+        double speedcheckN = saabNatural.getCurrentSpeed();
+        saabTurbo.setTurboOff();
+        saabNatural.setTurboOn();
+        saabTurbo.gas(1);
+        saabNatural.gas(1);
+        double speedCheckNEqual = saabNatural.getCurrentSpeed();
+        double speedCheckTEqual = saabTurbo.getCurrentSpeed();
+        assert safeCheck == safeCheck1 && speedcheckT > speedcheckN && speedCheckNEqual == speedCheckTEqual;
+
     }
 
     @Test
@@ -277,5 +301,10 @@ public class TestCar {
         s1.turnRight();
         s1.move();
         assert s1.getX() > i;
+    }
+
+    @After
+    public void runMain(){
+        Main.main(null);
     }
 }

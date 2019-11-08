@@ -54,11 +54,11 @@ public abstract class Car implements Movable {
         currentSpeed = 0;
     }
 
-    public int getNrDoors() { //
+    public int getNrDoors() {
         return nrDoors;
     }
 
-    public double getEnginePower() { //
+    public double getEnginePower() {
         return getEnginePower;
     }
 
@@ -66,15 +66,15 @@ public abstract class Car implements Movable {
         return currentSpeed;
     }
 
-    public Color getColor() { //
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(Color clr) { //
+    public void setColor(Color clr) {
         color = clr;
     }
 
-    public void startEngine() { //
+    public void startEngine() {
         currentSpeed = 0.1;
     }
 
@@ -100,7 +100,7 @@ public abstract class Car implements Movable {
     }
     
     @Override
-    public void move() { //
+    public void move() {
         switch (currentDirection) {
             case UP:
                 y += currentSpeed;
@@ -120,20 +120,22 @@ public abstract class Car implements Movable {
     @Override
     public void turnLeft() {
         currentDirection = findNextDirection(directionArrayLeft);
-    } //
+    }
 
     @Override
     public void turnRight() {
         currentDirection = findNextDirection(directionArrayRight);
-    } //
+    }
 
     private Direction findNextDirection(Direction[] dirArr) {
+        Direction nextDirection = null;
         for (int i = 0; i < dirArr.length; i++) {
             if (currentDirection == dirArr[i]) {
-                return dirArr[(i + 1) % dirArr.length];
+                nextDirection = dirArr[(i + 1) % dirArr.length];
+                break;
             }
         }
-        return null; //SHOULD NEVER HAPPEN
+        return nextDirection;
     }
 
     protected abstract double speedFactor();
