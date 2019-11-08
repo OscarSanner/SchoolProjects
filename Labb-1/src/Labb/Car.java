@@ -2,10 +2,6 @@ package Labb;
 
 import java.awt.*;
 
-enum Direction {
-    UP, DOWN, LEFT, RIGHT
-}
-
 public abstract class Car implements Movable {
     private static Direction[] directionArrayRight = {Direction.UP, Direction.RIGHT, Direction.DOWN, Direction.LEFT};
     private static Direction[] directionArrayLeft = {Direction.LEFT, Direction.DOWN, Direction.RIGHT, Direction.UP};
