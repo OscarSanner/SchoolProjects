@@ -104,12 +104,16 @@ public abstract class Car implements Movable {
         switch (currentDirection) {
             case UP:
                 y += currentSpeed;
+                break;
             case DOWN:
                 y -= currentSpeed;
+                break;
             case LEFT:
                 x -= currentSpeed;
+                break;
             case RIGHT:
                 x += currentSpeed;
+                break;
         }
     }
 

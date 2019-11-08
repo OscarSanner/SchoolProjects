@@ -29,7 +29,7 @@ public class TestCar {
         double maxSpeed = volvo.getCurrentSpeed();
         assert (startspeed == 0 && engineStart > startspeed &&
                 speedUnchanged == engineStart && speedUnchangedTwice == speedUnchanged &&
-                maxSpeed <= 100.00);
+                maxSpeed == 100.00);
     }
 
     @Test
@@ -44,14 +44,18 @@ public class TestCar {
         for (int i = 0; i < 10000; i++){
             saab.gas(1);
         }
-        double maxSpeed = volvo.getCurrentSpeed();
+        double maxSpeed = saab.getCurrentSpeed();
         assert (startspeed == 0 && engineStart > startspeed &&
                 speedUnchanged == engineStart && speedUnchangedTwice == speedUnchanged &&
-                maxSpeed <= 125.00);
+                maxSpeed == 125.00);
     }
 
     @Test
     public void testBreakVolvo(){
+        for (int i = 0; i < 10000; i++){
+            volvo.gas(1);
+        }
+
         double startspeed = volvo.getCurrentSpeed();
         volvo.brake(1);
         double brakeOnce = volvo.getCurrentSpeed();
@@ -64,11 +68,15 @@ public class TestCar {
         }
         double stop = volvo.getCurrentSpeed();
         assert (startspeed > brakeOnce && brakeOnce == unchanged1 &&
-                unchanged1 == unchanged2 && stop < 0.1 && stop >= 0);
+                unchanged1 == unchanged2 && stop == 0);
     }
 
     @Test
     public void testBreakSaab(){
+        for (int i = 0; i < 10000; i++){
+            saab.gas(1);
+        }
+
         double startspeed = saab.getCurrentSpeed();
         saab.brake(1);
         double brakeOnce = saab.getCurrentSpeed();
@@ -234,10 +242,10 @@ public class TestCar {
     @Test
     public void testMoveUpSaab(){
         s1 = new Saab95();
-        double i = s1.getY();
+        double yBefore = s1.getY();
         s1.startEngine();
         s1.move();
-        assert s1.getY() > i;
+        assert s1.getY() > yBefore;
     }
 
     @Test
