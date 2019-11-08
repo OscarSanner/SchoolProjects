@@ -34,6 +34,10 @@ public abstract class Car implements Movable {
         stopEngine();
     }
 
+    public Direction getCurrentDirection() {
+        return currentDirection;
+    }
+
     public double getX() {
         return x;
     }
