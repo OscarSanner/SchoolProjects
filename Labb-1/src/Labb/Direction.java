@@ -1,5 +1,5 @@
 package Labb;
 
-enum Direction {
+public enum Direction {
     UP, DOWN, LEFT, RIGHT
 }

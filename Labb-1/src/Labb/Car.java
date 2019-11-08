@@ -12,9 +12,9 @@ public abstract class Car implements Movable {
     private Color color; // Color of the car
     private String modelName; // The car model name
 
-    protected double x;
-    protected double y;
-    protected Direction currentDirection;
+    private double x;
+    private double y;
+    private Direction currentDirection;
 
     // Se till att era bilar implementerar interfacet Movable,
     // med någon lämplig intern representation av deras riktning och position.
@@ -34,19 +34,27 @@ public abstract class Car implements Movable {
         stopEngine();
     }
 
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
     private void setCurrentSpeed(double currentSpeed) {
         this.currentSpeed = currentSpeed;
     }
 
-    protected void stopEngine() {
+    public void stopEngine() {
         currentSpeed = 0;
     }
 
-    public int getNrDoors() {
+    public int getNrDoors() { //
         return nrDoors;
     }
 
-    public double getEnginePower() {
+    public double getEnginePower() { //
         return getEnginePower;
     }
 
@@ -54,15 +62,15 @@ public abstract class Car implements Movable {
         return currentSpeed;
     }
 
-    public Color getColor() {
+    public Color getColor() { //
         return color;
     }
 
-    protected void setColor(Color clr) {
+    public void setColor(Color clr) { //
         color = clr;
     }
 
-    protected void startEngine() {
+    public void startEngine() { //
         currentSpeed = 0.1;
     }
 
@@ -75,20 +83,20 @@ public abstract class Car implements Movable {
         setCurrentSpeed(Math.max(getCurrentSpeed() - speedFactor() * amount, 0));
     }
 
-    protected void gas(double amount) {
+    public void gas(double amount) {
         if (!(amount < 0 || amount > 1)){
             incrementSpeed(amount);
         }
     }
 
-    protected void brake(double amount) {
+    public void brake(double amount) {
         if (!(amount < 0 || amount > 1)){
             decrementSpeed(amount);
         }
     }
     
     @Override
-    public void move() {
+    public void move() { //
         switch (currentDirection) {
             case UP:
                 y += currentSpeed;
@@ -104,12 +112,12 @@ public abstract class Car implements Movable {
     @Override
     public void turnLeft() {
         currentDirection = findNextDirection(directionArrayLeft);
-    }
+    } //
 
     @Override
     public void turnRight() {
         currentDirection = findNextDirection(directionArrayRight);
-    }
+    } //
 
     private Direction findNextDirection(Direction[] dirArr) {
         for (int i = 0; i < dirArr.length; i++) {
