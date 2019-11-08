@@ -20,11 +20,7 @@ public abstract class Car implements Movable {
     private double x;
     private double y;
     private Direction currentDirection;
-
-    // Se till att era bilar implementerar interfacet Movable,
-    // med någon lämplig intern representation av deras riktning och position.
-    // Metoden move ska fungera så att beroende på riktning ökas (eller minskas)
-    // bilens x- eller y-koordinat med dess currentSpeed.
+    
 
     /**
      * Constructor for common properites of a car, all cars initiated standing still.
@@ -153,18 +149,33 @@ public abstract class Car implements Movable {
         setCurrentSpeed(Math.max(getCurrentSpeed() - speedFactor() * amount, 0));
     }
 
+    /**
+     * Increases the speed of the car, by calling the incrementSpeed method.
+     * @param amount parameter that determines how much the car
+     * will increase its speed. Essentially the gaspedal.
+     */
     public void gas(double amount) {
         if (!(amount < 0 || amount > 1)){
             incrementSpeed(amount);
         }
     }
 
+    /**
+     * Decreases the speed of the car, by calling the decrementSpeed method.
+     * @param amount parameter that determines how much the car
+     * will decrease its speed. Essentially the breakpedal.
+     */
     public void brake(double amount) {
         if (!(amount < 0 || amount > 1)){
             decrementSpeed(amount);
         }
     }
-    
+
+    /**
+     * Moves the car. The distance it's moved is determined by
+     * the current speed, and the direction it moves is determined
+     * by the current direction.
+     */
     @Override
     public void move() {
         switch (currentDirection) {
@@ -183,20 +194,28 @@ public abstract class Car implements Movable {
         }
     }
 
+    /**
+     * Turns the car to the left (rotates the car 90 degrees to the left).
+     */
     @Override
     public void turnLeft() {
         currentDirection = findNextDirection(directionArrayLeft);
     }
 
+    /**
+     * Turns the car to the right (rotates the car 90 degrees to the right).
+     */
     @Override
     public void turnRight() {
         currentDirection = findNextDirection(directionArrayRight);
     }
 
     /**
-     *
-     * @param dirArr
-     * @return
+     * Determines which direction is next, is only called internally
+     * by other methods in class, more specifically turnLeft and turnRight.
+     * @param dirArr should receive an array containing all the possible directions,
+     * in which the element after the current direction will be the next direction
+     * @return returns the next direction.
      */
     private Direction findNextDirection(Direction[] dirArr) {
         Direction nextDirection = null;
@@ -209,5 +228,10 @@ public abstract class Car implements Movable {
         return nextDirection;
     }
 
+    /**
+     * Used by methods in this class to determine the increase
+     * in speed demanded by the gas and break methods
+     * @return calculates a value based on the properties defined in each car.
+     */
     protected abstract double speedFactor();
 }
