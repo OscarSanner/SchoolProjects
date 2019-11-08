@@ -9,7 +9,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="271" />
+    <option name="myElementSize" value="294" />
   </component>
   <component name="ExportToHTMLSettings">
     <option name="OPEN_IN_BROWSER" value="true" />
@@ -53,7 +53,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestSuite">
+  <component name="RunManager" selected="JUnit.TestCar.testMoveDown">
     <configuration name="TestCar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Labb-1" />
       <option name="PACKAGE_NAME" value="" />
@@ -63,21 +63,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCar.testBreakVolvo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCar.testMoveDown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Labb-1" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestCar" />
-      <option name="METHOD_NAME" value="testBreakVolvo" />
+      <option name="METHOD_NAME" value="testMoveDown" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCar.testGasVolvo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCar.testMoveDownSaab" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Labb-1" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestCar" />
-      <option name="METHOD_NAME" value="testGasVolvo" />
+      <option name="METHOD_NAME" value="testMoveDownSaab" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -104,11 +104,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestCar.testMoveDown" />
+        <item itemvalue="JUnit.TestCar.testMoveDownSaab" />
         <item itemvalue="JUnit.TestSuite" />
         <item itemvalue="JUnit.TestCar.testTurboSaab" />
         <item itemvalue="JUnit.TestCar" />
-        <item itemvalue="JUnit.TestCar.testBreakVolvo" />
-        <item itemvalue="JUnit.TestCar.testGasVolvo" />
       </list>
     </recent_temporary>
   </component>
