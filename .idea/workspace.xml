@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d009105a-93f9-4645-9bcf-5031f6733e32" name="Default Changelist" comment="" />
+    <list default="true" id="d009105a-93f9-4645-9bcf-5031f6733e32" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Labb-1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Labb-1/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labb-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Labb-1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labb-1/out/production/Labb-1/Labb/Car$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Labb-1/out/production/Labb-1/Labb/Car$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labb-1/out/production/Labb-1/Labb/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/Labb-1/out/production/Labb-1/Labb/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labb-1/out/production/Labb-1/Labb/Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/Labb-1/out/production/Labb-1/Labb/Direction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labb-1/out/production/Labb-1/Labb/Saab95.class" beforeDir="false" afterPath="$PROJECT_DIR$/Labb-1/out/production/Labb-1/Labb/Saab95.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labb-1/out/production/Labb-1/Labb/Volvo240.class" beforeDir="false" afterPath="$PROJECT_DIR$/Labb-1/out/production/Labb-1/Labb/Volvo240.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +57,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

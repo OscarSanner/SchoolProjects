@@ -8,17 +8,60 @@ import java.awt.*;
  * Contains common properties of a car.
  */
 public abstract class Car implements Movable {
+
+    /**
+     * Array for right turns.
+     * An array containing all the possible directions,
+     * in which the element after the current direction will be the next direction when turning right.
+     */
     private static Direction[] directionArrayRight = {Direction.UP, Direction.RIGHT, Direction.DOWN, Direction.LEFT};
+
+    /**
+     * Array for left turns.
+     * An array containing all the possible directions,
+     * in which the element after the current direction will be the next direction when turning left.
+     */
     private static Direction[] directionArrayLeft = {Direction.LEFT, Direction.DOWN, Direction.RIGHT, Direction.UP};
 
-    private int nrDoors; // Number of doors on the car
-    private double getEnginePower; // Engine power of the car
-    private double currentSpeed; // The current speed of the car
-    private Color color; // Color of the car
-    private String modelName; // The car model name
+    /**
+     * The number of doors on the car.
+     */
+    private int nrDoors;
 
+    /**
+     * The engine power of the car.
+     */
+    private double getEnginePower;
+
+    /**
+     * The current speed of the car.
+     */
+    private double currentSpeed;
+
+    /**
+     * Color of the car.
+     */
+    private Color color;
+
+    /**
+     * The model name of the car.
+     */
+    private String modelName;
+
+    /**
+     * The current x coordinate of the car.
+     */
     private double x;
+
+    /**
+     * The current y coordinate of the car.
+     */
     private double y;
+
+
+    /**
+     * The current direction the car is facing. (UP, DOWN, LEFT, RIGHT)
+     */
     private Direction currentDirection;
     
 
