@@ -6,5 +6,6 @@ public class Main {
 
     void program(){
         //For run/compile check.
+
     }
 }

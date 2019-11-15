@@ -1,34 +1,16 @@
 package Labb;
 
-public class Flatbed {
-    static final private int minAngle = 0;
-    static final private int maxAngle = 70;
+public abstract class Flatbed {
+    static final protected int minAngle = 0;
+    static final protected int maxAngle = 70;
 
+    protected int currentAngle;
 
-    private int currentAngle;
-
-    public Flatbed(){
-        currentAngle = 0;
-    }
-
-    public void lowerFlatbed(){
-        if(currentAngle != minAngle){
-            setCurrentAngle(getCurrentAngle() - 1);
-        }
-    }
-
-    public void raiseFlatbed(double currentSpeed){
-        if(currentAngle != maxAngle && currentSpeed == 0){
-            setCurrentAngle(getCurrentAngle() + 1);
-        }
-    }
+    public abstract void raiseFlatbed();
+    public abstract void lowerFlatbed();
 
     public int getCurrentAngle() {
         return currentAngle;
-    }
-
-    private void setCurrentAngle(int currentAngle) {
-        this.currentAngle = currentAngle;
     }
 
 }
