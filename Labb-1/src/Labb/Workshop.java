@@ -2,9 +2,11 @@ package Labb;
 
 import java.util.Deque;
 
-public class Workshop <T extends Vehicle> implements CanLoadCars <T> {
+public class Workshop <T extends Vehicle> implements CanLoadCars <T>, HasXHasY {
 
     private CarLoad<T> carLoad;
+    private double X;
+    private double Y;
 
     public Workshop(){
         this.carLoad = new CarLoad<>();
@@ -34,5 +36,14 @@ public class Workshop <T extends Vehicle> implements CanLoadCars <T> {
 
     public boolean loadCheck(T carToBeLoaded, Vehicle loadedOnTo) {
         return carLoad.loadCheck(carToBeLoaded, loadedOnTo);
+    }
+
+    @Override
+    public double getX() {
+        return X;
+    }
+
+    public double getY() {
+        return Y;
     }
 }

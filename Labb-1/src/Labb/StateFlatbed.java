@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import static java.lang.Math.*;
 
-public class StateFlatbed <T extends Vehicle> extends Flatbed implements CanLoadCars <T> {
+public class StateFlatbed <T extends Vehicle> extends Flatbed implements CanLoadCars <T>, HasXHasY {
 
     //public Deque<T> loadedCars = new ArrayDeque<>();
 

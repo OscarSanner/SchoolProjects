@@ -7,7 +7,7 @@ import java.awt.*;
  * Contains methods for moving a car in 2d.
  * Contains common properties of a car.
  */
-public abstract class Vehicle implements Movable {
+public abstract class Vehicle implements Movable, HasXHasY {
 
 
     /**
