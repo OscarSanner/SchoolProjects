@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class CarTransporter extends Truck {
 
-    private StateFlatbed flatbed = new StateFlatbed();
+    private StateFlatbed<Car> flatbed = new StateFlatbed<>();
 
     public CarTransporter() {
         super(2, Color.YELLOW, 300, "Car Transporter");
@@ -24,9 +24,10 @@ public class CarTransporter extends Truck {
     public void move(){
         if (flatbed.getCurrentAngle() == flatbed.getMaxAngle()){
             super.move();
-        }
-        for(Car c : flatbed.loadedCars){
-            c.syncroniseWithCarrier(this);
+            for (Car c : flatbed.getLoadedCars()){
+                c.setX(this.getX());
+                c.setY(this.getY());
+            }
         }
     }
 

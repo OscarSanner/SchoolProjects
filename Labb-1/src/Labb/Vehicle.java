@@ -9,11 +9,7 @@ import java.awt.*;
  */
 public abstract class Vehicle implements Movable {
 
-    public void setLoaded(boolean loaded) {
-        isLoaded = loaded;
-    }
 
-    private boolean isLoaded;
     /**
      * Array for right turns.
      * An array containing all the possible directions,
@@ -69,12 +65,6 @@ public abstract class Vehicle implements Movable {
      */
     private Direction currentDirection;
 
-    protected void syncroniseWithCarrier(CarTransporter ct){
-        if(isLoaded){
-            setX(ct.getX());
-            setY(ct.getY());
-        }
-    }
 
     /**
      * Constructor for common properites of a car, all cars initiated standing still.
@@ -175,14 +165,6 @@ public abstract class Vehicle implements Movable {
      */
     public void setColor(Color clr) {
         color = clr;
-    }
-
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public void setY(double y) {
-        this.y = y;
     }
 
     /**
@@ -298,4 +280,17 @@ public abstract class Vehicle implements Movable {
      * @return calculates a value based on the properties defined in each car.
      */
     protected abstract double speedFactor();
+
+
+
+
+
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
 }
