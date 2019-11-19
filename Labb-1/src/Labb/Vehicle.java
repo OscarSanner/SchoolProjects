@@ -7,8 +7,10 @@ import java.awt.*;
  * Contains methods for moving a car in 2d.
  * Contains common properties of a car.
  */
-public abstract class Vehicle implements Movable, HasXHasY {
+public abstract class Vehicle implements Movable {
 
+    private boolean beingTransported;
+    private CarTransporter carrier;
 
     /**
      * Array for right turns.
@@ -64,7 +66,6 @@ public abstract class Vehicle implements Movable, HasXHasY {
      * The current direction the car is facing. (UP, DOWN, LEFT, RIGHT)
      */
     private Direction currentDirection;
-
 
     /**
      * Constructor for common properites of a car, all cars initiated standing still.
@@ -167,6 +168,14 @@ public abstract class Vehicle implements Movable, HasXHasY {
         color = clr;
     }
 
+    private void setX(double x){
+        this.x = x;
+    }
+
+    private void setY(double y){
+        this.y = y;
+    }
+
     /**
      * Method for starting the car by giving it a starting speed.
      */
@@ -200,7 +209,7 @@ public abstract class Vehicle implements Movable, HasXHasY {
      * will increase its speed. Essentially the gaspedal.
      */
     public void gas(double amount) {
-        if (!(amount < 0 || amount > 1)){
+        if (!(amount < 0 || amount > 1) && !beingTransported){
             incrementSpeed(amount);
         }
     }
@@ -274,23 +283,38 @@ public abstract class Vehicle implements Movable, HasXHasY {
         return nextDirection;
     }
 
+    public void beingTransported(CarTransporter carTransporter){
+        if(carTransporter.confirmTransporting((Car)this)){
+            beingTransported = true;
+            carrier = carTransporter;
+        }
+    }
+
+    public void noLongerBeingTransported(CarTransporter carTransporter){
+        if(!carTransporter.confirmTransporting((Car)this)){
+            beingTransported = false;
+            carrier = carTransporter;
+        }
+    }
+
+    public void updateWithCarrier(){
+        if(beingTransported){
+            setX(carrier.getX());
+            setY(carrier.getY());
+        }
+    }
+
+    public void rollOut(CarTransporter carTransporter){
+        if(carTransporter.confirmRollout()){
+            setY(getY() + 1);
+            setX(getX() + 1);
+        }
+    }
+
     /**
      * Used by methods in this class to determine the increase
      * in speed demanded by the gas and break methods
      * @return calculates a value based on the properties defined in each car.
      */
     protected abstract double speedFactor();
-
-
-
-
-
-
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public void setY(double y) {
-        this.y = y;
-    }
 }

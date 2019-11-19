@@ -4,7 +4,8 @@ import java.awt.*;
 
 public class CarTransporter extends Truck {
 
-    private StateFlatbed<Car> flatbed = new StateFlatbed<>();
+    private StateFlatbed flatbed = new StateFlatbed();
+    private boolean initRollout;
 
     public CarTransporter() {
         super(2, Color.YELLOW, 300, "Car Transporter");
@@ -24,11 +25,43 @@ public class CarTransporter extends Truck {
     public void move(){
         if (flatbed.getCurrentAngle() == flatbed.getMaxAngle()){
             super.move();
-            for (Car c : flatbed.getLoadedCars()){
-                c.setX(this.getX());
-                c.setY(this.getY());
+            for (Car ch : flatbed.getLoadedCars()){
+                updateWithCarrier();
             }
         }
+    }
+
+    public void addCar(Car car){
+        boolean closeEnough = car.getX() - this.getX() < 2 && car.getY() - this.getY() < 2;
+        if(flatbed.getCurrentAngle() == flatbed.getMinAngle() && closeEnough){
+            car.stopEngine();
+            flatbed.loadCar(car);
+            car.beingTransported(this);
+        }
+    }
+
+    public void removeCar(Car car){
+        if(flatbed.getCurrentAngle() == flatbed.getMinAngle()){
+            flatbed.deloadCar(car);
+            initRollout = true;
+            car.rollOut(this);
+            car.noLongerBeingTransported(this);
+        }
+    }
+
+    public boolean confirmTransporting(Car car){
+        if (flatbed.getLoadedCars().contains(car)){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean confirmRollout(){
+        if(initRollout = true){
+            initRollout = false;
+            return true;
+        }
+        return false;
     }
 
     @Override

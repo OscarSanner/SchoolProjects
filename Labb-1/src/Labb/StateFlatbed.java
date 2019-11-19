@@ -2,39 +2,26 @@ package Labb;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-import static java.lang.Math.*;
 
-public class StateFlatbed <T extends Vehicle> extends Flatbed implements CanLoadCars <T>, HasXHasY {
+public class StateFlatbed extends Flatbed {
 
-    //public Deque<T> loadedCars = new ArrayDeque<>();
 
-    private CarLoad<T> carLoad;
+    public Deque<Car> loadedCars = new ArrayDeque<>();
+
 
     public StateFlatbed() {
         super(0, 1);
-        carLoad = new CarLoad<>();
     }
 
-    public Deque<T> getLoadedCars() {
-        return carLoad.loadedCars;
+    public void loadCar (Car carToLoad){
+        loadedCars.push(carToLoad);
     }
 
-    public void loadCar(T carToBeLoaded, Vehicle loadedOnTo) {
-        if (loadCheck(carToBeLoaded, loadedOnTo) && getCurrentAngle() == getMinAngle()) {
-            carLoad.loadCar(carToBeLoaded, loadedOnTo);
-            // UPDATE COORDINATES OF CAR?
-        }
+    public void deloadCar (Car carToDeload){
+        loadedCars.pop();
     }
 
-    public void unloadCar() {
-        if (getCurrentAngle() == getMinAngle() && !carLoad.getLoadedCars().isEmpty()) {
-            carLoad.unloadCar();
-        }
-    }
-
-
-    public boolean loadCheck(T carToBeLoaded, Vehicle loadedOnTo) {
-        return carLoad.loadCheck(carToBeLoaded, loadedOnTo);
-
+    public Deque<Car> getLoadedCars() {
+        return loadedCars;
     }
 }
