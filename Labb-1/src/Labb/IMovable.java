@@ -3,7 +3,7 @@ package Labb;
 /**
  * Interface for movable objects.
  */
-public interface Movable {
+public interface IMovable {
     /**
      * Moves the movable object.
      */

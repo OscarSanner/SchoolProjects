@@ -8,12 +8,12 @@ import java.util.Random;
  * Contains methods for moving a car in 2d.
  * Contains common properties of a car.
  */
-public abstract class Vehicle implements Movable {
+public abstract class Vehicle implements IMovable {
 
     private boolean isLoadedOnACarrier;
-    private CarTransporter carrier;
+    private ICanLoadCars carrier;
 
-    public void setLoaded(CarTransporter potentialCarrier) {
+    void setLoaded(ICanLoadCars potentialCarrier) {
         if (potentialCarrier.confirmLoad(this)) {
             isLoadedOnACarrier = true;
             carrier = potentialCarrier;
@@ -23,12 +23,14 @@ public abstract class Vehicle implements Movable {
         }
     }
 
-    public void updateWithCarrier() {
-        setX(carrier.getX());
-        setY(carrier.getY());
+    void updateWithCarrier() {
+        if(carrier != null){
+            setX(carrier.getX());
+            setY(carrier.getY());
+        }
     }
 
-    public void rollOutFromCarrier(){
+    void rollOutFromCarrier(){
         if(!carrier.confirmLoad(this)){
             isLoadedOnACarrier = false;
             carrier = null;
@@ -46,6 +48,9 @@ public abstract class Vehicle implements Movable {
         this.y = y;
     }
 
+    public ICanLoadCars getCarrier() {
+        return carrier;
+    }
 
     /**
      * Array for right turns.

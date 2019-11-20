@@ -1,19 +1,16 @@
 package Labb;
 
 import java.awt.*;
-import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.List;
 
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
-public class CarTransporter extends Truck implements ICanLoadCars {
+public class CarFerry extends Vehicle implements ICanLoadCars {
 
     private StateFlatbed<Car> flatbed = new StateFlatbed<>();
-
-    public CarTransporter() {
-        super(2, Color.YELLOW, 300, "Car Transporter");
+    public CarFerry() {
+        super(200, Color.WHITE, 3000, "Car Transporter");
     }
 
     public void raiseFlatbed() {
@@ -36,14 +33,6 @@ public class CarTransporter extends Truck implements ICanLoadCars {
     }
 
     @Override
-    protected double speedFactor() {
-        return getEnginePower() * 0.003;
-    }
-
-
-
-
-    @Override
     public void loadCar(Car carToBeLoaded) {
         if (loadCheck(carToBeLoaded) && flatbed.getCurrentAngle() == flatbed.getMinAngle() && carToBeLoaded.getCarrier() == null) {
             flatbed.loadCar(carToBeLoaded);
@@ -56,19 +45,25 @@ public class CarTransporter extends Truck implements ICanLoadCars {
         return flatbed.getLoadedCars().contains(vehicleRequestedToBeLoaded);
     }
 
+
     public void unloadCar() {
         if (flatbed.getCurrentAngle() == flatbed.getMinAngle() && !flatbed.getLoadedCars().isEmpty()) {
-            flatbed.unloadFirstCar();
+            flatbed.unloadLastCar();
         }
     }
 
     @Override
     public boolean loadCheck(Car carToBeLoaded) {
         double distanceBetweenLoaderAndToBeLoaded = sqrt(pow((carToBeLoaded.getX() - this.getX()), 2) + pow((carToBeLoaded.getY() - this.getY()), 2));
-        return distanceBetweenLoaderAndToBeLoaded < 2 && carToBeLoaded.getCarrier() == null;                 //Avståndsformeln, 2 satt för 2 meters avstånd(?)
+        return distanceBetweenLoaderAndToBeLoaded < 2 && carToBeLoaded.getCarrier() == null;              //Avståndsformeln, 2 satt för 2 meters avstånd(?)
     }
 
     public Deque<Car> getLoadedCars(){
         return flatbed.getLoadedCars();
+    }
+
+    @Override
+    protected double speedFactor() {
+        return getEnginePower() * 0.0002;
     }
 }

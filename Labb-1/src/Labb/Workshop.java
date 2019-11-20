@@ -1,46 +1,61 @@
 package Labb;
 
+import java.util.ArrayList;
 import java.util.Deque;
+import java.util.List;
 
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
-public class Workshop <T extends Vehicle> implements CanLoadCars <T> {
+public class Workshop <T extends Car> implements ICanLoadCars <T> {
 
     private double x;
     private double y;
-    private CarLoad<T> carLoad;
+    private List<T> carsInTheShop;
+    private int maxCarCapacity;
 
-    public Workshop(double x, double y){
-        this.carLoad = new CarLoad<>();
+    public Workshop(double x, double y, int maxCarCapacity) {
+        carsInTheShop = new ArrayList<>();
         this.x = x;
         this.y = y;
+        this.maxCarCapacity = maxCarCapacity;
     }
 
-
-    public Deque<T> getLoadedCars() {
-        return carLoad.loadedCars;
-    }
-
-    public void loadCar(T carToBeLoaded, Vehicle loadedOnTo) {
-        carLoad.loadCar(carToBeLoaded, loadedOnTo);
-        // UPDATE COORDINATES OF CAR?
+    public List<T> getCarsInTheShop() {
+        return carsInTheShop;
     }
 
     public void loadCar(T carToBeLoaded) {
-        carLoad.loadCar(carToBeLoaded);
-        carToBeLoaded.updateWithCarrier();
-        // UPDATE COORDINATES OF CAR?
-
+        if (loadCheck(carToBeLoaded)) {
+            carsInTheShop.add(carToBeLoaded);
+            carToBeLoaded.setLoaded(this);
+        }
     }
 
-    public void unloadCar() {
-        carLoad.unloadCar();
-
+    public void unloadCar(Car carToBePickedUp) {
+        if (carsInTheShop.contains(carToBePickedUp)) {
+            carsInTheShop.remove(carToBePickedUp);
+            carToBePickedUp.rollOutFromCarrier();
+        }
     }
 
+    public boolean loadCheck(Car carToBeLoaded) {
+        double distanceBetweenLoaderAndToBeLoaded = sqrt(pow((carToBeLoaded.getX() - this.x), 2) + pow((carToBeLoaded.getY() - this.y), 2));
+        return distanceBetweenLoaderAndToBeLoaded < 2 && carToBeLoaded.getCarrier() == null && carsInTheShop.size() < maxCarCapacity;              //Avståndsformeln, 2 satt för 2 meters avstånd(?)
+    }
 
-    public boolean loadCheck(Car vehicleToBeLoaded) {
-        double distanceBetweenLoaderAndToBeLoaded = sqrt(pow((vehicleToBeLoaded.getX() - this.x), 2) + pow((vehicleToBeLoaded.getY() - this.y), 2));
-        return distanceBetweenLoaderAndToBeLoaded < 2;              //Avståndsformeln, 2 satt för 2 meters avstånd(?)
+    @Override
+    public boolean confirmLoad (Vehicle vehicleRequestedToBeLoaded){
+        return carsInTheShop.contains(vehicleRequestedToBeLoaded);
+    }
+
+    @Override
+    public double getX() {
+        return x;
+    }
+
+    @Override
+    public double getY() {
+        return y;
+    }
 }

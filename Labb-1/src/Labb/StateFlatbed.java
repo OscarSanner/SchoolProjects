@@ -3,31 +3,32 @@ package Labb;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-import static java.lang.Math.*;
+public class StateFlatbed<T extends Car> extends Flatbed{
 
-public class StateFlatbed<T extends Vehicle> extends Flatbed implements CanLoadCars<T> {
-
-    //public Deque<T> loadedCars = new ArrayDeque<>();
-
-    private CarLoad<T> carLoad;
+    private Deque<T> loadedCars;
 
     public StateFlatbed() {
         super(0, 1);
-        carLoad = new CarLoad<>();
+        loadedCars = new ArrayDeque<>();
     }
 
     public Deque<T> getLoadedCars() {
-        return carLoad.loadedCars;
+        return loadedCars;
     }
 
     public void loadCar(T carToBeLoaded) {
-        carLoad.loadCar(carToBeLoaded);
+        loadedCars.push(carToBeLoaded);
     }
 
     public void unloadFirstCar() {
-        carLoad.unloadFirstCar();
+        Vehicle vehicleBeingUnloaded = loadedCars.peek();
+        loadedCars.pop();
+        vehicleBeingUnloaded.rollOutFromCarrier();
     }
+
     public void unloadLastCar() {
-        carLoad.unloadLastCar();
+        Vehicle tempForVehicleBeingUnloaded = loadedCars.getLast();
+        loadedCars.removeLast();
+        tempForVehicleBeingUnloaded.rollOutFromCarrier();
     }
 }
