@@ -1,6 +1,7 @@
 package Labb;
 
 import java.awt.*;
+import java.util.Random;
 
 /**
  * Abstract class for all cars.
@@ -8,6 +9,42 @@ import java.awt.*;
  * Contains common properties of a car.
  */
 public abstract class Vehicle implements Movable {
+
+    private boolean isLoadedOnACarrier;
+    private CarTransporter carrier;
+
+    public void setLoaded(CarTransporter potentialCarrier) {
+        if (potentialCarrier.confirmLoad(this)) {
+            isLoadedOnACarrier = true;
+            carrier = potentialCarrier;
+            this.stopEngine();
+            setX(potentialCarrier.getX());
+            setY(potentialCarrier.getY());
+        }
+    }
+
+    public void updateWithCarrier() {
+        setX(carrier.getX());
+        setY(carrier.getY());
+    }
+
+    public void rollOutFromCarrier(){
+        if(!carrier.confirmLoad(this)){
+            isLoadedOnACarrier = false;
+            carrier = null;
+            this.setY(getY() + 2 + new Random().nextDouble());
+            this.setX(getX() + 2 + new Random().nextDouble());
+        }
+    }
+
+
+    private void setX(double x) {
+        this.x = x;
+    }
+
+    private void setY(double y) {
+        this.y = y;
+    }
 
 
     /**
@@ -68,10 +105,11 @@ public abstract class Vehicle implements Movable {
 
     /**
      * Constructor for common properites of a car, all cars initiated standing still.
-     * @param nrDoors the number of doors on the car.
-     * @param color the color of the car.
+     *
+     * @param nrDoors     the number of doors on the car.
+     * @param color       the color of the car.
      * @param enginePower the driving power of the car, max speed.
-     * @param modelName the cars model.
+     * @param modelName   the cars model.
      */
     public Vehicle(int nrDoors, Color color, double enginePower, String modelName) {
         this.nrDoors = nrDoors;
@@ -89,6 +127,7 @@ public abstract class Vehicle implements Movable {
 
     /**
      * Method for getting the current direction the car is facing in a 2d plane.
+     *
      * @return the direction the car is facing.
      */
     public Direction getCurrentDirection() {
@@ -97,6 +136,7 @@ public abstract class Vehicle implements Movable {
 
     /**
      * Method for getting the current x-coordinate of the car.
+     *
      * @return the x-coordinate.
      */
     public double getX() {
@@ -105,6 +145,7 @@ public abstract class Vehicle implements Movable {
 
     /**
      * Method for getting the current y-coordinate of the car.
+     *
      * @return the y-coordinate.
      */
     public double getY() {
@@ -114,6 +155,7 @@ public abstract class Vehicle implements Movable {
     /**
      * Sets the current speed of the car to the given value.
      * Used as a helper method for starting the car, acceleration and braking.
+     *
      * @param currentSpeed the given value.
      */
     private void setCurrentSpeed(double currentSpeed) {
@@ -129,6 +171,7 @@ public abstract class Vehicle implements Movable {
 
     /**
      * Method for getting the numbers of door on the car.
+     *
      * @return the number of doors on the car.
      */
     public int getNrDoors() {
@@ -137,6 +180,7 @@ public abstract class Vehicle implements Movable {
 
     /**
      * Method for getting the driving power of the car, max speed.
+     *
      * @return the maximum speed.
      */
     public double getEnginePower() {
@@ -145,6 +189,7 @@ public abstract class Vehicle implements Movable {
 
     /**
      * Method for getting the current speed of the car.
+     *
      * @return the current speed.
      */
     public double getCurrentSpeed() {
@@ -153,6 +198,7 @@ public abstract class Vehicle implements Movable {
 
     /**
      * Method for getting the color of the car.
+     *
      * @return the color of the car.
      */
     public Color getColor() {
@@ -161,6 +207,7 @@ public abstract class Vehicle implements Movable {
 
     /**
      * Method for setting the color of the car to the given color.
+     *
      * @param clr the given color the car will get.
      */
     public void setColor(Color clr) {
@@ -178,6 +225,7 @@ public abstract class Vehicle implements Movable {
      * Increases the speed of the car with the given amount from the gas-method.
      * The increase of speed is determined by adding a speedfactor (in conjuction with the amount) to the current speed.
      * The speedfactor is calculated through another method, specific for each type of car.
+     *
      * @param amount how much the cars speed will increase, given by gas-method.
      */
     private void incrementSpeed(double amount) {
@@ -188,30 +236,34 @@ public abstract class Vehicle implements Movable {
      * Decreases the speed of the car with the given amount from the brake-method.
      * The decrease of speed is determined by subtracting a speedfactor (in conjuction with the amount) to the current speed.
      * The speedfactor is calculated through another method, specific for each type of car.
+     *
      * @param amount how much the cars speed will decrease, given by brake-method.
      */
     private void decrementSpeed(double amount) {
         setCurrentSpeed(Math.max(getCurrentSpeed() - speedFactor() * amount, 0));
     }
 
+    /*
     /**
      * Increases the speed of the car, by calling the incrementSpeed method.
+     *
      * @param amount parameter that determines how much the car
-     * will increase its speed. Essentially the gaspedal.
+     *               will increase its speed. Essentially the gaspedal.
      */
     public void gas(double amount) {
-        if (!(amount < 0 || amount > 1)){
+        if (!(amount < 0 || amount > 1) && !isLoadedOnACarrier) {
             incrementSpeed(amount);
         }
     }
 
     /**
      * Decreases the speed of the car, by calling the decrementSpeed method.
+     *
      * @param amount parameter that determines how much the car
-     * will decrease its speed. Essentially the breakpedal.
+     *               will decrease its speed. Essentially the breakpedal.
      */
     public void brake(double amount) {
-        if (!(amount < 0 || amount > 1)){
+        if (!(amount < 0 || amount > 1)) {
             decrementSpeed(amount);
         }
     }
@@ -259,8 +311,9 @@ public abstract class Vehicle implements Movable {
     /**
      * Determines which direction is next, is only called internally
      * by other methods in class, more specifically turnLeft and turnRight.
+     *
      * @param dirArr should receive an array containing all the possible directions,
-     * in which the element after the current direction will be the next direction
+     *               in which the element after the current direction will be the next direction
      * @return returns the next direction.
      */
     private Direction findNextDirection(Direction[] dirArr) {
@@ -277,20 +330,10 @@ public abstract class Vehicle implements Movable {
     /**
      * Used by methods in this class to determine the increase
      * in speed demanded by the gas and break methods
+     *
      * @return calculates a value based on the properties defined in each car.
      */
     protected abstract double speedFactor();
 
 
-
-
-
-
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public void setY(double y) {
-        this.y = y;
-    }
 }

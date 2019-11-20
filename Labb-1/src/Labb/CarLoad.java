@@ -21,28 +21,24 @@ public class CarLoad <T extends Vehicle> implements CanLoadCars <T> {
     }
 
     @Override
-    public void loadCar(T carToBeLoaded, Vehicle loadedOnTo) {
-        loadedCars.push(carToBeLoaded);
-
-
-        carToBeLoaded.setX(loadedOnTo.getX());
-        carToBeLoaded.setY(loadedOnTo.getY());
-    }
-
     public void loadCar(T carToBeLoaded) {
         loadedCars.push(carToBeLoaded);
     }
 
     @Override
-    public void unloadCar() {
-        loadedCars.peek().setY(loadedCars.peek().getY()+2);                         //TEMPORARY SETTER, UNSAFE!!! (Avlastas på varandra, problem?)
+    public void unloadFirstCar() {          //TEMPORARY SETTER, UNSAFE!!! (Avlastas på varandra, problem?)
+        Vehicle tempForVehicleBeingUnloaded = loadedCars.peek();
         loadedCars.pop();
+        tempForVehicleBeingUnloaded.rollOutFromCarrier();
     }
 
     @Override
-    public boolean loadCheck(T vehicleToBeLoaded, Vehicle loadedOnTo) {
-        double distanceBetweenLoaderAndToBeLoaded = sqrt(  pow( (vehicleToBeLoaded.getX() - loadedOnTo.getX()) , 2) + pow( (vehicleToBeLoaded.getY() - loadedOnTo.getY()) , 2) );
-        return distanceBetweenLoaderAndToBeLoaded < 2;              //Avståndsformeln, 2 satt för 2 meters avstånd(?)
+    public void unloadLastCar() {             //TEMPORARY SETTER, UNSAFE!!! (Avlastas på varandra, problem?)
+        Vehicle tempForVehicleBeingUnloaded = loadedCars.getLast();
+        loadedCars.removeLast();
+        tempForVehicleBeingUnloaded.rollOutFromCarrier();
     }
+    public void unloadSpecificCar (Car carToBeUnloaded){
 
+    }
 }

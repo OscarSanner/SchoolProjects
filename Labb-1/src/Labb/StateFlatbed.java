@@ -2,9 +2,10 @@ package Labb;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+
 import static java.lang.Math.*;
 
-public class StateFlatbed <T extends Vehicle> extends Flatbed implements CanLoadCars <T> {
+public class StateFlatbed<T extends Vehicle> extends Flatbed implements CanLoadCars<T> {
 
     //public Deque<T> loadedCars = new ArrayDeque<>();
 
@@ -19,22 +20,14 @@ public class StateFlatbed <T extends Vehicle> extends Flatbed implements CanLoad
         return carLoad.loadedCars;
     }
 
-    public void loadCar(T carToBeLoaded, Vehicle loadedOnTo) {
-        if (loadCheck(carToBeLoaded, loadedOnTo) && getCurrentAngle() == getMinAngle()) {
-            carLoad.loadCar(carToBeLoaded, loadedOnTo);
-            // UPDATE COORDINATES OF CAR?
-        }
+    public void loadCar(T carToBeLoaded) {
+        carLoad.loadCar(carToBeLoaded);
     }
 
-    public void unloadCar() {
-        if (getCurrentAngle() == getMinAngle() && !carLoad.getLoadedCars().isEmpty()) {
-            carLoad.unloadCar();
-        }
+    public void unloadFirstCar() {
+        carLoad.unloadFirstCar();
     }
-
-
-    public boolean loadCheck(T carToBeLoaded, Vehicle loadedOnTo) {
-        return carLoad.loadCheck(carToBeLoaded, loadedOnTo);
-
+    public void unloadLastCar() {
+        carLoad.unloadLastCar();
     }
 }
