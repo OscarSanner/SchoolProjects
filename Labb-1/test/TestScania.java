@@ -10,32 +10,32 @@ public class TestScania {
     @Test
     public void testFlatbedRestrictsMoveFunction(){
         scania = new Scania();
-        scania.lowerFlatbed();
+        scania.raiseFlatbed();
 
         scania.gas(1);
         scania.move();
         double firstX = scania.getX();
         double firstY = scania.getY();
-        scania.raiseFlatbed();
+        scania.lowerFlatbed();
         scania.gas(1);
         scania.move();
-        assert scania.getX() != 0 && scania.getY() != 0 && firstX == 0 && firstY == 0;
+        assert (scania.getX() != 0 || scania.getY() != 0) && firstX == 0 && firstY == 0;
     }
 
     @Test
     public void testFlatbedBoundaries(){
         scania = new Scania();
-        int firstAngleUp = scania.getCurrentAngle();
-        scania.raiseFlatbed();
-        int secondAngleUp = scania.getCurrentAngle();
-
-        while (scania.getCurrentAngle() != 0){
-            scania.lowerFlatbed();
-        }
+        int firstAngleDown = scania.getCurrentAngle();
         scania.lowerFlatbed();
-        int angleDown = scania.getCurrentAngle();
+        int secondAngleDown = scania.getCurrentAngle();
 
-        assert firstAngleUp == secondAngleUp && angleDown == 0;
+        while (scania.getCurrentAngle() != 70){
+            scania.raiseFlatbed();
+        }
+        scania.raiseFlatbed();
+        int angleUp = scania.getCurrentAngle();
+
+        assert firstAngleDown == secondAngleDown && angleUp == 70;
     }
 
 }
