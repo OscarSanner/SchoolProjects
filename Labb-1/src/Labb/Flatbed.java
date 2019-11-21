@@ -1,7 +1,13 @@
 package Labb;
 
+/**
+ * Abstract class for common properties of all flatbeds.
+ */
 public abstract class Flatbed {
 
+    /**
+     *
+     */
     final protected int minAngle;
     final protected int maxAngle;
     protected int currentAngle;

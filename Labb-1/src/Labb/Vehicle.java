@@ -24,14 +24,14 @@ public abstract class Vehicle implements IMovable {
     }
 
     void updateWithCarrier() {
-        if(carrier != null){
+        if (carrier != null) {
             setX(carrier.getX());
             setY(carrier.getY());
         }
     }
 
-    void rollOutFromCarrier(){
-        if(!carrier.confirmLoad(this)){
+    void rollOutFromCarrier() {
+        if (!carrier.confirmLoad(this)) {
             isLoadedOnACarrier = false;
             carrier = null;
             this.setY(getY() + 2 + new Random().nextDouble());
