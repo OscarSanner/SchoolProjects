@@ -223,7 +223,9 @@ public abstract class Vehicle implements IMovable {
      * Method for starting the car by giving it a starting speed.
      */
     public void startEngine() {
-        currentSpeed = 0.1;
+        if (!isLoadedOnACarrier) {
+            currentSpeed = 0.1;
+        }
     }
 
     /**
