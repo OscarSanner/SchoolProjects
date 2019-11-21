@@ -2,26 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a33160a8-990b-4af0-a2ee-814250d279a2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Labb/CarFerry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Labb/ICanLoadCars.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/TestScania.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CanLoadCars.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarLoad.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarTransporter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarTransporter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Movable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/StateFlatbed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/StateFlatbed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Vehicle$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/Vehicle$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Vehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/Vehicle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Workshop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/Workshop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/CanLoadCars.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/CarLoad.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/CarTransporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/CarTransporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/Movable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/IMovable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/StateFlatbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/StateFlatbed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/Workshop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Workshop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Scania.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/Scania.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Truck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/Truck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Labb-1/TestSuite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Labb-1/TestSuite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Labb-1/TestVehicle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Labb/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Labb/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Scania.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Labb/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Truck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestVehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestCar.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,52 +34,24 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.4902439">
       <split-first>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Labb/Car.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+                <state relative-caret-position="136">
+                  <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Labb/StateFlatbed.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="method#StateFlatbed#0;class#StateFlatbed#0" />
-                    <element signature="e#377#378#0" expanded="true" />
-                    <element signature="e#423#424#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Labb/Flatbed.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Labb/Workshop.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="646">
-                  <caret line="43" column="91" lean-forward="true" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="91" />
+                <state relative-caret-position="221">
+                  <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
                   <folding>
-                    <element signature="e#476#477#0" expanded="true" />
-                    <element signature="e#512#513#0" expanded="true" />
-                    <element signature="e#1486#1487#0" expanded="true" />
-                    <element signature="e#1510#1511#0" expanded="true" />
-                    <element signature="e#1552#1553#0" expanded="true" />
-                    <element signature="e#1576#1577#0" expanded="true" />
+                    <element signature="e#578#579#0" expanded="true" />
+                    <element signature="e#632#633#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -98,7 +61,77 @@
             <entry file="file://$PROJECT_DIR$/src/Labb/Main.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="765">
-                  <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+                  <caret line="45" selection-start-line="45" selection-end-line="45" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Labb/CarFerry.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="445">
+                  <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#278#279#0" expanded="true" />
+                    <element signature="e#342#343#0" expanded="true" />
+                    <element signature="e#376#377#0" expanded="true" />
+                    <element signature="e#414#415#0" expanded="true" />
+                    <element signature="e#1884#1885#0" expanded="true" />
+                    <element signature="e#1930#1931#0" expanded="true" />
+                    <element signature="e#1982#1983#0" expanded="true" />
+                    <element signature="e#2030#2031#0" expanded="true" />
+                    <element signature="e#2105#2106#0" expanded="true" />
+                    <element signature="e#2148#2149#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/TestCar.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="119">
+                  <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/TestScania.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="153">
+                  <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/TestCarTransporter.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="340">
+                  <caret line="79" column="18" lean-forward="true" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="18" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/test/TestFerry.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="462">
+                  <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -106,69 +139,115 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Labb/Vehicle.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-4539">
-                  <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+                <state relative-caret-position="731">
+                  <caret line="46" column="33" lean-forward="true" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
                   <folding>
+                    <element signature="e#1087#1088#0" expanded="true" />
                     <element signature="e#1113#1114#0" expanded="true" />
                     <element signature="e#1174#1175#0" expanded="true" />
-                    <element signature="e#1218#1219#0" expanded="true" />
-                    <element signature="e#1248#1249#0" expanded="true" />
+                    <element signature="e#3454#3455#0" expanded="true" />
                     <element signature="e#3493#3494#0" expanded="true" />
+                    <element signature="e#3640#3641#0" expanded="true" />
                     <element signature="e#3664#3665#0" expanded="true" />
+                    <element signature="e#3811#3812#0" expanded="true" />
                     <element signature="e#3835#3836#0" expanded="true" />
+                    <element signature="e#4099#4100#0" expanded="true" />
                     <element signature="e#4147#4148#0" expanded="true" />
+                    <element signature="e#4255#4256#0" expanded="true" />
                     <element signature="e#4287#4288#0" expanded="true" />
+                    <element signature="e#4446#4447#0" expanded="true" />
                     <element signature="e#4476#4477#0" expanded="true" />
+                    <element signature="e#4638#4639#0" expanded="true" />
                     <element signature="e#4675#4676#0" expanded="true" />
+                    <element signature="e#4827#4828#0" expanded="true" />
                     <element signature="e#4862#4863#0" expanded="true" />
+                    <element signature="e#5001#5002#0" expanded="true" />
                     <element signature="e#5029#5030#0" expanded="true" />
+                    <element signature="e#5210#5211#0" expanded="true" />
                     <element signature="e#5237#5238#0" expanded="true" />
+                    <element signature="e#5352#5353#0" expanded="true" />
                     <element signature="e#5386#5387#0" expanded="true" />
+                    <element signature="e#7984#7985#0" expanded="true" />
                     <element signature="e#8056#8057#0" expanded="true" />
+                    <element signature="e#8194#8195#0" expanded="true" />
                     <element signature="e#8267#8268#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Labb/CarFerry.java">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Labb/StateFlatbed.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="799">
-                  <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+                <state relative-caret-position="170">
+                  <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="method#lowerFlatbed#0;class#CarFerry#0" />
-                    <element signature="e#1057#1058#0" expanded="true" />
-                    <element signature="e#1105#1106#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Labb/Truck.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="187">
+                  <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Labb/CarTransporter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="714">
-                  <caret line="65" column="36" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
+                <state relative-caret-position="479">
+                  <caret line="77" column="5" lean-forward="true" selection-start-line="75" selection-end-line="77" selection-end-column="5" />
                   <folding>
                     <element signature="method#lowerFlatbed#0;class#CarTransporter#0" />
+                    <element signature="method#move#0;class#CarTransporter#0" />
                     <element signature="method#loadCar#0;class#CarTransporter#0" />
-                    <element signature="method#confirmLoad#0;class#CarTransporter#0" />
+                    <element signature="method#unloadCar#0;class#CarTransporter#0" />
+                    <element signature="method#loadCheck#0;class#CarTransporter#0" />
+                    <element signature="e#2058#2059#0" expanded="true" />
+                    <element signature="e#2118#2119#0" expanded="true" />
+                    <element signature="e#2115#2116#0" expanded="true" />
+                    <element signature="e#2158#2159#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Labb/ICanLoadCars.java">
+            <entry file="file://$PROJECT_DIR$/src/Labb/Flatbed.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="8" column="68" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="68" />
+                <state relative-caret-position="153">
+                  <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Labb/AngledFlatbed.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="85">
+                  <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Labb/Scania.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="340">
+                  <caret line="24" column="5" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="24" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#431#432#0" expanded="true" />
+                    <element signature="e#473#474#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -197,11 +276,21 @@
         <option value="$PROJECT_DIR$/src/Labb/ICarLoad.java" />
         <option value="$PROJECT_DIR$/src/Labb/Vehicle.java" />
         <option value="$PROJECT_DIR$/src/Labb/ICanLoadCars.java" />
-        <option value="$PROJECT_DIR$/src/Labb/Workshop.java" />
         <option value="$PROJECT_DIR$/src/Labb/Main.java" />
+        <option value="$PROJECT_DIR$/test/TestCar.java" />
+        <option value="$PROJECT_DIR$/src/Labb/Car.java" />
+        <option value="$PROJECT_DIR$/src/Labb/Scania.java" />
+        <option value="$PROJECT_DIR$/src/Labb/Truck.java" />
+        <option value="$PROJECT_DIR$/test/TestScania.java" />
+        <option value="$PROJECT_DIR$/test/TestCartransporter.java" />
+        <option value="$PROJECT_DIR$/src/Labb/Flatbed.java" />
         <option value="$PROJECT_DIR$/src/Labb/StateFlatbed.java" />
-        <option value="$PROJECT_DIR$/src/Labb/CarFerry.java" />
+        <option value="$PROJECT_DIR$/src/Labb/AngledFlatbed.java" />
         <option value="$PROJECT_DIR$/src/Labb/CarTransporter.java" />
+        <option value="$PROJECT_DIR$/src/Labb/Workshop.java" />
+        <option value="$PROJECT_DIR$/test/TestCarTransporter.java" />
+        <option value="$PROJECT_DIR$/src/Labb/CarFerry.java" />
+        <option value="$PROJECT_DIR$/test/TestFerry.java" />
       </list>
     </option>
   </component>
@@ -218,7 +307,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -237,11 +326,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Labb" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Labb-1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Labb-1" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -268,16 +362,41 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Labb.Main" />
+  <component name="RunManager" selected="JUnit.TestFerry">
+    <configuration name="TestCarTransporter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Labb-1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Labb.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCarTransporter" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCarTransporter.testFlatbed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Labb-1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCarTransporter" />
+      <option name="METHOD_NAME" value="testFlatbed" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCarTransporter.testMovementWithCars" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Labb-1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCarTransporter" />
+      <option name="METHOD_NAME" value="testMovementWithCars" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestFerry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Labb-1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestFerry" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -291,43 +410,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestVehicle.testMoveDown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Labb-1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestVehicle" />
-      <option name="METHOD_NAME" value="testMoveDown" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestVehicle.testMoveDownSaab" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Labb-1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestVehicle" />
-      <option name="METHOD_NAME" value="testMoveDownSaab" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestVehicle.testTurboSaab" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Labb-1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestVehicle" />
-      <option name="METHOD_NAME" value="testTurboSaab" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TestFerry" />
+        <item itemvalue="JUnit.TestCarTransporter.testMovementWithCars" />
+        <item itemvalue="JUnit.TestCarTransporter.testFlatbed" />
+        <item itemvalue="JUnit.TestCarTransporter" />
         <item itemvalue="JUnit.TestSuite" />
-        <item itemvalue="JUnit.TestVehicle.testMoveDown" />
-        <item itemvalue="JUnit.TestVehicle.testMoveDownSaab" />
-        <item itemvalue="JUnit.TestVehicle.testTurboSaab" />
       </list>
     </recent_temporary>
   </component>
@@ -345,40 +434,66 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestSuite - 2019.11.15 at 10h 52m 32s.xml">
-      <configuration name="TestSuite" configurationId="JUnit" />
+    <history-entry file="TestCarTransporter_testFlatbed - 2019.11.21 at 15h 18m 26s.xml">
+      <configuration name="TestCarTransporter.testFlatbed" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCarTransporter_testFlatbed - 2019.11.21 at 15h 18m 29s.xml">
+      <configuration name="TestCarTransporter.testFlatbed" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCarTransporter_testFlatbed - 2019.11.21 at 15h 19m 35s.xml">
+      <configuration name="TestCarTransporter.testFlatbed" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCarTransporter_testFlatbed - 2019.11.21 at 15h 20m 39s.xml">
+      <configuration name="TestCarTransporter.testFlatbed" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCarTransporter_testFlatbed - 2019.11.21 at 15h 23m 39s.xml">
+      <configuration name="TestCarTransporter.testFlatbed" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCarTransporter_testFlatbed - 2019.11.21 at 15h 23m 42s.xml">
+      <configuration name="TestCarTransporter.testFlatbed" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCarTransporter_testMovementWithCars - 2019.11.21 at 15h 49m 01s.xml">
+      <configuration name="TestCarTransporter.testMovementWithCars" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCarTransporter_testMovementWithCars - 2019.11.21 at 15h 50m 45s.xml">
+      <configuration name="TestCarTransporter.testMovementWithCars" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCarTransporter_testMovementWithCars - 2019.11.21 at 15h 50m 48s.xml">
+      <configuration name="TestCarTransporter.testMovementWithCars" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCarTransporter_testMovementWithCars - 2019.11.21 at 15h 53m 35s.xml">
+      <configuration name="TestCarTransporter.testMovementWithCars" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12526652" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12633263" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.32981783" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32981783" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32981783" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39980826" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32981783" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
     <layout-to-restore>
       <window_info id="Image Layers" order="0" />
@@ -441,6 +556,18 @@
       </map>
     </option>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/TestCarTransporter.java</url>
+          <line>69</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Labb_1$Main.ic" NAME="Main Coverage Results" MODIFIED="1573236272090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Labb.*</FILTER>
@@ -448,64 +575,12 @@
     <SUITE FILE_PATH="coverage/Labb_1$TestSuite.ic" NAME="TestSuite Coverage Results" MODIFIED="1573811547518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Labb/CarLoad.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Labb/ICarLoad.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Labb/Car.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Labb/CarLoad.java" />
+    <entry file="file://$PROJECT_DIR$/src/Labb/ICarLoad.java" />
     <entry file="file://$PROJECT_DIR$/src/Labb/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Labb/Flatbed.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Labb/Vehicle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4539">
-          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding>
-            <element signature="e#1113#1114#0" expanded="true" />
-            <element signature="e#1174#1175#0" expanded="true" />
-            <element signature="e#1218#1219#0" expanded="true" />
-            <element signature="e#1248#1249#0" expanded="true" />
-            <element signature="e#3493#3494#0" expanded="true" />
-            <element signature="e#3664#3665#0" expanded="true" />
-            <element signature="e#3835#3836#0" expanded="true" />
-            <element signature="e#4147#4148#0" expanded="true" />
-            <element signature="e#4287#4288#0" expanded="true" />
-            <element signature="e#4476#4477#0" expanded="true" />
-            <element signature="e#4675#4676#0" expanded="true" />
-            <element signature="e#4862#4863#0" expanded="true" />
-            <element signature="e#5029#5030#0" expanded="true" />
-            <element signature="e#5237#5238#0" expanded="true" />
-            <element signature="e#5386#5387#0" expanded="true" />
-            <element signature="e#8056#8057#0" expanded="true" />
-            <element signature="e#8267#8268#0" expanded="true" />
-          </folding>
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
         </state>
       </provider>
     </entry>
@@ -516,55 +591,178 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Labb/StateFlatbed.java">
+    <entry file="file://$PROJECT_DIR$/test/TestCar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#StateFlatbed#0;class#StateFlatbed#0" />
-            <element signature="e#377#378#0" expanded="true" />
-            <element signature="e#423#424#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Labb/Car.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Labb/Vehicle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="46" column="33" lean-forward="true" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+          <folding>
+            <element signature="e#1087#1088#0" expanded="true" />
+            <element signature="e#1113#1114#0" expanded="true" />
+            <element signature="e#1174#1175#0" expanded="true" />
+            <element signature="e#3454#3455#0" expanded="true" />
+            <element signature="e#3493#3494#0" expanded="true" />
+            <element signature="e#3640#3641#0" expanded="true" />
+            <element signature="e#3664#3665#0" expanded="true" />
+            <element signature="e#3811#3812#0" expanded="true" />
+            <element signature="e#3835#3836#0" expanded="true" />
+            <element signature="e#4099#4100#0" expanded="true" />
+            <element signature="e#4147#4148#0" expanded="true" />
+            <element signature="e#4255#4256#0" expanded="true" />
+            <element signature="e#4287#4288#0" expanded="true" />
+            <element signature="e#4446#4447#0" expanded="true" />
+            <element signature="e#4476#4477#0" expanded="true" />
+            <element signature="e#4638#4639#0" expanded="true" />
+            <element signature="e#4675#4676#0" expanded="true" />
+            <element signature="e#4827#4828#0" expanded="true" />
+            <element signature="e#4862#4863#0" expanded="true" />
+            <element signature="e#5001#5002#0" expanded="true" />
+            <element signature="e#5029#5030#0" expanded="true" />
+            <element signature="e#5210#5211#0" expanded="true" />
+            <element signature="e#5237#5238#0" expanded="true" />
+            <element signature="e#5352#5353#0" expanded="true" />
+            <element signature="e#5386#5387#0" expanded="true" />
+            <element signature="e#7984#7985#0" expanded="true" />
+            <element signature="e#8056#8057#0" expanded="true" />
+            <element signature="e#8194#8195#0" expanded="true" />
+            <element signature="e#8267#8268#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Labb/Truck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Labb/Scania.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <element signature="e#431#432#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Labb/Flatbed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Labb/StateFlatbed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Labb/AngledFlatbed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Labb/Workshop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="43" column="91" lean-forward="true" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="91" />
+        <state relative-caret-position="221">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#1486#1487#0" expanded="true" />
-            <element signature="e#1510#1511#0" expanded="true" />
-            <element signature="e#1552#1553#0" expanded="true" />
-            <element signature="e#1576#1577#0" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#632#633#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/TestScania.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Labb/CarTransporter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="65" column="36" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
+        <state relative-caret-position="479">
+          <caret line="77" column="5" lean-forward="true" selection-start-line="75" selection-end-line="77" selection-end-column="5" />
           <folding>
             <element signature="method#lowerFlatbed#0;class#CarTransporter#0" />
+            <element signature="method#move#0;class#CarTransporter#0" />
             <element signature="method#loadCar#0;class#CarTransporter#0" />
-            <element signature="method#confirmLoad#0;class#CarTransporter#0" />
+            <element signature="method#unloadCar#0;class#CarTransporter#0" />
+            <element signature="method#loadCheck#0;class#CarTransporter#0" />
+            <element signature="e#2058#2059#0" expanded="true" />
+            <element signature="e#2118#2119#0" expanded="true" />
+            <element signature="e#2115#2116#0" expanded="true" />
+            <element signature="e#2158#2159#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Labb/CarFerry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+        <state relative-caret-position="445">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#lowerFlatbed#0;class#CarFerry#0" />
-            <element signature="e#1057#1058#0" expanded="true" />
-            <element signature="e#1105#1106#0" expanded="true" />
+            <element signature="e#278#279#0" expanded="true" />
+            <element signature="e#342#343#0" expanded="true" />
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#414#415#0" expanded="true" />
+            <element signature="e#1884#1885#0" expanded="true" />
+            <element signature="e#1930#1931#0" expanded="true" />
+            <element signature="e#1982#1983#0" expanded="true" />
+            <element signature="e#2030#2031#0" expanded="true" />
+            <element signature="e#2105#2106#0" expanded="true" />
+            <element signature="e#2148#2149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/TestCarTransporter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="79" column="18" lean-forward="true" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/TestFerry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

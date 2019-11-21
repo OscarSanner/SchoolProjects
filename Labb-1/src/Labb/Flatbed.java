@@ -7,9 +7,10 @@ public abstract class Flatbed {
     protected int currentAngle;
 
 
-    public Flatbed(int minAngle, int maxAngle) {
+    public Flatbed(int minAngle, int maxAngle, int currentAngle) {
         this.minAngle = minAngle;
         this.maxAngle = maxAngle;
+        this.currentAngle = currentAngle;
     }
 
     public void lowerFlatbed(){

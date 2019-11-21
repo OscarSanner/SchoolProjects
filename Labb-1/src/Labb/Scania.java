@@ -20,6 +20,10 @@ public class Scania extends Truck {
             flatbed.lowerFlatbed();
     }
 
+    public int getCurrentAngle(){
+        return flatbed.currentAngle;
+    }
+
     @Override
     public void move(){
         if (flatbed.getCurrentAngle() == flatbed.getMinAngle()){

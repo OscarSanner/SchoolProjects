@@ -5,7 +5,7 @@ import Labb.*;
 import org.junit.Test;
 import java.awt.*;
 
-public class TestVehicle {
+public class TestCar {
     private Volvo240 volvo;
     private Saab95 saab;
 

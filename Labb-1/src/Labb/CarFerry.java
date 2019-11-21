@@ -1,6 +1,7 @@
 package Labb;
 
 import java.awt.*;
+import java.util.ArrayDeque;
 import java.util.Deque;
 
 import static java.lang.Math.pow;
@@ -19,6 +20,7 @@ public class CarFerry extends Vehicle implements ICanLoadCars {
     public void lowerFlatbed() {
         if (this.getCurrentSpeed() == 0) {
             flatbed.lowerFlatbed();
+
         }
     }
 
@@ -59,11 +61,15 @@ public class CarFerry extends Vehicle implements ICanLoadCars {
     }
 
     public Deque<Car> getLoadedCars(){
-        return flatbed.getLoadedCars();
+        return new ArrayDeque<Car>( flatbed.getLoadedCars());
     }
 
     @Override
     protected double speedFactor() {
         return getEnginePower() * 0.0002;
+    }
+
+    public int getCurrentAngle(){
+        return flatbed.currentAngle;
     }
 }

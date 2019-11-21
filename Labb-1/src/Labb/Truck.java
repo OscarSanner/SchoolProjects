@@ -9,5 +9,7 @@ public abstract class Truck extends Vehicle {
         super(nrDoors, color, enginePower, modelName);
     }
 
+    public abstract int getCurrentAngle();
+
 
 }

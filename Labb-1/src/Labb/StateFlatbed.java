@@ -8,7 +8,7 @@ public class StateFlatbed<T extends Car> extends Flatbed{
     private Deque<T> loadedCars;
 
     public StateFlatbed() {
-        super(0, 1);
+        super(0, 1, 1);
         loadedCars = new ArrayDeque<>();
     }
 
