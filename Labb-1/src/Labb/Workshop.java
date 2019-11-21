@@ -22,7 +22,7 @@ public class Workshop <T extends Car> implements ICanLoadCars <T> {
     }
 
     public List<T> getCarsInTheShop() {
-        return carsInTheShop;
+        return new ArrayList<>(carsInTheShop);
     }
 
     public void loadCar(T carToBeLoaded) {

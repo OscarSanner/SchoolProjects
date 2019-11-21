@@ -2,6 +2,7 @@ package Labb;
 
 import java.awt.*;
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
@@ -69,6 +70,10 @@ public class CarTransporter extends Truck implements ICanLoadCars {
     }
 
     public Deque<Car> getLoadedCars(){
-        return flatbed.getLoadedCars();
+        return new ArrayDeque<Car>( flatbed.getLoadedCars());
+    }
+
+    public int getCurrentAngle(){
+        return flatbed.currentAngle;
     }
 }
