@@ -20,7 +20,7 @@ public class Main {
          -> uppdaterade move i carTransporter för att move:a bilar som är lastade också
 
 
-         Ändrade typen hos StateFlatbed till generisk som extendar Vehicle, satte även i konstruktorn för CarTransporter att dess generiska typ är <Car>.
+         Ändrade typen hos StateFlatbed till generisk som extendar MotorizedVehicle, satte även i konstruktorn för CarTransporter att dess generiska typ är <Car>.
 
 
 

@@ -7,7 +7,7 @@ import java.util.Deque;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
-public class CarFerry extends Vehicle implements ICanLoadCars {
+public class CarFerry extends MotorizedVehicle implements ICanLoadCars {
 
     private StateFlatbed<Car> flatbed = new StateFlatbed<>();
     public CarFerry() {
@@ -43,8 +43,8 @@ public class CarFerry extends Vehicle implements ICanLoadCars {
     }
 
     @Override
-    public boolean confirmLoad (Vehicle vehicleRequestedToBeLoaded){
-        return flatbed.getLoadedCars().contains(vehicleRequestedToBeLoaded);
+    public boolean confirmLoad (MotorizedVehicle motorizedVehicleRequestedToBeLoaded){
+        return flatbed.getLoadedCars().contains(motorizedVehicleRequestedToBeLoaded);
     }
 
 

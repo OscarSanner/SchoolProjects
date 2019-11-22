@@ -5,7 +5,7 @@ import java.awt.*;
 /**
  * Abstract Class for Cars, used to disinguished Cars from other Vehicles.
  */
-public abstract class Car extends Vehicle{
+public abstract class Car extends MotorizedVehicle {
 
     /**
      * Constructor for Cars.

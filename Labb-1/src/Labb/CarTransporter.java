@@ -2,9 +2,7 @@ package Labb;
 
 import java.awt.*;
 import java.util.ArrayDeque;
-import java.util.ArrayList;
 import java.util.Deque;
-import java.util.List;
 
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
@@ -53,8 +51,8 @@ public class CarTransporter extends Truck implements ICanLoadCars {
     }
 
     @Override
-    public boolean confirmLoad (Vehicle vehicleRequestedToBeLoaded){
-        return flatbed.getLoadedCars().contains(vehicleRequestedToBeLoaded);
+    public boolean confirmLoad (MotorizedVehicle motorizedVehicleRequestedToBeLoaded){
+        return flatbed.getLoadedCars().contains(motorizedVehicleRequestedToBeLoaded);
     }
 
     public void unloadCar() {
