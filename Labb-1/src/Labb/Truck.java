@@ -2,6 +2,7 @@ package Labb;
 
 import java.awt.*;
 
+
 /**
  * Abstract class for representing a truck. All trucks have flatbeds, and all
  * trucks are motorized vehicles.
