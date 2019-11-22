@@ -87,16 +87,31 @@ public class Workshop <T extends Car> implements ICanLoadCars <T> {
         return distanceBetweenLoaderAndToBeLoaded < 2 && carToBeLoaded.getCarrier() == null && carsInTheShop.size() < maxCarCapacity;              //Avståndsformeln, 2 satt för 2 meters avstånd(?)
     }
 
+
+    /**
+     * Method for confirming this cartransporter is the one asking to load the vehicle in question.
+     * Called by the vehicle in the "handshake"-chain when this cartransporter tries to load the vehicle.
+     * @param motorizedVehicleRequestedToBeLoaded the vehicle this cartransporter wants to load, confirming it's actually this cartransporter.
+     * @return true if this cartransporter coincides with the cartransporter the vehicle is wanting to be loaded on, otherwise false.
+     */
     @Override
     public boolean confirmLoad (MotorizedVehicle motorizedVehicleRequestedToBeLoaded){
         return carsInTheShop.contains(motorizedVehicleRequestedToBeLoaded);
     }
 
+    /**
+     * Method for getting x-cooridnate.
+     * @return the x-coordinate.
+     */
     @Override
     public double getX() {
         return x;
     }
 
+    /**
+     * Method for getting y-cooridnate.
+     * @return the y-coordinate.
+     */
     @Override
     public double getY() {
         return y;

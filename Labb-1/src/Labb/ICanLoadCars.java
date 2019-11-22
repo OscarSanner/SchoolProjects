@@ -28,14 +28,14 @@ public interface ICanLoadCars <T extends Car> {
     public boolean loadCheck(T carToBeLoaded);
 
     /**
-     * Method for getting x-cooridnate.
-     * @return the x-coordinate.
+     * Method for getting y-cooridnate.
+     * @return the y-coordinate.
      */
     public double getY();
 
     /**
-     * Method for getting y-cooridnate.
-     * @return the y-coordinate.
+     * Method for getting x-cooridnate.
+     * @return the x-coordinate.
      */
     public double getX();
 
