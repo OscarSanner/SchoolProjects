@@ -21,14 +21,14 @@ public class StateFlatbed<T extends Car> extends Flatbed{
     }
 
     public void unloadFirstCar() {
-        Vehicle vehicleBeingUnloaded = loadedCars.peek();
+        MotorizedVehicle motorizedVehicleBeingUnloaded = loadedCars.peek();
         loadedCars.pop();
-        vehicleBeingUnloaded.rollOutFromCarrier();
+        motorizedVehicleBeingUnloaded.rollOutFromCarrier();
     }
 
     public void unloadLastCar() {
-        Vehicle tempForVehicleBeingUnloaded = loadedCars.getLast();
+        MotorizedVehicle tempForMotorizedVehicleBeingUnloaded = loadedCars.getLast();
         loadedCars.removeLast();
-        tempForVehicleBeingUnloaded.rollOutFromCarrier();
+        tempForMotorizedVehicleBeingUnloaded.rollOutFromCarrier();
     }
 }

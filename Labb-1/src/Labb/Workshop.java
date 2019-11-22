@@ -1,7 +1,6 @@
 package Labb;
 
 import java.util.ArrayList;
-import java.util.Deque;
 import java.util.List;
 
 import static java.lang.Math.pow;
@@ -45,8 +44,8 @@ public class Workshop <T extends Car> implements ICanLoadCars <T> {
     }
 
     @Override
-    public boolean confirmLoad (Vehicle vehicleRequestedToBeLoaded){
-        return carsInTheShop.contains(vehicleRequestedToBeLoaded);
+    public boolean confirmLoad (MotorizedVehicle motorizedVehicleRequestedToBeLoaded){
+        return carsInTheShop.contains(motorizedVehicleRequestedToBeLoaded);
     }
 
     @Override

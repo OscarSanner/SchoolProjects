@@ -8,7 +8,7 @@ import java.util.Random;
  * Contains methods for moving a car in 2d.
  * Contains common properties of a car.
  */
-public abstract class Vehicle implements IMovable {
+public abstract class MotorizedVehicle implements IMovable {
 
     private boolean isLoadedOnACarrier;
     private ICanLoadCars carrier;
@@ -116,7 +116,7 @@ public abstract class Vehicle implements IMovable {
      * @param enginePower the driving power of the car, max speed.
      * @param modelName   the cars model.
      */
-    public Vehicle(int nrDoors, Color color, double enginePower, String modelName) {
+    public MotorizedVehicle(int nrDoors, Color color, double enginePower, String modelName) {
         this.nrDoors = nrDoors;
         this.color = color;
         this.getEnginePower = enginePower;

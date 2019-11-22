@@ -3,9 +3,10 @@ package Labb;
 import java.awt.*;
 
 /**
- * Abstract Class for Cars, used to disinguished Cars from other Vehicles.
+ * Abstract Class for Cars, subclass to MotorizedVehicle.
+ * Used to disinguished Cars from other MotorizedVehicles.
  */
-public abstract class Car extends Vehicle{
+public abstract class Car extends MotorizedVehicle {
 
     /**
      * Constructor for Cars.
