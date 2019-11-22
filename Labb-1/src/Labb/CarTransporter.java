@@ -11,12 +11,12 @@ import static java.lang.Math.sqrt;
  * Class for CarTransporter, subclass to Truck and MotorizedVehicle.
  * Implements the interface ICanLoadCars which enables the cartransporter to load cars.
  */
-public class CarTransporter extends Truck implements ICanLoadCars {
+public class CarTransporter <T extends Car> extends Truck implements ICanLoadCars <T> {
 
     /**
      * The type of flatbed the cartransporter has and what types of vehicles it can carry.
      */
-    private StateFlatbed<Car> flatbed = new StateFlatbed<>();
+    private StateFlatbed<T> flatbed = new StateFlatbed<>();
 
     /**
      * Constructor for cartransporter, initiates the properties for a cartransporter using the constructor in the superclass Truck and in turn MotorizedVehicle.
@@ -63,8 +63,8 @@ public class CarTransporter extends Truck implements ICanLoadCars {
      * @param carToBeLoaded the car in question which is to be loaded on to the cartransporter.
      */
     @Override
-    public void loadCar(Car carToBeLoaded) {
-        if (loadCheck(carToBeLoaded) && flatbed.getCurrentAngle() == flatbed.getMinAngle() && carToBeLoaded.getCarrier() == null) {
+    public void loadCar(T carToBeLoaded) {
+        if (loadCheck(carToBeLoaded) && flatbed.getCurrentAngle() == flatbed.getMinAngle()) {
             flatbed.loadCar(carToBeLoaded);
             carToBeLoaded.setLoaded(this);
         }
@@ -97,7 +97,7 @@ public class CarTransporter extends Truck implements ICanLoadCars {
      * @return true if car isn't currently loaded and is close enough to the cartransporter.
      */
     @Override
-    public boolean loadCheck(Car carToBeLoaded) {
+    public boolean loadCheck(T carToBeLoaded) {
         double distanceBetweenLoaderAndToBeLoaded = sqrt(pow((carToBeLoaded.getX() - this.getX()), 2) + pow((carToBeLoaded.getY() - this.getY()), 2));
         return distanceBetweenLoaderAndToBeLoaded < 2 && carToBeLoaded.getCarrier() == null;                 //Avståndsformeln, 2 satt för 2 meters avstånd(?)
     }
@@ -106,8 +106,8 @@ public class CarTransporter extends Truck implements ICanLoadCars {
      * Method for getting a list of the cars being carried.
      * @return A cloned list of the list of cars being carried.
      */
-    public Deque<Car> getLoadedCars(){
-        return new ArrayDeque<Car>( flatbed.getLoadedCars());
+    public Deque<T> getLoadedCars(){
+        return new ArrayDeque<T>( flatbed.getLoadedCars());
     }
 
 
