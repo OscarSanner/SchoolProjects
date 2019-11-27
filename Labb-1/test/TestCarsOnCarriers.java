@@ -9,7 +9,7 @@ public class TestCarsOnCarriers {
     @Test
     public void MoveTestOfCarOnWorkshop(){
         Workshop<Car> wCar = new Workshop<>(0,0, 3);
-        Volvo240 v1 = new Volvo240();
+        Volvo240 v1 = new Volvo240(0,0);
 
         v1.startEngine();
         v1.gas(1);
@@ -31,8 +31,8 @@ public class TestCarsOnCarriers {
 
     @Test
     public void MoveTestOfCarOnACarLoader(){
-        CarTransporter ct = new CarTransporter();
-        Volvo240 v1 = new Volvo240();
+        CarTransporter ct = new CarTransporter(0,0);
+        Volvo240 v1 = new Volvo240(0,0);
 
 
         ct.lowerFlatbed();
@@ -70,8 +70,8 @@ public class TestCarsOnCarriers {
 
     @Test
     public void MoveTestOfCarOnACarFerry(){
-        CarFerry ferry = new CarFerry();
-        Volvo240 v1 = new Volvo240();
+        CarFerry ferry = new CarFerry(0,0);
+        Volvo240 v1 = new Volvo240(0,0);
 
 
         ferry.lowerFlatbed();
@@ -107,9 +107,9 @@ public class TestCarsOnCarriers {
 
     @Test
     public void TestStealingACarFromACarrier(){
-        CarTransporter ct111111 = new CarTransporter();
-        CarTransporter ct222222 = new CarTransporter();
-        Volvo240 v1 = new Volvo240();
+        CarTransporter ct111111 = new CarTransporter(0,0);
+        CarTransporter ct222222 = new CarTransporter(0,0);
+        Volvo240 v1 = new Volvo240(0,0);
 
         ct111111.lowerFlatbed();
         ct222222.lowerFlatbed();

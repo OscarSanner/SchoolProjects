@@ -145,12 +145,12 @@ public abstract class MotorizedVehicle implements IMovable {
 
 
     /**
-     * Constructor for common properites of a vehicle, all cars initiated standing still.
+     * Constructor for common properites of a vehicle, all motorizedVehicles initiated standing still.
      *
      * @param nrDoors     the number of doors on the vehicle.
      * @param color       the color of the vehicle.
      * @param enginePower the driving power of the vehicle, max speed.
-     * @param modelName   the cars model.
+     * @param modelName   the motorizedVehicles model.
      */
     public MotorizedVehicle(int nrDoors, Color color, double enginePower, String modelName) {
         this.nrDoors = nrDoors;
@@ -160,7 +160,20 @@ public abstract class MotorizedVehicle implements IMovable {
 
         this.x = 0;
         this.y = 0;
-        this.currentDirection = Direction.UP;
+        this.currentDirection = Direction.RIGHT;
+
+        stopEngine();
+    }
+
+    public MotorizedVehicle(int nrDoors, Color color, double enginePower, String modelName, double x, double y) {
+        this.nrDoors = nrDoors;
+        this.color = color;
+        this.getEnginePower = enginePower;
+        this.modelName = modelName;
+
+        this.x = x;
+        this.y = y;
+        this.currentDirection = Direction.RIGHT;
 
         stopEngine();
     }
@@ -259,7 +272,7 @@ public abstract class MotorizedVehicle implements IMovable {
      * Method for starting the vehicle by giving it a starting speed.
      */
     public void startEngine() {
-        if (!isLoadedOnACarrier) {
+        if (!isLoadedOnACarrier && currentSpeed == 0) {
             currentSpeed = 0.1;
         }
     }
@@ -269,7 +282,7 @@ public abstract class MotorizedVehicle implements IMovable {
      * The increase of speed is determined by adding a speedfactor (in conjuction with the amount) to the current speed.
      * The speedfactor is calculated through another method, specific for each type of vehicle.
      *
-     * @param amount how much the cars speed will increase, given by gas-method.
+     * @param amount how much the motorizedVehicles speed will increase, given by gas-method.
      */
     private void incrementSpeed(double amount) {
         setCurrentSpeed(Math.min(getCurrentSpeed() + speedFactor() * amount, getEnginePower()));
@@ -280,7 +293,7 @@ public abstract class MotorizedVehicle implements IMovable {
      * The decrease of speed is determined by subtracting a speedfactor (in conjuction with the amount) to the current speed.
      * The speedfactor is calculated through another method, specific for each type of vehicle.
      *
-     * @param amount how much the cars speed will decrease, given by brake-method.
+     * @param amount how much the motorizedVehicles speed will decrease, given by brake-method.
      */
     private void decrementSpeed(double amount) {
         setCurrentSpeed(Math.max(getCurrentSpeed() - speedFactor() * amount, 0));
@@ -378,5 +391,7 @@ public abstract class MotorizedVehicle implements IMovable {
      */
     protected abstract double speedFactor();
 
-
+    public String getModelName() {
+        return modelName;
+    }
 }

@@ -12,8 +12,8 @@ public class Saab95 extends Car {
     /**
      * Constructor for class, initiates hardcoded properties of the car.
      */
-    public Saab95() {
-        super(2, Color.red, 125, "Saab95");
+    public Saab95(double x, double y) {
+        super(2, Color.red, 125, "Saab95", x, y);
         turboOn = false;
     }
 

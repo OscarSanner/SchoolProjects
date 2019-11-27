@@ -9,7 +9,7 @@ import static java.lang.Math.sqrt;
 
 /**
  * Class for CarFerry, subclass to MotorizedVehicle.
- * Implements the interface ICanLoadCars which enables the ferry to load cars.
+ * Implements the interface ICanLoadCars which enables the ferry to load motorizedVehicles.
  */
 public class CarFerry extends MotorizedVehicle implements ICanLoadCars {
 
@@ -21,8 +21,8 @@ public class CarFerry extends MotorizedVehicle implements ICanLoadCars {
     /**
      * Constructor for Ferry, initiates the properties for a Ferry using the constructor in the superclass MotorizedVehicle.
      */
-    public CarFerry() {
-        super(200, Color.WHITE, 3000, "Car Transporter");
+    public CarFerry(double x, double y) {
+        super(200, Color.WHITE, 3000, "Car Transporter", x, y);
     }
 
     /**
@@ -45,7 +45,7 @@ public class CarFerry extends MotorizedVehicle implements ICanLoadCars {
 
     /**
      * Overrides the move-method in MotorizedVehicle to add extra conditions for movement.
-     * Moves only when the flatbed is lowered and also moves all the cars loaded on to the ferry.
+     * Moves only when the flatbed is lowered and also moves all the motorizedVehicles loaded on to the ferry.
      */
     @Override
     public void move() {
@@ -84,7 +84,7 @@ public class CarFerry extends MotorizedVehicle implements ICanLoadCars {
 
 
     /**
-     * Unloads cars from the ferry in a specific order if the flatbed is lowered.
+     * Unloads motorizedVehicles from the ferry in a specific order if the flatbed is lowered.
      * The first car to be loaded is also the first car to be unloaded.
      */
     public void unloadCar() {
@@ -105,8 +105,8 @@ public class CarFerry extends MotorizedVehicle implements ICanLoadCars {
     }
 
     /**
-     * Method for getting a list of the cars being carried.
-     * @return A cloned list of the list of cars being carried.
+     * Method for getting a list of the motorizedVehicles being carried.
+     * @return A cloned list of the list of motorizedVehicles being carried.
      */
     public Deque<Car> getLoadedCars(){
         return new ArrayDeque<Car>( flatbed.getLoadedCars());

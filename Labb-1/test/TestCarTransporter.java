@@ -6,14 +6,14 @@ import org.junit.Test;
 
 public class TestCarTransporter {
 CarTransporter ct;
-Volvo240 v1 = new Volvo240();
-Volvo240 v2 = new Volvo240();
-Saab95 s1 = new Saab95();
+Volvo240 v1 = new Volvo240(0,0);
+Volvo240 v2 = new Volvo240(0,0);
+Saab95 s1 = new Saab95(0,0);
 
 
     @Test
     public void testMovementUnloaded(){
-        ct = new CarTransporter();
+        ct = new CarTransporter(0,0);
         ct.gas(1);
         double firstTestX = ct.getX(); // should be != 0;
         ct.stopEngine();
@@ -26,7 +26,7 @@ Saab95 s1 = new Saab95();
 
     @Test
     public void testFlatbed(){
-        ct = new CarTransporter();
+        ct = new CarTransporter(0,0);
         int initFlatbedState = ct.getCurrentAngle();
         ct.raiseFlatbed();
         int testBoundUp = ct.getCurrentAngle(); // should be equal to initFlatbedState;
@@ -50,7 +50,7 @@ Saab95 s1 = new Saab95();
 
     @Test
     public void testMovementWithCars(){
-        ct = new CarTransporter();
+        ct = new CarTransporter(0,0);
         ct.lowerFlatbed();
         ct.loadCar(v1);
         ct.loadCar(s1);
@@ -76,7 +76,7 @@ Saab95 s1 = new Saab95();
         ct.move();
         boolean canMoveAfterUnloading = (ct.getX() != testX || ct.getY() != testY);
 
-        Saab95 s2 = new Saab95();
+        Saab95 s2 = new Saab95(0,0);
         ct.move();
         ct.move();
         ct.move();

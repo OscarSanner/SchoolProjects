@@ -12,8 +12,8 @@ public class Volvo240 extends Car {
     /**
      * Constructor for initialising variables declared in MotorizedVehicle/Car (super class).
      */
-    public Volvo240() {
-        super(4, Color.black, 100, "Volvo240");
+    public Volvo240(double x, double y) {
+        super(4, Color.black, 100, "Volvo240", x, y);
     }
 
     /**
@@ -23,8 +23,6 @@ public class Volvo240 extends Car {
     protected double speedFactor() {
         return getEnginePower() * 0.01 * trimFactor;
     }
-
-
 
 }
 

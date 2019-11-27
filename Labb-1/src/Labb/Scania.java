@@ -15,8 +15,8 @@ public class Scania extends Truck {
     /**
      * Constructor for Scania, initiates the properties for a scania using the constructor in the superclass Truck and in turn MotorizedVehicle.
      */
-    public Scania() {
-        super(2, Color.WHITE, 300, "Scania");
+    public Scania(double x, double y) {
+        super(2, Color.WHITE, 300, "Scania", x, y);
     }
 
     /**

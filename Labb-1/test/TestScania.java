@@ -9,7 +9,7 @@ public class TestScania {
 
     @Test
     public void testFlatbedRestrictsMoveFunction(){
-        scania = new Scania();
+        scania = new Scania(0,0);
         scania.raiseFlatbed();
 
         scania.gas(1);
@@ -24,7 +24,7 @@ public class TestScania {
 
     @Test
     public void testFlatbedBoundaries(){
-        scania = new Scania();
+        scania = new Scania(0,0);
         int firstAngleDown = scania.getCurrentAngle();
         scania.lowerFlatbed();
         int secondAngleDown = scania.getCurrentAngle();

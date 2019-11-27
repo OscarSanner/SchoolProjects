@@ -5,14 +5,14 @@ import java.util.Deque;
 
 /**
  * Flatbed which only has two stated(up or down). This type of flatbed is specifically
- * designed to carry cars.
- * @param <T> Can take all cars, or a specific type of cars.
+ * designed to carry motorizedVehicles.
+ * @param <T> Can take all motorizedVehicles, or a specific type of motorizedVehicles.
  */
 public class StateFlatbed<T extends Car> extends Flatbed{
 
     /**
-     * As all state flatbeds can carry cars, it will also have a list (Deque) in which
-     * the cars are indexed.
+     * As all state flatbeds can carry motorizedVehicles, it will also have a list (Deque) in which
+     * the motorizedVehicles are indexed.
      */
     private Deque<T> loadedCars;
 
@@ -28,15 +28,15 @@ public class StateFlatbed<T extends Car> extends Flatbed{
     }
 
     /**
-     * Getter for the list of loaded cars.
-     * @return returns the list of loaded cars.
+     * Getter for the list of loaded motorizedVehicles.
+     * @return returns the list of loaded motorizedVehicles.
      */
     public Deque<T> getLoadedCars() {
         return loadedCars;
     }
 
     /**
-     * Simply adds a car to the list of loaded cars. Rest is handled by
+     * Simply adds a car to the list of loaded motorizedVehicles. Rest is handled by
      * the vehicle carrying the flatbed. This method is thus ever used by
      * means of delegation.
      * @param carToBeLoaded the car to be loaded.

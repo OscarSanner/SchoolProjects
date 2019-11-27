@@ -17,8 +17,8 @@ public abstract class Truck extends MotorizedVehicle {
      * @param enginePower The engine power of the truck.
      * @param modelName The model name of the truck.
      */
-    public Truck(int nrDoors, Color color, double enginePower, String modelName) {
-        super(nrDoors, color, enginePower, modelName);
+    public Truck(int nrDoors, Color color, double enginePower, String modelName, double x, double y) {
+        super(nrDoors, color, enginePower, modelName, x, y);
     }
 
     /**

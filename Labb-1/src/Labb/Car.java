@@ -13,10 +13,10 @@ public abstract class Car extends MotorizedVehicle {
      * @param nrDoors     the number of doors on the car.
      * @param color       the color of the car.
      * @param enginePower the driving power of the car, max speed.
-     * @param modelName   the cars model.
+     * @param modelName   the motorizedVehicles model.
      */
-    public Car(int nrDoors, Color color, double enginePower, String modelName) {
-        super(nrDoors, color, enginePower, modelName);
+    public Car(int nrDoors, Color color, double enginePower, String modelName, double x, double y) {
+        super(nrDoors, color, enginePower, modelName, x, y);
     }
 
 

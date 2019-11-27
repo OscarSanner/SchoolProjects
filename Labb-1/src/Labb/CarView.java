@@ -6,6 +6,7 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 /**
  * This class represents the full view of the MVC pattern of your car simulator.
@@ -29,6 +30,8 @@ public class CarView extends JFrame{
     JPanel gasPanel = new JPanel();
     JSpinner gasSpinner = new JSpinner();
     int gasAmount = 0;
+    JSpinner brakeSpinner = new JSpinner();
+    int brakeAmount = 0;
     JLabel gasLabel = new JLabel("Amount of gas");
 
     JButton gasButton = new JButton("Gas");
@@ -38,10 +41,12 @@ public class CarView extends JFrame{
     JButton liftBedButton = new JButton("Scania Lift Bed");
     JButton lowerBedButton = new JButton("Lower Lift Bed");
 
-    JButton startButton = new JButton("Start all cars");
-    JButton stopButton = new JButton("Stop all cars");
+
+    JButton startButton = new JButton("Start all motorizedVehicles");
+    JButton stopButton = new JButton("Stop all motorizedVehicles");
 
     // Constructor
+
     public CarView(String framename, CarController cc){
         this.carC = cc;
         initComponents(framename);
@@ -68,6 +73,13 @@ public class CarView extends JFrame{
         gasSpinner.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
                 gasAmount = (int) ((JSpinner)e.getSource()).getValue();
+            }
+        });
+        brakeSpinner = new JSpinner(spinnerModel);
+        brakeSpinner.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                brakeAmount = (int)((JSpinner)e.getSource()).getValue();
             }
         });
 
@@ -110,6 +122,79 @@ public class CarView extends JFrame{
             }
         });
 
+        brakeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                carC.brake(brakeAmount);
+            }
+        });
+
+        turboOnButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                for (MotorizedVehicle mv : carC.motorizedVehicles){
+                    if (mv.getModelName().equals("Saab95")){
+                        Saab95 sb = (Saab95) mv;
+                        sb.setTurboOn();
+                    }
+                }
+            }
+        });
+
+        liftBedButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                for (MotorizedVehicle mv : carC.motorizedVehicles){
+                    if (mv.getModelName().equals("Scania")){
+                        Scania sc = (Scania) mv;
+                        sc.raiseFlatbed();
+                    }
+                }
+            }
+        });
+
+        lowerBedButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                for (MotorizedVehicle mv : carC.motorizedVehicles){
+                    if (mv.getModelName().equals("Scania")){
+                        Scania sc = (Scania) mv;
+                        sc.lowerFlatbed();
+                    }
+                }
+            }
+        });
+
+        startButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                for (MotorizedVehicle mv : carC.motorizedVehicles){
+                    mv.startEngine();
+                    }
+                }
+        });
+
+        stopButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                for (MotorizedVehicle mv : carC.motorizedVehicles){
+                    mv.stopEngine();
+                }
+            }
+        });
+
+        turboOffButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                for (MotorizedVehicle mv : carC.motorizedVehicles){
+                    if (mv.getModelName().equals("Saab95")){
+                        Saab95 sb = (Saab95) mv;
+                        sb.setTurboOff();
+                    }
+                }
+            }
+        });
+
         // Make the frame pack all it's components by respecting the sizes if possible.
         this.pack();
 
@@ -122,4 +207,5 @@ public class CarView extends JFrame{
         // Make sure the frame exits when "x" is pressed
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+
 }

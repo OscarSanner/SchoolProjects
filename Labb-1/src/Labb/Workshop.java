@@ -7,7 +7,7 @@ import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
 /**
- * Class that represents a workshop, used to maintain cars, either all cars, or specific cars.
+ * Class that represents a workshop, used to maintain motorizedVehicles, either all motorizedVehicles, or specific motorizedVehicles.
  * @param <T> generic parameter used to define which typ of car the shop will handle.
  */
 public class Workshop <T extends Car> implements ICanLoadCars <T> {
@@ -22,12 +22,12 @@ public class Workshop <T extends Car> implements ICanLoadCars <T> {
     private double y;
 
     /**
-     * A list that is used to list track of the cars in the shop.
+     * A list that is used to list track of the motorizedVehicles in the shop.
      */
     private List<T> carsInTheShop;
 
     /**
-     * The maximum amount of cars in the shop.
+     * The maximum amount of motorizedVehicles in the shop.
      */
     private int maxCarCapacity;
 
@@ -45,8 +45,8 @@ public class Workshop <T extends Car> implements ICanLoadCars <T> {
     }
 
     /**
-     * A getter for a copy of the list holding the cars in the shop.
-     * @return returns a copy(!) of the list with cars in the shop.
+     * A getter for a copy of the list holding the motorizedVehicles in the shop.
+     * @return returns a copy(!) of the list with motorizedVehicles in the shop.
      */
     public List<T> getCarsInTheShop() {
         return new ArrayList<>(carsInTheShop);

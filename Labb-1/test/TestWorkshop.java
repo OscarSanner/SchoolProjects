@@ -10,10 +10,10 @@ public class TestWorkshop {
     public void TestWorkshopLoad(){
         Workshop<Volvo240> wVolvo = new Workshop(0,0,3);
         Workshop<Car> wCar = new Workshop(0,0,3);
-        Volvo240 v1 = new Volvo240();
-        Volvo240 v2 = new Volvo240();
-        Volvo240 v3 = new Volvo240();
-        Volvo240 v4 = new Volvo240();
+        Volvo240 v1 = new Volvo240(0,0);
+        Volvo240 v2 = new Volvo240(0,0);
+        Volvo240 v3 = new Volvo240(0,0);
+        Volvo240 v4 = new Volvo240(0,0);
 
         wVolvo.loadCar(v1);
         boolean containsAvolvo = wVolvo.getCarsInTheShop().contains(v1);
@@ -23,7 +23,7 @@ public class TestWorkshop {
         wVolvo.loadCar(v4);
         boolean maxCap = wVolvo.getCarsInTheShop().size() == 3;
 
-        Volvo240 v5 = new Volvo240();
+        Volvo240 v5 = new Volvo240(0,0);
         Workshop<Volvo240> wVolvoTEMP = new Workshop(3,3,3);
         wVolvoTEMP.loadCar(v5);
         boolean shouldBeEmpty = wVolvoTEMP.getCarsInTheShop().isEmpty();
@@ -39,10 +39,10 @@ public class TestWorkshop {
     @Test
     public void TestWorkshopUnload(){
         Workshop<Volvo240> wVolvo = new Workshop(0,0,3);
-        Volvo240 v1 = new Volvo240();
-        Volvo240 v2 = new Volvo240();
-        Volvo240 v3 = new Volvo240();
-        Volvo240 v4 = new Volvo240();
+        Volvo240 v1 = new Volvo240(0,0);
+        Volvo240 v2 = new Volvo240(0,0);
+        Volvo240 v3 = new Volvo240(0,0);
+        Volvo240 v4 = new Volvo240(0,0);
         wVolvo.loadCar(v1);
         wVolvo.loadCar(v2);
         wVolvo.loadCar(v3);

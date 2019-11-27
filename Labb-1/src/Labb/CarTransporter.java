@@ -9,7 +9,7 @@ import static java.lang.Math.sqrt;
 
 /**
  * Class for CarTransporter, subclass to Truck and MotorizedVehicle.
- * Implements the interface ICanLoadCars which enables the cartransporter to load cars.
+ * Implements the interface ICanLoadCars which enables the cartransporter to load motorizedVehicles.
  */
 public class CarTransporter <T extends Car> extends Truck implements ICanLoadCars <T> {
 
@@ -21,8 +21,8 @@ public class CarTransporter <T extends Car> extends Truck implements ICanLoadCar
     /**
      * Constructor for cartransporter, initiates the properties for a cartransporter using the constructor in the superclass Truck and in turn MotorizedVehicle.
      */
-    public CarTransporter() {
-        super(2, Color.YELLOW, 300, "Car Transporter");
+    public CarTransporter(double x, double y) {
+        super(2, Color.YELLOW, 300, "Car Transporter", x, y);
     }
 
     /**
@@ -44,7 +44,7 @@ public class CarTransporter <T extends Car> extends Truck implements ICanLoadCar
 
     /**
      * Overrides the move-method in MotorizedVehicle to add extra conditions for movement.
-     * Moves only when the flatbed is lowered and also moves all the cars loaded on to the cartransporter.
+     * Moves only when the flatbed is lowered and also moves all the motorizedVehicles loaded on to the cartransporter.
      */
     @Override
     public void move() {
@@ -82,7 +82,7 @@ public class CarTransporter <T extends Car> extends Truck implements ICanLoadCar
     }
 
     /**
-     * Unloads cars from the cartransporter in a specific order if the flatbed is lowered.
+     * Unloads motorizedVehicles from the cartransporter in a specific order if the flatbed is lowered.
      * The first car to be loaded is also the first car to be unloaded.
      */
     public void unloadCar() {
@@ -103,8 +103,8 @@ public class CarTransporter <T extends Car> extends Truck implements ICanLoadCar
     }
 
     /**
-     * Method for getting a list of the cars being carried.
-     * @return A cloned list of the list of cars being carried.
+     * Method for getting a list of the motorizedVehicles being carried.
+     * @return A cloned list of the list of motorizedVehicles being carried.
      */
     public Deque<T> getLoadedCars(){
         return new ArrayDeque<T>( flatbed.getLoadedCars());

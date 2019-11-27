@@ -2,8 +2,8 @@ package Labb;
 
 
 /**
- * Interface used to describe a class which can load cars.
- * @param <T> Can be set a specific car or all cars.
+ * Interface used to describe a class which can load motorizedVehicles.
+ * @param <T> Can be set a specific car or all motorizedVehicles.
  */
 public interface ICanLoadCars <T extends Car> {
 
