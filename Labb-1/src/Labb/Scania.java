@@ -10,7 +10,7 @@ public class Scania extends Truck {
     /**
      * The flatbed on the Scania.
      */
-    private Flatbed flatbed = new AngledFlatbed();
+    private AngledFlatbed flatbed = new AngledFlatbed();
 
     /**
      * Constructor for Scania, initiates the properties for a scania using the constructor in the superclass Truck and in turn MotorizedVehicle.

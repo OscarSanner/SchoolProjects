@@ -1,0 +1,336 @@
+@startuml
+
+title __LABB's Class Diagram__\n
+
+
+    namespace abb {
+      class Labb.AngledFlatbed {
+          + AngledFlatbed()
+      }
+    }
+
+  
+
+
+    namespace abb {
+      abstract class Labb.Car {
+          + Car()
+      }
+    }
+
+  
+
+
+    namespace abb {
+      class Labb.CarController {
+          ~ motorizedVehicles : ArrayList<MotorizedVehicle>
+          - delay : int
+          - timer : Timer
+          {static} + main()
+          ~ brake()
+          ~ gas()
+      }
+    }
+
+  
+
+
+    namespace abb {
+      class Labb.CarController.TimerListener {
+          + actionPerformed()
+          - collision()
+      }
+    }
+
+  
+
+
+    namespace abb {
+      class Labb.CarFerry {
+          - flatbed : StateFlatbed<Car>
+          + CarFerry()
+          + confirmLoad()
+          + getCurrentAngle()
+          + getLoadedCars()
+          + loadCar()
+          + loadCheck()
+          + lowerFlatbed()
+          + move()
+          + raiseFlatbed()
+          + unloadCar()
+          # speedFactor()
+      }
+    }
+
+
+    namespace abb {
+      class Labb.CarTransporter {
+          - flatbed : StateFlatbed<T>
+          + CarTransporter()
+          + confirmLoad()
+          + getCurrentAngle()
+          + getLoadedCars()
+          + loadCar()
+          + loadCheck()
+          + lowerFlatbed()
+          + move()
+          + raiseFlatbed()
+          + unloadCar()
+          # speedFactor()
+      }
+    }
+
+
+    namespace abb {
+      class Labb.CarView {
+          ~ brakeAmount : int
+          ~ brakeButton : JButton
+          ~ brakeSpinner : JSpinner
+          ~ controlPanel : JPanel
+          ~ gasAmount : int
+          ~ gasButton : JButton
+          ~ gasLabel : JLabel
+          ~ gasPanel : JPanel
+          ~ gasSpinner : JSpinner
+          ~ liftBedButton : JButton
+          ~ lowerBedButton : JButton
+          ~ startButton : JButton
+          ~ stopButton : JButton
+          ~ turboOffButton : JButton
+          ~ turboOnButton : JButton
+          {static} - X : int
+          {static} - Y : int
+          + CarView()
+          - initComponents()
+      }
+    }
+
+
+    namespace abb {
+      enum Direction {
+        DOWN
+        LEFT
+        RIGHT
+        UP
+      }
+    }
+
+
+
+    namespace abb {
+      class Labb.DrawPanel {
+          ~ saabImage : BufferedImage
+          ~ saabPoint : Point
+          ~ scaniaImage : BufferedImage
+          ~ scaniaPoint : Point
+          ~ volvoImage : BufferedImage
+          ~ volvoPoint : Point
+          + DrawPanel()
+          # paintComponent()
+          ~ moveit()
+      }
+    }
+
+  
+
+    namespace abb {
+      abstract class Labb.Flatbed {
+          # currentAngle : int
+          # maxAngle : int
+          # minAngle : int
+          + Flatbed()
+          + getCurrentAngle()
+          + getMaxAngle()
+          + getMinAngle()
+          + lowerFlatbed()
+          + raiseFlatbed()
+      }
+    }
+
+  
+
+    namespace abb {
+      interface Labb.ICanLoadCars {
+          {abstract} + confirmLoad()
+          {abstract} + getX()
+          {abstract} + getY()
+          {abstract} + loadCar()
+          {abstract} + loadCheck()
+      }
+    }
+
+
+
+    namespace abb {
+      interface Labb.IMovable {
+          {abstract} + move()
+          {abstract} + turnLeft()
+          {abstract} + turnRight()
+      }
+    }
+
+  
+
+    namespace abb {
+      class Labb.Main {
+          {static} + main()
+          ~ program()
+      }
+    }
+
+
+    namespace abb {
+      abstract class Labb.MotorizedVehicle {
+          - color : Color
+          - currentSpeed : double
+          {static} - directionArrayLeft : Direction[]
+          {static} - directionArrayRight : Direction[]
+          - getEnginePower : double
+          - isLoadedOnACarrier : boolean
+          - modelName : String
+          - nrDoors : int
+          - x : double
+          - y : double
+          + MotorizedVehicle()
+          + MotorizedVehicle()
+          + brake()
+          + gas()
+          + getCarrier()
+          + getColor()
+          + getCurrentDirection()
+          + getCurrentSpeed()
+          + getEnginePower()
+          + getModelName()
+          + getNrDoors()
+          + getX()
+          + getY()
+          + move()
+          + setColor()
+          + startEngine()
+          + stopEngine()
+          + turnLeft()
+          + turnRight()
+          {abstract} # speedFactor()
+          ~ rollOutFromCarrier()
+          ~ setLoaded()
+          ~ updateWithCarrier()
+          - decrementSpeed()
+          - findNextDirection()
+          - incrementSpeed()
+          - setCurrentSpeed()
+          - setX()
+          - setY()
+      }
+    }
+
+  
+
+    namespace abb {
+      class Labb.Saab95 {
+          - turboOn : boolean
+          + Saab95()
+          + setTurboOff()
+          + setTurboOn()
+          # speedFactor()
+      }
+    }
+
+  
+
+    namespace abb {
+      class Labb.Scania {
+          + Scania()
+          + getCurrentAngle()
+          + lowerFlatbed()
+          + move()
+          + raiseFlatbed()
+          # speedFactor()
+      }
+    }
+
+  
+
+    namespace abb {
+      class Labb.StateFlatbed {
+          - loadedCars : Deque<T>
+          + StateFlatbed()
+          + getLoadedCars()
+          + loadCar()
+          + unloadFirstCar()
+          + unloadLastCar()
+      }
+    }
+
+
+
+    namespace abb {
+      abstract class Labb.Truck {
+          + Truck()
+          {abstract} + getCurrentAngle()
+      }
+    }
+
+  
+
+    namespace abb {
+      class Labb.Volvo240 {
+          {static} - trimFactor : double
+          + Volvo240()
+          # speedFactor()
+      }
+    }
+
+  
+
+    namespace abb {
+      class Labb.Workshop {
+          - carsInTheShop : List<T>
+          - maxCarCapacity : int
+          - x : double
+          - y : double
+          + Workshop()
+          + confirmLoad()
+          + getCarsInTheShop()
+          + getX()
+          + getY()
+          + loadCar()
+          + loadCheck()
+          + unloadCar()
+      }
+    }
+
+  
+
+  Labb.AngledFlatbed -up-|> Labb.Flatbed
+  Labb.Car -up-|> Labb.MotorizedVehicle
+  Labb.CarController o-- Labb.CarView : frame
+  Labb.CarController +-down- Labb.CarController.TimerListener
+  Labb.CarController.TimerListener .up.|> java.awt.event.ActionListener
+  Labb.CarFerry .up.|> Labb.ICanLoadCars
+  Labb.CarFerry -up-|> Labb.MotorizedVehicle
+  Labb.CarTransporter .up.|> Labb.ICanLoadCars
+  Labb.CarTransporter -up-|> Labb.Truck
+  Labb.CarView -up-|> javax.swing.JFrame
+  Labb.CarView o-- Labb.CarController : carC
+  Labb.CarView o-- Labb.DrawPanel : drawPanel
+  Labb.DrawPanel -up-|> javax.swing.JPanel
+  Labb.MotorizedVehicle .up.|> Labb.IMovable
+  Labb.MotorizedVehicle o-- Labb.ICanLoadCars : carrier
+  Labb.MotorizedVehicle o-- Labb.Direction : currentDirection
+  Labb.Saab95 -up-|> Labb.Car
+  Labb.Scania -up-|> Labb.Truck
+  Labb.Scania o-- Labb.Flatbed : flatbed
+  Labb.StateFlatbed -up-|> Labb.Flatbed
+  Labb.Truck -up-|> Labb.MotorizedVehicle
+  Labb.Volvo240 -up-|> Labb.Car
+  Labb.Workshop .up.|> Labb.ICanLoadCars
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
