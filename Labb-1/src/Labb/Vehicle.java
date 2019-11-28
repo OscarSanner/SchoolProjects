@@ -338,7 +338,10 @@ public abstract class Vehicle implements IMovable {
      *
      * @return calculates a value based on the properties defined in each car.
      */
-    protected abstract double speedFactor();
+    protected abstract double speedFactor();aaasdd
+    asf
+            af
+    
 
 
 }
