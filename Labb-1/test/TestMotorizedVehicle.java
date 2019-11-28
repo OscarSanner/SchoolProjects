@@ -5,20 +5,20 @@ import Labb.*;
 import org.junit.Test;
 import java.awt.*;
 
-public class TestVehicle {
+public class TestMotorizedVehicle {
     private Volvo240 volvo;
     private Saab95 saab;
 
     @Before
     public void createCar(){
-        this.saab = new Saab95();
-        this.volvo = new Volvo240();
+        this.saab = new Saab95(0,0);
+        this.volvo = new Volvo240(0,0);
     }
 
     @Test
     public void testTurboSaab(){
-        Saab95 saabTurbo = new Saab95();
-        Saab95 saabNatural  = new Saab95();
+        Saab95 saabTurbo = new Saab95(0,0);
+        Saab95 saabNatural  = new Saab95(0,0);
         saabTurbo.startEngine();
         saabNatural.startEngine();
         double safeCheck = saabTurbo.getCurrentSpeed();
@@ -157,14 +157,14 @@ public class TestVehicle {
 
     @Test
     public void testTurnLeftVolvo(){
-        v1 = new Volvo240();
+        v1 = new Volvo240(0,0);
         v1.turnLeft();
         assert v1.getCurrentDirection() == Direction.LEFT;
     }
 
     @Test
     public void testRotateLeftVolvo(){
-        v1 = new Volvo240();
+        v1 = new Volvo240(0,0);
         Direction d = v1.getCurrentDirection();
         for (int i = 0; i < 4; i++){
             v1.turnLeft();
@@ -174,14 +174,14 @@ public class TestVehicle {
 
     @Test
     public void testTurnRightVolvo(){
-        v1 = new Volvo240();
+        v1 = new Volvo240(0,0);
         v1.turnRight();
         assert v1.getCurrentDirection() == Direction.RIGHT;
     }
 
     @Test
     public void testRotateRightVolvo(){
-        v1 = new Volvo240();
+        v1 = new Volvo240(0,0);
         Direction d = v1.getCurrentDirection();
         for (int i = 0; i < 4; i++){
             v1.turnRight();
@@ -191,7 +191,7 @@ public class TestVehicle {
 
     @Test
     public void testMoveUp(){
-        v1 = new Volvo240();
+        v1 = new Volvo240(0,0);
         double i = v1.getY();
         v1.startEngine();
         v1.move();
@@ -200,7 +200,7 @@ public class TestVehicle {
 
     @Test
     public void testMoveLeft(){
-        v1 = new Volvo240();
+        v1 = new Volvo240(0,0);
         double i = v1.getX();
         v1.startEngine();
         v1.turnLeft();
@@ -210,7 +210,7 @@ public class TestVehicle {
 
     @Test
     public void testMoveDown(){
-        v1 = new Volvo240();
+        v1 = new Volvo240(0,0);
         double i = v1.getY();
         v1.startEngine();
         v1.turnLeft();
@@ -221,7 +221,7 @@ public class TestVehicle {
 
     @Test
     public void testMoveRight(){
-        v1 = new Volvo240();
+        v1 = new Volvo240(0,0);
         double i = v1.getX();
         v1.startEngine();
         v1.turnRight();
@@ -231,14 +231,14 @@ public class TestVehicle {
 
     @Test
     public void testTurnLeftSaab(){
-        s1 = new Saab95();
+        s1 = new Saab95(0,0);
         s1.turnLeft();
         assert s1.getCurrentDirection() == Direction.LEFT;
     }
 
     @Test
     public void testRotateLeftSaab(){
-        s1 = new Saab95();
+        s1 = new Saab95(0,0);
         Direction d = s1.getCurrentDirection();
         for (int i = 0; i < 4; i++){
             s1.turnLeft();
@@ -248,14 +248,14 @@ public class TestVehicle {
 
     @Test
     public void testTurnRightSaab(){
-        s1 = new Saab95();
+        s1 = new Saab95(0,0);
         s1.turnRight();
         assert s1.getCurrentDirection() == Direction.RIGHT;
     }
 
     @Test
     public void testRotateRightSaab(){
-        s1 = new Saab95();
+        s1 = new Saab95(0,0);
         Direction d = s1.getCurrentDirection();
         for (int i = 0; i < 4; i++){
             s1.turnRight();
@@ -265,7 +265,7 @@ public class TestVehicle {
 
     @Test
     public void testMoveUpSaab(){
-        s1 = new Saab95();
+        s1 = new Saab95(0,0);
         double yBefore = s1.getY();
         s1.startEngine();
         s1.move();
@@ -274,7 +274,7 @@ public class TestVehicle {
 
     @Test
     public void testMoveLeftSaab(){
-        s1 = new Saab95();
+        s1 = new Saab95(0,0);
         double i = s1.getX();
         s1.startEngine();
         s1.turnLeft();
@@ -284,7 +284,7 @@ public class TestVehicle {
 
     @Test
     public void testMoveDownSaab(){
-        s1 = new Saab95();
+        s1 = new Saab95(0,0);
         double i = s1.getY();
         s1.startEngine();
         s1.turnLeft();
@@ -295,7 +295,7 @@ public class TestVehicle {
 
     @Test
     public void testMoveRightSaab(){
-        s1 = new Saab95();
+        s1 = new Saab95(0,0);
         double i = s1.getX();
         s1.startEngine();
         s1.turnRight();
