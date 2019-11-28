@@ -389,7 +389,10 @@ public abstract class MotorizedVehicle implements IMovable {
      *
      * @return calculates a value based on the properties defined in each vehicle.
      */
-    protected abstract double speedFactor();
+    protected abstract double speedFactor();aaasdd
+    asf
+            af
+    
 
     public String getModelName() {
         return modelName;
