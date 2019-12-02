@@ -1,0 +1,93 @@
+-- Labb 2 del A --
+
+
+-Vilka beroenden är nödvändiga?
+	Angled flatbed:
+		Flatbed (Extends, är OK)
+	*StateFlatbed:
+		Car (Har en lista, aggregation. ok(?))	//ok(?) då vi eventuellt vill ha interface Loadable istället för Car.
+		Flatbed (Extends, är OK)
+	Flatbed:
+		Inget
+	*Workshop:
+		Car (Har en lista, aggregation. ok(?)) 
+		ICanLoadCars(Implements, OK)
+	*CarFerry:
+		StateFlatbed (Har en flatbed(Komp/Del) OK)
+		ICanLoadCars(Implements, OK)
+		MotorizedVehicle(Extends, är OK)
+		Car (Har en lista, ok(?)) (Gör om till generic)
+	*CarTransporter:
+		Truck (Extends, är OK)
+		ICanLoadCars(Implements, OK)
+		Car (StateFlatbed med T extends Car ok(?))
+		StateFlatbed (Komp/Del OK)
+	Scania:
+		Truck (Extends, OK)
+		AngledFlatbed (Komp/Del OK)
+	Volvo240:
+		Car(Extends, är OK)
+	Saab95:
+		Car(Extends, är OK)
+	Car:
+		MotorizedVehicle (Extends, är OK)
+	Truck:
+		MotorizedVehicle (Extends, är OK)
+	*ICanLoadCars:
+		MotorizedVehicle (Association, Ej OK(!))
+		Car (T extends Car ok(?))
+	Direction:
+		Inget
+	*MotorizedVehicle:
+		IMovable (Implements, är OK)
+		Direction (Komp, är OK)
+		ICanLoadCars (Låsmekanism, ok(!?))
+	*CarController:
+		Saab95 (Komposition ok(?))
+		Volvo240 (Komposition ok(?))
+		Scania (Komposition ok(?))
+		MotorizedVehicles (Komposition, ok(?!))
+		CarView (Kompostition, ok(!?))
+		TimerListener (Klass i klassen ok(!?))
+	*CarView:
+		Saab95 (Komposition, EJ OK(!))
+		Scania (Komposition, EJ OK(!))
+		DrawPanel (Komposition, ok(!?))
+		CarController(Komposition (?? Vi måste bestämma vem skall skall ha komp till vem, går dubbelt nu))
+	*DrawPanel:
+		MotorizedVehicle(Association, EJ OK (Hårdkodning mm))
+
+-Vilka klasser är beroende av varandra som inte bör vara det?
+	CarTransporter, CarFerry, Workshop, (StateFlatbed), ICanLoadCars beroende av Car
+		Inför loadable? Måste ta bort låsmekanism  så fall.
+	CarTransporter, CarFerry, Workshop beroende av MotorizedVehice.
+		Handskakningen/Låsmekanism, behövs ej. (Paket uppdelnning) packagePrivate setters
+	MotorizedVehicle, beroende av ICanLoadCars
+		Handskakningen/Låsmekanism, behövs ej
+	CarController, beroende av Saab/Volvo/Scania
+		Behöver inte vara så, kan iställt vara beroende av motorizedVehicle och låta användaren skapa objekten vid uppstart.
+	CarView, beroende av Scania och Saab.
+		Får inte vara så. Lägg över logik berörande scanian och saaben till CarController.
+	DrawPanel, beroende av MotorizedVehicle
+		Kör .getModelName och jämför, bör få in data från annan klass.
+
+-Finns det starkare beroenden än nödvändigt?
+	Ja, många klasser som implementerar ICanLoadCars samt ICanLoadCars själv, använder sig av Car direkt.
+	Det skulle bli ett svagare beroende om de istället använde sig av ett interface (Loadable).
+	Det beroendet som finns mellan ICanLoadCars, MotorizedVehicles och Car är mycket starkare än vad 
+	det skulle behöva. <--("Handskakningen").
+
+-Kan ni identifiera några brott mot övriga designprinciper vi pratat om i kursen?
+	Vi bryter mot:
+		Single Responsibility Principle - Vår handskakningsmetod finns lite överallt.
+		Open Closed Principle		- Eventuellt kan vi ha en superklass till båtar.
+						  Vi beror väldigt mycket på implementationsarv, vilket gör att det är svårt att extenda.
+						  Väldigt mycket hårdkodat i GUI klasserna.
+		Dependency Inversion Principle	- Ganska mycket GUI-Klasser som dependar på olika typer av Cars etc.
+						  Väldigt många ICanLoadCars dependar på bilar, vi bör eventuellt ha ett interface (Loadable)
+		Composition Over Inheritance	- Rätt bra på att utnyttja komposition, men ändå väldigt mycket implementationsarv i koden.		
+		Speration of Concern		- Ingen paketuppdelning, allt blir mer sammanbundet, påverkar coupling och cohesion.
+		
+		Allmänt har vi dålig paketuppdelning, vilket gör det svårt att analysera coupling och cohesion.
+						
+		

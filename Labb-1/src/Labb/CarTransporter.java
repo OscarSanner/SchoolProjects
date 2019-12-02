@@ -11,7 +11,7 @@ import static java.lang.Math.sqrt;
  * Class for CarTransporter, subclass to Truck and MotorizedVehicle.
  * Implements the interface ICanLoadCars which enables the cartransporter to load motorizedVehicles.
  */
-public class CarTransporter <T extends Car> extends Truck implements ICanLoadCars <T> {
+public class CarTransporter<T extends Car> extends Truck implements ICanLoadCars<T> {
 
     /**
      * The type of flatbed the cartransporter has and what types of vehicles it can carry.
@@ -60,6 +60,7 @@ public class CarTransporter <T extends Car> extends Truck implements ICanLoadCar
      * Method for loading a car.
      * Initiates a "handshake"-chain where checks are done to made sure the car to be loaded actually can be loaded.
      * Checks are: flatbed is lowered, car isn't loaded on another entity, car is close enough to be loaded.
+     *
      * @param carToBeLoaded the car in question which is to be loaded on to the cartransporter.
      */
     @Override
@@ -73,11 +74,12 @@ public class CarTransporter <T extends Car> extends Truck implements ICanLoadCar
     /**
      * Method for confirming this cartransporter is the one asking to load the vehicle in question.
      * Called by the vehicle in the "handshake"-chain when this cartransporter tries to load the vehicle.
+     *
      * @param motorizedVehicleRequestedToBeLoaded the vehicle this cartransporter wants to load, confirming it's actually this cartransporter.
      * @return true if this cartransporter coincides with the cartransporter the vehicle is wanting to be loaded on, otherwise false.
      */
     @Override
-    public boolean confirmLoad (MotorizedVehicle motorizedVehicleRequestedToBeLoaded){
+    public boolean confirmLoad(MotorizedVehicle motorizedVehicleRequestedToBeLoaded) {
         return flatbed.getLoadedCars().contains(motorizedVehicleRequestedToBeLoaded);
     }
 
@@ -93,6 +95,7 @@ public class CarTransporter <T extends Car> extends Truck implements ICanLoadCar
 
     /**
      * Method for checking that the car to be loaded is within distance and isn't currently loaded on another entity.
+     *
      * @param carToBeLoaded car trying to be loaded.
      * @return true if car isn't currently loaded and is close enough to the cartransporter.
      */
@@ -104,24 +107,27 @@ public class CarTransporter <T extends Car> extends Truck implements ICanLoadCar
 
     /**
      * Method for getting a list of the motorizedVehicles being carried.
+     *
      * @return A cloned list of the list of motorizedVehicles being carried.
      */
-    public Deque<T> getLoadedCars(){
-        return new ArrayDeque<T>( flatbed.getLoadedCars());
+    public Deque<T> getLoadedCars() {
+        return new ArrayDeque<T>(flatbed.getLoadedCars());
     }
 
 
     /**
      * Method for getting the current angle of the flatbed. (Raised or lowered)
+     *
      * @return returns 1 if the flatbed is raised or 0 if the flatbed if lowered.
      */
     @Override
-    public int getCurrentAngle(){
+    public int getCurrentAngle() {
         return flatbed.currentAngle;
     }
 
     /**
      * Method used by methods in MotorizedVehicle for increasing and decreasing speed.
+     *
      * @return calculates a factor based on the engine power.
      */
     @Override
