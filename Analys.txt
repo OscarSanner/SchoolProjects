@@ -130,12 +130,57 @@ Responsibility Principle (SRP).
 		Represneterar alla fordon med motor. Ansvarar över att dessa får funktionalitet så som gasning, bromsing, kordinater.
 		Denna funktionallitet innefattar även låsmekanism (fordonet "har" en ICanLoadCars).
 		NOTE: Vill kanske ha en point klass, istället för koordinater.		
-	CarController:
-		
-	CarView:
-	
-	DrawPanel:
+	CarController: [Ej ok då den egentligen bör ha ansvar för ALL logik (Eventlistener, kontakt med modellen)]
+		Uppdaterar logiken (med timer) och lyder order från CarView (gas brake)
+	CarView: [ej ok, både renderar, lyssnar och kommunicerar med modellen]
+		Ansvarar för ritning av kontrollpanelen (Knappar m.m.), har ansvaret för knapparnas funktioner. 
+	DrawPanel: [Ansvar OK, behöver förändras]
+		Ansvarar för ritning av simulationen (bilar och bakgrund).
 		
 -Vilka anledningar har de att förändras?
+	
+	Angled flatbed:
+		Om man vill ha en utökad funktionallitet hos en ANGLED flatbed. Tex om de skall kunna lasta.
+	StateFlatbed:
+		Om man vill ha en utökad funktionallitet hos en STATE flatbed. Tex om de skall kunna lasta andra förmål.
+	Flatbed:
+		Om man vill ha en utökad funktionallitet hos ALLA flatbeds. T.ex om de skall ha färger.
+	Workshop:
+		Om man vill ha mer funktionallitet i sin workshop. Man kanske vill kunna trimma bilmotorer.
+		(Om man vill ändra vad man gör med bilarna i workshoppen).
+		(Om man vill ändra hur man laddar in bilar i workshoppen).
+	CarFerry:
+		Om man vill ändra hur bilarna lastas på båten.
+		Om man vill ändra hur båten beter sig när bilarna är lastade.
+	CarTransporter:
+		Om man vill ändra hur bilarna lastas på cartransporten
+		Om man vill ändra hur cartransporten beter sig när bilarna är lastade.
+	Scania:
+		Om man vill ändra Scanians funktionallitet som en typ av lastbil. Den kanske kan laddas. Eller få en annan typ av motor.
+	Volvo240:
+		Om man vill ändra Volvons funktionallitet som en typ av bil. Kanske lägga till ett servosystem.
+	Saab95:
+		Om man vill ändra Saabens funktionallitet som en typ av bil. Kanske lägga till en katalysator.
+	Car:
+		Om man vill ändra funktionalliteten hos ALLA bilar. Man kanske vill implementera att alla bilar har hjul.
+	Truck:
+		Om man vill ändra funktionalliteten hos ALLA lastbilar. Alla lastbilar kanske har en vändskiva eller en fjäderstötdämpat hyttfäste. 
+	ICanLoadCars:
+		Om man vill ändra vad som krävs av ALLA entiteter som kan lasta på bilar. Man kanske vill att nämnda entiteter skall kunna lasta av bilar. 
+	Direction:
+		Om man vill ändra vad direktion innebär. T.ex kunna ha ett gradsystem istället för "Vänster höger upp ner".
+	MotorizedVehicle:
+		Om man vill ändra funktionalliteten hos ALLA fordon med motor. Man kanske vill implementera att alla motordrivna fordon kan öppna sina dörrar.
+	CarController:
+		Om man vill att simulationen skall ha mer funktionalitet, tex svängning.
+		Om man vill ändra på hur bilarna interagerar med varandra och sin omgivning. 
+	CarView:
+		Om man vill ändra funktionalitet hos styrpanelen i programmet. T.ex. ha fler knappar.
+		Om man vill ändra funktionaliteten hos vissa av knapparna 
+	DrawPanel:
+		Om man vill ändra den grafiska representationen av simuleringen, t.ex. bilarna. 
+		
 -På vilka klasser skulle ni behöva tillämpa dekomposition för att bättre följa SoC och SRP?
+	
+
 
