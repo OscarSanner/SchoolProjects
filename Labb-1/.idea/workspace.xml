@@ -2,47 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab457b7d-dc01-4ad3-9bb5-9ca01656b6cb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/AngledFlatbed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/AngledFlatbed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/Car.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarController$TimerListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarController$TimerListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarFerry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarFerry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarTransporter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarTransporter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/Direction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/DrawPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/DrawPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Flatbed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/Flatbed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/ICanLoadCars.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/ICanLoadCars.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/IMovable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/IMovable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/MotorizedVehicle$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/MotorizedVehicle$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/MotorizedVehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/MotorizedVehicle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Saab95.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/Saab95.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Scania.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/Scania.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/StateFlatbed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/StateFlatbed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Truck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/Truck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Volvo240.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/Volvo240.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Workshop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/Workshop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Labb-1/TestCarTransporter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Labb-1/TestCarTransporter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Labb-1/TestCarsOnCarriers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Labb-1/TestCarsOnCarriers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Labb-1/TestFerry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Labb-1/TestFerry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Labb-1/TestMotorizedVehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Labb-1/TestMotorizedVehicle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Labb-1/TestScania.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Labb-1/TestScania.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Labb-1/TestSuite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Labb-1/TestSuite.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Labb-1/TestWorkshop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Labb-1/TestWorkshop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/CarTransporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/CarTransporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Analys.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Analys.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,10 +88,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="2" y="6" key="#Notifications/0.0.1280.689@0.0.1280.689" timestamp="1575054562731" />
-    <state x="421" y="86" key="FileChooserDialogImpl" timestamp="1575072753912">
+    <state x="421" y="86" key="FileChooserDialogImpl" timestamp="1575297020195">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="421" y="86" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1575072753912" />
+    <state x="421" y="86" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1575297020195" />
     <state width="1237" height="165" key="GridCell.Tab.0.bottom" timestamp="1575054788931">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -152,15 +112,15 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1575054770408" />
-    <state x="341" y="168" key="com.intellij.ide.util.TipDialog" timestamp="1575059632636">
+    <state x="341" y="168" key="com.intellij.ide.util.TipDialog" timestamp="1575296967934">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="341" y="168" key="com.intellij.ide.util.TipDialog/0.0.1280.689/0.1080.1097.587@0.0.1280.689" timestamp="1575059632636" />
-    <state x="341" y="168" key="com.intellij.ide.util.TipDialog/0.0.1280.689@0.0.1280.689" timestamp="1575054497362" />
-    <state x="91" y="0" key="new project wizard" timestamp="1575072760087">
+    <state x="341" y="168" key="com.intellij.ide.util.TipDialog/0.0.1280.689@0.0.1280.689" timestamp="1575296967934" />
+    <state x="91" y="0" key="new project wizard" timestamp="1575297048222">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="91" y="0" key="new project wizard/0.0.1280.689@0.0.1280.689" timestamp="1575072760087" />
+    <state x="91" y="0" key="new project wizard/0.0.1280.689@0.0.1280.689" timestamp="1575297048222" />
     <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1575277407456">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

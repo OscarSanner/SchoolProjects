@@ -1,4 +1,6 @@
--- Labb 2 del A --
+-- Labb 2 del A--
+	
+	Uppgift 2
 
 
 -Vilka beroenden är nödvändiga?
@@ -91,3 +93,49 @@
 		Allmänt har vi dålig paketuppdelning, vilket gör det svårt att analysera coupling och cohesion.
 						
 		
+	Uppgift 3.
+
+Analysera era klasser med avseende på Separation of Concern (SoC) och Single
+Responsibility Principle (SRP).
+
+-Vilka ansvarsområden har era klasser?
+	Angled flatbed: [OK]
+		Är en flatbed med vinklar.
+	StateFlatbed: [OK]
+		Är en flatbed med lägen. Kan lasta på och av bilar.
+	Flatbed: [OK]
+		Representerar all funktionalitet hos en flatbed. 
+	Workshop: [Kanske ok]
+		Är ett lager för bilar. Kan lasta på och av dessa. Har (också) låsmekanism.
+	CarFerry: [Kanske ok]
+		Är en motorizedVehicle som kan lasta på och av bilar. Har (också) låsmekanism.
+	CarTransporter: [Kanske ok]
+		Är en truck som kan lasta på och av bilar. Har (också) låsmekanism.
+	Scania: [OK]
+		Är en typ av truck. Har en angled flatbed.
+	Volvo240: [OK]
+		Är en typ av car.
+	Saab95: [OK]
+		Är en typ av car.
+	Car: [OK]
+		Representerar en typ av MotorizedVehicle. Abstrakt.
+	Truck: [OK]
+		Representerar en typ av MotorizedVehicle. Abstrakt.
+	ICanLoadCars: [Kanske ok]
+		Interface som representerar funktionalitet hos objekt som kan lasta på bilar. 
+		Denna funktionalitet omfattar även låsmekanism.
+	Direction: [OK]
+		Representerar riktning hos flyttbara objekt.
+	MotorizedVehicle: [Kanske ok]
+		Represneterar alla fordon med motor. Ansvarar över att dessa får funktionalitet så som gasning, bromsing, kordinater.
+		Denna funktionallitet innefattar även låsmekanism (fordonet "har" en ICanLoadCars).
+		NOTE: Vill kanske ha en point klass, istället för koordinater.		
+	CarController:
+		
+	CarView:
+	
+	DrawPanel:
+		
+-Vilka anledningar har de att förändras?
+-På vilka klasser skulle ni behöva tillämpa dekomposition för att bättre följa SoC och SRP?
+
