@@ -55,6 +55,13 @@ public class Scania extends Truck {
         }
     }
 
+    @Override
+    public void gas(double amount){
+        if (flatbed.getCurrentAngle() == flatbed.getMinAngle()){
+            super.gas(amount);
+        }
+    }
+
     /**
      * Method used by methods in MotorizedVehicle for increasing and decreasing speed.
      * @return calculates a factor based on the engine power.

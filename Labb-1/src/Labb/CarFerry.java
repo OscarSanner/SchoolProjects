@@ -57,6 +57,13 @@ public class CarFerry extends MotorizedVehicle implements ICanLoadCars {
         }
     }
 
+    @Override
+    public void gas(double amount){
+        if (flatbed.getCurrentAngle() == flatbed.getMaxAngle()){
+            super.gas(amount);
+        }
+    }
+
     /**
      * Method for loading a car.
      * Initiates a "handshake"-chain where checks are done to made sure the car to be loaded actually can be loaded.

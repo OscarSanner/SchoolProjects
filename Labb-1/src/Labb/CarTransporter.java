@@ -42,6 +42,8 @@ public class CarTransporter<T extends Car> extends Truck implements ICanLoadCars
         }
     }
 
+
+
     /**
      * Overrides the move-method in MotorizedVehicle to add extra conditions for movement.
      * Moves only when the flatbed is lowered and also moves all the motorizedVehicles loaded on to the cartransporter.
@@ -53,6 +55,13 @@ public class CarTransporter<T extends Car> extends Truck implements ICanLoadCars
             for (Car c : flatbed.getLoadedCars()) {
                 c.updateWithCarrier();
             }
+        }
+    }
+
+    @Override
+    public void gas(double amount){
+        if (flatbed.getCurrentAngle() == flatbed.getMaxAngle()){
+            super.gas(amount);
         }
     }
 

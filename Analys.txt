@@ -181,6 +181,19 @@ Responsibility Principle (SRP).
 		Om man vill ändra den grafiska representationen av simuleringen, t.ex. bilarna. 
 		
 -På vilka klasser skulle ni behöva tillämpa dekomposition för att bättre följa SoC och SRP?
+	DrawPanel:
+		Funktionell dekomposition i konstruktorn, låt en egen metod initialisera panelen (redan gjort en egen metod för fordonen)
+		Funktionell dekomposition också i konstruktorn för try-catch metoden... lägg i egen metod (findImage();)
+	
+	CarView:
+		initComponents är MYCKET dålig, använd funktionell nedbrytning.
+	
+	CarController:
+		Lägg till en "addCars()" metod för initiering av de olika bilarna.
+		
+		
+
+			
 	
 
 

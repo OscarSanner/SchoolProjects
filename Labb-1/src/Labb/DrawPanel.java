@@ -2,11 +2,11 @@ package Labb;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
+import java.nio.Buffer;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ArrayBlockingQueue;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -21,32 +21,22 @@ public class DrawPanel extends JPanel{
     BufferedImage scaniaImage;
     // To keep track of a singel motorizedVehicles position
 
-    Point volvoPoint = new Point(0,0);
-    Point saabPoint = new Point(0,100);
-    Point scaniaPoint = new Point(0,200);
+    Map<MotorizedVehicle, Point> vehiclePointMap;
 
     // TODO: Make this genereal for all motorizedVehicles
 
-    void moveit(int x, int y, MotorizedVehicle motorizedVehicle) {
-        if (motorizedVehicle.getModelName().equals("Volvo240")) {
-            volvoPoint.x = x;
-            volvoPoint.y = y;
-        }
-        if (motorizedVehicle.getModelName().equals("Saab95")) {
-            saabPoint.x = x;
-            saabPoint.y = y;
-        }
-        if (motorizedVehicle.getModelName().equals("Scania")) {
-            scaniaPoint.x = x;
-            scaniaPoint.y = y;
-        }
+    void moveit(MotorizedVehicle motorizedVehicle) {
+        Point temp = vehiclePointMap.get(motorizedVehicle);
+        temp.x = (int) Math.round(motorizedVehicle.getX());
+        temp.y = (int) Math.round(motorizedVehicle.getY());
     }
 
     // Initializes the panel and reads the images
-    public DrawPanel(int x, int y) {
+    public DrawPanel(int x, int y, ArrayList<MotorizedVehicle> motorizedVehicles) {
         this.setDoubleBuffered(true);
         this.setPreferredSize(new Dimension(x, y));
         this.setBackground(Color.pink);
+        initiateVehiclePointMap(motorizedVehicles);
 
         // Print an error message in case file is not found with a try/catch block
         try {
@@ -63,7 +53,17 @@ public class DrawPanel extends JPanel{
         {
             ex.printStackTrace();
         }
+    }
 
+    private void initiateVehiclePointMap(ArrayList<MotorizedVehicle> motorizedVehicles) {
+        vehiclePointMap = new HashMap<>();
+        for (MotorizedVehicle mv : motorizedVehicles){
+            vehiclePointMap.put(mv, matchModel(mv));
+        }
+    }
+
+    private Point matchModel(MotorizedVehicle mv) {
+        return new Point((int)mv.getX(), (int)mv.getY());
     }
 
     // This method is called each time the panel updates/refreshes/repaints itself
@@ -71,8 +71,21 @@ public class DrawPanel extends JPanel{
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(volvoImage, volvoPoint.x, volvoPoint.y, null); // see javadoc for more info on the parameters
-        g.drawImage(saabImage, saabPoint.x, saabPoint.y, null); // see javadoc for more info on the parameters
-        g.drawImage(scaniaImage, scaniaPoint.x, scaniaPoint.y, null); // see javadoc for more info on the parameters
+        for (Map.Entry<MotorizedVehicle, Point> entry : vehiclePointMap.entrySet()) {
+            g.drawImage(matchImage(entry.getKey()), entry.getValue().x, entry.getValue().y , null);
+        }
+    }
+
+    private BufferedImage matchImage(MotorizedVehicle mv){
+        if (mv.getModelName().equals("Volvo240")) {
+            return volvoImage;
+        }
+        if (mv.getModelName().equals("Saab95")) {
+            return saabImage;
+        }
+        if (mv.getModelName().equals("Scania")) {
+            return scaniaImage;
+        }
+        return null; // WILL NEVER BE REACHED.
     }
 }
