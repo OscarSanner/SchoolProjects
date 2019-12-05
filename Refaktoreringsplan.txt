@@ -1,0 +1,24 @@
+Motivera, i termer av de principer vi gått igenom, varför era förbättringar verkligen är 
+förbättringar.
+
+	Modell:
+		-Har tagit bort vår "handskakningmekanism" vilket har signifikant reducerat beroendent mellan klasser.
+		-Har även lagt till ett interface ICanBeLoaded för pålastningsbara enheter.
+ 		 Detta gör programmet mer modulärt och ger oss mer extensibility.
+		-Har lagt hela modellen i ett paket (Model) med en ny modell klass som är tänkt att initiera modellen (alla bilar) och vara den publika delen av modellen.
+		 Tanken är att detta ger oss lägre coupling då endast en klass är publik.
+		 Att klasserna gör package private ger oss högre abstraktionsnivå.
+	View:
+		Lyssna på model efter förändringar och uppdatera grafiken efter det.
+		FRÅGA: Hur ska vi göra med points, bilder och bilar om vi inte skall använda hashmap utan referenser till motorizedvehicles, den enda referensen vi vill ha är till modell.
+		
+	Controller:
+	Application:
+
+Skriv en refaktoriseringsplan. Planen bör bestå av en sekvens refaktoriseringssteg som tar 
+er från det nuvarande programmet till ett som implementerar er nya design. Planen behöver 
+inte vara enormt detaljerad.
+
+Finns det några delar av planen som går att utföra parallellt, av olika utvecklare som 
+arbetar oberoende av varandra? Om inte, finns det något sätt att omformulera planen så 
+att en sådan arbetsdelning är möjlig?

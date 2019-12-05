@@ -8,7 +8,7 @@ import java.util.Random;
  * Contains methods for moving a vehicle in 2d.
  * Contains common properties of a motorized vehicle.
  */
-public abstract class MotorizedVehicle implements IMovable {
+abstract class MotorizedVehicle implements IMovable {
 
     /**
      * Variable is set to true of the vehicle is loaded onto a carrier.
