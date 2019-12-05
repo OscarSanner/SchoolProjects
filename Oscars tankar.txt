@@ -1,0 +1,8 @@
+Vi kan ha en lista i modellen med IDrawable/Ipositionables
+Detta interface kan ligga i modellen.
+Modellen har en get Ipositionables
+Guit gör en for (Ipositionable : modell.getIpositionables)
+
+En ipositionable har getX, getY
+
+En sådan lös referens bör vara ok.
