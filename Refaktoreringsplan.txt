@@ -8,16 +8,60 @@ förbättringar.
 		-Har lagt hela modellen i ett paket (Model) med en ny modell klass som är tänkt att initiera modellen (alla bilar) och vara den publika delen av modellen.
 		 Tanken är att detta ger oss lägre coupling då endast en klass är publik.
 		 Att klasserna gör package private ger oss högre abstraktionsnivå.
+		-Vi skall implementera ett interface Drawable som skall ska ha alla nödvändiga funktioner för att kunna rita upp bilder på bilar på rätt koordinat.
+		 Den här kommer i sin tur användas av View och Model.
+		 Detta ger oss en högre abstraktions nivå för att vi får lägre coupling mellan paket då View endast behöver komma åt den "ytliga" listan med IDrawables. (Lägre beroende)
 	View:
-		Lyssna på model efter förändringar och uppdatera grafiken efter det.
-		FRÅGA: Hur ska vi göra med points, bilder och bilar om vi inte skall använda hashmap utan referenser till motorizedvehicles, den enda referensen vi vill ha är till modell.
-		
+		-Får objekt att rita i form av Interface typer IDrawables, som har utvalda metoder som behövs för uppritande. (FACADE?????)
+		 Mindre beroende då vi har blivit av med vår HashMap lösning. 
+		 Förut lagrades MotorizedVehicles i både CarControllen OCH CarView, nu lagras endast MotorizedVehicles i modellen som skickar vidare dom i form av IDrawables till View.
+		-Flyttar över actionlisteners från View till Controller men låter den "grafisk" representationen hos t.ex. knapparna ligga kvar i View medan actionlistener funktionen som sagt ligger i Controller.
+		 Controller anropar i sin tur funktionaliteten i modellen.
+		 Detta leder till att View inte blir beroende av controller och således "Dummare".
 	Controller:
+		-Här skall alla actionlisteners, som nuvarande finns i view, läggas. Dessa anropar i sin tur funktionaliteten i modellen.
+		 Leder till att blir av med det dubbla beroendet som tidigare nämnt i View.
+		-Flyttar över gas(), break() funktionalitet till modellen som i sin tur anropar modellens inre funktionalitet.
+		 På så sätt slipper vi Controllerns beroende på inre funktionalitet hos modellen (motorizedvehicles) och knyter controllern endast till den publika Model-klassen.
+		-Skriver om collision så att den endasst är beroende av x/y/bilden, blir därmed av med beroendet på motorized vehicle.
 	Application:
+		-Inehåller main metoden och skapar alla modeller samt kopplar ihop dem.
+		 Ger abstraktion då alla modeller är frikopplade initialt och ansvaret för att initera programmet ligger inte hos något specifikt paket --> MODULARITET.
 
 Skriv en refaktoriseringsplan. Planen bör bestå av en sekvens refaktoriseringssteg som tar 
 er från det nuvarande programmet till ett som implementerar er nya design. Planen behöver 
 inte vara enormt detaljerad.
+	
+
+	Model:
+		Ta bort "Handskakningsmekanism" för relevanta klasser, se UML.
+		Skriv om Carferry till generic.
+		Skriv om ICanLoadCars så att den minsar beroende (på typ motorizedVehicle)
+		Skapa Interfacet ICanBeLoaded som omplementeras för klasser som kan bli pålastade.
+		Skapa IDrawable.
+			Kräver koordinater (getX/getY)
+			Kräver bild (getBufferedImage)
+		Skapa Klassen Model.
+			Enda publika klassen.
+			Skapar alla objekt via IDrawable factory method (skapa den).
+			Skall vara ansiktet utåt och därav ha funktioner för att t.ex gasa, bromsa, flatbedfunktioner etc.
+	View:
+		Ta bort hashmappen som innehåller fordon och points. Slopa all användning av points. Funktionen som faktiskt ritar upp
+		kommer istället att använda getDrawables.
+		Ta bort allt skapande av BufferedImage dessa kommer fås av getDrawables som finns i Model.
+		Ta bort alla controller referenser och actionlisteners. Dessa kommer skapas av controllern. Behåll själva knapparna, men "kör"
+		knapparna ifrån carController.
+		I DrawPanel:
+			Skriv om konstruktorn (inga bilder letas här)
+			Ta bort all HashMap funktionalitet.
+			Ta bort match image (kommer ges en bild istället, behöver inte matcha själv.)
+			Skriv om paintComponent så att den hämtar IDrawables och ritar ut dem.
+			Ta bort moveIt(behövs inte längre då vi inte använder Points)
+	Controller:
+
+	Application:
+
+	
 
 Finns det några delar av planen som går att utföra parallellt, av olika utvecklare som 
 arbetar oberoende av varandra? Om inte, finns det något sätt att omformulera planen så 
