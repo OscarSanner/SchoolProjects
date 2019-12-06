@@ -45,10 +45,12 @@ inte vara enormt detaljerad.
 			Enda publika klassen.
 			Skapar alla objekt via IDrawable factory method (skapa den).
 			Skall vara ansiktet utåt och därav ha funktioner för att t.ex gasa, bromsa, flatbedfunktioner etc.
+			Skapa en updatePositions metod som anropas hela tiden av updateloopen i Controller.
 	View:
 		Ta bort hashmappen som innehåller fordon och points. Slopa all användning av points. Funktionen som faktiskt ritar upp
 		kommer istället att använda getDrawables.
 		Ta bort allt skapande av BufferedImage dessa kommer fås av getDrawables som finns i Model.
+
 		Ta bort alla controller referenser och actionlisteners. Dessa kommer skapas av controllern. Behåll själva knapparna, men "kör"
 		knapparna ifrån carController.
 		I DrawPanel:
@@ -58,11 +60,39 @@ inte vara enormt detaljerad.
 			Skriv om paintComponent så att den hämtar IDrawables och ritar ut dem.
 			Ta bort moveIt(behövs inte längre då vi inte använder Points)
 	Controller:
-
+		Lägg till samtliga actionlisteners, som skrevs över från View, i konstruktorn av CarController. Dessa binds till knapparna i View och anropar sedan funktioner i Model.
+		Ta bort Main (skall läggas i application).
+		Ta bort Listan med fordon.
+		Skriv om collision med IDrawable (ha kvar?? flytta till modell???)
+		Skriv om updateloopen så att den uppdaterar modellen.
+		
+		
 	Application:
+		Skapa MainMetoden
+			Skapar en Model, (skickar in antal bilar som skall skapas, skickas till factoryn).
+			Skapar en CarView (som skapar en DrawPanel) in i carView skickas även model.getDrawables (typ).
+			Skapar en CarController med Model och CarView som argument som också startar updateloopen.
 
 	
 
 Finns det några delar av planen som går att utföra parallellt, av olika utvecklare som 
 arbetar oberoende av varandra? Om inte, finns det något sätt att omformulera planen så 
 att en sådan arbetsdelning är möjlig?
+
+Allt i ett steg kan göras parallelt (med tanke på en person)
+
+	Om man först delar upp allt i relevanta paket. Sen gör allt som skall vara package private till pp, så kan alla paketen arbetas på
+	individuellt, parallelt. En person kan t.ex jobba med publika klasser och hur dom "pratar" med varandra.
+	
+	Alternativt hade man teoretiskt sätt kunnat lägga interfaces på alla paket, med all funktionallitet som krävs för samverkan mellan 
+	paketen, sen arbeta med paketen parallellt utifrån de andras interfaces. 
+	 
+	/*
+
+	STEG 1
+		Model
+		View (Kan göras förutsatt att IDrawable skapas direkt då det är allt View bereo på från Model.
+		Application (Kan skapas och initera alla delar)
+	STEG 2
+		Controllern
+	*/
