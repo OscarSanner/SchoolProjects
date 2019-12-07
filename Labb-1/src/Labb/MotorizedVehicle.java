@@ -14,6 +14,7 @@ abstract class MotorizedVehicle implements IMovable {
      * Variable is set to true of the vehicle is loaded onto a carrier.
      */
     private boolean isLoadedOnACarrier;
+    public boolean hasCrashed;
 
     /**
      * The vehicle has a "ICanLoadCars" which is an object able to load the vehicle
@@ -69,7 +70,7 @@ abstract class MotorizedVehicle implements IMovable {
      * Private(!) method for setting the x coordinates.
      * @param x, the new x coordinate.
      */
-    private void setX(double x) {
+    public void setX(double x) {
         this.x = x;
     }
 
@@ -77,7 +78,7 @@ abstract class MotorizedVehicle implements IMovable {
      * Private(!) method for setting the y coordinates.
      * @param y, the new y coordinate.
      */
-    private void setY(double y) {
+    public void setY(double y) {
         this.y = y;
     }
 
@@ -176,6 +177,12 @@ abstract class MotorizedVehicle implements IMovable {
         this.currentDirection = Direction.RIGHT;
 
         stopEngine();
+    }
+
+    public void crashed(){
+        if(this.hasCrashed){
+            currentSpeed = 0;
+        }
     }
 
 

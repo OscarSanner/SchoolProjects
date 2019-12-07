@@ -35,6 +35,10 @@ public class CarController {
         cc.motorizedVehicles.add(new Saab95(0,100));
         cc.motorizedVehicles.add(new Scania(0,200));
         cc.motorizedVehicles.add(new Volvo240(0,300));
+        cc.motorizedVehicles.add(new Sad(-4000, 0));
+        cc.motorizedVehicles.add(new Sad(-4000, 0));
+        cc.motorizedVehicles.add(new Sad(-4000, 0));
+        cc.motorizedVehicles.add(new Sad(-4000, 0));
 
         // Start a new view and send a reference of self
         cc.frame = new CarView("CarSim 1.0", cc);
@@ -56,6 +60,13 @@ public class CarController {
                     motorizedVehicle.turnLeft();
                 }
 
+                motorizedVehicle.crashed();
+
+                if(collision(motorizedVehicle) && motorizedVehicle.getCurrentSpeed() > 20 && motorizedVehicle.getModelName().equals("Saab95")){
+                    frame.drawPanel.crashEvent(motorizedVehicle, motorizedVehicles);
+                    motorizedVehicle.hasCrashed = true;
+                }
+
                 frame.drawPanel.moveit(motorizedVehicle);
                 // repaint() calls the paintComponent method of the panel
                 frame.drawPanel.repaint();
@@ -66,7 +77,7 @@ public class CarController {
             return (motorizedVehicle.getX() > frame.drawPanel.getWidth() -  frame.drawPanel.volvoImage.getWidth()  ||
                     motorizedVehicle.getX() < 0 ||
                     motorizedVehicle.getY() > frame.drawPanel.getHeight() - frame.drawPanel.volvoImage.getHeight() ||
-                    motorizedVehicle.getY() < 0);
+                    motorizedVehicle.getY() < 0) && !motorizedVehicle.getModelName().equals("Sad");
         }
     }
 

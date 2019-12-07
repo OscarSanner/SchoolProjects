@@ -19,6 +19,9 @@ public class DrawPanel extends JPanel{
     BufferedImage volvoImage;
     BufferedImage saabImage;
     BufferedImage scaniaImage;
+    BufferedImage crash;
+    BufferedImage sadImage;
+    boolean crashHasHappened;
     // To keep track of a singel motorizedVehicles position
 
     Map<MotorizedVehicle, Point> vehiclePointMap;
@@ -49,6 +52,8 @@ public class DrawPanel extends JPanel{
             volvoImage = ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/Volvo240.jpg"));
             saabImage = ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/Saab95.jpg"));
             scaniaImage = ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/Scania.jpg"));
+            crash = ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/Crash.jpg"));
+            sadImage = ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/Sad.jpg"));
         } catch (IOException ex)
         {
             ex.printStackTrace();
@@ -59,6 +64,20 @@ public class DrawPanel extends JPanel{
         vehiclePointMap = new HashMap<>();
         for (MotorizedVehicle mv : motorizedVehicles){
             vehiclePointMap.put(mv, matchModel(mv));
+        }
+    }
+
+    public void crashEvent(MotorizedVehicle mv, ArrayList<MotorizedVehicle> list){
+        saabImage = crash;
+        mv.stopEngine();
+        for(MotorizedVehicle m : list){
+            if (m.getModelName().equals("Sad")){
+                Sad s;
+                s = (Sad)m;
+                s.setX(mv.getX());
+                s.setY(mv.getY());
+                s.startEngine();
+            }
         }
     }
 
@@ -85,6 +104,9 @@ public class DrawPanel extends JPanel{
         }
         if (mv.getModelName().equals("Scania")) {
             return scaniaImage;
+        }
+        if (mv.getModelName().equals("Sad")){
+            return sadImage;
         }
         return null; // WILL NEVER BE REACHED.
     }
