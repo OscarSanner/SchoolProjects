@@ -34,10 +34,10 @@ inte vara enormt detaljerad.
 	
 
 	Model:
-		Ta bort "Handskakningsmekanism" för relevanta klasser, se UML.
-		Skriv om Carferry till generic.
-		Skriv om ICanLoadCars så att den minsar beroende (på typ motorizedVehicle)
-		Skapa Interfacet ICanBeLoaded som omplementeras för klasser som kan bli pålastade.
+		//Ta bort "Handskakningsmekanism" för relevanta klasser, se UML.
+		//Skriv om Carferry till generic.
+		//Skriv om ICanLoadCars så att den minsar beroende (på typ motorizedVehicle)
+		//Skapa Interfacet ICanBeLoaded som omplementeras för klasser som kan bli pålastade.
 		Skapa IDrawable.
 			Kräver koordinater (getX/getY)
 			Kräver bild (getBufferedImage)

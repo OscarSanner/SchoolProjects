@@ -1,8 +1,7 @@
-import org.junit.After;
-import org.junit.Before;
-import Labb.*;
+/*import Labb.Model.Car;
+import Labb.Model.Volvo240;
+import Labb.Model.Workshop;
 import org.junit.Test;
-import java.awt.*;
 
 public class TestWorkshop {
 
@@ -65,3 +64,6 @@ public class TestWorkshop {
 
 
 }
+
+
+ */

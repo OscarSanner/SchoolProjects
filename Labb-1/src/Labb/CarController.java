@@ -1,9 +1,13 @@
 package Labb;
 
+import Labb.Model.Model;
+import Labb.View.*;
+
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 /*
 * This class represents the Controller part in the MVC pattern.
@@ -22,25 +26,87 @@ public class CarController {
 
     // The frame that represents this instance View of the MVC pattern
     CarView frame;
+    Model model;
     // A list of motorizedVehicles, modify if needed
-    ArrayList<MotorizedVehicle> motorizedVehicles = new ArrayList<>();
 
-    //methods:
+    public CarController(CarView frame, Model model) {
+        this.model = model;
+        this.frame = frame;
+        initListeners();
+        timer.start();
+    }
 
-    public static void main(String[] args) {
-        // Instance of this class
-        CarController cc = new CarController();
+    private void initListeners() {
 
-        cc.motorizedVehicles.add(new Volvo240(0,0));
-        cc.motorizedVehicles.add(new Saab95(0,100));
-        cc.motorizedVehicles.add(new Scania(0,200));
-        cc.motorizedVehicles.add(new Volvo240(0,300));
+        frame.gasSpinner.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent e) {
+                frame.gasAmount = (int) ((JSpinner)e.getSource()).getValue();
+            }
+        });
 
-        // Start a new view and send a reference of self
-        cc.frame = new CarView("CarSim 1.0", cc);
+        frame.brakeSpinner.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                frame.brakeAmount = (int)((JSpinner)e.getSource()).getValue();
+            }
+        });
 
-        // Start the timer
-        cc.timer.start();
+        frame.gasButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.gas(frame.gasAmount);
+            }
+        });
+
+        frame.brakeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.brake(frame.brakeAmount);
+            }
+        });
+
+        frame.turboOnButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.setTurboOn();
+            }
+        });
+
+        frame.liftBedButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.raiseFlatbed();
+            }
+        });
+
+        frame.lowerBedButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.lowerFlatbed();
+            }
+        });
+
+        frame.startButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.startEngine();
+            }
+        });
+
+        frame.stopButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.stopEngine();
+            }
+        });
+
+        frame.turboOffButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.setTurboOff();
+            }
+        });
+
     }
 
     /* Each step the TimerListener moves all the motorizedVehicles in the list and tells the
@@ -48,43 +114,11 @@ public class CarController {
     * */
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            for (MotorizedVehicle motorizedVehicle : motorizedVehicles) {
-                motorizedVehicle.move();
-
-                if(collision(motorizedVehicle)){
-                    motorizedVehicle.turnLeft();
-                    motorizedVehicle.turnLeft();
-                }
-
-                frame.drawPanel.moveit(motorizedVehicle);
+                model.update();
                 // repaint() calls the paintComponent method of the panel
                 frame.drawPanel.repaint();
             }
         }
-
-        private boolean collision(MotorizedVehicle motorizedVehicle){
-            return (motorizedVehicle.getX() > frame.drawPanel.getWidth() -  frame.drawPanel.volvoImage.getWidth()  ||
-                    motorizedVehicle.getX() < 0 ||
-                    motorizedVehicle.getY() > frame.drawPanel.getHeight() - frame.drawPanel.volvoImage.getHeight() ||
-                    motorizedVehicle.getY() < 0);
-        }
     }
 
-    // Calls the gas method for each car once
-    void gas(int amount) {
-        double gas = ((double) amount) / 100;
-        for (MotorizedVehicle motorizedVehicle : motorizedVehicles
-                ) {
-            motorizedVehicle.gas(gas);
-        }
-    }
-    // Calls the brake method for each car once
-    void brake(int amount) {
-        double brake = ((double) amount) / 100;
-        for (MotorizedVehicle motorizedVehicle : motorizedVehicles
-        ) {
-            motorizedVehicle.brake(brake);
-        }
-    }
 
-}

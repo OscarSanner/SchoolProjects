@@ -1,7 +1,6 @@
-import Labb.CarTransporter;
-import Labb.Saab95;
-import Labb.Scania;
-import Labb.Volvo240;
+/*import Labb.Model.CarTransporter;
+import Labb.Model.Saab95;
+import Labb.Model.Volvo240;
 import org.junit.Test;
 
 public class TestCarTransporter {
@@ -91,3 +90,6 @@ Saab95 s1 = new Saab95(0,0);
     }
 
 }
+
+
+ */

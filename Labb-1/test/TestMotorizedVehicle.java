@@ -1,4 +1,7 @@
-
+/*
+import Labb.Model.Direction;
+import Labb.Model.Saab95;
+import Labb.Model.Volvo240;
 import org.junit.After;
 import org.junit.Before;
 import Labb.*;
@@ -308,3 +311,4 @@ public class TestMotorizedVehicle {
         Main.main(null);
     }
 }
+*/

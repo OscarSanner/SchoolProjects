@@ -1,8 +1,5 @@
-import org.junit.After;
-import org.junit.Before;
-import Labb.*;
+/*import Labb.Model.*;
 import org.junit.Test;
-import java.awt.*;
 
 public class TestCarsOnCarriers {
 
@@ -122,3 +119,6 @@ public class TestCarsOnCarriers {
         assert shouldContainCar && shouldSTILLContainCar;
     }
 }
+
+
+ */

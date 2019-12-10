@@ -1,8 +1,5 @@
-import org.junit.After;
-import org.junit.Before;
-import Labb.*;
+/*import Labb.Model.Scania;
 import org.junit.Test;
-import java.awt.*;
 
 public class TestScania {
     Scania scania;
@@ -39,3 +36,6 @@ public class TestScania {
     }
 
 }
+
+
+ */

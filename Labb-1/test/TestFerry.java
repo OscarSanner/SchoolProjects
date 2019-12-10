@@ -1,7 +1,6 @@
-import Labb.CarFerry;
-import Labb.CarTransporter;
-import Labb.Saab95;
-import Labb.Volvo240;
+/*import Labb.Model.CarFerry;
+import Labb.Model.Saab95;
+import Labb.Model.Volvo240;
 import org.junit.Test;
 
 public class TestFerry {
@@ -92,3 +91,6 @@ public class TestFerry {
 
 }
 
+
+
+ */

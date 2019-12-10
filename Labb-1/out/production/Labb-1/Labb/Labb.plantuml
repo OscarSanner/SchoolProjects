@@ -4,7 +4,7 @@ title __LABB's Class Diagram__\n
 
 
     namespace abb {
-      class Labb.AngledFlatbed {
+      class Labb.Model.AngledFlatbed {
           + AngledFlatbed()
       }
     }
@@ -13,7 +13,7 @@ title __LABB's Class Diagram__\n
 
 
     namespace abb {
-      abstract class Labb.Car {
+      abstract class Labb.Model.Car {
           + Car()
       }
     }
@@ -46,7 +46,7 @@ title __LABB's Class Diagram__\n
 
 
     namespace abb {
-      class Labb.CarFerry {
+      class Labb.Model.CarFerry {
           - flatbed : StateFlatbed<Car>
           + CarFerry()
           + confirmLoad()
@@ -64,7 +64,7 @@ title __LABB's Class Diagram__\n
 
 
     namespace abb {
-      class Labb.CarTransporter {
+      class Labb.Model.CarTransporter {
           - flatbed : StateFlatbed<T>
           + CarTransporter()
           + confirmLoad()
@@ -82,7 +82,7 @@ title __LABB's Class Diagram__\n
 
 
     namespace abb {
-      class Labb.CarView {
+      class Labb.View.CarView {
           ~ brakeAmount : int
           ~ brakeButton : JButton
           ~ brakeSpinner : JSpinner
@@ -118,7 +118,7 @@ title __LABB's Class Diagram__\n
 
 
     namespace abb {
-      class Labb.DrawPanel {
+      class Labb.View.DrawPanel {
           ~ saabImage : BufferedImage
           ~ saabPoint : Point
           ~ scaniaImage : BufferedImage
@@ -134,7 +134,7 @@ title __LABB's Class Diagram__\n
   
 
     namespace abb {
-      abstract class Labb.Flatbed {
+      abstract class Labb.Model.Flatbed {
           # currentAngle : int
           # maxAngle : int
           # minAngle : int
@@ -150,7 +150,7 @@ title __LABB's Class Diagram__\n
   
 
     namespace abb {
-      interface Labb.ICanLoadCars {
+      interface Labb.Model.ICanLoadCars {
           {abstract} + confirmLoad()
           {abstract} + getX()
           {abstract} + getY()
@@ -162,7 +162,7 @@ title __LABB's Class Diagram__\n
 
 
     namespace abb {
-      interface Labb.IMovable {
+      interface Labb.Model.IMovable {
           {abstract} + move()
           {abstract} + turnLeft()
           {abstract} + turnRight()
@@ -180,7 +180,7 @@ title __LABB's Class Diagram__\n
 
 
     namespace abb {
-      abstract class Labb.MotorizedVehicle {
+      abstract class Labb.Model.MotorizedVehicle {
           - color : Color
           - currentSpeed : double
           {static} - directionArrayLeft : Direction[]
@@ -226,7 +226,7 @@ title __LABB's Class Diagram__\n
   
 
     namespace abb {
-      class Labb.Saab95 {
+      class Labb.Model.Saab95 {
           - turboOn : boolean
           + Saab95()
           + setTurboOff()
@@ -238,7 +238,7 @@ title __LABB's Class Diagram__\n
   
 
     namespace abb {
-      class Labb.Scania {
+      class Labb.Model.Scania {
           + Scania()
           + getCurrentAngle()
           + lowerFlatbed()
@@ -251,7 +251,7 @@ title __LABB's Class Diagram__\n
   
 
     namespace abb {
-      class Labb.StateFlatbed {
+      class Labb.Model.StateFlatbed {
           - loadedCars : Deque<T>
           + StateFlatbed()
           + getLoadedCars()
@@ -264,7 +264,7 @@ title __LABB's Class Diagram__\n
 
 
     namespace abb {
-      abstract class Labb.Truck {
+      abstract class Labb.Model.Truck {
           + Truck()
           {abstract} + getCurrentAngle()
       }
@@ -273,7 +273,7 @@ title __LABB's Class Diagram__\n
   
 
     namespace abb {
-      class Labb.Volvo240 {
+      class Labb.Model.Volvo240 {
           {static} - trimFactor : double
           + Volvo240()
           # speedFactor()
@@ -283,7 +283,7 @@ title __LABB's Class Diagram__\n
   
 
     namespace abb {
-      class Labb.Workshop {
+      class Labb.Model.Workshop {
           - carsInTheShop : List<T>
           - maxCarCapacity : int
           - x : double
@@ -301,29 +301,29 @@ title __LABB's Class Diagram__\n
 
   
 
-  Labb.AngledFlatbed -up-|> Labb.Flatbed
-  Labb.Car -up-|> Labb.MotorizedVehicle
-  Labb.CarController o-- Labb.CarView : frame
+  Labb.Model.AngledFlatbed -up-|> Labb.Model.Flatbed
+  Labb.Model.Car -up-|> Labb.Model.MotorizedVehicle
+  Labb.CarController o-- Labb.View.CarView : frame
   Labb.CarController +-down- Labb.CarController.TimerListener
   Labb.CarController.TimerListener .up.|> java.awt.event.ActionListener
-  Labb.CarFerry .up.|> Labb.ICanLoadCars
-  Labb.CarFerry -up-|> Labb.MotorizedVehicle
-  Labb.CarTransporter .up.|> Labb.ICanLoadCars
-  Labb.CarTransporter -up-|> Labb.Truck
-  Labb.CarView -up-|> javax.swing.JFrame
-  Labb.CarView o-- Labb.CarController : carC
-  Labb.CarView o-- Labb.DrawPanel : drawPanel
-  Labb.DrawPanel -up-|> javax.swing.JPanel
-  Labb.MotorizedVehicle .up.|> Labb.IMovable
-  Labb.MotorizedVehicle o-- Labb.ICanLoadCars : carrier
-  Labb.MotorizedVehicle o-- Labb.Direction : currentDirection
-  Labb.Saab95 -up-|> Labb.Car
-  Labb.Scania -up-|> Labb.Truck
-  Labb.Scania o-- Labb.Flatbed : flatbed
-  Labb.StateFlatbed -up-|> Labb.Flatbed
-  Labb.Truck -up-|> Labb.MotorizedVehicle
-  Labb.Volvo240 -up-|> Labb.Car
-  Labb.Workshop .up.|> Labb.ICanLoadCars
+  Labb.Model.CarFerry .up.|> Labb.Model.ICanLoadCars
+  Labb.Model.CarFerry -up-|> Labb.Model.MotorizedVehicle
+  Labb.Model.CarTransporter .up.|> Labb.Model.ICanLoadCars
+  Labb.Model.CarTransporter -up-|> Labb.Model.Truck
+  Labb.View.CarView -up-|> javax.swing.JFrame
+  Labb.View.CarView o-- Labb.CarController : carC
+  Labb.View.CarView o-- Labb.View.DrawPanel : drawPanel
+  Labb.View.DrawPanel -up-|> javax.swing.JPanel
+  Labb.Model.MotorizedVehicle .up.|> Labb.Model.IMovable
+  Labb.Model.MotorizedVehicle o-- Labb.Model.ICanLoadCars : carrier
+  Labb.Model.MotorizedVehicle o-- Labb.Model.Direction : currentDirection
+  Labb.Model.Saab95 -up-|> Labb.Model.Car
+  Labb.Model.Scania -up-|> Labb.Model.Truck
+  Labb.Model.Scania o-- Labb.Model.Flatbed : flatbed
+  Labb.Model.StateFlatbed -up-|> Labb.Model.Flatbed
+  Labb.Model.Truck -up-|> Labb.Model.MotorizedVehicle
+  Labb.Model.Volvo240 -up-|> Labb.Model.Car
+  Labb.Model.Workshop .up.|> Labb.Model.ICanLoadCars
 
 
 right footer
