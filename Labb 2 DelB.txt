@@ -1,10 +1,35 @@
 -----Uppgift 2-----
-Vilka avvikelser från MVC-idealet kan ni identifiera i det ursprungliga användargränssnittet? Vad borde ha gjorts smartare, dummare eller tunnare?
 
+
+Vilka avvikelser från MVC-idealet kan ni identifiera i det ursprungliga användargränssnittet? Vad borde ha gjorts smartare, dummare eller tunnare?
+	Avvikelser:
+		Otroligt dålig cohesion. Dels för att vi hade dubbla beroenden mellan CarController och CarView vilket ger oss hög coupling mellan två klasser som inte nödvändigtvis behöver det.
+		Dessutom var både CarController och CarView odefinerade i deras funktionalitet. Båda utförde "arbeten" från varandra och uppfyllde knappast thin och dumb. 
+			T.ex. så hade CarView actionlisteners, dvs funktionalitet som borde höra till CarController.
+			T.ex. så utförde CarControllern direkta metoder och modell logik istället för att låta modellen uppdatera sig själv genom att endast uppmana till dessa uppdateringar.
+		Som grädden på moset så saknades modell klassen helt! Alltså utfördes en del av dess logik i V/C.
+		Slutligen så fanns ingen Applikations-klass så vi saknar enkel "start-up" funktionalitet och modularitet.
+
+	Smartare:
+		Smart skall modellen vara som saknades helt. Borde ha funnits en egen klass som representerade modellen och i sig tog bort alla direkta beroenden in i modellen från V/C.
+
+	Dummare:
+		CarView borde ha varit mycket dummare, då den själv hade ansvar över vad som händer när man trycker på dess knappar. Då blir den lite som en kontroller - dubbla ansvarsområden.
+		View skall endast behövas "klistra på" modellen utan att faktiskt påverka den, vilket den gjorde genom listeners.
+		
+	Tunnare:
+		CarController borde ha gjorts tunnare då den har en lista med bilar(hör till logik) och den hade en timer(som uppdaterar) vilket vi inte anser hör till en controller. 
+		Den borde samtidigt ha gjorts "bredare", då den egentligen bör ha koll på "events" som sker då man trycker på knappar i CarView.		
 
 
 Vilka av dessa brister åtgärdade ni med er nya design från del 2? Hur då? Vilka brister åtgärdade ni inte?
-
+	Avvikelser:
+		Vi ökade cohesion genom att tydligt definera ansvarsområden hoss de olika klasserna.
+		
+	Smartare:
+	Dummare	
+	Tunnare:
+	
 
 
 Rita ett nytt UML-diagram som beskriver en förbättrad design med avseende på MVC.

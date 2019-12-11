@@ -2,75 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab457b7d-dc01-4ad3-9bb5-9ca01656b6cb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Labb/Model/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Labb-1.plantuml" beforeDir="false" afterPath="$PROJECT_DIR$/Labb-1.plantuml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/AngledFlatbed.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Car.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarController$TimerListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarController$TimerListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarFerry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarTransporter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/CarView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Direction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/DrawPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Flatbed.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/ICanLoadCars.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/IMovable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Labb.plantuml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1/Labb/Labb.plantuml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/MotorizedVehicle$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/MotorizedVehicle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Saab95.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Scania.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/StateFlatbed.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Truck.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Volvo240.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1/Labb/Workshop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Labb-1/TestCarTransporter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Labb-1/TestCarsOnCarriers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Labb-1/TestFerry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Labb-1/TestMotorizedVehicle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Labb-1/TestScania.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Labb-1/TestSuite.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Labb-1/TestWorkshop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/AngledFlatbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Model/AngledFlatbed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Model/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/CarFerry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Model/CarFerry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/CarTransporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Model/CarTransporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/View/CarView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Model/Direction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/View/DrawPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/Flatbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Model/Flatbed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/ICanLoadCars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Model/ICanLoadCars.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/IDrawable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Model/IDrawable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/IMovable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Model/IMovable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/Labb.plantuml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Labb.plantuml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/Model.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/MotorizedVehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Model/MotorizedVehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/Saab95.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Model/Saab95.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Model/Scania.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/StateFlatbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Model/StateFlatbed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Model/Truck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/Volvo240.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Model/Volvo240.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Labb/Workshop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Labb/Model/Workshop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestCarTransporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestCarTransporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestCarsOnCarriers.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestCarsOnCarriers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestFerry.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestFerry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestMotorizedVehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestMotorizedVehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestScania.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestScania.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestSuite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestWorkshop.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestWorkshop.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Labb/Model/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+            <state relative-caret-position="425">
+              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3204#3205#0" expanded="true" />
@@ -114,8 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Labb/CarController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-552">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="204">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,8 +58,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Labb/Labb.plantuml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+            <state relative-caret-position="218">
+              <caret line="239" column="19" lean-forward="true" selection-start-line="239" selection-start-column="19" selection-end-line="239" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -212,6 +144,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -234,7 +167,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -244,7 +176,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../laboration-2" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -322,9 +254,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15831557" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15991472" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -348,7 +281,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Maven" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="PlantUML" order="6" weight="0.32995737" />
+      <window_info anchor="right" id="PlantUML" order="6" visible="true" weight="0.32995737" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
@@ -613,8 +546,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Labb/Model/Model.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        <state relative-caret-position="425">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3204#3205#0" expanded="true" />
@@ -634,6 +567,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Labb/CarController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Labb/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -641,20 +584,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Labb/CarController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-552">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Labb/Labb.plantuml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        <state relative-caret-position="218">
+          <caret line="239" column="19" lean-forward="true" selection-start-line="239" selection-start-column="19" selection-end-line="239" selection-end-column="19" />
         </state>
       </provider>
     </entry>
