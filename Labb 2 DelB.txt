@@ -14,7 +14,7 @@ Vilka avvikelser från MVC-idealet kan ni identifiera i det ursprungliga använd
 		Smart skall modellen vara som saknades helt. Borde ha funnits en egen klass som representerade modellen och i sig tog bort alla direkta beroenden in i modellen från V/C.
 
 	Dummare:
-		CarView borde ha varit mycket dummare, då den själv hade ansvar över vad som händer när man trycker på dess knappar. Då blir den lite som en kontroller - dubbla ansvarsområden.
+		CarView borde ha varit mycket dummare, då den själv hade ansvar över vad som händer när man trycker på dess knappar. Då blir den lite som en controller - dubbla ansvarsområden.
 		View skall endast behövas "klistra på" modellen utan att faktiskt påverka den, vilket den gjorde genom listeners.
 		
 	Tunnare:
@@ -23,15 +23,63 @@ Vilka avvikelser från MVC-idealet kan ni identifiera i det ursprungliga använd
 
 
 Vilka av dessa brister åtgärdade ni med er nya design från del 2? Hur då? Vilka brister åtgärdade ni inte?
-	Avvikelser:
-		Vi ökade cohesion genom att tydligt definera ansvarsområden hoss de olika klasserna.
-		
-	Smartare:
-	Dummare	
-	Tunnare:
-	
-
+	Åtgärder:
+		Vi ökade cohesion genom att tydligt definera ansvarsområden hos de olika klasserna. Genom att också ta bort de dubbla beroendena mellan CarController och CarView så minskade vi couplingen mellan moduler.
+		Definerade både CarControllerns och CarViewens funktionalitet så att de "tar hand om" de uppgifter som faktiskt MVC-modellen säger - thinner & dumber.
+		Skapade dessutom en Model-klass som representerar hela modellen och dess logik som är den ENDA publika klassen i modellpaketet (skapade ett modellpaket där all logik från tidigare labbar lades in).
+		Skapade också ett View-paket där den uppdaterade CarView och DrawPanel lades in. (strukturerat enligt MVC, implementerat enligt tidigare UML)
+		Skapade även ett interafce IDrawable som representerar ett ritbart objekt och lät relevanta klasser immplementera detta.
+		Slutligen skapades även en applikationsklass som fick initialisera de olika delarna i MVC-modellen och koppla samman de relevanta beroendana.
+	Ej åtgärdat:
+		Timern som uppdaterar logiken ligger fortfarande i CarController. Vill helst flytta över till Model eller kanske Application.
+		Vill skapa ett Observer-pattern där Modellen agerar som observable med en Observer-lista där alla observers (t.ex. nuvarande (och framtida) View-applikationer) skall kunna lägga tills sig som observers.
+		LAGGAR???
 
 Rita ett nytt UML-diagram som beskriver en förbättrad design med avseende på MVC.
+
+
+-----Uppgift 3-----
+Skriv ut "<Bil>: <Hastighet>" i något lämpligt hörn av panelen, eller kanske på en helt ny JLabel ni kan lägga under alla knappar. 
+Detta bör göras inte som ett tillägg till den befintliga vyn, utan som en ny vy som kan samexistera med den gamla vyn, existera fristående från den gamla vyn, eller samexistera med helt andra vyer.
+		Lätt att göra med det observer pattern vi har skapat. Lägg endast till den nya View-modulen som en observer och ge den en referens till modell och dessutom CarView för att den ska kunna samexistera på ett snyggt sätt grafiskt.
+	
+Hur bör eran MVC-lösning vara utformad för att möjliggöra att ovanstående förändring blir en utökning snarare än en modifikation?
+		Lägg till som Observer, se ovan.
+
+Hur bör de olika komponenterna kommunicera med varandra?
+		Den nya SpeedPanel:n ska läggas till som komposition hos CarView. Får även en referens som Observer och således en referens till Modellen.
+		
+
+-----Uppgift 4-----
+
+Observer, Factory Method, State, Composite. För vart och ett av dessa fyra designmönster, svara på följande frågor:
+Finns det något ställe i er design där ni redan använder detta pattern, avsiktligt eller oavsiktligt? Vilka designproblem löste ni genom att använda det?
+	Observer:
+		Ja (avsiktligt, planerat).
+		Minskar coupling och låter oss lägga timer/update i modellen.
+		Genom observer pattern INVERTERAR vi sedan modellens beroenden.
+		(Behöver inte längre gå via CarController)
+
+	Factory Method:
+		Ja (avsiktligt, till viss del).
+		Kan utöka med mer valmöjlighet vid skapandet.
+		Gör vårt skapande av objekt mer modulärt.
+		Vi slipper beroenden av konkreta implementationer utan istället beror på factoryMethods. (DIP, "Depend on abstractions not on concrete implementations") 
+		Gör att vi hypotetiskt kan skapa Saab objekt genom både CarView och CarController utan att behöva veta vad klassen Saab är (inte för att de skulle vilja göra det utan för att påvisa funktionaliteten).
+
+	State:
+		Nej (används inte)
+		
+	Composite:
+		Nej (tror inte vi använder)
+
+Finns det något ställe där ni kan förbättra er design genom att använda detta design pattern? Vilka designproblem skulle ni lösa genom att använda det? Om inte, varför skulle er design inte förbättras av att använda det?
+	State:
+		Kan eventuellt använda detta pattern i model. t.ex. genom att ge fordon staten: "parked", "moving", "moving at max speed".
+
+	Composite:
+		Kan användas som struktur för t.ex. CarTransporter vilket låter oss synka positionerna hos de lastade bilarna sekventiellt.
+
+Uppdatera er design med de förbättringar ni identifierat.
 
 
