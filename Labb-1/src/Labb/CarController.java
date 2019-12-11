@@ -16,24 +16,15 @@ import java.awt.event.ActionListener;
  */
 
 public class CarController {
-    // member fields:
 
-    // The delay (ms) corresponds to 20 updates a sec (hz)
-    private final int delay = 10;
-    // The timer is started with an listener (see below) that executes the statements
-    // each step between delays.
-    private Timer timer = new Timer(delay, new TimerListener());
-
-    // The frame that represents this instance View of the MVC pattern
     CarView frame;
     Model model;
-    // A list of motorizedVehicles, modify if needed
 
     public CarController(CarView frame, Model model) {
         this.model = model;
         this.frame = frame;
         initListeners();
-        timer.start();
+
     }
 
     private void initListeners() {
@@ -108,17 +99,6 @@ public class CarController {
         });
 
     }
-
-    /* Each step the TimerListener moves all the motorizedVehicles in the list and tells the
-    * view to update its images. Change this method to your needs.
-    * */
-    private class TimerListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-                model.update();
-                // repaint() calls the paintComponent method of the panel
-                frame.drawPanel.repaint();
-            }
-        }
     }
 
 

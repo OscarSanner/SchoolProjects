@@ -11,7 +11,7 @@ import java.io.IOException;
  *  Class that represents a specific car called Saab95.
  */
 class Saab95 extends Car {
-
+    BufferedImage icon;
     private boolean turboOn;
 
     /**
@@ -20,6 +20,12 @@ class Saab95 extends Car {
     public Saab95(double x, double y) {
         super(2, Color.red, 125, "Saab95", x, y);
         turboOn = false;
+        try{icon = ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/Saab95.jpg"));
+        }catch (IOException ex)
+        {
+            ex.printStackTrace();
+            icon = null;
+        }
     }
 
     /**
@@ -48,11 +54,6 @@ class Saab95 extends Car {
 
     @Override
     public BufferedImage getIcon() {
-        try{return ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/Saab95.jpg"));
-        }catch (IOException ex)
-        {
-            ex.printStackTrace();
-            return null;
-        }
+        return icon;
     }
 }

@@ -1,5 +1,6 @@
 package Labb.View;
 
+import Labb.IObserver;
 import Labb.Model.IDrawable;
 
 import java.awt.*;
@@ -10,7 +11,7 @@ import javax.swing.*;
 
 // This panel represent the animated part of the view with the car images.
 
-public class DrawPanel extends JPanel{
+public class DrawPanel extends JPanel implements IObserver {
 
     List<IDrawable> drawableList;
 
@@ -24,6 +25,7 @@ public class DrawPanel extends JPanel{
         this.setPreferredSize(new Dimension(x, y));
         this.setBackground(Color.pink);
         this.drawableList = drawableList;
+
     }
 
     // This method is called each time the panel updates/refreshes/repaints itself
@@ -34,5 +36,10 @@ public class DrawPanel extends JPanel{
         for (IDrawable drawable : drawableList) {
             g.drawImage(drawable.getIcon(), (int)drawable.getX(), (int)drawable.getY(),null);
         }
+    }
+
+    @Override
+    public void observerUpdate() {
+        this.repaint();
     }
 }

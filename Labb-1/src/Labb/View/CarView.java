@@ -23,6 +23,7 @@ public class CarView extends JFrame{
     public DrawPanel drawPanel;
     //Model model;
 
+
     JPanel controlPanel = new JPanel();
 
     JPanel gasPanel = new JPanel();
@@ -39,7 +40,7 @@ public class CarView extends JFrame{
     public JButton liftBedButton = new JButton("Scania Lift Bed");
     public JButton lowerBedButton = new JButton("Lower Lift Bed");
 
-
+    public SpeedPanel speedPanel;
     public JButton startButton = new JButton("Start all motorizedVehicles");
     public JButton stopButton = new JButton("Stop all motorizedVehicles");
 
@@ -50,8 +51,9 @@ public class CarView extends JFrame{
         X = model.getWIDTH();
         Y = model.getHEIGHT();
         drawPanel = new DrawPanel(X, Y-240, model.getDrawables());
+        speedPanel = new SpeedPanel(model);
         initComponents(framename);
-
+        model.attach(drawPanel);
     }
 
     // Sets everything in place and fits everything
@@ -76,8 +78,9 @@ public class CarView extends JFrame{
         gasPanel.add(gasLabel, BorderLayout.PAGE_START);
         gasPanel.add(gasSpinner, BorderLayout.PAGE_END);
         this.add(gasPanel);
+        this.add(speedPanel);
 
-        controlPanel.setLayout(new GridLayout(2,4));
+        controlPanel.setLayout(new GridLayout(2,7));
         controlPanel.add(gasButton, 0);
         controlPanel.add(turboOnButton, 1);
         controlPanel.add(liftBedButton, 2);

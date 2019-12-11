@@ -1,18 +1,31 @@
 package Labb.Model;
 
+import Labb.IObservable;
+import Labb.IObserver;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Model {
+public class Model implements IObservable {
 
+    List<IObserver> observers;
     List<MotorizedVehicle> vehicles;
     final int WIDTH;
     final int HEIGHT;
+    private final int delay;
+    public Timer timer;
 
     public Model(int width, int height){
         this.vehicles = vehicleFactory();
         this.HEIGHT = height;
         this.WIDTH = width;
+        observers = new ArrayList<>();
+        delay = 10;
+        timer = new Timer(delay, new TimerListener());
+
     }
 
     public int getWIDTH() {
@@ -25,12 +38,13 @@ public class Model {
 
     public void update(){
         for(MotorizedVehicle motorizedVehicle: vehicles){
+            motorizedVehicle.move();
             if(collision(motorizedVehicle)){
                 motorizedVehicle.turnLeft();
                 motorizedVehicle.turnLeft();
             }
-            motorizedVehicle.move();
         }
+        notifyAllObservers();
     }
 
     private boolean collision(MotorizedVehicle motorizedVehicle){
@@ -108,10 +122,13 @@ public class Model {
 
     private List<MotorizedVehicle> vehicleFactory() {
         List<MotorizedVehicle> vehicles = new ArrayList<>();
-        vehicles.add(volvo240Factory(0));
+        //vehicles.add(volvo240Factory(0));
         vehicles.add(saab95Factory(100));
-        vehicles.add(scaniaFactory(200));
-        vehicles.add(volvo240Factory(300));
+        vehicles.add(saab95Factory(200));
+        vehicles.add(saab95Factory(300));
+        vehicles.add(saab95Factory(400));
+        //vehicles.add(scaniaFactory(200));
+        //vehicles.add(volvo240Factory(300));
         return vehicles;
     }
 
@@ -125,4 +142,27 @@ public class Model {
         return new Volvo240(0, y);
     }
 
+    @Override
+    public void attach(IObserver observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void detach(IObserver observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyAllObservers() {
+        for (IObserver observer : observers){
+            observer.observerUpdate();
+        }
+    }
+
+    private class TimerListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            update();
+            // repaint() calls the paintComponent method of the panel
+        }
+    }
 }
