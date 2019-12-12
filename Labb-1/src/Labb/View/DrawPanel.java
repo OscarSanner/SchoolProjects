@@ -1,7 +1,7 @@
 package Labb.View;
 
 import Labb.IObserver;
-import Labb.Model.IDrawable;
+import Labb.Model.*;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -13,19 +13,17 @@ import javax.swing.*;
 
 public class DrawPanel extends JPanel implements IObserver {
 
-    List<IDrawable> drawableList;
-
+    Model model;
     // To keep track of a single motorizedVehicles position
 
     // TODO: Make this general for all motorizedVehicles
 
     // Initializes the panel and reads the images
-    public DrawPanel(int x, int y, ArrayList<IDrawable> drawableList) {
+    public DrawPanel(int x, int y, Model model) {
         this.setDoubleBuffered(true);
         this.setPreferredSize(new Dimension(x, y));
         this.setBackground(Color.pink);
-        this.drawableList = drawableList;
-
+        this.model = model;
     }
 
     // This method is called each time the panel updates/refreshes/repaints itself
@@ -33,7 +31,7 @@ public class DrawPanel extends JPanel implements IObserver {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        for (IDrawable drawable : drawableList) {
+        for (IDrawable drawable : model.getDrawables()) {
             g.drawImage(drawable.getIcon(), (int)drawable.getX(), (int)drawable.getY(),null);
         }
     }

@@ -5,6 +5,7 @@ import Labb.Model.IDrawable;
 import Labb.Model.Model;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -17,22 +18,35 @@ public class SpeedPanel extends JPanel implements IObserver {
     public SpeedPanel(Model model){
         this.model = model;
         labels = new ArrayList<>();
-        setLabels(labels);
-        displayLabels();
+        this.repaint();
         model.attach(this);
     }
 
     @Override
     public void observerUpdate() {
-        labels = overrideRePaint();
-        displayLabels();
         this.repaint();
     }
 
-    List<JLabel> overrideRePaint(){
-        List<JLabel> freshLabelList = new ArrayList<>();
-        setLabels(freshLabelList);
-        return freshLabelList;
+    private void compareAndAdjust() {
+        if (model.getDrawables().size() != labels.size()){
+            this.removeAll();
+            labels.clear();
+            setLabels(labels);
+            displayLabels();
+        }
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        int vehicleCounter = 0;
+
+        compareAndAdjust();
+
+        for (JLabel label : labels) {
+            label.setText(textBuilder(model.getDrawables().get(vehicleCounter)));
+            vehicleCounter++;
+        }
     }
 
     private void displayLabels() {
@@ -43,7 +57,7 @@ public class SpeedPanel extends JPanel implements IObserver {
 
     private void setLabels(List<JLabel> labels) {
         for(IDrawable drawable : model.getDrawables()){
-            labels.add(new JLabel(textBuilder(drawable)));
+            labels.add(new JLabel());
         }
     }
 

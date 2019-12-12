@@ -16,12 +16,19 @@ class Scania extends Truck {
      * The flatbed on the Scania.
      */
     private AngledFlatbed flatbed = new AngledFlatbed();
+    BufferedImage icon;
 
     /**
      * Constructor for Scania, initiates the properties for a scania using the constructor in the superclass Truck and in turn MotorizedVehicle.
      */
     public Scania(double x, double y) {
         super(2, Color.WHITE, 300, "Scania", x, y);
+        try{icon = ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/Scania.jpg"));
+        }catch (IOException ex)
+        {
+            ex.printStackTrace();
+            icon = null;
+        }
     }
 
     /**
@@ -76,13 +83,9 @@ class Scania extends Truck {
         return getEnginePower() * 0.003;
     }
 
+
     @Override
     public BufferedImage getIcon() {
-        try{return ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/Scania.jpg"));
-        }catch (IOException ex)
-        {
-            ex.printStackTrace();
-            return null;
-        }
+        return icon;
     }
 }

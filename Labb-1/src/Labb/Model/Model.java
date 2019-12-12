@@ -8,9 +8,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Model implements IObservable {
 
+    final private MotorizedVehicleFactory factory;
     List<IObserver> observers;
     List<MotorizedVehicle> vehicles;
     final int WIDTH;
@@ -18,14 +20,14 @@ public class Model implements IObservable {
     private final int delay;
     public Timer timer;
 
-    public Model(int width, int height){
-        this.vehicles = vehicleFactory();
+    public Model(int width, int height) {
+        this.vehicles = new ArrayList<>();
         this.HEIGHT = height;
         this.WIDTH = width;
         observers = new ArrayList<>();
         delay = 10;
         timer = new Timer(delay, new TimerListener());
-
+        factory = new MotorizedVehicleFactory();
     }
 
     public int getWIDTH() {
@@ -36,10 +38,10 @@ public class Model implements IObservable {
         return HEIGHT;
     }
 
-    public void update(){
-        for(MotorizedVehicle motorizedVehicle: vehicles){
+    public void update() {
+        for (MotorizedVehicle motorizedVehicle : vehicles) {
             motorizedVehicle.move();
-            if(collision(motorizedVehicle)){
+            if (collision(motorizedVehicle)) {
                 motorizedVehicle.turnLeft();
                 motorizedVehicle.turnLeft();
             }
@@ -47,99 +49,77 @@ public class Model implements IObservable {
         notifyAllObservers();
     }
 
-    private boolean collision(MotorizedVehicle motorizedVehicle){
-        return (motorizedVehicle.getX() > WIDTH -  motorizedVehicle.getIcon().getWidth()    ||
+    private boolean collision(MotorizedVehicle motorizedVehicle) {
+        return (motorizedVehicle.getX() > WIDTH - motorizedVehicle.getIcon().getWidth() ||
                 motorizedVehicle.getX() < 0 ||
-                motorizedVehicle.getY() > HEIGHT -  motorizedVehicle.getIcon().getHeight()  ||
+                motorizedVehicle.getY() > HEIGHT - motorizedVehicle.getIcon().getHeight() ||
                 motorizedVehicle.getY() < 0);
     }
 
-    public void gas(int amount){
+    public void gas(int amount) {
         double gas = ((double) amount) / 100;
-        for (MotorizedVehicle vehicle : vehicles){
+        for (MotorizedVehicle vehicle : vehicles) {
             vehicle.gas(gas);
         }
     }
 
-    public void brake(int amount){
+    public void brake(int amount) {
         double brake = ((double) amount) / 100;
-        for (MotorizedVehicle vehicle : vehicles){
+        for (MotorizedVehicle vehicle : vehicles) {
             vehicle.brake(brake);
         }
     }
 
-    public void setTurboOn(){
-        for (MotorizedVehicle vehicle : vehicles){
-            if (vehicle.getModelName().equals("Saab95")){
+    public void setTurboOn() {
+        for (MotorizedVehicle vehicle : vehicles) {
+            if (vehicle.getModelName().equals("Saab95")) {
                 Saab95 saab = (Saab95) vehicle;
                 saab.setTurboOn();
             }
         }
     }
 
-    public void setTurboOff(){
-        for (MotorizedVehicle vehicle : vehicles){
-            if (vehicle.getModelName().equals("Saab95")){
+    public void setTurboOff() {
+        for (MotorizedVehicle vehicle : vehicles) {
+            if (vehicle.getModelName().equals("Saab95")) {
                 Saab95 saab = (Saab95) vehicle;
                 saab.setTurboOff();
             }
         }
     }
 
-    public void raiseFlatbed(){
-        for (MotorizedVehicle vehicle : vehicles){
-            if (vehicle.getModelName().equals("Scania")){
+    public void raiseFlatbed() {
+        for (MotorizedVehicle vehicle : vehicles) {
+            if (vehicle.getModelName().equals("Scania")) {
                 Scania scania = (Scania) vehicle;
                 scania.raiseFlatbed();
             }
         }
     }
 
-    public void lowerFlatbed(){
-        for (MotorizedVehicle vehicle : vehicles){
-            if (vehicle.getModelName().equals("Scania")){
+    public void lowerFlatbed() {
+        for (MotorizedVehicle vehicle : vehicles) {
+            if (vehicle.getModelName().equals("Scania")) {
                 Scania scania = (Scania) vehicle;
                 scania.lowerFlatbed();
             }
         }
     }
 
-    public void startEngine(){
-        for (MotorizedVehicle vehicle : vehicles){
+    public void startEngine() {
+        for (MotorizedVehicle vehicle : vehicles) {
             vehicle.startEngine();
         }
     }
 
-    public void stopEngine(){
-        for (MotorizedVehicle vehicle : vehicles){
+    public void stopEngine() {
+        for (MotorizedVehicle vehicle : vehicles) {
             vehicle.stopEngine();
         }
     }
 
-    public ArrayList<IDrawable> getDrawables(){
+    public ArrayList<IDrawable> getDrawables() {
         return new ArrayList<IDrawable>(vehicles);
-    }
-
-    private List<MotorizedVehicle> vehicleFactory() {
-        List<MotorizedVehicle> vehicles = new ArrayList<>();
-        //vehicles.add(volvo240Factory(0));
-        vehicles.add(saab95Factory(100));
-        vehicles.add(saab95Factory(200));
-        vehicles.add(saab95Factory(300));
-        vehicles.add(saab95Factory(400));
-        //vehicles.add(scaniaFactory(200));
-        //vehicles.add(volvo240Factory(300));
-        return vehicles;
-    }
-
-    private Scania scaniaFactory(int y) {
-        return new Scania(0, y);
-    }
-    private Saab95 saab95Factory(int y) {
-        return new Saab95(0, y);
-    }
-    private Volvo240 volvo240Factory(int y) {
-        return new Volvo240(0, y);
     }
 
     @Override
@@ -154,8 +134,22 @@ public class Model implements IObservable {
 
     @Override
     public void notifyAllObservers() {
-        for (IObserver observer : observers){
+        for (IObserver observer : observers) {
             observer.observerUpdate();
+        }
+    }
+
+    public void addCar(){
+        if (vehicles.size() < 10) {
+            int i = new Random().nextInt(3);
+            int yCoordinate = vehicles.size() * 100;
+        vehicles.add(factory.addCar(yCoordinate,i));
+        }
+    }
+
+    public void removeCar() {
+        if (vehicles.size() > 0) {
+            vehicles.remove(vehicles.size() - 1);
         }
     }
 

@@ -13,12 +13,20 @@ import java.io.IOException;
 class Volvo240 extends Car {
 
     private final static double trimFactor = 1.25;
+    BufferedImage icon;
+
 
     /**
      * Constructor for initialising variables declared in MotorizedVehicle/Car (super class).
      */
     public Volvo240(double x, double y) {
         super(4, Color.black, 100, "Volvo240", x, y);
+        try{icon = ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/Volvo240.jpg"));
+        }catch (IOException ex)
+        {
+            ex.printStackTrace();
+            icon = null;
+        }
     }
 
     /**
@@ -31,13 +39,7 @@ class Volvo240 extends Car {
 
     @Override
     public BufferedImage getIcon() {
-        try{return ImageIO.read(DrawPanel.class.getResourceAsStream("/pics/Volvo240.jpg"));
-        }catch (IOException ex)
-        {
-            ex.printStackTrace();
-            return null;
-        }
+        return icon;
     }
-
 }
 
