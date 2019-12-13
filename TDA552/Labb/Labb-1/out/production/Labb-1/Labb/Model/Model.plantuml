@@ -1,0 +1,391 @@
+@startuml
+
+title __MODEL's Class Diagram__\n
+
+  namespace  {
+    namespace abb {
+      namespace Model {
+        class Labb.Model.AngledFlatbed {
+            + AngledFlatbed()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace abb {
+      namespace Model {
+        abstract class Labb.Model.Car {
+            + Car()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace abb {
+      namespace Model {
+        class Labb.Model.CarFerry {
+            - flatbed : StateFlatbed<Car>
+            + CarFerry()
+            + confirmLoad()
+            + gas()
+            + getCurrentAngle()
+            + getIcon()
+            + getLoadedCars()
+            + loadCar()
+            + loadCheck()
+            + lowerFlatbed()
+            + move()
+            + raiseFlatbed()
+            + unloadCar()
+            # speedFactor()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace abb {
+      namespace Model {
+        class Labb.Model.CarTransporter {
+            - flatbed : StateFlatbed<T>
+            + CarTransporter()
+            + confirmLoad()
+            + gas()
+            + getCurrentAngle()
+            + getIcon()
+            + getLoadedCars()
+            + loadCar()
+            + loadCheck()
+            + lowerFlatbed()
+            + move()
+            + raiseFlatbed()
+            + unloadCar()
+            # speedFactor()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace abb {
+      namespace Model {
+        enum Direction {
+          DOWN
+          LEFT
+          RIGHT
+          UP
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace abb {
+      namespace Model {
+        abstract class Labb.Model.Flatbed {
+            # currentAngle : int
+            # maxAngle : int
+            # minAngle : int
+            + Flatbed()
+            + getCurrentAngle()
+            + getMaxAngle()
+            + getMinAngle()
+            + lowerFlatbed()
+            + raiseFlatbed()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace abb {
+      namespace Model {
+        interface Labb.Model.ICanLoadCars {
+            {abstract} + confirmLoad()
+            {abstract} + getX()
+            {abstract} + getY()
+            {abstract} + loadCar()
+            {abstract} + loadCheck()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace abb {
+      namespace Model {
+        interface Labb.Model.IDrawable {
+            {abstract} + getCurrentSpeed()
+            {abstract} + getIcon()
+            {abstract} + getModelName()
+            {abstract} + getX()
+            {abstract} + getY()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace abb {
+      namespace Model {
+        interface Labb.Model.IMovable {
+            {abstract} + move()
+            {abstract} + turnLeft()
+            {abstract} + turnRight()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace abb {
+      namespace Model {
+        class Labb.Model.Model {
+            + timer : Timer
+            ~ HEIGHT : int
+            ~ WIDTH : int
+            ~ observers : List<IObserver>
+            ~ vehicles : List<MotorizedVehicle>
+            - delay : int
+            + Model()
+            + addCar()
+            + attach()
+            + brake()
+            + detach()
+            + gas()
+            + getDrawables()
+            + getHEIGHT()
+            + getWIDTH()
+            + lowerFlatbed()
+            + notifyAllObservers()
+            + raiseFlatbed()
+            + removeCar()
+            + setTurboOff()
+            + setTurboOn()
+            + startEngine()
+            + stopEngine()
+            + update()
+            - collision()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace abb {
+      namespace Model {
+        class Labb.Model.Model.TimerListener {
+            + actionPerformed()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace abb {
+      namespace Model {
+        abstract class Labb.Model.MotorizedVehicle {
+            - color : Color
+            - currentSpeed : double
+            {static} - directionArrayLeft : Direction[]
+            {static} - directionArrayRight : Direction[]
+            - getEnginePower : double
+            - isLoadedOnACarrier : boolean
+            - modelName : String
+            - nrDoors : int
+            - x : double
+            - y : double
+            + MotorizedVehicle()
+            + MotorizedVehicle()
+            + brake()
+            + gas()
+            + getCarrier()
+            + getColor()
+            + getCurrentDirection()
+            + getCurrentSpeed()
+            + getEnginePower()
+            + getModelName()
+            + getNrDoors()
+            + getX()
+            + getY()
+            + move()
+            + setColor()
+            + startEngine()
+            + stopEngine()
+            + turnLeft()
+            + turnRight()
+            {abstract} # speedFactor()
+            ~ rollOutFromCarrier()
+            ~ setLoaded()
+            ~ updateWithCarrier()
+            - decrementSpeed()
+            - findNextDirection()
+            - incrementSpeed()
+            - setCurrentSpeed()
+            - setX()
+            - setY()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace abb {
+      namespace Model {
+        class Labb.Model.MotorizedVehicleFactory {
+            ~ addCar()
+            - saab95Factory()
+            - scaniaFactory()
+            - volvo240Factory()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace abb {
+      namespace Model {
+        class Labb.Model.Saab95 {
+            ~ icon : BufferedImage
+            - turboOn : boolean
+            + Saab95()
+            + getIcon()
+            + setTurboOff()
+            + setTurboOn()
+            # speedFactor()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace abb {
+      namespace Model {
+        class Labb.Model.Scania {
+            ~ icon : BufferedImage
+            + Scania()
+            + gas()
+            + getCurrentAngle()
+            + getIcon()
+            + lowerFlatbed()
+            + move()
+            + raiseFlatbed()
+            # speedFactor()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace abb {
+      namespace Model {
+        class Labb.Model.StateFlatbed {
+            - loadedCars : Deque<T>
+            + StateFlatbed()
+            + getLoadedCars()
+            + loadCar()
+            + unloadFirstCar()
+            + unloadLastCar()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace abb {
+      namespace Model {
+        abstract class Labb.Model.Truck {
+            + Truck()
+            {abstract} + getCurrentAngle()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace abb {
+      namespace Model {
+        class Labb.Model.Volvo240 {
+            ~ icon : BufferedImage
+            {static} - trimFactor : double
+            + Volvo240()
+            + getIcon()
+            # speedFactor()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace abb {
+      namespace Model {
+        class Labb.Model.Workshop {
+            - carsInTheShop : List<T>
+            - maxCarCapacity : int
+            - x : double
+            - y : double
+            + Workshop()
+            + confirmLoad()
+            + getCarsInTheShop()
+            + getX()
+            + getY()
+            + loadCar()
+            + loadCheck()
+            + unloadCar()
+        }
+      }
+    }
+  }
+  
+
+  Labb.Model.AngledFlatbed -up-|> Labb.Model.Flatbed
+  Labb.Model.Car -up-|> Labb.Model.MotorizedVehicle
+  Labb.Model.CarFerry .up.|> Labb.Model.ICanLoadCars
+  Labb.Model.CarFerry -up-|> Labb.Model.MotorizedVehicle
+  Labb.Model.CarTransporter .up.|> Labb.Model.ICanLoadCars
+  Labb.Model.CarTransporter -up-|> Labb.Model.Truck
+  Labb.Model.Model .up.|> Labb.IObservable
+  Labb.Model.Model o-- Labb.Model.MotorizedVehicleFactory : factory
+  Labb.Model.Model +-down- Labb.Model.Model.TimerListener
+  Labb.Model.Model.TimerListener .up.|> java.awt.event.ActionListener
+  Labb.Model.MotorizedVehicle .up.|> Labb.Model.IDrawable
+  Labb.Model.MotorizedVehicle .up.|> Labb.Model.IMovable
+  Labb.Model.MotorizedVehicle o-- Labb.Model.ICanLoadCars : carrier
+  Labb.Model.MotorizedVehicle o-- Labb.Model.Direction : currentDirection
+  Labb.Model.Saab95 -up-|> Labb.Model.Car
+  Labb.Model.Scania -up-|> Labb.Model.Truck
+  Labb.Model.Scania o-- Labb.Model.AngledFlatbed : flatbed
+  Labb.Model.StateFlatbed -up-|> Labb.Model.Flatbed
+  Labb.Model.Truck -up-|> Labb.Model.MotorizedVehicle
+  Labb.Model.Volvo240 -up-|> Labb.Model.Car
+  Labb.Model.Workshop .up.|> Labb.Model.ICanLoadCars
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

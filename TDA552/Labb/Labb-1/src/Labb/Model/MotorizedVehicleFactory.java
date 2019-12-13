@@ -1,7 +1,5 @@
 package Labb.Model;
 
-import java.util.Random;
-
 class MotorizedVehicleFactory {
 
     MotorizedVehicle addCar(int yCoordinate, int randomNumber) {
