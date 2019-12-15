@@ -5,6 +5,7 @@ import java.util.*;
 
 public class Island
 {
+    //TODO: Refrences both ways, TowerComponent has Island, Island has TowerComponent.
     private TowerComponent tower;
     public BufferedImage image;
     private int[] pixels;
@@ -29,12 +30,15 @@ public class Island
 
         pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
 
+        //TODO: Interesting for-loop, should be able to reconstruct...
         for (int i = 0; i < 1;)
         {
+            //Creates a spot (in regards to the seed) for the tower to be placed.
             double x = (random.nextDouble() * 256 - 128) * 1.5;
             double y = (random.nextDouble() * 256 - 128) * 1.5;
-
             Tower t = new Tower(x, y);
+
+
             if (isFree(t.x, t.y, t.r))
             {
                 addEntity(t);
@@ -43,13 +47,13 @@ public class Island
         }
 
         for (int i = 0; i < 7; i++)
-        {
+        {            //Creates a spot (in regards to the seed) for the rocks to be placed.
             double x = (random.nextDouble() * 256 - 128) * 1.5;
             double y = (random.nextDouble() * 256 - 128) * 1.5;
             addRocks(x, y);
         }
         for (int i = 0; i < 20; i++)
-        {
+        {            //Creates a spot (in regards to the seed) for the trees to be placed.
             double x = (random.nextDouble() * 256 - 128) * 1.5;
             double y = (random.nextDouble() * 256 - 128) * 1.5;
             addForrest(x, y);
@@ -57,11 +61,11 @@ public class Island
 
         double xStart = 40;
         double yStart = -120;
-        House house = new House(xStart, yStart, HouseType.GUARDPOST);
+        House house = new House(xStart, yStart, HouseType.GUARDPOST); //Renders the starting guardpost.
         house.complete();
         addEntity(house);
 
-        for (int i = 0; i < 10;)
+        for (int i = 0; i < 10;) //Creates all of the starting peons.
         {
             double x = xStart + (random.nextDouble() * 32 - 16);
             double y = yStart + (random.nextDouble() * 32 - 16);
@@ -74,7 +78,9 @@ public class Island
             }
         }
     }
-
+//TODO: addRocks() and addForrest() could both be abstracted using a Template Pattern, code reuse is noticeable right now.
+    //TODO: Alternatively Factory Pattern could be used.
+        //TODO: Or even both Factory Pattern and Template Pattern combined.
     private void addRocks(double xo, double yo)
     {
         for (int i = 0; i < 100; i++)
@@ -111,7 +117,7 @@ public class Island
         entities.add(entity);
         entity.tick();
     }
-
+    //TODO: Debatable if whether this method is okay, should have used the other method with the argument set as null.
     public boolean isFree(double x, double y, double r)
     {
         return isFree(x, y, r, null);
@@ -120,6 +126,7 @@ public class Island
     public boolean isFree(double x, double y, double r, Entity source)
     {
         if (!isOnGround(x, y)) return false;
+
         for (int i = 0; i < entities.size(); i++)
         {
             Entity e = entities.get(i);
@@ -130,7 +137,7 @@ public class Island
         }
         return true;
     }
-
+    //TODO: Debatable if whether this method is okay, should have used the other method with the argument set as null.
     public Entity getEntityAt(double x, double y, double r, TargetFilter filter)
     {
         return getEntityAt(x, y, r, filter, null);

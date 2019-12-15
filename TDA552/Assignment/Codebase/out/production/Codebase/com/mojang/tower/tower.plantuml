@@ -1,0 +1,681 @@
+@startuml
+
+title __TOWER's Class Diagram__\n
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Bitmaps {
+        + carriedResources : BufferedImage[]
+        + delete : BufferedImage
+        + farmPlots : BufferedImage[]
+        + help : BufferedImage
+        + houses : BufferedImage[][]
+        + infoPuffs : BufferedImage[]
+        + island : BufferedImage
+        + logo : BufferedImage
+        + peons : BufferedImage[][]
+        + rocks : BufferedImage[]
+        + smoke : BufferedImage[]
+        + soundButtons : BufferedImage[]
+        + towerBot : BufferedImage
+        + towerMid : BufferedImage
+        + towerTop : BufferedImage
+        + trees : BufferedImage[]
+        + wonScreen : BufferedImage
+        {static} + clip()
+        + loadAll()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Entity {
+        + r : double
+        + x : double
+        + xr : double
+        + y : double
+        + yr : double
+        # alive : boolean
+        # random : Random
+        + Entity()
+        + acceptsResource()
+        + collides()
+        + collides()
+        + compareTo()
+        + distance()
+        + fight()
+        + gatherResource()
+        + getRandomTarget()
+        + givesResource()
+        + init()
+        + isAlive()
+        + render()
+        + setPos()
+        + submitResource()
+        + tick()
+        + updatePos()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.FarmPlot {
+        {static} + GROW_SPEED : int
+        - age : int
+        - stamina : int
+        - yield : int
+        + FarmPlot()
+        + cut()
+        + gatherResource()
+        + getAge()
+        + givesResource()
+        + render()
+        + tick()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.House {
+        {static} + FOOD_PER_PEON : int
+        {static} + WOOD_PER_WARRIOR : int
+        {static} - POPULATION_PER_RESIDENCE : int
+        {static} - WARRIORS_PER_BARRACKS : int
+        - animFrame : int
+        - buildDuration : int
+        - buildTime : int
+        - hp : int
+        - maxHp : int
+        + House()
+        + acceptsResource()
+        + build()
+        + complete()
+        + destroy()
+        + die()
+        + fight()
+        + puff()
+        + render()
+        + sell()
+        + submitResource()
+        + tick()
+        - getRandomPeon()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.HouseType {
+        {static} + BARRACKS : HouseType
+        {static} + FARM : HouseType
+        {static} + GUARDPOST : HouseType
+        {static} + MASON : HouseType
+        {static} + PLANTER : HouseType
+        {static} + RESIDENCE : HouseType
+        {static} + WINDMILL : HouseType
+        {static} + WOODCUTTER : HouseType
+        + acceptResource : int
+        + food : int
+        {static} + houseTypes : HouseType[]
+        + image : int
+        + name : String
+        + radius : int
+        + rock : int
+        + wood : int
+        {static} - id : int
+        + getDescription()
+        + getImage()
+        + getString()
+        - HouseType()
+        - setAcceptsResource()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.InfoPuff {
+        + life : int
+        + lifeTime : int
+        + xa : double
+        + ya : double
+        + z : double
+        + za : double
+        - image : int
+        + InfoPuff()
+        + render()
+        + tick()
+        + updatePos()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Island {
+        + image : BufferedImage
+        + monsterPopulation : int
+        + population : int
+        + populationCap : int
+        + rot : double
+        + warriorPopulation : int
+        + warriorPopulationCap : int
+        ~ entities : List<Entity>
+        - pixels : int[]
+        - random : Random
+        + Island()
+        + addEntity()
+        + canPlaceHouse()
+        + getEntityAt()
+        + getEntityAt()
+        + getEntityAtMouse()
+        + isFree()
+        + isFree()
+        + isOnGround()
+        + placeHouse()
+        + tick()
+        + win()
+        - addForrest()
+        - addRocks()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Job {
+        + boreTime : int
+        + targetDistance : double
+        + xTarget : double
+        + yTarget : double
+        # bonusRadius : int
+        # random : Random
+        + arrived()
+        + cantReach()
+        + collide()
+        + getCarried()
+        + hasTarget()
+        + init()
+        + isValidTarget()
+        + setTarget()
+        + tick()
+        # tryFindTarget()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Job.Build {
+        + Build()
+        + arrived()
+        + isValidTarget()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Job.Gather {
+        + resourceId : int
+        ~ hasResource : boolean
+        + Gather()
+        + arrived()
+        + getCarried()
+        + isValidTarget()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Job.Goto {
+        + Goto()
+        + arrived()
+        + isValidTarget()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Job.GotoAndConvert {
+        + GotoAndConvert()
+        + arrived()
+        + isValidTarget()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Job.Hunt {
+        + Hunt()
+        + arrived()
+        + isValidTarget()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Job.Plant {
+        - hasSeed : boolean
+        + Plant()
+        + arrived()
+        + getCarried()
+        + hasTarget()
+        + isValidTarget()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Monster {
+        + moveTick : double
+        + rot : double
+        {static} - animDirs : int[]
+        {static} - animSteps : int[]
+        - hp : int
+        - maxHp : int
+        - wanderTime : int
+        + Monster()
+        + die()
+        + fight()
+        + init()
+        + render()
+        + tick()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Peon {
+        + moveTick : double
+        + rot : double
+        + type : int
+        # xTarget : double
+        # yTarget : double
+        {static} - animDirs : int[]
+        {static} - animSteps : int[]
+        - hp : int
+        - level : int
+        - maxHp : int
+        - nextLevel : int
+        - wanderTime : int
+        - xp : int
+        + Peon()
+        + addXp()
+        + die()
+        + fight()
+        + init()
+        + render()
+        + setJob()
+        + setType()
+        + tick()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Puff {
+        + life : int
+        + lifeTime : int
+        + xa : double
+        + ya : double
+        + z : double
+        + za : double
+        + Puff()
+        + render()
+        + tick()
+        + updatePos()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Resources {
+        {static} + FOOD : int
+        {static} + ROCK : int
+        {static} + WOOD : int
+        + food : int
+        + rock : int
+        + wood : int
+        + add()
+        + canAfford()
+        + charge()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Rock {
+        - life : int
+        - stamina : int
+        - type : int
+        + Rock()
+        + gatherResource()
+        + givesResource()
+        + render()
+        + tick()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    abstract class com.mojang.tower.Sound {
+        # duration : int
+        # p : int
+        # random : Random
+        + read()
+        # Sound()
+        {abstract} # fill()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Sound.Death {
+        ~ noise : double
+        + Death()
+        # fill()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Sound.Destroy {
+        ~ val : int
+        + Destroy()
+        # fill()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Sound.Ding {
+        + Ding()
+        # fill()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Sound.FinishBuilding {
+        ~ val : int
+        + FinishBuilding()
+        # fill()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Sound.Gather {
+        ~ val : int
+        + Gather()
+        # fill()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Sound.MonsterDeath {
+        ~ noise : double
+        + MonsterDeath()
+        # fill()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Sound.Plant {
+        ~ val : int
+        + Plant()
+        # fill()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Sound.Select {
+        + Select()
+        # fill()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Sound.Spawn {
+        + Spawn()
+        # fill()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Sound.SpawnWarrior {
+        + SpawnWarrior()
+        # fill()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Sound.WinSound {
+        + WinSound()
+        # fill()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Sounds {
+        {static} + SAMPLE_RATE : int
+        {static} + instance : Sounds
+        - dataLine : SourceDataLine
+        {static} - isMute : boolean
+        - soundAvailable : boolean
+        - sounds : List<Sound>
+        {static} + isMute()
+        {static} + play()
+        + run()
+        {static} + setMute()
+        - Sounds()
+        - addSound()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.TargetFilter {
+        + accepts()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Tower {
+        {static} - DEBUG : boolean
+        - h : int
+        - minMonsters : int
+        - stamina : int
+        - staminaPerLevel : int
+        + Tower()
+        + gatherResource()
+        + givesResource()
+        + render()
+        + tick()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.TowerApplet {
+        {static} - serialVersionUID : long
+        + destroy()
+        + init()
+        + start()
+        + stop()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.TowerComponent {
+        {static} + TICKS_PER_SECOND : int
+        {static} - MAX_TICKS_PER_FRAME : int
+        - frames : int
+        - gameTime : int
+        - height : int
+        - image : VolatileImage
+        - paused : boolean
+        - running : boolean
+        - scrolling : boolean
+        - selectedHouseType : int
+        {static} - serialVersionUID : long
+        - thread : Thread
+        - tickCount : int
+        - titleScreen : boolean
+        - width : int
+        - winScore : int
+        - won : boolean
+        - wonTime : int
+        - xCenter : int
+        - xMouse : int
+        - xRot : double
+        - xRotA : double
+        - xScrollStart : double
+        - yCenter : int
+        - yMouse : int
+        + TowerComponent()
+        {static} + main()
+        + mouseClicked()
+        + mouseDragged()
+        + mouseEntered()
+        + mouseExited()
+        + mouseMoved()
+        + mousePressed()
+        + mouseReleased()
+        + paint()
+        + pause()
+        + run()
+        + start()
+        + stop()
+        + unpause()
+        + update()
+        + win()
+        - init()
+        - render()
+        - renderGame()
+        - tick()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Tree {
+        {static} + GROW_SPEED : int
+        {static} + SPREAD_INTERVAL : int
+        - age : int
+        - spreadDelay : int
+        - stamina : int
+        - yield : int
+        + Tree()
+        + cut()
+        + gatherResource()
+        + getAge()
+        + givesResource()
+        + render()
+        + tick()
+    }
+  }
+  
+
+  namespace com.mojang.tower {
+    class com.mojang.tower.Vec {
+        + x : double
+        + y : double
+        + z : double
+        + Vec()
+        + Vec()
+        + add()
+        + distance()
+        + distanceSqr()
+        + lengthSqr()
+        + project()
+        + rotate()
+        + scale()
+        + sub()
+    }
+  }
+  
+
+  com.mojang.tower.Entity .up.|> java.lang.Comparable
+  com.mojang.tower.Entity o-- com.mojang.tower.Bitmaps : bitmaps
+  com.mojang.tower.Entity o-- com.mojang.tower.Island : island
+  com.mojang.tower.FarmPlot -up-|> com.mojang.tower.Entity
+  com.mojang.tower.House -up-|> com.mojang.tower.Entity
+  com.mojang.tower.House o-- com.mojang.tower.HouseType : type
+  com.mojang.tower.InfoPuff -up-|> com.mojang.tower.Entity
+  com.mojang.tower.Island o-- com.mojang.tower.Resources : resources
+  com.mojang.tower.Island o-- com.mojang.tower.TowerComponent : tower
+  com.mojang.tower.Job o-- com.mojang.tower.Island : island
+  com.mojang.tower.Job o-- com.mojang.tower.Peon : peon
+  com.mojang.tower.Job o-- com.mojang.tower.Entity : target
+  com.mojang.tower.Job +-down- com.mojang.tower.Job.Build
+  com.mojang.tower.Job +-down- com.mojang.tower.Job.Gather
+  com.mojang.tower.Job +-down- com.mojang.tower.Job.Goto
+  com.mojang.tower.Job +-down- com.mojang.tower.Job.GotoAndConvert
+  com.mojang.tower.Job +-down- com.mojang.tower.Job.Hunt
+  com.mojang.tower.Job +-down- com.mojang.tower.Job.Plant
+  com.mojang.tower.Job.Build -up-|> com.mojang.tower.Job
+  com.mojang.tower.Job.Build o-- com.mojang.tower.House : target
+  com.mojang.tower.Job.Gather -up-|> com.mojang.tower.Job
+  com.mojang.tower.Job.Gather o-- com.mojang.tower.House : returnTo
+  com.mojang.tower.Job.Goto -up-|> com.mojang.tower.Job
+  com.mojang.tower.Job.Goto o-- com.mojang.tower.Entity : target
+  com.mojang.tower.Job.GotoAndConvert -up-|> com.mojang.tower.Job
+  com.mojang.tower.Job.GotoAndConvert o-- com.mojang.tower.Entity : target
+  com.mojang.tower.Job.Hunt -up-|> com.mojang.tower.Job
+  com.mojang.tower.Job.Hunt o-- com.mojang.tower.Monster : target
+  com.mojang.tower.Job.Plant -up-|> com.mojang.tower.Job
+  com.mojang.tower.Job.Plant o-- com.mojang.tower.Entity : target
+  com.mojang.tower.Job.Plant o-- com.mojang.tower.Entity : toPlant
+  com.mojang.tower.Monster -up-|> com.mojang.tower.Entity
+  com.mojang.tower.Monster o-- com.mojang.tower.Entity : target
+  com.mojang.tower.Peon -up-|> com.mojang.tower.Entity
+  com.mojang.tower.Peon o-- com.mojang.tower.Job : job
+  com.mojang.tower.Puff -up-|> com.mojang.tower.Entity
+  com.mojang.tower.Rock -up-|> com.mojang.tower.Entity
+  com.mojang.tower.Sound +-down- com.mojang.tower.Sound.Death
+  com.mojang.tower.Sound +-down- com.mojang.tower.Sound.Destroy
+  com.mojang.tower.Sound +-down- com.mojang.tower.Sound.Ding
+  com.mojang.tower.Sound +-down- com.mojang.tower.Sound.FinishBuilding
+  com.mojang.tower.Sound +-down- com.mojang.tower.Sound.Gather
+  com.mojang.tower.Sound +-down- com.mojang.tower.Sound.MonsterDeath
+  com.mojang.tower.Sound +-down- com.mojang.tower.Sound.Plant
+  com.mojang.tower.Sound +-down- com.mojang.tower.Sound.Select
+  com.mojang.tower.Sound +-down- com.mojang.tower.Sound.Spawn
+  com.mojang.tower.Sound +-down- com.mojang.tower.Sound.SpawnWarrior
+  com.mojang.tower.Sound +-down- com.mojang.tower.Sound.WinSound
+  com.mojang.tower.Sound.Death -up-|> com.mojang.tower.Sound
+  com.mojang.tower.Sound.Destroy -up-|> com.mojang.tower.Sound
+  com.mojang.tower.Sound.Ding -up-|> com.mojang.tower.Sound
+  com.mojang.tower.Sound.FinishBuilding -up-|> com.mojang.tower.Sound
+  com.mojang.tower.Sound.Gather -up-|> com.mojang.tower.Sound
+  com.mojang.tower.Sound.MonsterDeath -up-|> com.mojang.tower.Sound
+  com.mojang.tower.Sound.Plant -up-|> com.mojang.tower.Sound
+  com.mojang.tower.Sound.Select -up-|> com.mojang.tower.Sound
+  com.mojang.tower.Sound.Spawn -up-|> com.mojang.tower.Sound
+  com.mojang.tower.Sound.SpawnWarrior -up-|> com.mojang.tower.Sound
+  com.mojang.tower.Sound.WinSound -up-|> com.mojang.tower.Sound
+  com.mojang.tower.Sounds .up.|> java.lang.Runnable
+  com.mojang.tower.Tower -up-|> com.mojang.tower.Entity
+  com.mojang.tower.TowerApplet -up-|> java.applet.Applet
+  com.mojang.tower.TowerApplet o-- com.mojang.tower.TowerComponent : tower
+  com.mojang.tower.TowerComponent .up.|> java.awt.event.MouseListener
+  com.mojang.tower.TowerComponent .up.|> java.awt.event.MouseMotionListener
+  com.mojang.tower.TowerComponent .up.|> java.lang.Runnable
+  com.mojang.tower.TowerComponent -up-|> java.awt.Canvas
+  com.mojang.tower.TowerComponent o-- com.mojang.tower.Bitmaps : bitmaps
+  com.mojang.tower.TowerComponent o-- com.mojang.tower.Island : island
+  com.mojang.tower.Tree -up-|> com.mojang.tower.Entity
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

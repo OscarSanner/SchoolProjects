@@ -45,10 +45,10 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
         addMouseListener(this);
 
         xCenter = width / 2;
-        yCenter = height * 43 / 70;
+        yCenter = height * 43 / 70; // to compensate for toolbar (?)
     }
 
-    public void unpause()
+    public void unpause() // Ran by the start method in applet
     {
         if (thread == null)
         {
@@ -57,15 +57,17 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
         paused = false;
     }
 
-    public void pause()
+    public void pause() // Program is started in a paused state.
     {
         paused = true;
     }
 
+    //TODO: Breaks Interface Segregation Principle related to interfaces.
     public void paint(Graphics g)
     {
     }
 
+    //TODO: Breaks Interface Segregation Principle related to interfaces.
     public void update(Graphics g)
     {
     }
@@ -88,6 +90,7 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
         }
     }
 
+    // Loads all the images for related objects into class "bitmaps" and sends bitmaps and itself into a new Island constructor.
     private void init()
     {
         try
@@ -117,7 +120,7 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
                 float now = (System.nanoTime() / 1000000) / 1000.0f;
                 int frameTicks = 0;
                 while (now - lastTime > msPerTick)
-                {
+                { //This is where the game is run
                     if (!paused && frameTicks++ < MAX_TICKS_PER_FRAME) tick();
 
                     lastTime += msPerTick;
@@ -140,6 +143,8 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
         }
     }
 
+    //Extremely hard to understand. Has to do with rotation of the island image.
+    //TODO: Names unnecessarily short, could've used longer names for readability and abstraction.
     private void tick()
     {
         if (won) wonTime++;
@@ -172,7 +177,7 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
         tickCount++;
         if (tickCount % TICKS_PER_SECOND == 0)
         {
-            //            System.out.println(frames + " fps");
+                        System.out.println(frames + " fps");
             frames = 0;
         }
 
@@ -181,8 +186,11 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
             gameTime++;
         }
         if (!titleScreen) island.tick();
+
+        //TODO: Very high use of boolean values to represent states, could use state pattern to achieve same functionality.
     }
 
+    //Renders all the graphics.
     private void render(double alpha)
     {
         frames++;
@@ -243,6 +251,8 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
         double sin = Math.sin(rot);
         double cos = Math.cos(rot);
 
+
+        //Renders all entities and places them in the world.
         for (int i = 0; i < island.entities.size(); i++)
         {
             Entity e = island.entities.get(i);
@@ -265,12 +275,12 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
         for (int i = 0; i < island.entities.size(); i++)
             island.entities.get(i).render(g, alpha);
 
-        if (!titleScreen && !won)
+        if (!titleScreen && !won) //This if statement contains logic for the selecting and displaying houses you may want to place. (game has not been won or is in the titlescreen)
         {
-            if (selectedHouseType >= 0)
+            if (selectedHouseType >= 0) // Can be less then zero??
             {
                 boolean canPlace = island.canPlaceHouse(xMouse - xCenter * 2, yMouse - yCenter * 2, HouseType.houseTypes[selectedHouseType]);
-                if (canPlace)
+                if (canPlace) // Draws the house at the tip of the mouse (Shows the house). TODO: This booleans logic is probably used elsewhere.
                 {
                     g.drawImage(HouseType.houseTypes[selectedHouseType].getImage(bitmaps), xMouse / 2 - xCenter - 8, yMouse / 2 - yCenter - 11, null);
                 }
@@ -294,8 +304,8 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
 
         g.setTransform(af);
         g.setFont(new Font("Sans-Serif", Font.PLAIN, 10));
-
-        if (titleScreen)
+    //TODO: Should use states here. "States" would share alot of methods but execute them differently.
+        if (titleScreen) //Dislays the titlescreen
         {
             g.drawImage(bitmaps.logo, (width - bitmaps.logo.getWidth()) / 2, 16, null);
 
@@ -312,7 +322,7 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
                 g.setColor(new Color(0xffffff));
             }
         }
-        else if (won)
+        else if (won) //Displays the winning screen
         {
             g.drawImage(bitmaps.wonScreen, (width - bitmaps.logo.getWidth()) / 2, 16, null);
             FontMetrics fm = g.getFontMetrics();
@@ -333,9 +343,9 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
 
             }
         }
-        else
+        else //Displays the running gamelogic screen.
         {
-            for (int i = -1; i < HouseType.houseTypes.length; i++)
+            for (int i = -1; i < HouseType.houseTypes.length; i++) //Draws the toolbar for all the houses/delete
             {
                 int x = i * 20 + (width - (HouseType.houseTypes.length + 1) * 20) / 2;
                 int y = 4;
@@ -361,7 +371,7 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
                 int x = selectedHouseType * 20 + (width - (HouseType.houseTypes.length + 1) * 20) / 2;
                 int y = 4 + 28;
 
-                if (selectedHouseType >= 0)
+                if (selectedHouseType >= 0) //Writes description for houses
                 {
                     HouseType ht = HouseType.houseTypes[selectedHouseType];
 
@@ -370,14 +380,14 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
                     s = ht.getDescription();
                     g.drawString(s, x + 8 - fm.stringWidth(s) / 2 - i, y - i + 11);
                 }
-                else
+                else //Writes description for delete
                 {
                     String s = "Sell building";
                     g.drawString(s, x + 8 - fm.stringWidth(s) / 2 - i, y - i);
                     s = "Returns 75% of wood and rock used";
                     g.drawString(s, x + 8 - fm.stringWidth(s) / 2 - i, y - i + 11);
                 }
-
+                //Renders all the information in the top right corner.
                 String tmp = "Wood: 9999";
                 g.drawString("Wood: " + island.resources.wood, width - 4 - i - fm.stringWidth(tmp), 12 - i + 11 * 0);
                 g.drawString("Rock: " + island.resources.rock, width - 4 - i - fm.stringWidth(tmp), 12 - i + 11 * 1);
@@ -392,10 +402,11 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
                 g.setColor(Color.WHITE);
             }
         }
-        
+        //mute button
         g.drawImage(bitmaps.soundButtons[Sounds.isMute()?1:0], width-20, height-20, null);
     }
 
+    //TODO: Interface Segregation Principle!!!!!!
     public void mouseClicked(MouseEvent me)
     {
     }
@@ -409,6 +420,9 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
         xMouse = -1;
     }
 
+
+    //TODO: "ControlPanel" is hardcoded, no buttons exist, the functionality is simply pasted on top of the window and just happens to align with the buttons.
+    //TODO: MVC-pattern could be used!
     public void mousePressed(MouseEvent me)
     {
         synchronized (this)
@@ -432,7 +446,7 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
                 }
                 return;
             }
-            if (me.getButton() == 1)
+            if (me.getButton() == 1) //TODO: Uses a lot of complicated calculations for just senseing that the mous is being pressed in the right area -> should use mvc and listen to the button.
             {
                 int xm = me.getX() / 2;
                 int ym = me.getY() / 2;
@@ -470,7 +484,7 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
                     }
                 }
             }
-            if (me.getButton() == 3)
+            if (me.getButton() == 3) //Mousebutton 3 = right mousebutton?, drags the screen.
             {
                 xScrollStart = me.getX();
                 scrolling = true;
