@@ -1,9 +1,9 @@
 package com.mojang.tower;
 
 import java.awt.*;
-import java.awt.event.*;
-import java.awt.geom.AffineTransform;
-import java.awt.image.*;
+import java.awt.event.*;  //NOT INCLUDED IN UML
+import java.awt.geom.AffineTransform; //NOT INCLUDED IN UML
+import java.awt.image.*;  //NOT INCLUDED IN UML
 import java.io.IOException;
 import java.util.Collections;
 
