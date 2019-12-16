@@ -29,120 +29,107 @@ title __TOWER's Class Diagram__\n
 
   namespace com.mojang.tower {
     class com.mojang.tower.Entity {
-        + r : double Ja
-        + x : double Ja
-        + xr : double Ja
-        + y : double Ja
-        + yr : double Ja
-        # alive : boolean Ja
+        + r : double
+        + x : double
+        + xr : double
+        + y : double
+        + yr : double
+        # alive : boolean
         # random : Random Nej
         + Entity() Nej
-        + acceptsResource() Ja
-        + collides() Ja
+        + acceptsResource()
+        + collides()
         + collides() Nej
         + compareTo() Nej
-        + distance() Ja
-        + fight() Ja
-        + gatherResource() Ja
-        + getRandomTarget() Ja
-        + givesResource() Ja
-        + init() Ja
+        + distance()
+        + fight()
+        + gatherResource()
+        + getRandomTarget()
+        + givesResource()
+        + init()
         + isAlive() Nej
-        + render() Ja
-        + setPos() Ja
-        + submitResource() Ja
-        + tick() Ja
-        + updatePos() Ja
+        + render()
+        + setPos()
+        + submitResource()
+        + tick()
+        + updatePos()
     }
   }
   
 
   namespace com.mojang.tower {
     class com.mojang.tower.FarmPlot {
-        {static} + GROW_SPEED : int Ja
-        - age : int Ja
-        - stamina : int Ja
-        - yield : int Nej
-        + FarmPlot() Ja
-        + cut() Nej
-        + gatherResource() Ja
-        + getAge() Nej
-        + givesResource() Ja
-        + render() Ja
-        + tick() Ja
+        {static} + GROW_SPEED : int
+        - age : int
+        - stamina : int
+        + FarmPlot()
+        + gatherResource()
+        + givesResource()
+        + render()
+        + tick()
     }
   }
   
 
   namespace com.mojang.tower {
     class com.mojang.tower.House {
-        {static} + FOOD_PER_PEON : int Ja
-        {static} + WOOD_PER_WARRIOR : int Ja
-        {static} - POPULATION_PER_RESIDENCE : int Ja
-        {static} - WARRIORS_PER_BARRACKS : int Ja
-        - animFrame : int Ja
-        - buildDuration : int Ja
-        - buildTime : int Ja
-        - hp : int Ja
-        - maxHp : int Ja
-        + House() Nej
-        + acceptsResource() Ja
-        + build() Ja
-        + complete() Ja
-        + destroy() Ja
-        + die() Ja
-        + fight()Ja
-        + puff() Ja
-        + render() Ja
-        + sell() Ja
-        + submitResource() Ja
-        + tick() Ja
-        - getRandomPeon() Ja
+        {static} + FOOD_PER_PEON : int
+        {static} + WOOD_PER_WARRIOR : int
+        {static} - POPULATION_PER_RESIDENCE : int
+        {static} - WARRIORS_PER_BARRACKS : int
+        - animFrame : int
+        - buildDuration : int
+        - buildTime : int
+        - hp : int
+        - maxHp : int
+        + acceptsResource()
+        + build()
+        + complete()
+        + destroy()
+        + die()
+        + fight()
+        + puff()
+        + render()
+        + sell()
+        + submitResource()
+        + tick()
+        - getRandomPeon()
     }
   }
   
 
   namespace com.mojang.tower {
     class com.mojang.tower.HouseType {
-        {static} + BARRACKS : HouseType Ja
-        {static} + FARM : HouseType Ja
-        {static} + GUARDPOST : HouseType Ja
-        {static} + MASON : HouseType Ja
-        {static} + PLANTER : HouseType Ja
-        {static} + RESIDENCE : HouseType Ja
-        {static} + WINDMILL : HouseType Ja
-        {static} + WOODCUTTER : HouseType Ja
-        + acceptResource : int Ja
-        + food : int Ja
-        {static} + houseTypes : HouseType[] Ja
-        + image : int Ja
-        + name : String Ja
-        + radius : int Ja
-        + rock : int Ja
-        + wood : int Ja
-        {static} - id : int Ja
-        + getDescription()
-        + getImage()
-        + getString()
-        - HouseType() Ja
-        - setAcceptsResource() Ja
+        {static} + BARRACKS : HouseType
+        {static} + FARM : HouseType
+        {static} + GUARDPOST : HouseType
+        {static} + MASON : HouseType
+        {static} + PLANTER : HouseType
+        {static} + RESIDENCE : HouseType
+        {static} + WINDMILL : HouseType
+        {static} + WOODCUTTER : HouseType
+        + acceptResource : int
+        + food : int
+        {static} + houseTypes : HouseType[]
+        + image : int
+        + name : String
+        + radius : int
+        + rock : int
+        + wood : int
+        {static} - id : int
+        - setAcceptsResource()
     }
   }
   
 
   namespace com.mojang.tower {
     class com.mojang.tower.InfoPuff {
-        + life : int Ja
-        + lifeTime : int Ja
-        + xa : double Nej
-        + ya : double Nej
-        + z : double Nej
-        + za : double Nej
-        - image : int Ja
-        + InfoPuff()
-        + render() Ja
-        + tick() Ja
-        + updatePos() Ja
+        + life : int
+        + lifeTime : int
+        - image : int
+        + render()
+        + tick()
+        + updatePos() 
     }
   }
   
