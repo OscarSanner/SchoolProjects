@@ -4,6 +4,12 @@ import java.awt.image.BufferedImage;
 
 public class HouseType
 {
+
+    //TODO (Regarding class as a whole): This class makes heavy use of statics. The class has a static array of all the housetypes, and
+    //TODO: and can only be created by static methods. The class places all the houses in an array.
+    //TODO: Are the HouseTypes instantly instantiated?? This is a clear attempt to use a singleton variant. Singleton
+    //TODO: should arguably never ever be used, and especially if you might want to add more types in the future. Strategy pattern is more appropriate here.
+    //TODO: Class has several responsibilities
     public static final HouseType[] houseTypes = new HouseType[8];
 
     public static final HouseType MASON = new HouseType(1, "Mason", 10, 0, 15, 0).setAcceptsResource(Resources.ROCK);
@@ -40,11 +46,13 @@ public class HouseType
         return this;
     }
 
+    //Difficult to understand way of getting the image.
     public BufferedImage getImage(Bitmaps bitmaps)
     {
         return bitmaps.houses[image % 2 + 1][image / 2];
     }
 
+    //Is string builder not a better option?
     public String getString()
     {
         String res = name + " [";
@@ -55,6 +63,7 @@ public class HouseType
         return res;
     }
 
+    //TODO: couldn't this be a trycatch? "Return: unknown" seems to implicate that something has gone wrong
     public String getDescription()
     {
         if (this == MASON) return "Gathers nearby stones, produces rock";

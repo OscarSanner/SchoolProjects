@@ -2,6 +2,8 @@ package com.mojang.tower;
 
 import java.awt.Graphics2D;
 
+//This class represents a puff of smoke. It appears when something is gathered.
+// Just like all other entities it renders itself and has too many responsibilities.
 public class Puff extends Entity
 {
     public void updatePos(double sin, double cos, double alpha)

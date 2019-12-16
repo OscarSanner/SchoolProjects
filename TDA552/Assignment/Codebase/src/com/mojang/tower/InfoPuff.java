@@ -2,6 +2,8 @@ package com.mojang.tower;
 
 import java.awt.Graphics2D;
 
+//TODO: Easy to understand entity that shows an image for a short period of time (i.e. "level up!") Renders itself and is not quite really
+//TODO: an entity.
 public class InfoPuff extends Entity
 {
     public void updatePos(double sin, double cos, double alpha)

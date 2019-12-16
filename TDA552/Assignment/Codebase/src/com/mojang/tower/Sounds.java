@@ -16,6 +16,7 @@ public class Sounds implements Runnable
     private List<Sound> sounds = new ArrayList<Sound>();
     
 
+    //Another private constructor. Weird.
     private Sounds()
     {
         if (!soundAvailable) return;

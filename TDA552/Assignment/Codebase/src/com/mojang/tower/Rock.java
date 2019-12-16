@@ -2,6 +2,7 @@ package com.mojang.tower;
 
 import java.awt.Graphics2D;
 
+//TODO: Has a lot in common with other resources. Farmplot and tree. Could be a super class.
 public class Rock extends Entity
 {
     private int type = 0;
@@ -14,6 +15,7 @@ public class Rock extends Entity
         type = random.nextInt(4);
     }
 
+    //TODO: Doesn't have to override as tick exists in super.
     public void tick()
     {
     }
@@ -25,7 +27,8 @@ public class Rock extends Entity
 
         g.drawImage(bitmaps.rocks[type], x, y, null);
     }
-    
+
+    //Identical to FarmPlot.
     public boolean gatherResource(int resourceId)
     {
         stamina -= 64;

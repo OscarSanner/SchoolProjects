@@ -2,6 +2,12 @@ package com.mojang.tower;
 
 import java.awt.Graphics2D;
 
+/**
+ * Tree class. Trees are a resource that can grow. However it shares an extraordinary amount of properties with other resources.
+ */
+
+//TODO: Literally everything in this class has already been covered by other entity classes. This in itself is bad as it shows that the classes are
+    //TODO: incredibly similar.
 public class Tree extends Entity
 {
     public static final int GROW_SPEED = 320;
@@ -18,6 +24,7 @@ public class Tree extends Entity
         spreadDelay = random.nextInt(SPREAD_INTERVAL);
     }
 
+    //Determines what happens to a tree each game update.
     public void tick()
     {
         if (age < 15 * GROW_SPEED)

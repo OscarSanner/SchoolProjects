@@ -15,6 +15,9 @@ public class Monster extends Entity
     private int hp = 100;
     private int maxHp = 100;
 
+    //TODO: Right of the bat notes: Is entity -> renders itself. Bad. Shares an extraordinary amount of properties with
+    //TODO: peon, yet it doesn't share a superclass. Instead both use "Entity". Breaks liskov, breaks SRP, breaks the whole damn alphabet.
+
     public Monster(double x, double y)
     {
         super(x, y, 2);
@@ -28,6 +31,7 @@ public class Monster extends Entity
         island.monsterPopulation++;
     }
 
+    //Presents a sound AND dies.
     public void die()
     {
         Sounds.play(new Sound.MonsterDeath());
@@ -42,6 +46,7 @@ public class Monster extends Entity
             hp++;
         }
 
+        //Gets a random target to attack. Has to be in range.
         if (target == null || random.nextInt(100) == 0)
         {
             Entity e = getRandomTarget(60, 30, new TargetFilter()
@@ -97,6 +102,7 @@ public class Monster extends Entity
         super.tick();
     }
 
+    //SRP has already been addressed.
     public void render(Graphics2D g, double alpha)
     {
         int rotStep = (int) Math.floor((rot - island.rot) * 4 / (Math.PI * 2) + 0.5);
@@ -106,6 +112,7 @@ public class Monster extends Entity
         int y = -(int) (yr / 2 + 8);
         g.drawImage(bitmaps.peons[3][animDirs[rotStep & 3] * 3 + animStep], x, y, null);
 
+        //Renders the healthbar.
         if (hp < maxHp)
         {
             g.setColor(Color.BLACK);
@@ -115,6 +122,7 @@ public class Monster extends Entity
         }
     }
 
+    //TODO: Becomes a double reference. Would be fixed if superclasses was properly used.
     public void fight(Peon peon)
     {
         if (hp <= 0) return;

@@ -2,6 +2,14 @@ package com.mojang.tower;
 
 import java.util.Random;
 
+/**
+ * hard to understand class that deals with audio playback. Whats important is who uses it. This classfile seems
+ * to have a bunch of subclasses that all do the exact same thing in a different way. This leaves a lot of room for
+ * improvement. All have fill.
+ */
+
+//TODO: Sound should be an abstract class (it is) or interface. Since all the subclasses are different. Is there perhaps a way to implement template methods to do this?
+
 public abstract class Sound
 {
     public static class Select extends Sound

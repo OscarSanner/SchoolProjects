@@ -9,6 +9,11 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+/**
+ * Class appears to create a bunch of arrays, multi-dim arrays and variables of buffered images and binds '
+ * images to these variables.
+ */
+//TODO: This could be part of a "assets-class"-should an MVC-pattern be implemented.
 public class Bitmaps
 {
     public BufferedImage[] trees;
@@ -28,6 +33,7 @@ public class Bitmaps
     
     public BufferedImage logo, wonScreen;
 
+    //TODO: Needs functional decomposition!
     public void loadAll() throws IOException
     {
         logo = ImageIO.read(Bitmaps.class.getResource("/logo.gif"));
@@ -82,7 +88,7 @@ public class Bitmaps
         ImageIO.read(Bitmaps.class.getResource("/island.gif")).getRGB(0, 0, 256, 256, pixels, 0, 256);
         island.setRGB(0, 0, 256, 256, pixels, 0, 256);
     }
-
+    //Does something related to screen..?
     public static BufferedImage clip(BufferedImage src, int x, int y, int w, int h)
     {
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();

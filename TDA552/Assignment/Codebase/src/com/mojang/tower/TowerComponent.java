@@ -446,7 +446,7 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
                 }
                 return;
             }
-            if (me.getButton() == 1) //TODO: Uses a lot of complicated calculations for just senseing that the mous is being pressed in the right area -> should use mvc and listen to the button.
+            if (me.getButton() == 1) //TODO: Uses a lot of complicated calculations for just senseing that the mouse is being pressed in the right area -> should use mvc and listen to the button.
             {
                 int xm = me.getX() / 2;
                 int ym = me.getY() / 2;

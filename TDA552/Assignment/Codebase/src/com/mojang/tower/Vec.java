@@ -1,5 +1,6 @@
 package com.mojang.tower;
 
+//TODO: Completely unused class. (WILL NOT BE ADRESSED??)
 public class Vec
 {
     public final double x, y, z;
