@@ -4,25 +4,25 @@ title __TOWER's Class Diagram__\n
 
   namespace com.mojang.tower {
     class com.mojang.tower.Bitmaps {
-        + carriedResources : BufferedImage[]
-        + delete : BufferedImage
-        + farmPlots : BufferedImage[]
-        + help : BufferedImage
-        + houses : BufferedImage[][]
-        + infoPuffs : BufferedImage[]
-        + island : BufferedImage
-        + logo : BufferedImage
-        + peons : BufferedImage[][]
-        + rocks : BufferedImage[]
-        + smoke : BufferedImage[]
-        + soundButtons : BufferedImage[]
-        + towerBot : BufferedImage
-        + towerMid : BufferedImage
-        + towerTop : BufferedImage
-        + trees : BufferedImage[]
-        + wonScreen : BufferedImage
-        {static} + clip()
-        + loadAll()
+        + carriedResources : BufferedImage[] Ja
+        + delete : BufferedImage Ja
+        + farmPlots : BufferedImage[] Ja
+        + help : BufferedImage Ja
+        + houses : BufferedImage[][] Ja
+        + infoPuffs : BufferedImage[] Ja
+        + island : BufferedImage Ja
+        + logo : BufferedImage Ja
+        + peons : BufferedImage[][] Ja
+        + rocks : BufferedImage[] Ja
+        + smoke : BufferedImage[] Ja
+        + soundButtons : BufferedImage[] Ja
+        + towerBot : BufferedImage Ja
+        + towerMid : BufferedImage Ja
+        + towerTop : BufferedImage Ja
+        + trees : BufferedImage[] Ja
+        + wonScreen : BufferedImage Ja
+        {static} + clip() Ja
+        + loadAll() Ja
     }
   }
   
@@ -35,19 +35,19 @@ title __TOWER's Class Diagram__\n
         + y : double
         + yr : double
         # alive : boolean
-        # random : Random
-        + Entity()
+        # random : Random Nej
+        + Entity() Nej
         + acceptsResource()
         + collides()
-        + collides()
-        + compareTo()
+        + collides() Nej
+        + compareTo() Nej
         + distance()
         + fight()
         + gatherResource()
         + getRandomTarget()
         + givesResource()
         + init()
-        + isAlive()
+        + isAlive() Nej
         + render()
         + setPos()
         + submitResource()
@@ -62,11 +62,8 @@ title __TOWER's Class Diagram__\n
         {static} + GROW_SPEED : int
         - age : int
         - stamina : int
-        - yield : int
         + FarmPlot()
-        + cut()
         + gatherResource()
-        + getAge()
         + givesResource()
         + render()
         + tick()
@@ -85,7 +82,6 @@ title __TOWER's Class Diagram__\n
         - buildTime : int
         - hp : int
         - maxHp : int
-        + House()
         + acceptsResource()
         + build()
         + complete()
@@ -121,10 +117,6 @@ title __TOWER's Class Diagram__\n
         + rock : int
         + wood : int
         {static} - id : int
-        + getDescription()
-        + getImage()
-        + getString()
-        - HouseType()
         - setAcceptsResource()
     }
   }
@@ -134,15 +126,10 @@ title __TOWER's Class Diagram__\n
     class com.mojang.tower.InfoPuff {
         + life : int
         + lifeTime : int
-        + xa : double
-        + ya : double
-        + z : double
-        + za : double
         - image : int
-        + InfoPuff()
         + render()
         + tick()
-        + updatePos()
+        + updatePos() 
     }
   }
   
@@ -158,14 +145,14 @@ title __TOWER's Class Diagram__\n
         + warriorPopulationCap : int
         ~ entities : List<Entity>
         - pixels : int[]
-        - random : Random
-        + Island()
+        - random : Random Nej
+        + Island() Nej
         + addEntity()
         + canPlaceHouse()
-        + getEntityAt()
+        + getEntityAt() Nej
         + getEntityAt()
         + getEntityAtMouse()
-        + isFree()
+        + isFree() Nej
         + isFree()
         + isOnGround()
         + placeHouse()
@@ -184,7 +171,7 @@ title __TOWER's Class Diagram__\n
         + xTarget : double
         + yTarget : double
         # bonusRadius : int
-        # random : Random
+        # random : Random Nej
         + arrived()
         + cantReach()
         + collide()
@@ -268,7 +255,7 @@ title __TOWER's Class Diagram__\n
         - hp : int
         - maxHp : int
         - wanderTime : int
-        + Monster()
+        + Monster() Nej
         + die()
         + fight()
         + init()
@@ -293,7 +280,7 @@ title __TOWER's Class Diagram__\n
         - nextLevel : int
         - wanderTime : int
         - xp : int
-        + Peon()
+        + Peon() Nej
         + addXp()
         + die()
         + fight()
@@ -310,11 +297,11 @@ title __TOWER's Class Diagram__\n
     class com.mojang.tower.Puff {
         + life : int
         + lifeTime : int
-        + xa : double
-        + ya : double
-        + z : double
-        + za : double
-        + Puff()
+        + xa : double Nej
+        + ya : double Nej
+        + z : double Nej
+        + za : double Nej
+        + Puff() Nej
         + render()
         + tick()
         + updatePos()
@@ -342,7 +329,7 @@ title __TOWER's Class Diagram__\n
         - life : int
         - stamina : int
         - type : int
-        + Rock()
+        + Rock() Nej
         + gatherResource()
         + givesResource()
         + render()
@@ -355,7 +342,7 @@ title __TOWER's Class Diagram__\n
     abstract class com.mojang.tower.Sound {
         # duration : int
         # p : int
-        # random : Random
+        # random : Random Nej
         + read()
         # Sound()
         {abstract} # fill()
@@ -469,7 +456,7 @@ title __TOWER's Class Diagram__\n
         {static} + play()
         + run()
         {static} + setMute()
-        - Sounds()
+        - Sounds() Nej
         - addSound()
     }
   }
@@ -484,12 +471,12 @@ title __TOWER's Class Diagram__\n
 
   namespace com.mojang.tower {
     class com.mojang.tower.Tower {
-        {static} - DEBUG : boolean
+        {static} - DEBUG : boolean Nej
         - h : int
         - minMonsters : int
         - stamina : int
         - staminaPerLevel : int
-        + Tower()
+        + Tower() Nej
         + gatherResource()
         + givesResource()
         + render()
@@ -511,9 +498,9 @@ title __TOWER's Class Diagram__\n
 
   namespace com.mojang.tower {
     class com.mojang.tower.TowerComponent {
-        {static} + TICKS_PER_SECOND : int
-        {static} - MAX_TICKS_PER_FRAME : int
-        - frames : int
+        {static} + TICKS_PER_SECOND : int Nej
+        {static} - MAX_TICKS_PER_FRAME : int Nej
+        - frames : int Nej
         - gameTime : int
         - height : int
         - image : VolatileImage
@@ -521,26 +508,26 @@ title __TOWER's Class Diagram__\n
         - running : boolean
         - scrolling : boolean
         - selectedHouseType : int
-        {static} - serialVersionUID : long
+        {static} - serialVersionUID : long Nej
         - thread : Thread
-        - tickCount : int
+        - tickCount : int Nej
         - titleScreen : boolean
         - width : int
         - winScore : int
         - won : boolean
-        - wonTime : int
-        - xCenter : int
-        - xMouse : int
-        - xRot : double
-        - xRotA : double
-        - xScrollStart : double
-        - yCenter : int
-        - yMouse : int
-        + TowerComponent()
+        - wonTime : int Nej
+        - xCenter : int Nej
+        - xMouse : int Nej
+        - xRot : double Nej
+        - xRotA : double Nej
+        - xScrollStart : double Nej
+        - yCenter : int Nej
+        - yMouse : int Nej
+        + TowerComponent() Nej
         {static} + main()
-        + mouseClicked()
+        + mouseClicked() Nej
         + mouseDragged()
-        + mouseEntered()
+        + mouseEntered() Nej
         + mouseExited()
         + mouseMoved()
         + mousePressed()
@@ -568,11 +555,11 @@ title __TOWER's Class Diagram__\n
         - age : int
         - spreadDelay : int
         - stamina : int
-        - yield : int
-        + Tree()
-        + cut()
+        - yield : int Nej
+        + Tree() Nej
+        + cut() Nej
         + gatherResource()
-        + getAge()
+        + getAge() Nej
         + givesResource()
         + render()
         + tick()
