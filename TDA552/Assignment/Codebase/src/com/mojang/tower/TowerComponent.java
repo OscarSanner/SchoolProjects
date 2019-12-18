@@ -515,6 +515,18 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
 
     public static void main(String[] args)
     {
+
+        HouseType h = HouseType.FARM;
+        HouseType i = HouseType.FARM;
+        HouseType k = HouseType.FARM;
+
+        HouseType hy = HouseType.GUARDPOST;
+        HouseType iy = HouseType.GUARDPOST;
+        HouseType ky = HouseType.GUARDPOST;
+
+        HouseType hu = HouseType.FARM;
+        HouseType iu = HouseType.FARM;
+        HouseType ku = HouseType.FARM;
         final TowerComponent tower = new TowerComponent(512, 320);
 
         Frame frame = new Frame("Breaking the Tower");
