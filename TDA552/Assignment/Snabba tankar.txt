@@ -1,0 +1,28 @@
+LSP
+
+Överskuggning är inget problem för liskov <--- programmet. Entity.
+
+Frågan för Job-klassen är om lovar mindre. I Job klassen så gör getTarget någ HELT annat från supern, så man kan inte substituera metoderna.
+getTarget() har vi både tagit bort och lagt till funktionalitet. Bra.
+
+Mycket composite och agregarion men det leder bara till dubbla beroenden och visar inga riktiga bra mönster. Detta leder snarare till dubbla beroenden... bla bla
+
+Konkreta avvikelser/följder mot/av OCP.
+Lista med entitys, men för att lägga till en entity måste man skriva om klassen bitmaps, och skriva en funktion som renderar.
+
+Vad man kan påpeka är viss mån har tagits till OCP vid skrivande av programmet. I klassen Island återfinns en lista med Entiteter, vilka läggs till
+via AddEntity(). Och det enda som krävs av ett Entity-objekt är att det faktiskt skall extenda klassen "Entity". All logik som rör dessa objekt programmeras
+direkt i klasserna, vilket leder till viss öppenhet för utbyggnad av programmet. Det leder dock inte till att programmet är helt stängt för modifikation då
+man fortfarande kommer behöva ändra i "Bitmaps" och "Island". Med tanke på att programmet använder sig mycket av dubbla och cirkulära beroenden så blir...
+
+Liskovs:
+
+Vår kodbas innehåller 3 arvshierarkier. De vid första anblick påpekar man att många metoder lämnas tomma, eller returnerar booleska värden per default. 
+Metoderna har alltså varken några förvilkår eller direkta eftervilkår och det blir svårt att diskutera hurvida detta avviker från LSP. Man kan dock strikt agrumentera för att
+dessa metoder, tillsammans med hela dess superklasser, borde vara abstrakta. Alternativt borde dessa metoder vara inskriva i ett interface.
+
+Man kan dock finna exempel på där metoder har funktionalitet i superklassen, och som överskuggas och får ändrad funktionalitet i subklassen. Mer specifikt
+finns det en metod i Job, vid namn hasTarget(). hasTarget() i Job lovar som eftervilkor att ge det booleska värdet true om och endast om själva instansvariabel
+"Entity e" inte är null och isValidTarget(e) är bland andra saker. hasTarget() i subklassen Job.Plant har dock helt andra eftervilkor, givet att den booleska instansvariabeln
+"hasSeed" är falsk. Detta leder till att LSP inte följs, då hasSeed inte är ett förvilkår i superklassen.
+
