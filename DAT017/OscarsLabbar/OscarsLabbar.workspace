@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeLite_Workspace Name="Lab" Database="" Version="10.0.0">
-  <Project Name="MinecraftRippoff" Path="MinecraftRippoff/MinecraftRippoff.project" Active="Yes"/>
+<CodeLite_Workspace Name="OscarsLabbar" Database="" Version="10.0.0">
+  <Project Name="LearningC" Path="LearningC/LearningC.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
-      <Project Name="MinecraftRippoff" ConfigName="Debug"/>
+      <Project Name="LearningC" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
-      <Project Name="MinecraftRippoff" ConfigName="Release"/>
+      <Project Name="LearningC" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

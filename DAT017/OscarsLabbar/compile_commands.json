@@ -1,0 +1,5 @@
+[{
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\LearningC\\main.c",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\LearningC",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\LearningC\\main.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\LearningC\\main.c.o  -I. -I.  -g  -O0  -Wall"
+ }]
