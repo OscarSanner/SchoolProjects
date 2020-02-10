@@ -1,5 +1,0 @@
-[{
-  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Lab\\MinecraftRippoff\\main.c",
-  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Lab\\MinecraftRippoff",
-  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Lab\\MinecraftRippoff\\main.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Lab\\MinecraftRippoff\\main.c.o -target x86_64-pc-windows-gnu -I. -I.  -g  -O0  -Wall"
- }]
