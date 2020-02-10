@@ -1,33 +1,29 @@
 [{
-  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fivePointFive\\startup.c",
-  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fivePointFive",
-  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fivePointFive\\startup.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fivePointFive\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+  "file": "C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fivePointFive\\startup.c",
+  "directory": "C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fivePointFive",
+  "command": "clang  -c C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fivePointFive\\startup.c -o C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fivePointFive\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
  }, {
-  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fivePointThree\\startup.c",
-  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fivePointThree",
-  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fivePointThree\\startup.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fivePointThree\\startup.c.o  -DSIMULATOR -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+  "file": "C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\Vecka1Recap\\main.c",
+  "directory": "C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\Vecka1Recap",
+  "command": "clang  -c C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\Vecka1Recap\\main.c -o C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\Vecka1Recap\\main.c.o  -I. -I.  -g  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\osann\\Documents\\GitProjects\\C\\ExampleExercises\\main.c",
-  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\C\\ExampleExercises",
-  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\C\\ExampleExercises\\main.c -o C:\\Users\\osann\\Documents\\GitProjects\\C\\ExampleExercises\\main.c.o  -I. -I.  -g  -O0  -Wall"
+  "file": "C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\LearningC\\main.c",
+  "directory": "C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\LearningC",
+  "command": "clang  -c C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\LearningC\\main.c -o C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\LearningC\\main.c.o  -I. -I.  -g  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\basic__IO\\startup.c",
-  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\basic__IO",
-  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\basic__IO\\startup.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\basic__IO\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+  "file": "C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\Vecka2\\main.c",
+  "directory": "C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\Vecka2",
+  "command": "clang  -c C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\Vecka2\\main.c -o C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\Vecka2\\main.c.o  -I. -I.  -g  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fourPointTwo\\startup.c",
-  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fourPointTwo",
-  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fourPointTwo\\startup.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fourPointTwo\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+  "file": "C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\basic__IO\\startup.c",
+  "directory": "C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\basic__IO",
+  "command": "clang  -c C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\basic__IO\\startup.c -o C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\basic__IO\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
  }, {
-  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\LearningC\\main.c",
-  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\LearningC",
-  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\LearningC\\main.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\LearningC\\main.c.o  -I. -I.  -g  -O0  -Wall"
+  "file": "C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fourPointTwo\\startup.c",
+  "directory": "C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fourPointTwo",
+  "command": "clang  -c C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fourPointTwo\\startup.c -o C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fourPointTwo\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
  }, {
-  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\Vecka1Recap\\main.c",
-  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\Vecka1Recap",
-  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\Vecka1Recap\\main.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\Vecka1Recap\\main.c.o  -I. -I.  -g  -O0  -Wall"
- }, {
-  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\Vecka2\\main.c",
-  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\Vecka2",
-  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\Vecka2\\main.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\Vecka2\\main.c.o  -I. -I.  -g  -O0  -Wall"
+  "file": "C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fivePointThree\\startup.c",
+  "directory": "C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fivePointThree",
+  "command": "clang  -c C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fivePointThree\\startup.c -o C:\\Users\\Oscar\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fivePointThree\\startup.c.o  -DSIMULATOR -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
  }]
