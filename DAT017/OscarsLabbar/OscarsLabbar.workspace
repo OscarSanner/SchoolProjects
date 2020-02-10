@@ -4,7 +4,10 @@
   <Project Name="ExampleExercises" Path="../../../C/ExampleExercises/ExampleExercises.project" Active="No"/>
   <Project Name="Vecka1Recap" Path="Vecka1Recap/Vecka1Recap.project" Active="No"/>
   <Project Name="Vecka2" Path="Vecka2/Vecka2.project" Active="No"/>
-  <Project Name="basic__IO" Path="basic__IO/basic__IO.project" Active="Yes"/>
+  <Project Name="basic__IO" Path="basic__IO/basic__IO.project" Active="No"/>
+  <Project Name="fourPointTwo" Path="fourPointTwo/fourPointTwo.project" Active="No"/>
+  <Project Name="fivePointThree" Path="fivePointThree/fivePointThree.project" Active="No"/>
+  <Project Name="fivePointFour" Path="fivePointFive/fivePointFive.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -13,6 +16,9 @@
       <Project Name="Vecka1Recap" ConfigName="Debug"/>
       <Project Name="Vecka2" ConfigName="Debug"/>
       <Project Name="basic__IO" ConfigName="Debug"/>
+      <Project Name="fourPointTwo" ConfigName="Debug"/>
+      <Project Name="fivePointThree" ConfigName="Debug"/>
+      <Project Name="fivePointFour" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -21,6 +27,9 @@
       <Project Name="Vecka1Recap" ConfigName="Release"/>
       <Project Name="Vecka2" ConfigName="Release"/>
       <Project Name="basic__IO" ConfigName="Release"/>
+      <Project Name="fourPointTwo" ConfigName="Release"/>
+      <Project Name="fivePointThree" ConfigName="Release"/>
+      <Project Name="fivePointFour" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

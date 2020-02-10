@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ basic__IO - Debug ]----------"
-	@cd "basic__IO" && "$(MAKE)" -f  "basic__IO.mk" && "$(MAKE)" -f  "basic__IO.mk" PostBuild
+	@echo "----------Building project:[ fivePointThree - Debug ]----------"
+	@cd "fivePointThree" && "$(MAKE)" -f  "fivePointThree.mk" && "$(MAKE)" -f  "fivePointThree.mk" PostBuild
 clean:
-	@echo "----------Cleaning project:[ basic__IO - Debug ]----------"
-	@cd "basic__IO" && "$(MAKE)" -f  "basic__IO.mk" clean
+	@echo "----------Cleaning project:[ fivePointThree - Debug ]----------"
+	@cd "fivePointThree" && "$(MAKE)" -f  "fivePointThree.mk" clean
