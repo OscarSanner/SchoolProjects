@@ -1,0 +1,75 @@
+
+binTo7seg.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+20000000 <init>:
+@ binTo7Seg
+@
+
+init:
+@ initiera port D som utport
+	LDR	R6,=0x55555555
+20000000:	4e0b      	ldr	r6, [pc, #44]	; (20000030 <SegCodes+0x10>)
+	LDR	R5,=0x40020C00
+20000002:	4d0c      	ldr	r5, [pc, #48]	; (20000034 <SegCodes+0x14>)
+	STR	R6,[R5]
+20000004:	602e      	str	r6, [r5, #0]
+@ adressen till port D:s ut-dataregister till R5
+
+	LDR	R5,=0x40020C14
+20000006:	4d0c      	ldr	r5, [pc, #48]	; (20000038 <SegCodes+0x18>)
+@ adressen till port E:s in-dataregister till R6
+	LDR	R6,=0x40021010
+20000008:	4e0c      	ldr	r6, [pc, #48]	; (2000003c <SegCodes+0x1c>)
+@ adressen till SegCodes till R4
+	LDR	R4,=SegCodes
+2000000a:	4c0d      	ldr	r4, [pc, #52]	; (20000040 <SegCodes+0x20>)
+
+2000000c <main>:
+
+main:	
+	LDR	R0,[R6]
+2000000c:	6830      	ldr	r0, [r6, #0]
+	CMP	R0,#16
+2000000e:	2810      	cmp	r0, #16
+	BCC	L1
+20000010:	d302      	bcc.n	20000018 <L1>
+	MOV	R0,#0
+20000012:	2000      	movs	r0, #0
+	B	L2
+20000014:	e001      	b.n	2000001a <L2>
+	ADD	R0,R0,R4
+20000016:	1900      	adds	r0, r0, r4
+
+20000018 <L1>:
+L1:	LDRB	R0,[R4,R0]
+20000018:	5c20      	ldrb	r0, [r4, r0]
+
+2000001a <L2>:
+L2:	STRB	R0,[R5]
+2000001a:	7028      	strb	r0, [r5, #0]
+	B	main
+2000001c:	e7f6      	b.n	2000000c <main>
+2000001e:	46c0      	nop			; (mov r8, r8)
+
+20000020 <SegCodes>:
+20000020:	4f5b063f 	.word	0x4f5b063f
+20000024:	077d6d66 	.word	0x077d6d66
+20000028:	7c776f7f 	.word	0x7c776f7f
+2000002c:	71793e38 	.word	0x71793e38
+20000030:	55555555 	.word	0x55555555
+20000034:	40020c00 	.word	0x40020c00
+20000038:	40020c14 	.word	0x40020c14
+2000003c:	40021010 	.word	0x40021010
+20000040:	20000020 	.word	0x20000020
+
+20000044 <__bss_end__>:
+	...
+
+20001000 <heap_low>:
+	...
+
+20001800 <heap_top>:
+	...

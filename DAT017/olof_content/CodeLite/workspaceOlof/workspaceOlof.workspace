@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="workspaceOlof" Database="" Version="10.0.0">
+  <Project Name="Week2" Path="Week2/Week2.project" Active="No"/>
+  <Project Name="basic_io" Path="basic_io/basic_io.project" Active="No"/>
+  <Project Name="Week1" Path="Week1/Week1.project" Active="No"/>
+  <Project Name="keypad" Path="keypad/keypad.project" Active="No"/>
+  <Project Name="delay" Path="delay/delay.project" Active="No"/>
+  <Project Name="asciidisplay" Path="asciidisplay/asciidisplay.project" Active="Yes"/>
+  <Project Name="delayFIXED" Path="delayFIXED/delayFIXED.project" Active="No"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="Week1" ConfigName="Debug"/>
+      <Project Name="Week2" ConfigName="Debug"/>
+      <Project Name="basic_io" ConfigName="Debug"/>
+      <Project Name="Week1" ConfigName="Debug"/>
+      <Project Name="keypad" ConfigName="Debug"/>
+      <Project Name="delay" ConfigName="Debug"/>
+      <Project Name="asciidisplay" ConfigName="Debug"/>
+      <Project Name="delayFIXED" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="Week1" ConfigName="Release"/>
+      <Project Name="Week2" ConfigName="Release"/>
+      <Project Name="basic_io" ConfigName="Release"/>
+      <Project Name="Week1" ConfigName="Release"/>
+      <Project Name="keypad" ConfigName="Release"/>
+      <Project Name="delay" ConfigName="Release"/>
+      <Project Name="asciidisplay" ConfigName="Release"/>
+      <Project Name="delayFIXED" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>

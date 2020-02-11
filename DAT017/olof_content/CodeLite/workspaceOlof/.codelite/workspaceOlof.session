@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Session Name="C:\Users\olofs\Desktop\DAT017\olof_content\CodeLite\workspaceOlof\workspaceOlof.workspace">
+  <int Value="0" Name="m_selectedTab"/>
+  <wxString Value="C:\Users\olofs\Desktop\DAT017\olof_content\CodeLite\workspaceOlof\workspaceOlof.workspace" Name="m_workspaceName"/>
+  <TabInfoArray Name="TabInfoArray">
+    <TabInfo>
+      <wxString Value="C:\Users\olofs\Desktop\DAT017\olof_content\CodeLite\workspaceOlof\asciidisplay\startup.c" Name="FileName"/>
+      <int Value="129" Name="FirstVisibleLine"/>
+      <int Value="147" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\olofs\Desktop\DAT017\olof_content\CodeLite\workspaceOlof\keypad\startup.c" Name="FileName"/>
+      <int Value="54" Name="FirstVisibleLine"/>
+      <int Value="85" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\olofs\Desktop\DAT017\olof_content\CodeLite\workspaceOlof\delayFIXED\startup.c" Name="FileName"/>
+      <int Value="31" Name="FirstVisibleLine"/>
+      <int Value="7" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+  </TabInfoArray>
+  <SerializedObject Name="m_breakpoints">
+    <long Value="0" Name="Count"/>
+  </SerializedObject>
+  <wxString Value="*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.inc;*.mm;*.m;*.xrc;*.plist;*.txt" Name="m_findInFilesMask"/>
+</Session>

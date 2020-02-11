@@ -1,0 +1,58 @@
+
+mom5.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+20000000 <start>:
+
+
+@ mom5.asm-----------------MED TECKEN
+start:
+@ initiera port D som utport
+	LDR	R6,=0x55555555
+20000000:	4e06      	ldr	r6, [pc, #24]	; (2000001c <main+0x12>)
+	LDR	R5,=0x40020C00
+20000002:	4d07      	ldr	r5, [pc, #28]	; (20000020 <main+0x16>)
+	STR	R6,[R5]
+20000004:	602e      	str	r6, [r5, #0]
+@ adressen till port D:s ut-dataregister till R5
+
+	LDR	R5,=0x40020C14
+20000006:	4d07      	ldr	r5, [pc, #28]	; (20000024 <main+0x1a>)
+@ adressen till port E:s in-dataregister till R6
+	LDR	R6,=0x40021010
+20000008:	4e07      	ldr	r6, [pc, #28]	; (20000028 <main+0x1e>)
+
+2000000a <main>:
+main:
+	LDRB	R0,[R6]		@ läs PE0-E7
+2000000a:	7830      	ldrb	r0, [r6, #0]
+	SXTB	R0,R0
+2000000c:	b240      	sxtb	r0, r0
+	LDRB	R1,[R6,#1]	@ läs PE8-E15
+2000000e:	7871      	ldrb	r1, [r6, #1]
+	SXTB	R1,R1
+20000010:	b249      	sxtb	r1, r1
+	ADD	R0,R0,R1
+20000012:	1840      	adds	r0, r0, r1
+	SXTH	R0,R0
+20000014:	b200      	sxth	r0, r0
+	STRH	R0,[R5]
+20000016:	8028      	strh	r0, [r5, #0]
+	B	main
+20000018:	e7f7      	b.n	2000000a <main>
+2000001a:	0000      	.short	0x0000
+2000001c:	55555555 	.word	0x55555555
+20000020:	40020c00 	.word	0x40020c00
+20000024:	40020c14 	.word	0x40020c14
+20000028:	40021010 	.word	0x40021010
+
+2000002c <__bss_end__>:
+	...
+
+20001000 <heap_low>:
+	...
+
+20001800 <heap_top>:
+	...
