@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="workspaceOlof" Database="" Version="10.0.0">
   <Project Name="Week2" Path="Week2/Week2.project" Active="No"/>
-  <Project Name="basic_io" Path="basic_io/basic_io.project" Active="No"/>
+  <Project Name="basic_io" Path="basic_io/basic_io.project" Active="Yes"/>
   <Project Name="Week1" Path="Week1/Week1.project" Active="No"/>
   <Project Name="keypad" Path="keypad/keypad.project" Active="No"/>
   <Project Name="delay" Path="delay/delay.project" Active="No"/>
-  <Project Name="asciidisplay" Path="asciidisplay/asciidisplay.project" Active="Yes"/>
+  <Project Name="asciidisplay" Path="asciidisplay/asciidisplay.project" Active="No"/>
   <Project Name="delayFIXED" Path="delayFIXED/delayFIXED.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
