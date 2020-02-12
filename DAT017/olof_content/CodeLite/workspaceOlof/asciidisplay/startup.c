@@ -1,12 +1,8 @@
-#define	STK_BAS 					0xE000E010
-#define	STK_CTRL				((volatile unsigned char *) (STK_BAS))
-#define	STK_COUNTFLAG	((volatile unsigned char *) (STK_BAS + 0x2))
-#define	STK_LOAD				((volatile unsigned int *) (STK_BAS + 0x4))
-#define	STK_VAL					((volatile unsigned int *) (STK_BAS + 0x8))
-
-#define	GPIO_BAS			0x40021000
-#define	GPIO_MODER		((volatile unsigned int *) (GPIO_BAS))
-#define 	GPIO_ODR_LOW	((volatile unsigned short *) (GPIO_BAS+0x14))
+#define	STK_BAS 0xE000E010
+#define	STK_CTRL ((volatile unsigned char *) (STK_BAS))
+#define	STK_COUNTFLAG ((volatile unsigned char *) (STK_BAS + 0x2))
+#define	STK_LOAD ((volatile unsigned int *) (STK_BAS + 0x4))
+#define	STK_VAL ((volatile unsigned int *) (STK_BAS + 0x8))
 
 #define	PORT_BASE 0x40021000
 #define	portModer ((volatile unsigned long *) PORT_BASE)
@@ -36,9 +32,12 @@ __asm__ volatile(".L1: B .L1\n");				/* never return */
 }
 
 void init_app(void){
-	* GPIO_MODER &= 0xFFFF0000;
-	* GPIO_MODER |= 0x5555;
+	* portModer = 0x55555555;
 }
+
+
+
+
 
 void delay_250ns(void){
 	*STK_CTRL = 0;
@@ -82,11 +81,6 @@ void ascii_ctrl_bit_clear (unsigned char x) {
 	* portOdrLow &= notX;
 	* portOdrLow |= B_SELECT;
 }
-
-
-
-
-
 
 void ascii_write_cmd (unsigned char command) {
 	ascii_ctrl_bit_clear(B_RS);
@@ -144,8 +138,50 @@ void ascii_command (unsigned char command) {
 	delay_milli(2);
 }
 
+void ascii_init (void) {
+	ascii_ctrl_bit_clear(B_RS);
+	ascii_ctrl_bit_clear(B_RW);
+	ascii_command(0x38);
+	ascii_command(0x0E);
+	ascii_command(0x01);
+	ascii_command(0x04);
+}
+
+void ascii_gotoxy (int x, int y) {
+	ascii_ctrl_bit_clear(B_RS);
+	ascii_ctrl_bit_clear(B_RW);
+	unsigned char adress = x - 1;
+	if ( y == 2) {
+		adress += 0x40;
+	}
+	ascii_write_cmd(0x80 | adress);
+}
+
+void ascii_write_char (unsigned char c) {
+	while ((ascii_read_status()  & 0x80) == 0x80 ){}
+	delay_mikro(8);
+	ascii_write_data(c);
+	delay_mikro(50);
+}
+
 void main(void) {
+	char *s;
+	char test1[] = "Alfanumerisk ";
+	char test2[] = "Display - test";
 	
+	init_app();
+	ascii_init();
+	ascii_gotoxy(1,1);
+	s = test1;
+	while (*s) {
+		ascii_write_char(*s++);
+	}
+	ascii_gotoxy(1,2);
+	s = test2;
+	while (*s) {
+		ascii_write_char(*s++);
+	}
+	return 0;
 }
 
 

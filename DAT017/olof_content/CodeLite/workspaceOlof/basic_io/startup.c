@@ -25,5 +25,3 @@ void main(void) {
 		*((unsigned char *) 0x40020C14) = c;
 	}
 }
-
-
