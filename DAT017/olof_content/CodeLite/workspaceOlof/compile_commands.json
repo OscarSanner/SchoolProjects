@@ -1,11 +1,15 @@
 [{
+  "file": "C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\graphicdisplay\\graphicdisplay.c",
+  "directory": "C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\graphicdisplay",
+  "command": "clang  -c C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\graphicdisplay\\graphicdisplay.c -o C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\graphicdisplay\\graphicdisplay.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
   "file": "C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\delayFIXED\\startup.c",
   "directory": "C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\delayFIXED",
   "command": "clang  -c C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\delayFIXED\\startup.c -o C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\delayFIXED\\startup.c.o  -DSIMULATOR -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
  }, {
-  "file": "C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\keypad\\startup.c",
+  "file": "C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\keypad\\keypad.c",
   "directory": "C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\keypad",
-  "command": "clang  -c C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\keypad\\startup.c -o C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\keypad\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+  "command": "clang  -c C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\keypad\\keypad.c -o C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\keypad\\keypad.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
  }, {
   "file": "C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\basic_io\\startup.c",
   "directory": "C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\basic_io",
@@ -23,7 +27,7 @@
   "directory": "C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\delay",
   "command": "clang  -c C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\delay\\startup.c -o C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\delay\\startup.c.o  -DSIMULATOR -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
  }, {
-  "file": "C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\asciidisplay\\startup.c",
+  "file": "C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\asciidisplay\\asciidisplay.c",
   "directory": "C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\asciidisplay",
-  "command": "clang  -c C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\asciidisplay\\startup.c -o C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\asciidisplay\\startup.c.o  -DSIMULATOR -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+  "command": "clang  -c C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\asciidisplay\\asciidisplay.c -o C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\olof_content\\CodeLite\\workspaceOlof\\asciidisplay\\asciidisplay.c.o  -DSIMULATOR -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
  }]

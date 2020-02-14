@@ -3,17 +3,17 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=keypad
+ProjectName            :=graphicdisplay
 ConfigurationName      :=Debug
 WorkspacePath          :=C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof
-ProjectPath            :=C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof/keypad
+ProjectPath            :=C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof/graphicdisplay
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=olofs
-Date                   :=13/02/2020
+Date                   :=14/02/2020
 CodeLitePath           :=C:/cseapp/CodeLite
 LinkerName             :=$(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-g++.exe
 SharedObjectLinkerName :=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi-g++.exe -shared -fPIC
@@ -32,7 +32,7 @@ Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
-ObjectsFileList        :="keypad.txt"
+ObjectsFileList        :="graphicdisplay.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=makedir
 RcCmpOptions           := 
@@ -68,7 +68,7 @@ ARM_M4SFPLIB:=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v7e-m+fp/soft
 ARM_GCC_M4SFPLIB:=$(CodeLiteDir)/tools/gcc-arm/lib/gcc/arm-none-eabi/9.2.1/thumb/v7e-m+fp/softfp
 ARM_M4HFPLIB:=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v7e-m+fp/hard
 ARM_GCC_M4HFPLIB:=$(CodeLiteDir)/tools/gcc-arm/lib/gcc/arm-none-eabi/9.2.1/thumb/v7e-m+fp/hard
-Objects0=$(IntermediateDirectory)/startup.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/graphicdisplay.c$(ObjectSuffix) 
 
 
 
@@ -88,8 +88,8 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 
 PostBuild:
 	@echo Executing Post Build commands ...
-	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objcopy -S -O srec  ./Debug/keypad.elf ./Debug/keypad.s19
-	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objdump -D -S ./Debug/keypad.elf > ./Debug/keypad.dass
+	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objcopy -S -O srec  ./Debug/graphicdisplay.elf ./Debug/graphicdisplay.s19
+	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objdump -D -S ./Debug/graphicdisplay.elf > ./Debug/graphicdisplay.dass
 	@echo Done
 
 MakeIntermediateDirs:
@@ -105,13 +105,13 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/startup.c$(ObjectSuffix): startup.c $(IntermediateDirectory)/startup.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof/keypad/startup.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/startup.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/startup.c$(DependSuffix): startup.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/startup.c$(ObjectSuffix) -MF$(IntermediateDirectory)/startup.c$(DependSuffix) -MM startup.c
+$(IntermediateDirectory)/graphicdisplay.c$(ObjectSuffix): graphicdisplay.c $(IntermediateDirectory)/graphicdisplay.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof/graphicdisplay/graphicdisplay.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/graphicdisplay.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/graphicdisplay.c$(DependSuffix): graphicdisplay.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/graphicdisplay.c$(ObjectSuffix) -MF$(IntermediateDirectory)/graphicdisplay.c$(DependSuffix) -MM graphicdisplay.c
 
-$(IntermediateDirectory)/startup.c$(PreprocessSuffix): startup.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/startup.c$(PreprocessSuffix) startup.c
+$(IntermediateDirectory)/graphicdisplay.c$(PreprocessSuffix): graphicdisplay.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/graphicdisplay.c$(PreprocessSuffix) graphicdisplay.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

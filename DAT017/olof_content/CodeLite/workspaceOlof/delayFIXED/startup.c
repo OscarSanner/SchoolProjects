@@ -1,3 +1,7 @@
+
+// #define SIMULATOR
+// #define USBDM
+
 #define		STK_BAS 		0xE000E010
 #define		STK_CTRL		((volatile unsigned char *) (STK_BAS))
 #define		STK_COUNTFLAG	((volatile unsigned char *) (STK_BAS + 0x2))
@@ -18,6 +22,11 @@ __asm__ volatile(".L1: B .L1\n");				/* never return */
 }
 
 void init_app(void){
+	#ifdef USBDM
+		* ((unsigned long *) 0x40023830) = 0x18;
+		__asm__ volatile(" LDR R0, =0x08000209\n");
+		__asm__ volatile(" BLX R0 \n");
+	#endif
 	* GPIO_MODER &= 0xFFFF0000;
 	* GPIO_MODER |= 0x5555;
 }
@@ -27,7 +36,7 @@ void delay_250ns(void){
 	*STK_LOAD = 168/4 -1;
 	*STK_VAL = 0;
 	*STK_CTRL = 5;
-	while( (*STK_COUNTFLAG & 0x01) != 0){
+	while( (*STK_COUNTFLAG & 0x1) != 0){
 	}
 	*STK_CTRL = 0;
 }
@@ -55,10 +64,9 @@ void delay_milli(unsigned int ms){
 void main(void){
 	init_app();
 	while(1){
-		*GPIO_ODR_LOW = 0xFF;
-		delay_milli(500);
 		*GPIO_ODR_LOW = 0x0;
+		delay_milli(500);
+		*GPIO_ODR_LOW = 0xFF;
 		delay_milli(500);
 	}
 }
-

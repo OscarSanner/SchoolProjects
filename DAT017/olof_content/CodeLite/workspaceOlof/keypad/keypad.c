@@ -2,6 +2,10 @@
  * 	startup.c
  *
  */
+ 
+// #define USBDM
+ 
+ 
  #define GPIO_D 0x40020C00																		// Pekare till D-Porten (börjar på MODER registret).
  #define GPIO_D_MODER ((unsigned long *) 0x40020C00)						// Pekare till D-Portens MODER register, används för att bestämma vilka portpinnar som ska vara in och ut (se quick-guide sida 20).
  #define GPIO_D_OTYPER ((unsigned short *) 0x40020C04)						// Pekare till D-Portens Output-TYPE register, används för konfigurera portpinnar enligt push-pull/open-drain, OBS: endast 16-BITAR (se quick-guide sida 20 och arbetsbok sida 86).
@@ -33,13 +37,17 @@ void init_GPIO_D_keypad_HIGH (void) {				// Initierar Keypaden på höga bytes
 	* GPIO_D_PUPDR &= 0x0000FFFF;					// Nollställer de 2 höga bytesen i PUPDR-registret och har samtidigt kvar eventuella tidigare inskrivningar i de låga.
 	* GPIO_D_PUPDR |= 0x00AA0000;					// 0000 0000 den högsta byten vilket konfigurerar motsvarande 4 port-pinnar till FLOATING och 0101 0101 den näst högsta porten konfigurerar motsvarande 4 port-pinnar till PULL-DOWN. Har samtidigt kvar eventuella bitar på de låga bytesen.
 }
-
+clTabCtrl
 void init_GPIO_D_7SegmentDisplay_LOW (void) {
 	* GPIO_D_MODER &= 0xFFFF0000;				// Nollställer de 2 lägsta bytesen i MODER-registret och har samtidigt kvar eventuella tidigare inskrivningar i de höga. 
 	* GPIO_D_MODER |= 0x00005555;					// 0101 0101 de två lägsta byten vilket gör porten till en utport. Har samtidigt kvar eventuella bitar på de låga bytesen.
 }
 
 void app_init(void) {										// Kallar på de två ovantsående init funktionerna.
+	#ifdef USBDM
+		*((unsigned long *) 0x40023830) = 0x18;
+	#endif
+	
 	init_GPIO_D_keypad_HIGH();
 	init_GPIO_D_7SegmentDisplay_LOW();
 }
@@ -84,9 +92,9 @@ void out7seg (unsigned char c) {
 
 unsigned char keyb (void) {
 	unsigned char key[4][4] = { {1, 2, 3, 10},			// Matris som representerar alla knappar på 16-tangenbord ( OBS i decimalt för att kunna använda som index i hexArrayen i metoden ovan.
-											{4, 5, 6, 11},
-											{7, 8, 9, 12},
-											{14, 0, 15, 13} };
+											    {4, 5, 6, 11},
+											    {7, 8, 9, 12},
+										     	{14, 0, 15, 13} };
 	unsigned char col = 0;
 	for (unsigned char row = 1; row <= 4; row++) {		// Loopar igenom alla rader
 		keybActivate(row);													// Om en knapp på raden är ifylld, spara dess RAD (se metoden ovan).

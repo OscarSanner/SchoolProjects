@@ -5,15 +5,15 @@
 ## Debug
 ProjectName            :=delayFIXED
 ConfigurationName      :=Debug
-WorkspacePath          :=C:/Users/olofs/Desktop/DAT017/olof_content/CodeLite/workspaceOlof
-ProjectPath            :=C:/Users/olofs/Desktop/DAT017/olof_content/CodeLite/workspaceOlof/delayFIXED
+WorkspacePath          :=C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof
+ProjectPath            :=C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof/delayFIXED
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=olofs
-Date                   :=10/02/2020
+Date                   :=13/02/2020
 CodeLitePath           :=C:/cseapp/CodeLite
 LinkerName             :=$(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-g++.exe
 SharedObjectLinkerName :=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi-g++.exe -shared -fPIC
@@ -106,7 +106,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/startup.c$(ObjectSuffix): startup.c $(IntermediateDirectory)/startup.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/olofs/Desktop/DAT017/olof_content/CodeLite/workspaceOlof/delayFIXED/startup.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/startup.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof/delayFIXED/startup.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/startup.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/startup.c$(DependSuffix): startup.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/startup.c$(ObjectSuffix) -MF$(IntermediateDirectory)/startup.c$(DependSuffix) -MM startup.c
 

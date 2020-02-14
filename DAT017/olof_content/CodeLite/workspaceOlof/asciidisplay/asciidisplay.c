@@ -1,3 +1,6 @@
+// #define SIMULATOR
+// #define USBDM
+
 #define	STK_BAS 0xE000E010
 #define	STK_CTRL ((volatile unsigned char *) (STK_BAS))
 #define	STK_COUNTFLAG ((volatile unsigned char *) (STK_BAS + 0x2))
@@ -19,8 +22,6 @@
 #define B_SELECT 4
 #define B_RW 2
 #define B_RS 1
-
-
  
 __attribute__((naked)) __attribute__((section (".start_section")) )
 void startup ( void )
@@ -32,6 +33,12 @@ __asm__ volatile(".L1: B .L1\n");				/* never return */
 }
 
 void init_app(void){
+	#ifdef USBDM
+		* ((unsigned long *) 0x40023830) = 0x18;
+		__asm__ volatile(" LDR R0, =0x08000209\n");
+		__asm__ volatile(" BLX R0 \n");
+	#endif
+	
 	* portModer = 0x55555555;
 }
 
@@ -124,7 +131,7 @@ unsigned char ascii_read_data (void) {
 
 unsigned char ascii_read_status (void) {
 	* portModer = 0x00005555;
-	ascii_ctrl_bit_clear(B_RS);						//OBS samma som ovan men CLEARAR RS här (RS styr 
+	ascii_ctrl_bit_clear(B_RS);						//OBS samma som ovan men CLEARAR RS här
 	ascii_ctrl_bit_set(B_RW);
 	unsigned char returnValue = ascii_read_controller();
 	* portModer = 0x55555555;
@@ -164,6 +171,10 @@ void ascii_write_char (unsigned char c) {
 	delay_mikro(50);
 }
 
+
+
+
+
 void main(void) {
 	char *s;
 	char test1[] = "Alfanumerisk ";
@@ -174,7 +185,8 @@ void main(void) {
 	ascii_gotoxy(1,1);
 	s = test1;
 	while (*s) {
-		ascii_write_char(*s++);
+		ascii_write_char(*s);
+		s++;
 	}
 	ascii_gotoxy(1,2);
 	s = test2;

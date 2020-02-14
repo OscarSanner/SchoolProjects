@@ -4,11 +4,25 @@
   <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\workspaceOlof.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\asciidisplay\startup.c" Name="FileName"/>
-      <int Value="144" Name="FirstVisibleLine"/>
-      <int Value="156" Name="CurrentLine"/>
+      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\graphicdisplay\graphicdisplay.c" Name="FileName"/>
+      <int Value="82" Name="FirstVisibleLine"/>
+      <int Value="215" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
+      <IntVector Name="CollapsedFolds">
+        <IntVectorItem Value="58"/>
+        <IntVectorItem Value="68"/>
+        <IntVectorItem Value="73"/>
+        <IntVectorItem Value="83"/>
+        <IntVectorItem Value="95"/>
+        <IntVectorItem Value="100"/>
+        <IntVectorItem Value="106"/>
+        <IntVectorItem Value="118"/>
+        <IntVectorItem Value="137"/>
+        <IntVectorItem Value="159"/>
+        <IntVectorItem Value="179"/>
+        <IntVectorItem Value="186"/>
+        <IntVectorItem Value="194"/>
+      </IntVector>
     </TabInfo>
   </TabInfoArray>
   <SerializedObject Name="m_breakpoints">
