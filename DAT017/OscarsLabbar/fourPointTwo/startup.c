@@ -11,6 +11,7 @@
 #define KeypadOut ((volatile unsigned char*) GPIOD_BASE + 0x15)
 #define SevenDigitDisplay ((volatile unsigned char*) GPIOD_BASE + 0x14)
 
+
 __attribute__((naked)) __attribute__((section (".start_section")) )
 void startup ( void )
 {
@@ -21,6 +22,10 @@ __asm__ volatile(".L1: B .L1\n");				/* never return */
 }
 
 void app_init(){
+	#ifdef USBDM
+	*((unsigned long*) 0x40023830) = 0x18;
+	#endif
+	
 	* GPIOD_MODER = 0x55005555;
 	* GPIOD_PUPDR = 0x00AA0000;
 	* GPIOD_OTYPER = 0x0;

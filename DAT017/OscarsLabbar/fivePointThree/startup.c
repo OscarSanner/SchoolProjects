@@ -20,6 +20,11 @@ __asm__ volatile(".L1: B .L1\n");				/* never return */
 }
 
 void init_app(){
+	#ifdef USBDM
+	*((unsigned long*)0x40023830) = 0x18; 
+	__asm volatile(" LDR R0,=0x08000209 \n BLX R0 \n")
+	#endif
+	
 	*((volatile unsigned long*) 0x40021000) &=0xFFFF0000;
 	*((volatile unsigned long*) 0x40021000) |=0x55;
 }

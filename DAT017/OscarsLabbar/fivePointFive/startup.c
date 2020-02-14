@@ -25,6 +25,11 @@
 #define B_SELECT 4
 #define B_RW 2
 #define B_RS 1
+#define B_RST 0x20
+#define B_CS2 0x10
+#define B_CS1 8
+
+typedef unsigned char uint8_t;
 
 __attribute__((naked)) __attribute__((section (".start_section")) )
 void startup ( void )
@@ -36,6 +41,10 @@ __asm__ volatile(".L1: B .L1\n");				/* never return */
 }
 
 void init_app(){
+	#ifdef USBDM
+	((unsigned long*) 0x40023830) = 0x18;
+	__asm volatile(" LDR R0,=0x08000209 \n BLX R0 \n");
+	#endif
 	* portModer = 0x55555555;
 }
 
@@ -166,7 +175,7 @@ void ascii_write_char(unsigned char c){
 
 void main(void){
 	char * s;
-	char test1[] = "ö Ö ä Ä å Å";
+	char test1[] = "Antiloper";
 	char test2[] = "Display - test";
 	
 	init_app();

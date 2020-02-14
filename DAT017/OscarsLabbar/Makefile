@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ olofskeypad - Debug ]----------"
-	@cd "olofskeypad" && "$(MAKE)" -f  "olofskeypad.mk" && "$(MAKE)" -f  "olofskeypad.mk" PostBuild
+	@echo "----------Building project:[ graphicdisplay - Debug ]----------"
+	@cd "graphicdisplay" && "$(MAKE)" -f  "graphicdisplay.mk" && "$(MAKE)" -f  "graphicdisplay.mk" PostBuild
 clean:
-	@echo "----------Cleaning project:[ olofskeypad - Debug ]----------"
-	@cd "olofskeypad" && "$(MAKE)" -f  "olofskeypad.mk" clean
+	@echo "----------Cleaning project:[ graphicdisplay - Debug ]----------"
+	@cd "graphicdisplay" && "$(MAKE)" -f  "graphicdisplay.mk" clean

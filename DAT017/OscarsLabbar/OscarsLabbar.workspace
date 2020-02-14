@@ -8,7 +8,8 @@
   <Project Name="fourPointTwo" Path="fourPointTwo/fourPointTwo.project" Active="No"/>
   <Project Name="fivePointThree" Path="fivePointThree/fivePointThree.project" Active="No"/>
   <Project Name="fivePointFour" Path="fivePointFive/fivePointFive.project" Active="No"/>
-  <Project Name="olofskeypad" Path="olofskeypad/olofskeypad.project" Active="Yes"/>
+  <Project Name="olofskeypad" Path="olofskeypad/olofskeypad.project" Active="No"/>
+  <Project Name="graphicdisplay" Path="graphicdisplay/graphicdisplay.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -21,6 +22,7 @@
       <Project Name="fivePointThree" ConfigName="Debug"/>
       <Project Name="fivePointFour" ConfigName="Debug"/>
       <Project Name="olofskeypad" ConfigName="Debug"/>
+      <Project Name="graphicdisplay" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -33,6 +35,7 @@
       <Project Name="fivePointThree" ConfigName="Release"/>
       <Project Name="fivePointFour" ConfigName="Release"/>
       <Project Name="olofskeypad" ConfigName="Release"/>
+      <Project Name="graphicdisplay" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

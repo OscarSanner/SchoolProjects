@@ -11,6 +11,10 @@
   "directory": "C:\\Users\\osann\\Documents\\GitProjects\\C\\ExampleExercises",
   "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\C\\ExampleExercises\\main.c -o C:\\Users\\osann\\Documents\\GitProjects\\C\\ExampleExercises\\main.c.o  -I. -I.  -g  -O0  -Wall"
  }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\graphicdisplay\\startup.c",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\graphicdisplay",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\graphicdisplay\\startup.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\graphicdisplay\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
   "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\basic__IO\\startup.c",
   "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\basic__IO",
   "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\basic__IO\\startup.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\basic__IO\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
