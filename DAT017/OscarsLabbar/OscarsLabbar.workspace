@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="OscarsLabbar" Database="" Version="10.0.0">
   <Project Name="LearningC" Path="LearningC/LearningC.project" Active="No"/>
+  <Project Name="ExampleExercises" Path="../../../C/ExampleExercises/ExampleExercises.project" Active="No"/>
   <Project Name="Vecka1Recap" Path="Vecka1Recap/Vecka1Recap.project" Active="No"/>
   <Project Name="Vecka2" Path="Vecka2/Vecka2.project" Active="No"/>
   <Project Name="basic__IO" Path="basic__IO/basic__IO.project" Active="No"/>
-  <Project Name="fourPointTwo" Path="fourPointTwo/fourPointTwo.project" Active="Yes"/>
+  <Project Name="fourPointTwo" Path="fourPointTwo/fourPointTwo.project" Active="No"/>
   <Project Name="fivePointThree" Path="fivePointThree/fivePointThree.project" Active="No"/>
   <Project Name="fivePointFour" Path="fivePointFive/fivePointFive.project" Active="No"/>
+  <Project Name="olofskeypad" Path="olofskeypad/olofskeypad.project" Active="No"/>
+  <Project Name="graphicdisplay" Path="graphicdisplay/graphicdisplay.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -18,6 +21,8 @@
       <Project Name="fourPointTwo" ConfigName="Debug"/>
       <Project Name="fivePointThree" ConfigName="Debug"/>
       <Project Name="fivePointFour" ConfigName="Debug"/>
+      <Project Name="olofskeypad" ConfigName="Debug"/>
+      <Project Name="graphicdisplay" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -29,6 +34,8 @@
       <Project Name="fourPointTwo" ConfigName="Release"/>
       <Project Name="fivePointThree" ConfigName="Release"/>
       <Project Name="fivePointFour" ConfigName="Release"/>
+      <Project Name="olofskeypad" ConfigName="Release"/>
+      <Project Name="graphicdisplay" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

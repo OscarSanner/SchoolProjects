@@ -26,6 +26,11 @@ __asm__ volatile(".L1: B .L1\n");				/* never return */
 void init_app(){
 2000000c:	b580      	push	{r7, lr}
 2000000e:	af00      	add	r7, sp, #0
+	#ifdef USBDM
+	*((unsigned long*)0x40023830) = 0x18; 
+	__asm volatile(" LDR R0,=0x08000209 \n BLX R0 \n")
+	#endif
+	
 	*((volatile unsigned long*) 0x40021000) &=0xFFFF0000;
 20000010:	4b07      	ldr	r3, [pc, #28]	; (20000030 <init_app+0x24>)
 20000012:	681a      	ldr	r2, [r3, #0]
@@ -215,6 +220,7 @@ void delayMilli(unsigned int ms){
 20000132:	429a      	cmp	r2, r3
 20000134:	d8ef      	bhi.n	20000116 <delayMilli+0x24>
 	}
+}
 20000136:	46c0      	nop			; (mov r8, r8)
 20000138:	46c0      	nop			; (mov r8, r8)
 2000013a:	46bd      	mov	sp, r7
@@ -380,18 +386,18 @@ Disassembly of section .debug_info:
   1c:	00014020 	andeq	r4, r1, r0, lsr #32
   20:	00000000 	andeq	r0, r0, r0
   24:	010d0200 	mrseq	r0, SP_fiq
-  28:	3a010000 	bcc	40030 <startup-0x1ffbffd0>
+  28:	3f010000 	svccc	0x00010000
   2c:	0000f206 	andeq	pc, r0, r6, lsl #4
   30:	00004e20 	andeq	r4, r0, r0, lsr #28
   34:	619c0100 	orrsvs	r0, ip, r0, lsl #2
   38:	03000000 	movweq	r0, #0
   3c:	0100736d 	tsteq	r0, sp, ror #6
-  40:	00611e3a 	rsbeq	r1, r1, sl, lsr lr
+  40:	00611e3f 	rsbeq	r1, r1, pc, lsr lr
   44:	91020000 	mrsls	r0, (UNDEF: 2)
   48:	0110046c 	tsteq	r0, ip, ror #8
   4c:	00262000 	eoreq	r2, r6, r0
   50:	69050000 	stmdbvs	r5, {}	; <UNPREDICTABLE>
-  54:	0a400100 	beq	100045c <startup-0x1efffba4>
+  54:	0a450100 	beq	114045c <startup-0x1eebfba4>
   58:	00000068 	andeq	r0, r0, r8, rrx
   5c:	00749102 	rsbseq	r9, r4, r2, lsl #2
   60:	07040600 	streq	r0, [r4, -r0, lsl #12]
@@ -399,26 +405,26 @@ Disassembly of section .debug_info:
   68:	69050407 	stmdbvs	r5, {r0, r1, r2, sl}
   6c:	0200746e 	andeq	r7, r0, #1845493760	; 0x6e000000
   70:	00000089 	andeq	r0, r0, r9, lsl #1
-  74:	b0062f01 	andlt	r2, r6, r1, lsl #30
+  74:	b0063401 	andlt	r3, r6, r1, lsl #8
   78:	42200000 	eormi	r0, r0, #0
   7c:	01000000 	mrseq	r0, (UNDEF: 0)
   80:	0000ab9c 	muleq	r0, ip, fp
   84:	73750300 	cmnvc	r5, #0, 6
-  88:	1e2f0100 	sufnee	f0, f7, f0
+  88:	1e340100 	rsfnes	f0, f4, f0
   8c:	00000061 	andeq	r0, r0, r1, rrx
   90:	046c9102 	strbteq	r9, [ip], #-258	; 0xfffffefe
   94:	200000ce 	andcs	r0, r0, lr, asr #1
   98:	0000001a 	andeq	r0, r0, sl, lsl r0
   9c:	01006905 	tsteq	r0, r5, lsl #18
-  a0:	00680a35 	rsbeq	r0, r8, r5, lsr sl
+  a0:	00680a3a 	rsbeq	r0, r8, sl, lsr sl
   a4:	91020000 	mrsls	r0, (UNDEF: 2)
   a8:	08000074 	stmdaeq	r0, {r2, r4, r5, r6}
   ac:	000000a5 	andeq	r0, r0, r5, lsr #1
-  b0:	68062601 	stmdavs	r6, {r0, r9, sl, sp}
+  b0:	68062b01 	stmdavs	r6, {r0, r8, r9, fp, sp}
   b4:	48200000 	stmdami	r0!, {}	; <UNPREDICTABLE>
   b8:	01000000 	mrseq	r0, (UNDEF: 0)
   bc:	00b1029c 	umlalseq	r0, r1, ip, r2
-  c0:	1b010000 	blne	400c8 <startup-0x1ffbff38>
+  c0:	20010000 	andcs	r0, r1, r0
   c4:	00003406 	andeq	r3, r0, r6, lsl #8
   c8:	00003420 	andeq	r3, r0, r0, lsr #8
   cc:	ec9c0100 	ldfs	f0, [ip], {0}
@@ -426,7 +432,7 @@ Disassembly of section .debug_info:
   d4:	2000003c 	andcs	r0, r0, ip, lsr r0
   d8:	00000026 	andeq	r0, r0, r6, lsr #32
   dc:	00010d09 	andeq	r0, r1, r9, lsl #26
-  e0:	03200100 	nopeq	{0}	; <UNPREDICTABLE>
+  e0:	03250100 			; <UNDEFINED> instruction: 0x03250100
   e4:	00000068 	andeq	r0, r0, r8, rrx
   e8:	0000000a 	andeq	r0, r0, sl
   ec:	00009408 	andeq	r9, r0, r8, lsl #8
@@ -543,7 +549,7 @@ Disassembly of section .debug_line:
   88:	0e032000 	cdpeq	0, 0, cr2, cr3, cr0, {0}
   8c:	21211301 			; <UNDEFINED> instruction: 0x21211301
   90:	1005212f 	andne	r2, r5, pc, lsr #2
-  94:	2f2a0522 	svccs	0x002a0522
+  94:	342a0522 	strtcc	r0, [sl], #-1314	; 0xfffffade
   98:	67010567 	strvs	r0, [r1, -r7, ror #10]
   9c:	05681005 	strbeq	r1, [r8, #-5]!
   a0:	03052f02 	movweq	r2, #24322	; 0x5f02
