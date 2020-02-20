@@ -37,7 +37,7 @@ void init_GPIO_D_keypad_HIGH (void) {				// Initierar Keypaden på höga bytes
 	* GPIO_D_PUPDR &= 0x0000FFFF;					// Nollställer de 2 höga bytesen i PUPDR-registret och har samtidigt kvar eventuella tidigare inskrivningar i de låga.
 	* GPIO_D_PUPDR |= 0x00AA0000;					// 0000 0000 den högsta byten vilket konfigurerar motsvarande 4 port-pinnar till FLOATING och 0101 0101 den näst högsta porten konfigurerar motsvarande 4 port-pinnar till PULL-DOWN. Har samtidigt kvar eventuella bitar på de låga bytesen.
 }
-clTabCtrl
+
 void init_GPIO_D_7SegmentDisplay_LOW (void) {
 	* GPIO_D_MODER &= 0xFFFF0000;				// Nollställer de 2 lägsta bytesen i MODER-registret och har samtidigt kvar eventuella tidigare inskrivningar i de höga. 
 	* GPIO_D_MODER |= 0x00005555;					// 0101 0101 de två lägsta byten vilket gör porten till en utport. Har samtidigt kvar eventuella bitar på de låga bytesen.

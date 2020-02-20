@@ -7,7 +7,10 @@
   <Project Name="delay" Path="delay/delay.project" Active="No"/>
   <Project Name="asciidisplay" Path="asciidisplay/asciidisplay.project" Active="No"/>
   <Project Name="delayFIXED" Path="delayFIXED/delayFIXED.project" Active="No"/>
-  <Project Name="graphicdisplay" Path="graphicdisplay/graphicdisplay.project" Active="Yes"/>
+  <Project Name="graphicdisplay" Path="graphicdisplay/graphicdisplay.project" Active="No"/>
+  <Project Name="autopong" Path="autopong/autopong.project" Active="No"/>
+  <Project Name="ballWithKeypad" Path="ballWithKeypad/ballWithKeypad.project" Active="No"/>
+  <Project Name="getsetpsr" Path="getsetpsr/getsetpsr.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -20,6 +23,9 @@
       <Project Name="asciidisplay" ConfigName="Debug"/>
       <Project Name="delayFIXED" ConfigName="Debug"/>
       <Project Name="graphicdisplay" ConfigName="Debug"/>
+      <Project Name="autopong" ConfigName="Debug"/>
+      <Project Name="ballWithKeypad" ConfigName="Debug"/>
+      <Project Name="getsetpsr" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -32,6 +38,9 @@
       <Project Name="asciidisplay" ConfigName="Release"/>
       <Project Name="delayFIXED" ConfigName="Release"/>
       <Project Name="graphicdisplay" ConfigName="Release"/>
+      <Project Name="autopong" ConfigName="Release"/>
+      <Project Name="ballWithKeypad" ConfigName="Release"/>
+      <Project Name="getsetpsr" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

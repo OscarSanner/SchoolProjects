@@ -3,17 +3,17 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=keypad
+ProjectName            :=getsetpsr
 ConfigurationName      :=Debug
 WorkspacePath          :=C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof
-ProjectPath            :=C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof/keypad
+ProjectPath            :=C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof/getsetpsr
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=olofs
-Date                   :=18/02/2020
+Date                   :=19/02/2020
 CodeLitePath           :=C:/cseapp/CodeLite
 LinkerName             :=$(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-g++.exe
 SharedObjectLinkerName :=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi-g++.exe -shared -fPIC
@@ -32,7 +32,7 @@ Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
-ObjectsFileList        :="keypad.txt"
+ObjectsFileList        :="getsetpsr.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=makedir
 RcCmpOptions           := 
@@ -68,7 +68,7 @@ ARM_M4SFPLIB:=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v7e-m+fp/soft
 ARM_GCC_M4SFPLIB:=$(CodeLiteDir)/tools/gcc-arm/lib/gcc/arm-none-eabi/9.2.1/thumb/v7e-m+fp/softfp
 ARM_M4HFPLIB:=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v7e-m+fp/hard
 ARM_GCC_M4HFPLIB:=$(CodeLiteDir)/tools/gcc-arm/lib/gcc/arm-none-eabi/9.2.1/thumb/v7e-m+fp/hard
-Objects0=$(IntermediateDirectory)/keypad.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/getsetpsr.c$(ObjectSuffix) 
 
 
 
@@ -88,8 +88,8 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 
 PostBuild:
 	@echo Executing Post Build commands ...
-	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objcopy -S -O srec  ./Debug/keypad.elf ./Debug/keypad.s19
-	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objdump -D -S ./Debug/keypad.elf > ./Debug/keypad.dass
+	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objcopy -S -O srec  ./Debug/getsetpsr.elf ./Debug/getsetpsr.s19
+	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objdump -D -S ./Debug/getsetpsr.elf > ./Debug/getsetpsr.dass
 	@echo Done
 
 MakeIntermediateDirs:
@@ -105,13 +105,13 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/keypad.c$(ObjectSuffix): keypad.c $(IntermediateDirectory)/keypad.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof/keypad/keypad.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/keypad.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/keypad.c$(DependSuffix): keypad.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/keypad.c$(ObjectSuffix) -MF$(IntermediateDirectory)/keypad.c$(DependSuffix) -MM keypad.c
+$(IntermediateDirectory)/getsetpsr.c$(ObjectSuffix): getsetpsr.c $(IntermediateDirectory)/getsetpsr.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof/getsetpsr/getsetpsr.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/getsetpsr.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/getsetpsr.c$(DependSuffix): getsetpsr.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/getsetpsr.c$(ObjectSuffix) -MF$(IntermediateDirectory)/getsetpsr.c$(DependSuffix) -MM getsetpsr.c
 
-$(IntermediateDirectory)/keypad.c$(PreprocessSuffix): keypad.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/keypad.c$(PreprocessSuffix) keypad.c
+$(IntermediateDirectory)/getsetpsr.c$(PreprocessSuffix): getsetpsr.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/getsetpsr.c$(PreprocessSuffix) getsetpsr.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

@@ -3,10 +3,10 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=keypad
+ProjectName            :=autopong
 ConfigurationName      :=Debug
 WorkspacePath          :=C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof
-ProjectPath            :=C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof/keypad
+ProjectPath            :=C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof/autopong
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
@@ -32,7 +32,7 @@ Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
-ObjectsFileList        :="keypad.txt"
+ObjectsFileList        :="autopong.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=makedir
 RcCmpOptions           := 
@@ -68,7 +68,7 @@ ARM_M4SFPLIB:=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v7e-m+fp/soft
 ARM_GCC_M4SFPLIB:=$(CodeLiteDir)/tools/gcc-arm/lib/gcc/arm-none-eabi/9.2.1/thumb/v7e-m+fp/softfp
 ARM_M4HFPLIB:=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v7e-m+fp/hard
 ARM_GCC_M4HFPLIB:=$(CodeLiteDir)/tools/gcc-arm/lib/gcc/arm-none-eabi/9.2.1/thumb/v7e-m+fp/hard
-Objects0=$(IntermediateDirectory)/keypad.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/autopong.c$(ObjectSuffix) 
 
 
 
@@ -88,8 +88,8 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 
 PostBuild:
 	@echo Executing Post Build commands ...
-	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objcopy -S -O srec  ./Debug/keypad.elf ./Debug/keypad.s19
-	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objdump -D -S ./Debug/keypad.elf > ./Debug/keypad.dass
+	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objcopy -S -O srec  ./Debug/autopong.elf ./Debug/autopong.s19
+	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objdump -D -S ./Debug/autopong.elf > ./Debug/autopong.dass
 	@echo Done
 
 MakeIntermediateDirs:
@@ -105,13 +105,13 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/keypad.c$(ObjectSuffix): keypad.c $(IntermediateDirectory)/keypad.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof/keypad/keypad.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/keypad.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/keypad.c$(DependSuffix): keypad.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/keypad.c$(ObjectSuffix) -MF$(IntermediateDirectory)/keypad.c$(DependSuffix) -MM keypad.c
+$(IntermediateDirectory)/autopong.c$(ObjectSuffix): autopong.c $(IntermediateDirectory)/autopong.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof/autopong/autopong.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/autopong.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/autopong.c$(DependSuffix): autopong.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/autopong.c$(ObjectSuffix) -MF$(IntermediateDirectory)/autopong.c$(DependSuffix) -MM autopong.c
 
-$(IntermediateDirectory)/keypad.c$(PreprocessSuffix): keypad.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/keypad.c$(PreprocessSuffix) keypad.c
+$(IntermediateDirectory)/autopong.c$(PreprocessSuffix): autopong.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/autopong.c$(PreprocessSuffix) autopong.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

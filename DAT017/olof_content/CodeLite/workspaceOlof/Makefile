@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ graphicdisplay - Debug ]----------"
-	@cd "graphicdisplay" && "$(MAKE)" -f  "graphicdisplay.mk" && "$(MAKE)" -f  "graphicdisplay.mk" PostBuild
+	@echo "----------Building project:[ getsetpsr - Debug ]----------"
+	@cd "getsetpsr" && "$(MAKE)" -f  "getsetpsr.mk" && "$(MAKE)" -f  "getsetpsr.mk" PostBuild
 clean:
-	@echo "----------Cleaning project:[ graphicdisplay - Debug ]----------"
-	@cd "graphicdisplay" && "$(MAKE)" -f  "graphicdisplay.mk" clean
+	@echo "----------Cleaning project:[ getsetpsr - Debug ]----------"
+	@cd "getsetpsr" && "$(MAKE)" -f  "getsetpsr.mk" clean

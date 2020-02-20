@@ -5,7 +5,6 @@
 
 #define SIMULATOR
 
-
 #define	STK_BAS 0xE000E010
 #define	STK_CTRL ((volatile unsigned char *) (STK_BAS))
 #define	STK_COUNTFLAG ((volatile unsigned char *) (STK_BAS + 0x2))
@@ -40,13 +39,40 @@
  #define LCD_SET_PAGE 0xB8 // Set vertical coordinate
  #define LCD_DISP_START 0xC0 // Start address
  #define LCD_BUSY 0x80 // Read busy status
+
+
+#define MAX_POINTS 20
+
  
+  // --------------------------- TYPEDEF --------------------------------
  
  typedef unsigned char uint_8t;
  
+ typedef  struct tPoint {
+	 uint_8t x;
+	 uint_8t y;
+ } POINT;
+ 
+ typedef struct tGeometry {
+	 int numpoints;						//  hur många punkter av max_points som används för att bygga objektet
+	 int sizex;									//  hur brett objektet är
+	 int sizey;									//  hur högt objektet är
+	 POINT px[MAX_POINTS];
+ } GEOMETRY, *PGEOMETRY;
+ 
+ typedef struct tObj {
+	 PGEOMETRY geo;
+	 int dx, dy;
+	 int posx, posy;
+	 void (* draw) (struct tObj *);
+	 void (* clear) (struct tObj *);
+	 void (* move) (struct tObj *);
+	 void (* set_speed) (struct tObj *, int, int);
+ } OBJECT, *POBJECT;
+
+  // --------------------------- STARTUP --------------------------------
 __attribute__((naked)) __attribute__((section (".start_section")) )
-void startup ( void )
-{
+void startup ( void ) {
 __asm__ volatile(" LDR R0,=0x2001C000\n");		/* set stack */
 __asm__ volatile(" MOV SP,R0\n");
 __asm__ volatile(" BL main\n");					/* call main */
@@ -55,9 +81,14 @@ __asm__ volatile(".L1: B .L1\n");				/* never return */
 
 void init_app(void){
 	* portModer = 0x55555555;
+	#ifdef USBDM
+		* ((unsigned long *) 0x40023830) = 0x18;
+		__asm__ volatile(" LDR R0, =0x08000209\n");
+		__asm__ volatile(" BLX R0 \n");
+	#endif
 }
 
- // --------------------------- DELAY -----------------------
+ // --------------------------- DELAY --------------------------------
 
 void delay_250ns(void){
 	*STK_CTRL = 0;
@@ -263,24 +294,70 @@ void pixel (uint_8t x, uint_8t y, uint_8t set) {
 	graphic_write_data(mask, controller);
 }
 
+// ------------------------------ OBJECT_FUNCTIONS ----------------------------
+
+void set_object_speed (POBJECT o, int speedx, int speedy) {
+	o->dx = speedx;
+	o->dy = speedy;	
+}
+
+void draw_object (POBJECT o) {
+	for (int t = 0; t < o->geo->numpoints; t++) {
+		pixel((o->geo->px[t].x + o->posx), (o->geo->px[t].y + o->posy), 1);
+	}
+}
+
+void clear_object (POBJECT o) {
+	for (int t = 0; t < o->geo->numpoints; t++) {
+		pixel((o->geo->px[t].x + o->posx), (o->geo->px[t].y + o->posy), 0);
+	}
+}
+
+void move_object (POBJECT o) {
+	clear_object(o);
+	int newx = o->posx + o->dx;
+	int newy = o->posy + o->dy;
+	
+	if (newx < 1) {
+		o->dx =(o->dx)*(-1);
+		o->posx = 1;
+	}
+	else if ((newx + o->geo->sizex)  > 128) {
+		o->dx = (o->dx)*(-1);
+		o->posx = 128 - o->geo->sizex;
+	} else {
+		o->posx = newx;
+	}
+	if (newy < 1) {
+		o->dy = (o->dy)*(-1);
+		o->posy = 1;
+	}
+	else if ((newy + o->geo->sizey) > 64) {
+		o->dy = (o->dy)*(-1);
+		o->posy = 64 - o->geo->sizey;
+	} else {
+		o->posy = newy;
+	}
+
+	draw_object(o);
+}
+
+
+static GEOMETRY ball_geometry = {12, 4, 4, {{0,1}, {0,2}, {1,0}, {1,1}, {1,2}, {1,3}, {2,0}, {2,1}, {2,2}, {2,3}, {3,1}, {3,2} }};
+
+static OBJECT ball = {&ball_geometry, 0,0, 0,0, draw_object, clear_object, move_object, set_object_speed};
+
+
 void main(void) {
-	uint_8t i;
+	POBJECT p = &ball;
 	init_app();
 	graphic_initalize();
-	#ifndef		SIMULATOR
+	#ifndef SIMULATOR
 		graphic_clear_screen();
 	#endif
-	for (i = 0; i < 128; i++) {
-		pixel(i, 10, 1);
-		}
-	for (i = 0; i < 64; i++) {
-		pixel(10, i, 1);
-		}
-		delay_milli(500);
-	for (i = 0; i < 128; i++) {
-		pixel(i, 10, 0);
-		}
-	for (i = 0; i < 64; i++) {
-		pixel(10, i, 0);
-		}
+	p->set_speed(p, -10, -10);
+	while(1) {
+		p->move(p);
+		delay_milli(40);
+	}
 	}
