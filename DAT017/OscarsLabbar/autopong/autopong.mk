@@ -3,10 +3,10 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=graphicdisplay
+ProjectName            :=autopong
 ConfigurationName      :=Debug
 WorkspacePath          :=C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar
-ProjectPath            :=C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar/graphicdisplay
+ProjectPath            :=C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar/autopong
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
@@ -32,7 +32,7 @@ Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
-ObjectsFileList        :="graphicdisplay.txt"
+ObjectsFileList        :="autopong.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=makedir
 RcCmpOptions           := 
@@ -68,7 +68,7 @@ ARM_M4SFPLIB:=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v7e-m+fp/soft
 ARM_GCC_M4SFPLIB:=$(CodeLiteDir)/tools/gcc-arm/lib/gcc/arm-none-eabi/9.2.1/thumb/v7e-m+fp/softfp
 ARM_M4HFPLIB:=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v7e-m+fp/hard
 ARM_GCC_M4HFPLIB:=$(CodeLiteDir)/tools/gcc-arm/lib/gcc/arm-none-eabi/9.2.1/thumb/v7e-m+fp/hard
-Objects0=$(IntermediateDirectory)/startup.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/autopong.c$(ObjectSuffix) 
 
 
 
@@ -88,8 +88,8 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 
 PostBuild:
 	@echo Executing Post Build commands ...
-	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objcopy -S -O srec  ./Debug/graphicdisplay.elf ./Debug/graphicdisplay.s19
-	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objdump -D -S ./Debug/graphicdisplay.elf > ./Debug/graphicdisplay.dass
+	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objcopy -S -O srec  ./Debug/autopong.elf ./Debug/autopong.s19
+	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objdump -D -S ./Debug/autopong.elf > ./Debug/autopong.dass
 	@echo Done
 
 MakeIntermediateDirs:
@@ -105,13 +105,13 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/startup.c$(ObjectSuffix): startup.c $(IntermediateDirectory)/startup.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar/graphicdisplay/startup.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/startup.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/startup.c$(DependSuffix): startup.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/startup.c$(ObjectSuffix) -MF$(IntermediateDirectory)/startup.c$(DependSuffix) -MM startup.c
+$(IntermediateDirectory)/autopong.c$(ObjectSuffix): autopong.c $(IntermediateDirectory)/autopong.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar/autopong/autopong.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/autopong.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/autopong.c$(DependSuffix): autopong.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/autopong.c$(ObjectSuffix) -MF$(IntermediateDirectory)/autopong.c$(DependSuffix) -MM autopong.c
 
-$(IntermediateDirectory)/startup.c$(PreprocessSuffix): startup.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/startup.c$(PreprocessSuffix) startup.c
+$(IntermediateDirectory)/autopong.c$(PreprocessSuffix): autopong.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/autopong.c$(PreprocessSuffix) autopong.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

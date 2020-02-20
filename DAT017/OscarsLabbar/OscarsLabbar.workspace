@@ -9,7 +9,10 @@
   <Project Name="fivePointThree" Path="fivePointThree/fivePointThree.project" Active="No"/>
   <Project Name="fivePointFour" Path="fivePointFive/fivePointFive.project" Active="No"/>
   <Project Name="olofskeypad" Path="olofskeypad/olofskeypad.project" Active="No"/>
-  <Project Name="graphicdisplay" Path="graphicdisplay/graphicdisplay.project" Active="Yes"/>
+  <Project Name="graphicdisplay" Path="graphicdisplay/graphicdisplay.project" Active="No"/>
+  <Project Name="autopong" Path="autopong/autopong.project" Active="No"/>
+  <Project Name="ballWithKeypad" Path="ballWithKeypad/ballWithKeypad.project" Active="No"/>
+  <Project Name="getsetpsr" Path="getsetpsr/getsetpsr.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -23,6 +26,9 @@
       <Project Name="fivePointFour" ConfigName="Debug"/>
       <Project Name="olofskeypad" ConfigName="Debug"/>
       <Project Name="graphicdisplay" ConfigName="Debug"/>
+      <Project Name="autopong" ConfigName="Debug"/>
+      <Project Name="ballWithKeypad" ConfigName="Debug"/>
+      <Project Name="getsetpsr" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -36,6 +42,9 @@
       <Project Name="fivePointFour" ConfigName="Release"/>
       <Project Name="olofskeypad" ConfigName="Release"/>
       <Project Name="graphicdisplay" ConfigName="Release"/>
+      <Project Name="autopong" ConfigName="Release"/>
+      <Project Name="ballWithKeypad" ConfigName="Release"/>
+      <Project Name="getsetpsr" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

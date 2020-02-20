@@ -1,4 +1,12 @@
 [{
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\ballWithKeypad\\ballWithKeypad.c",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\ballWithKeypad",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\ballWithKeypad\\ballWithKeypad.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\ballWithKeypad\\ballWithKeypad.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\autopong\\autopong.c",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\autopong",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\autopong\\autopong.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\autopong\\autopong.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
   "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fivePointFive\\startup.c",
   "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fivePointFive",
   "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fivePointFive\\startup.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fivePointFive\\startup.c.o  -DSIMULATOR -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
@@ -18,6 +26,10 @@
   "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\basic__IO\\startup.c",
   "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\basic__IO",
   "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\basic__IO\\startup.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\basic__IO\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\getsetpsr\\getsetpsr.c",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\getsetpsr",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\getsetpsr\\getsetpsr.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\getsetpsr\\getsetpsr.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
  }, {
   "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fourPointTwo\\startup.c",
   "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\OscarsLabbar\\fourPointTwo",

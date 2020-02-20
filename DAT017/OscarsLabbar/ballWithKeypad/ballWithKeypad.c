@@ -16,11 +16,6 @@
 #define portOspeedr ((volatile unsigned long)* PORT_BASE + 8)
 #define portPupdr ((volatile unsigned long)* PORT_BASE + 0xC)
 
-#define portportIdrLow ((volatile unsigned char*) PORT_BASE + 0x10)
-#define portIdrHigh ((volatile unsigned char*) PORT_BASE + 0x11)
-#define portOdrLow ((volatile unsigned char*) PORT_BASE + 0x14)
-#define portOdrHigh ((volatile unsigned char*) PORT_BASE + 0x15)
-
 #define B_E 0x40
 #define B_SELECT 4
 #define B_RW 2
@@ -30,6 +25,8 @@
 #define B_CS1 8
 #define B_CS1_AND_B_CS2 0x18
 
+
+
 #define LCD_ON 0x3F // Display on
 #define LCD_OFF 0x3E // Display off
 #define LCD_SET_ADD 0x40 // Set horizontal coordinate
@@ -37,11 +34,52 @@
 #define LCD_DISP_START 0xC0 // Start address
 #define LCD_BUSY 0x80 // Read busy status
 
+#define portportIdrLow ((volatile unsigned char*) PORT_BASE + 0x10)
+#define portIdrHigh ((volatile unsigned char*) PORT_BASE + 0x11)
+#define portOdrLow ((volatile unsigned char*) PORT_BASE + 0x14)
+#define portOdrHigh ((volatile unsigned char*) PORT_BASE + 0x15)
+
+// 					DEFINES FOR KEYPAD					//
+
+#define GPIOD_BASE 0x40020C00
+#define GPIOD_MODER ((volatile unsigned long*) GPIOD_BASE)
+#define GPIOD_PUPDR ((volatile unsigned long*) GPIOD_BASE + 0x0C)
+#define GPIOD_OTYPER ((volatile unsigned short*) GPIOD_BASE + 4)
+#define KeypadIn ((volatile unsigned char*) GPIOD_BASE + 0x11)
+#define KeypadOut ((volatile unsigned char*) GPIOD_BASE + 0x15)
+#define SevenDigitDisplay ((volatile unsigned char*) GPIOD_BASE + 0x14)
+
+
+#define MAX_POINTS 20
+
+// 					STRUCTS					//
 typedef unsigned char uint8_t;
 
+
+typedef struct tPoint{
+	uint8_t x;
+	uint8_t y;
+}POINT;
+
+typedef struct tGeometry{
+	int numpoints;		//Amount of points composing the object (max)
+	int	sizex;			//Width
+	int sizey;			//Height
+	POINT px[MAX_POINTS];
+} GEOMETRY, *PGEOMETRY; 
+
+typedef struct tObj{
+	PGEOMETRY geo;
+	int dx, dy;
+	int posx,posy;
+	void (* draw)(struct tObj *);
+	void (* clear)(struct tObj *);
+	void (* move)(struct tObj *);
+	void (* set_speed)(struct tObj *, int, int);
+} OBJECT, *POBJECT;
+
 __attribute__((naked)) __attribute__((section (".start_section")) )
-void startup ( void )
-{
+void startup ( void ){
 __asm__ volatile(" LDR R0,=0x2001C000\n");		/* set stack */
 __asm__ volatile(" MOV SP,R0\n");
 __asm__ volatile(" BL main\n");					/* call main */
@@ -51,8 +89,18 @@ __asm__ volatile(".L1: B .L1\n");				/* never return */
 
 void init_app(void){
 	* portModer = 0x55555555;
+	* GPIOD_MODER = 0x55005555;
+	* GPIOD_PUPDR = 0x00AA0000;
+	* GPIOD_OTYPER = 0x0;
+	
+	#ifdef USBDM
+	* ((unsigned long *) 0x40023830) = 0x18;
+	_asm_ volatile(" LDR R0, =0x08000209\n");
+	_asm_ volatile(" BLX R0 \n");
+	#endif
 }
 	// 					DELAYS					//
+	
 void delay_250ns(void){
 	*STK_CTRL = 0;
 	*STK_LOAD = 168/4 -1;
@@ -94,6 +142,7 @@ void graphic_ctrl_bit_set(uint8_t x){
 	* portOdrLow |= (x & ~B_SELECT);
 	* portOdrLow &= ~B_SELECT;
 }
+
 void graphic_ctrl_bit_clear(uint8_t x){
 	* portOdrLow &= ~(x | B_SELECT);
 }
@@ -256,25 +305,111 @@ void pixel(uint8_t x, uint8_t y, uint8_t set){
 	graphic_write_data(mask, controller);
 }
 
+// 					OBJECT FUNCTIONS					//
+
+void set_object_speed(POBJECT o, int speedx, int speedy){
+	o->dx = speedx;
+	o->dy = speedy;
+}
+
+void draw_object(POBJECT o){
+	for(int t = 0; t < o->geo->numpoints +0; t++){
+		pixel(o->geo->px[t].x + o->posx, o->geo->px[t].y + o->posy, 1);
+	}
+}
+
+void clear_object(POBJECT o){
+	for(int t = 0; t < o->geo->numpoints; t++){
+		pixel(o->geo->px[t].x + o->posx, o->geo->px[t].y + o->posy, 0);
+	}
+}
+
+void move_object(POBJECT o){
+	clear_object(o);
+	int newx = o->posx + o->dx;
+	int newy = o->posy + o->dy;
+	
+	if(newx < 1){
+		o->dx = -o->dx;
+		o->posx = 1;
+	}
+	else if((newx + o->geo->sizex) > 128){
+		o->dx = -o->dx;
+		o->posx = 128 - o->geo->sizex;
+	}
+	else if(newy < 1){
+		o->dy = -o->dy;
+		o->posy = 1;
+	}
+	else if(newy > 64 - o->geo->sizey){
+		o->dy = -o->dy;
+		o->posy = 64 - o->geo->sizey;
+	}else{
+		o->posx = newx;
+		o->posy = newy;
+	}
+	draw_object(o);
+}
+
+static GEOMETRY ball_geometry = { 12,4,4,{{0,1},{0,2},{1,0},{1,1},{1,2},{1,3},{2,0},{2,1},{2,2},{2,3},{3,1},{3,2}} };
+static OBJECT ball = { &ball_geometry, 0, 0, 1, 1, draw_object, clear_object, move_object, set_object_speed};
+
+unsigned char keyb(){
+	char column;
+	char key;
+	for(int row = 0; row < 4; row++){
+		activateRow(row);
+		column = readColumn();
+		
+		if (column != 4){
+			key = getKeyValue(row);
+			return key;
+		}
+	}
+	return -1;
+}
+
+void activateRow(int row){
+	switch(row){
+		case 0: * KeypadOut = 0x10; break;
+		case 1: * KeypadOut = 0x20; break;
+		case 2: * KeypadOut = 0x40; break;
+		case 3: * KeypadOut = 0x80; break;
+		default: * KeypadOut = 0x0;
+	}
+}
+
+int getKeyValue(int row){
+	unsigned char keys[4][4] = { {1, 2, 3, 0xA}, {4, 5, 6, 0xB}, {7, 8, 9, 0xC}, {0xF, 0, 0xE, 0xD} };
+	return keys[row][readColumn()];
+}
+
+int readColumn(){
+	unsigned char c = * KeypadIn;
+	if(c & 0x8){return 3;}
+	if(c & 0x4){return 2;}
+	if(c & 0x2){return 1;}
+	if(c & 0x1){return 0;}
+	return 4;
+}
+
 void main(void){
-	uint8_t i;
+	POBJECT p = &ball;
 	init_app();
 	graphic_initialize();
 #ifndef SIMULATOR
 	graphic_clear_screen();
 #endif
-	for(i = 0; i < 128; i++){
-		pixel(i, 10, 1);
-	}
-	for(i = 0; i < 64; i++){
-		pixel(10, i, 1);
-	}
-	delay_milli(500);
-	for(i = 0; i < 128; i++){
-		pixel(i, 10, 0);
-	}
-	for(i = 0; i < 64; i++){
-		pixel(10, i, 0);
+	while(1){
+		p->move(p);
+		delay_milli(40);
+		uint8_t c = keyb();
+		switch(c){
+			case 6: p->set_speed(p,2,0);break;
+			case 4: p->set_speed(p,-2,0);break;
+			case 2: p->set_speed(p,0,-2);break;
+			case 8: p->set_speed(p,0,2);break;
+		}
 	}
 }
 

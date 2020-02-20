@@ -3,17 +3,17 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=graphicdisplay
+ProjectName            :=getsetpsr
 ConfigurationName      :=Debug
 WorkspacePath          :=C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar
-ProjectPath            :=C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar/graphicdisplay
+ProjectPath            :=C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar/getsetpsr
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=osann
-Date                   :=18/02/2020
+Date                   :=19/02/2020
 CodeLitePath           :=C:/cseapp/CodeLite
 LinkerName             :=$(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-g++.exe
 SharedObjectLinkerName :=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi-g++.exe -shared -fPIC
@@ -32,7 +32,7 @@ Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
-ObjectsFileList        :="graphicdisplay.txt"
+ObjectsFileList        :="getsetpsr.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=makedir
 RcCmpOptions           := 
@@ -68,7 +68,7 @@ ARM_M4SFPLIB:=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v7e-m+fp/soft
 ARM_GCC_M4SFPLIB:=$(CodeLiteDir)/tools/gcc-arm/lib/gcc/arm-none-eabi/9.2.1/thumb/v7e-m+fp/softfp
 ARM_M4HFPLIB:=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v7e-m+fp/hard
 ARM_GCC_M4HFPLIB:=$(CodeLiteDir)/tools/gcc-arm/lib/gcc/arm-none-eabi/9.2.1/thumb/v7e-m+fp/hard
-Objects0=$(IntermediateDirectory)/startup.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/getsetpsr.c$(ObjectSuffix) 
 
 
 
@@ -88,8 +88,8 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 
 PostBuild:
 	@echo Executing Post Build commands ...
-	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objcopy -S -O srec  ./Debug/graphicdisplay.elf ./Debug/graphicdisplay.s19
-	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objdump -D -S ./Debug/graphicdisplay.elf > ./Debug/graphicdisplay.dass
+	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objcopy -S -O srec  ./Debug/getsetpsr.elf ./Debug/getsetpsr.s19
+	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objdump -D -S ./Debug/getsetpsr.elf > ./Debug/getsetpsr.dass
 	@echo Done
 
 MakeIntermediateDirs:
@@ -105,13 +105,13 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/startup.c$(ObjectSuffix): startup.c $(IntermediateDirectory)/startup.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar/graphicdisplay/startup.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/startup.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/startup.c$(DependSuffix): startup.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/startup.c$(ObjectSuffix) -MF$(IntermediateDirectory)/startup.c$(DependSuffix) -MM startup.c
+$(IntermediateDirectory)/getsetpsr.c$(ObjectSuffix): getsetpsr.c $(IntermediateDirectory)/getsetpsr.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar/getsetpsr/getsetpsr.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/getsetpsr.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/getsetpsr.c$(DependSuffix): getsetpsr.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/getsetpsr.c$(ObjectSuffix) -MF$(IntermediateDirectory)/getsetpsr.c$(DependSuffix) -MM getsetpsr.c
 
-$(IntermediateDirectory)/startup.c$(PreprocessSuffix): startup.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/startup.c$(PreprocessSuffix) startup.c
+$(IntermediateDirectory)/getsetpsr.c$(PreprocessSuffix): getsetpsr.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/getsetpsr.c$(PreprocessSuffix) getsetpsr.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

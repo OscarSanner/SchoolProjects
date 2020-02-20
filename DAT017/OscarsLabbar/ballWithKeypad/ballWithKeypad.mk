@@ -3,10 +3,10 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=graphicdisplay
+ProjectName            :=ballWithKeypad
 ConfigurationName      :=Debug
 WorkspacePath          :=C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar
-ProjectPath            :=C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar/graphicdisplay
+ProjectPath            :=C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar/ballWithKeypad
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
@@ -32,7 +32,7 @@ Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
-ObjectsFileList        :="graphicdisplay.txt"
+ObjectsFileList        :="ballWithKeypad.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=makedir
 RcCmpOptions           := 
@@ -68,7 +68,7 @@ ARM_M4SFPLIB:=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v7e-m+fp/soft
 ARM_GCC_M4SFPLIB:=$(CodeLiteDir)/tools/gcc-arm/lib/gcc/arm-none-eabi/9.2.1/thumb/v7e-m+fp/softfp
 ARM_M4HFPLIB:=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v7e-m+fp/hard
 ARM_GCC_M4HFPLIB:=$(CodeLiteDir)/tools/gcc-arm/lib/gcc/arm-none-eabi/9.2.1/thumb/v7e-m+fp/hard
-Objects0=$(IntermediateDirectory)/startup.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/ballWithKeypad.c$(ObjectSuffix) 
 
 
 
@@ -88,8 +88,8 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 
 PostBuild:
 	@echo Executing Post Build commands ...
-	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objcopy -S -O srec  ./Debug/graphicdisplay.elf ./Debug/graphicdisplay.s19
-	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objdump -D -S ./Debug/graphicdisplay.elf > ./Debug/graphicdisplay.dass
+	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objcopy -S -O srec  ./Debug/ballWithKeypad.elf ./Debug/ballWithKeypad.s19
+	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objdump -D -S ./Debug/ballWithKeypad.elf > ./Debug/ballWithKeypad.dass
 	@echo Done
 
 MakeIntermediateDirs:
@@ -105,13 +105,13 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/startup.c$(ObjectSuffix): startup.c $(IntermediateDirectory)/startup.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar/graphicdisplay/startup.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/startup.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/startup.c$(DependSuffix): startup.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/startup.c$(ObjectSuffix) -MF$(IntermediateDirectory)/startup.c$(DependSuffix) -MM startup.c
+$(IntermediateDirectory)/ballWithKeypad.c$(ObjectSuffix): ballWithKeypad.c $(IntermediateDirectory)/ballWithKeypad.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar/ballWithKeypad/ballWithKeypad.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/ballWithKeypad.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/ballWithKeypad.c$(DependSuffix): ballWithKeypad.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/ballWithKeypad.c$(ObjectSuffix) -MF$(IntermediateDirectory)/ballWithKeypad.c$(DependSuffix) -MM ballWithKeypad.c
 
-$(IntermediateDirectory)/startup.c$(PreprocessSuffix): startup.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/startup.c$(PreprocessSuffix) startup.c
+$(IntermediateDirectory)/ballWithKeypad.c$(PreprocessSuffix): ballWithKeypad.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/ballWithKeypad.c$(PreprocessSuffix) ballWithKeypad.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
