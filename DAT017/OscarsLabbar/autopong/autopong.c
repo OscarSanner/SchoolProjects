@@ -4,6 +4,7 @@
  */
  
 #define 	SIMULATOR
+#define		USBDM
 #define		STK_BAS 		0xE000E010
 #define		STK_CTRL		((volatile unsigned char *) (STK_BAS))
 #define		STK_COUNTFLAG	((volatile unsigned char *) (STK_BAS + 0x2))
@@ -78,6 +79,11 @@ __asm__ volatile(".L1: B .L1\n");				/* never return */
 
 void init_app(void){
 	* portModer = 0x55555555;
+#ifdef USBDM
+	*((unsigned long * ) 0x40023830) = 0x18;
+	__asm__ volatile (" LDR R0, =0x08000209 \n");
+	__asm__ volatile (" BLX R0 \n");
+#endif
 }
 	// 					DELAYS					//
 void delay_250ns(void){

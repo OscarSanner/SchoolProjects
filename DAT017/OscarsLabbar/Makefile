@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ getsetpsr - Debug ]----------"
-	@cd "getsetpsr" && "$(MAKE)" -f  "getsetpsr.mk" && "$(MAKE)" -f  "getsetpsr.mk" PostBuild
+	@echo "----------Building project:[ ballWithKeypad - Debug ]----------"
+	@cd "ballWithKeypad" && "$(MAKE)" -f  "ballWithKeypad.mk" && "$(MAKE)" -f  "ballWithKeypad.mk" PostBuild
 clean:
-	@echo "----------Cleaning project:[ getsetpsr - Debug ]----------"
-	@cd "getsetpsr" && "$(MAKE)" -f  "getsetpsr.mk" clean
+	@echo "----------Cleaning project:[ ballWithKeypad - Debug ]----------"
+	@cd "ballWithKeypad" && "$(MAKE)" -f  "ballWithKeypad.mk" clean
