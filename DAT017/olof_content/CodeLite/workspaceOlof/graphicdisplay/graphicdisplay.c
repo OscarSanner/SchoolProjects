@@ -4,6 +4,10 @@
  */
 
 #define SIMULATOR
+#define USBDM
+
+
+
 
 
 #define	STK_BAS 0xE000E010
@@ -106,6 +110,8 @@ void graphic_ctrl_bit_clear (uint_8t x) {
 			//	* portOdrLow &= ~x;
 			//	* portOdrLow &= ~B_SELECT;
 	}
+
+
 
 void select_controller (uint_8t controller ) {
 	switch (controller) {

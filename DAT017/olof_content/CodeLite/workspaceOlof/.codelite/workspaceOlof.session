@@ -1,69 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\workspaceOlof.workspace">
-  <int Value="3" Name="m_selectedTab"/>
+  <int Value="2" Name="m_selectedTab"/>
   <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\workspaceOlof.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\asciidisplay\asciidisplay.c" Name="FileName"/>
-      <int Value="46" Name="FirstVisibleLine"/>
-      <int Value="35" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
       <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\ballWithKeypad\ballwithkeypad.c" Name="FileName"/>
-      <int Value="150" Name="FirstVisibleLine"/>
-      <int Value="382" Name="CurrentLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="10" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds">
-        <IntVectorItem Value="69"/>
-        <IntVectorItem Value="74"/>
-        <IntVectorItem Value="81"/>
-        <IntVectorItem Value="100"/>
-        <IntVectorItem Value="120"/>
-        <IntVectorItem Value="130"/>
-        <IntVectorItem Value="135"/>
-        <IntVectorItem Value="145"/>
-        <IntVectorItem Value="157"/>
-        <IntVectorItem Value="162"/>
-        <IntVectorItem Value="168"/>
-        <IntVectorItem Value="180"/>
-        <IntVectorItem Value="199"/>
-        <IntVectorItem Value="221"/>
-        <IntVectorItem Value="241"/>
-        <IntVectorItem Value="248"/>
-        <IntVectorItem Value="256"/>
-        <IntVectorItem Value="261"/>
-        <IntVectorItem Value="275"/>
-        <IntVectorItem Value="285"/>
-        <IntVectorItem Value="326"/>
-        <IntVectorItem Value="331"/>
-        <IntVectorItem Value="337"/>
+        <IntVectorItem Value="70"/>
+        <IntVectorItem Value="75"/>
+        <IntVectorItem Value="82"/>
+        <IntVectorItem Value="131"/>
+        <IntVectorItem Value="136"/>
+        <IntVectorItem Value="146"/>
+        <IntVectorItem Value="158"/>
+        <IntVectorItem Value="163"/>
+        <IntVectorItem Value="169"/>
+        <IntVectorItem Value="181"/>
+        <IntVectorItem Value="200"/>
+        <IntVectorItem Value="222"/>
+        <IntVectorItem Value="242"/>
+        <IntVectorItem Value="249"/>
+        <IntVectorItem Value="257"/>
+        <IntVectorItem Value="262"/>
+        <IntVectorItem Value="276"/>
+        <IntVectorItem Value="286"/>
+        <IntVectorItem Value="327"/>
+        <IntVectorItem Value="332"/>
+        <IntVectorItem Value="338"/>
       </IntVector>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\graphicdisplay\graphicdisplay.c" Name="FileName"/>
-      <int Value="160" Name="FirstVisibleLine"/>
-      <int Value="267" Name="CurrentLine"/>
+      <int Value="4" Name="FirstVisibleLine"/>
+      <int Value="6" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds">
-        <IntVectorItem Value="98"/>
-        <IntVectorItem Value="103"/>
-        <IntVectorItem Value="109"/>
-        <IntVectorItem Value="121"/>
-        <IntVectorItem Value="140"/>
-        <IntVectorItem Value="162"/>
-        <IntVectorItem Value="182"/>
-        <IntVectorItem Value="189"/>
-        <IntVectorItem Value="197"/>
-        <IntVectorItem Value="202"/>
-        <IntVectorItem Value="216"/>
+        <IntVectorItem Value="102"/>
+        <IntVectorItem Value="107"/>
+        <IntVectorItem Value="115"/>
+        <IntVectorItem Value="127"/>
+        <IntVectorItem Value="146"/>
+        <IntVectorItem Value="168"/>
+        <IntVectorItem Value="188"/>
+        <IntVectorItem Value="195"/>
+        <IntVectorItem Value="203"/>
+        <IntVectorItem Value="208"/>
+        <IntVectorItem Value="222"/>
+        <IntVectorItem Value="232"/>
       </IntVector>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\getsetpsr\getsetpsr.c" Name="FileName"/>
-      <int Value="3" Name="FirstVisibleLine"/>
-      <int Value="14" Name="CurrentLine"/>
+      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\autopong\autopong.c" Name="FileName"/>
+      <int Value="72" Name="FirstVisibleLine"/>
+      <int Value="85" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

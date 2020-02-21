@@ -7,6 +7,7 @@
 
 
 #define SIMULATOR
+#define USBDM
 
 
 
