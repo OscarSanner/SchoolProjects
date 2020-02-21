@@ -8,8 +8,8 @@
   <Project Name="asciidisplay" Path="asciidisplay/asciidisplay.project" Active="No"/>
   <Project Name="delayFIXED" Path="delayFIXED/delayFIXED.project" Active="No"/>
   <Project Name="graphicdisplay" Path="graphicdisplay/graphicdisplay.project" Active="No"/>
-  <Project Name="autopong" Path="autopong/autopong.project" Active="Yes"/>
-  <Project Name="ballWithKeypad" Path="ballWithKeypad/ballWithKeypad.project" Active="No"/>
+  <Project Name="autopong" Path="autopong/autopong.project" Active="No"/>
+  <Project Name="ballWithKeypad" Path="ballWithKeypad/ballWithKeypad.project" Active="Yes"/>
   <Project Name="getsetpsr" Path="getsetpsr/getsetpsr.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">

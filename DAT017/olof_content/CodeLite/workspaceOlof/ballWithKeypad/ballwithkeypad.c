@@ -6,7 +6,7 @@
 
 
 
-#define SIMULATOR
+//#define SIMULATOR
 #define USBDM
 
 
@@ -99,23 +99,6 @@ __asm__ volatile(" BL main\n");					/* call main */
 __asm__ volatile(".L1: B .L1\n");				/* never return */
 }
 
-void init_app(void){
-	* portModer = 0x55555555;
-	* GPIO_D_MODER &= 0x0000FFFF;				// Nollställer de 2 höga bytesen i MODER-registret och har samtidigt kvar eventuella tidigare inskrivningar i de låga.
-	* GPIO_D_MODER |= 0x55000000;					// 0101 0101 den högsta byten vilket gör porten till en utport och 0000 0000 den näst högsta porten vilket gör den till en inport. Har samtidigt kvar eventuella bitar på de låga bytesen.
-	
-	* GPIO_D_OTYPER &= 0x00FF;						// Nollställer den höga byten i OTYPER-registret och har samtidigt kvar eventuella tidigare inskrivningar i de låga.
-	* GPIO_D_OTYPER |= 0x0000;							// 0000 0000 på den  höga byten i registrert vilket sätter dessa portpinnar till PUSH-PULL. Har samtidigt kvar eventuella bitar på de låga bytesen.		(onödig kanske?)
-	
-	* GPIO_D_PUPDR &= 0x0000FFFF;					// Nollställer de 2 höga bytesen i PUPDR-registret och har samtidigt kvar eventuella tidigare inskrivningar i de låga.
-	* GPIO_D_PUPDR |= 0x00AA0000;					// 0000 0000 den högsta byten vilket konfigurerar motsvarande 4 port-pinnar till FLOATING och 0101 0101 den näst högsta porten konfigurerar motsvarande 4 port-pinnar till PULL-DOWN. Har samtidigt kvar eventuella bitar på de låga bytesen.
-	
-	#ifdef USBDM
-		* ((unsigned long *) 0x40023830) = 0x18;
-		__asm__ volatile(" LDR R0, =0x08000209\n");
-		__asm__ volatile(" BLX R0 \n");
-	#endif
-}
 
  // --------------------------- DELAY --------------------------------
 
@@ -188,9 +171,10 @@ void graphic_wait_ready (void) {
 	while (1) {
 		graphic_ctrl_bit_set(B_E);
 		delay_500ns();
+		uint_8t c = * portIdrHigh & LCD_BUSY;
 		graphic_ctrl_bit_clear(B_E);
 		delay_500ns();
-		if ( (* portIdrHigh & LCD_BUSY) == 0 ) {
+		if ( c == 0 ) {
 			break;
 		}
 	}
@@ -285,7 +269,7 @@ void graphic_clear_screen (void) {
 }
 
 void pixel (uint_8t x, uint_8t y, uint_8t set) {
-	if ((x > 128) || (y > 64)) {return;}
+	if ((x > 128) || (y > 64)||(x < 1) || (y < 1)) {return;}
 	uint_8t mask, controller, x_real, data_holder;
 	uint_8t index = (y - 1) / 8;
 
@@ -421,6 +405,23 @@ static GEOMETRY ball_geometry = {12, 4, 4, {{0,1}, {0,2}, {1,0}, {1,1}, {1,2}, {
 
 static OBJECT ball = {&ball_geometry, 0,0, 0,0, draw_object, clear_object, move_object, set_object_speed};
 
+void init_app(void){
+	* portModer = 0x55555555;
+	* GPIO_D_MODER &= 0x0000FFFF;				// Nollställer de 2 höga bytesen i MODER-registret och har samtidigt kvar eventuella tidigare inskrivningar i de låga.
+	* GPIO_D_MODER |= 0x55000000;					// 0101 0101 den högsta byten vilket gör porten till en utport och 0000 0000 den näst högsta porten vilket gör den till en inport. Har samtidigt kvar eventuella bitar på de låga bytesen.
+	
+	* GPIO_D_OTYPER &= 0x00FF;						// Nollställer den höga byten i OTYPER-registret och har samtidigt kvar eventuella tidigare inskrivningar i de låga.
+	* GPIO_D_OTYPER |= 0x0000;							// 0000 0000 på den  höga byten i registrert vilket sätter dessa portpinnar till PUSH-PULL. Har samtidigt kvar eventuella bitar på de låga bytesen.		(onödig kanske?)
+	
+	* GPIO_D_PUPDR &= 0x0000FFFF;					// Nollställer de 2 höga bytesen i PUPDR-registret och har samtidigt kvar eventuella tidigare inskrivningar i de låga.
+	* GPIO_D_PUPDR |= 0x00AA0000;					// 0000 0000 den högsta byten vilket konfigurerar motsvarande 4 port-pinnar till FLOATING och 0101 0101 den näst högsta porten konfigurerar motsvarande 4 port-pinnar till PULL-DOWN. Har samtidigt kvar eventuella bitar på de låga bytesen.
+	
+	#ifdef USBDM
+		* ((unsigned long *) 0x40023830) = 0x18;
+		__asm__ volatile(" LDR R0, =0x08000209\n");
+		__asm__ volatile(" BLX R0 \n");
+	#endif
+}
 
 void main(void) {
 	POBJECT p = &ball;

@@ -3,7 +3,8 @@
  *
  */
  
-#define 	SIMULATOR
+//#define 	SIMULATOR
+#define 	USBDM
 #define		STK_BAS 		0xE000E010
 #define		STK_CTRL		((volatile unsigned char *) (STK_BAS))
 #define		STK_COUNTFLAG	((volatile unsigned char *) (STK_BAS + 0x2))
@@ -86,19 +87,6 @@ __asm__ volatile(" BL main\n");					/* call main */
 __asm__ volatile(".L1: B .L1\n");				/* never return */
 }
 
-
-void init_app(void){
-	* portModer = 0x55555555;
-	* GPIOD_MODER = 0x55005555;
-	* GPIOD_PUPDR = 0x00AA0000;
-	* GPIOD_OTYPER = 0x0;
-	
-	#ifdef USBDM
-	* ((unsigned long *) 0x40023830) = 0x18;
-	_asm_ volatile(" LDR R0, =0x08000209\n");
-	_asm_ volatile(" BLX R0 \n");
-	#endif
-}
 	// 					DELAYS					//
 	
 void delay_250ns(void){
@@ -169,9 +157,10 @@ void graphic_wait_ready(void){
 	while(1){
 		graphic_ctrl_bit_set(B_E);
 		delay_500ns();
+		uint8_t c = * portIdrHigh & LCD_BUSY;
 		graphic_ctrl_bit_clear(B_E);
 		delay_500ns();
-		if((* portIdrHigh & LCD_BUSY) == 0){
+		if(c == 0){
 			break;
 		}
 	}
@@ -267,7 +256,7 @@ void graphic_clear_screen(){
 }
 
 void pixel(uint8_t x, uint8_t y, uint8_t set){
-	if((x > 128)||(y > 64)){return;}
+	if((x > 128)||(y > 64)||(x < 1)||(y < 1)){return;}
 	uint8_t mask, controller, x_real, data_holder;
 	uint8_t index = (y-1) / 8;
 	
@@ -362,7 +351,7 @@ unsigned char keyb(){
 		column = readColumn();
 		
 		if (column != 4){
-			key = getKeyValue(row);
+			key = getKeyValue(row, column);
 			return key;
 		}
 	}
@@ -379,9 +368,9 @@ void activateRow(int row){
 	}
 }
 
-int getKeyValue(int row){
+int getKeyValue(int row, int column){
 	unsigned char keys[4][4] = { {1, 2, 3, 0xA}, {4, 5, 6, 0xB}, {7, 8, 9, 0xC}, {0xF, 0, 0xE, 0xD} };
-	return keys[row][readColumn()];
+	return keys[row][column];
 }
 
 int readColumn(){
@@ -391,6 +380,19 @@ int readColumn(){
 	if(c & 0x2){return 1;}
 	if(c & 0x1){return 0;}
 	return 4;
+}
+
+void init_app(void){
+	* portModer = 0x55555555;
+	* GPIOD_MODER = 0x55005555;
+	* GPIOD_PUPDR = 0x00AA0000;
+	* GPIOD_OTYPER = 0x0;
+	
+	#ifdef USBDM
+	* ((unsigned long *) 0x40023830) = 0x18;
+	__asm__ volatile(" LDR R0, =0x08000209\n");
+	__asm__ volatile(" BLX R0 \n");
+	#endif
 }
 
 void main(void){

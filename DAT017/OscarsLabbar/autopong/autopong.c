@@ -3,7 +3,7 @@
  *
  */
  
-#define 	SIMULATOR
+//#define 	SIMULATOR
 #define		USBDM
 #define		STK_BAS 		0xE000E010
 #define		STK_CTRL		((volatile unsigned char *) (STK_BAS))
@@ -77,14 +77,7 @@ __asm__ volatile(".L1: B .L1\n");				/* never return */
 }
 
 
-void init_app(void){
-	* portModer = 0x55555555;
-#ifdef USBDM
-	*((unsigned long * ) 0x40023830) = 0x18;
-	__asm__ volatile (" LDR R0, =0x08000209 \n");
-	__asm__ volatile (" BLX R0 \n");
-#endif
-}
+
 	// 					DELAYS					//
 void delay_250ns(void){
 	*STK_CTRL = 0;
@@ -154,9 +147,10 @@ void graphic_wait_ready(void){
 	while(1){
 		graphic_ctrl_bit_set(B_E);
 		delay_500ns();
+		uint8_t c = * portIdrHigh & LCD_BUSY;
 		graphic_ctrl_bit_clear(B_E);
 		delay_500ns();
-		if((* portIdrHigh & LCD_BUSY) == 0){
+		if(c == 0){
 			break;
 		}
 	}
@@ -252,7 +246,7 @@ void graphic_clear_screen(){
 }
 
 void pixel(uint8_t x, uint8_t y, uint8_t set){
-	if((x > 128)||(y > 64)){return;}
+	if((x > 128)||(y > 64)||(x < 1)||(y < 1)){return;}
 	uint8_t mask, controller, x_real, data_holder;
 	uint8_t index = (y-1) / 8;
 	
@@ -339,6 +333,15 @@ void move_object(POBJECT o){
 static GEOMETRY ball_geometry = { 12,4,4,{{0,1},{0,2},{1,0},{1,1},{1,2},{1,3},{2,0},{2,1},{2,2},{2,3},{3,1},{3,2}} };
 static OBJECT ball = { &ball_geometry, 0, 0, 1, 1, draw_object, clear_object, move_object, set_object_speed};
 
+void init_app(void){
+	* portModer = 0x55555555;
+#ifdef USBDM
+	*((unsigned long * ) 0x40023830) = 0x18;
+	__asm__ volatile (" LDR R0, =0x08000209 \n");
+	__asm__ volatile (" BLX R0 \n");
+#endif
+}
+
 void main(void){
 	POBJECT p = &ball;
 	init_app();
@@ -351,6 +354,7 @@ void main(void){
 	p->posy = 25;
 	while(1){
 		p->move(p);
+		delay_milli(40);
 	}
 }
 

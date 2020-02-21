@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ autopong - Debug ]----------"
-	@cd "autopong" && "$(MAKE)" -f  "autopong.mk" && "$(MAKE)" -f  "autopong.mk" PostBuild
+	@echo "----------Building project:[ ballWithKeypad - Debug ]----------"
+	@cd "ballWithKeypad" && "$(MAKE)" -f  "ballWithKeypad.mk" && "$(MAKE)" -f  "ballWithKeypad.mk" PostBuild
 clean:
-	@echo "----------Cleaning project:[ autopong - Debug ]----------"
-	@cd "autopong" && "$(MAKE)" -f  "autopong.mk" clean
+	@echo "----------Cleaning project:[ ballWithKeypad - Debug ]----------"
+	@cd "ballWithKeypad" && "$(MAKE)" -f  "ballWithKeypad.mk" clean

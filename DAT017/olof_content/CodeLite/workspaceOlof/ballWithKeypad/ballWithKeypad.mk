@@ -5,14 +5,14 @@
 ## Debug
 ProjectName            :=ballWithKeypad
 ConfigurationName      :=Debug
-WorkspacePath          :=C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof
-ProjectPath            :=C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof/ballWithKeypad
+WorkspacePath          :=C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof
+ProjectPath            :=C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof/ballWithKeypad
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=olofs
+User                   :=osann
 Date                   :=21/02/2020
 CodeLitePath           :=C:/cseapp/CodeLite
 LinkerName             :=$(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-g++.exe
@@ -106,7 +106,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/ballwithkeypad.c$(ObjectSuffix): ballwithkeypad.c $(IntermediateDirectory)/ballwithkeypad.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof/ballWithKeypad/ballwithkeypad.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/ballwithkeypad.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/olof_content/CodeLite/workspaceOlof/ballWithKeypad/ballwithkeypad.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/ballwithkeypad.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/ballwithkeypad.c$(DependSuffix): ballwithkeypad.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/ballwithkeypad.c$(ObjectSuffix) -MF$(IntermediateDirectory)/ballwithkeypad.c$(DependSuffix) -MM ballwithkeypad.c
 
