@@ -3,10 +3,10 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=getsetpsr
+ProjectName            :=systick_irq
 ConfigurationName      :=Debug
 WorkspacePath          :=C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar
-ProjectPath            :=C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar/getsetpsr
+ProjectPath            :=C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar/systick_irq
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
@@ -32,7 +32,7 @@ Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
-ObjectsFileList        :="getsetpsr.txt"
+ObjectsFileList        :="systick_irq.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=makedir
 RcCmpOptions           := 
@@ -68,7 +68,7 @@ ARM_M4SFPLIB:=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v7e-m+fp/soft
 ARM_GCC_M4SFPLIB:=$(CodeLiteDir)/tools/gcc-arm/lib/gcc/arm-none-eabi/9.2.1/thumb/v7e-m+fp/softfp
 ARM_M4HFPLIB:=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v7e-m+fp/hard
 ARM_GCC_M4HFPLIB:=$(CodeLiteDir)/tools/gcc-arm/lib/gcc/arm-none-eabi/9.2.1/thumb/v7e-m+fp/hard
-Objects0=$(IntermediateDirectory)/getsetpsr.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/systick_irq.c$(ObjectSuffix) 
 
 
 
@@ -88,8 +88,8 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 
 PostBuild:
 	@echo Executing Post Build commands ...
-	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objcopy -S -O srec  ./Debug/getsetpsr.elf ./Debug/getsetpsr.s19
-	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objdump -D -S ./Debug/getsetpsr.elf > ./Debug/getsetpsr.dass
+	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objcopy -S -O srec  ./Debug/systick_irq.elf ./Debug/systick_irq.s19
+	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objdump -D -S ./Debug/systick_irq.elf > ./Debug/systick_irq.dass
 	@echo Done
 
 MakeIntermediateDirs:
@@ -105,13 +105,13 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/getsetpsr.c$(ObjectSuffix): getsetpsr.c $(IntermediateDirectory)/getsetpsr.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar/getsetpsr/getsetpsr.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/getsetpsr.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/getsetpsr.c$(DependSuffix): getsetpsr.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/getsetpsr.c$(ObjectSuffix) -MF$(IntermediateDirectory)/getsetpsr.c$(DependSuffix) -MM getsetpsr.c
+$(IntermediateDirectory)/systick_irq.c$(ObjectSuffix): systick_irq.c $(IntermediateDirectory)/systick_irq.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar/systick_irq/systick_irq.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/systick_irq.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/systick_irq.c$(DependSuffix): systick_irq.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/systick_irq.c$(ObjectSuffix) -MF$(IntermediateDirectory)/systick_irq.c$(DependSuffix) -MM systick_irq.c
 
-$(IntermediateDirectory)/getsetpsr.c$(PreprocessSuffix): getsetpsr.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/getsetpsr.c$(PreprocessSuffix) getsetpsr.c
+$(IntermediateDirectory)/systick_irq.c$(PreprocessSuffix): systick_irq.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/systick_irq.c$(PreprocessSuffix) systick_irq.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

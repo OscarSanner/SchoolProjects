@@ -11,8 +11,9 @@
   <Project Name="olofskeypad" Path="olofskeypad/olofskeypad.project" Active="No"/>
   <Project Name="graphicdisplay" Path="graphicdisplay/graphicdisplay.project" Active="No"/>
   <Project Name="autopong" Path="autopong/autopong.project" Active="No"/>
-  <Project Name="ballWithKeypad" Path="ballWithKeypad/ballWithKeypad.project" Active="Yes"/>
+  <Project Name="ballWithKeypad" Path="ballWithKeypad/ballWithKeypad.project" Active="No"/>
   <Project Name="getsetpsr" Path="getsetpsr/getsetpsr.project" Active="No"/>
+  <Project Name="systick_irq" Path="systick_irq/systick_irq.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -29,6 +30,7 @@
       <Project Name="autopong" ConfigName="Debug"/>
       <Project Name="ballWithKeypad" ConfigName="Debug"/>
       <Project Name="getsetpsr" ConfigName="Debug"/>
+      <Project Name="systick_irq" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -45,6 +47,7 @@
       <Project Name="autopong" ConfigName="Release"/>
       <Project Name="ballWithKeypad" ConfigName="Release"/>
       <Project Name="getsetpsr" ConfigName="Release"/>
+      <Project Name="systick_irq" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
