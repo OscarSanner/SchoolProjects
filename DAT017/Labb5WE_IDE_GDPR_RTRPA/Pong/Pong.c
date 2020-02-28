@@ -3,8 +3,8 @@
  *
  */
  
-//#define 	SIMULATOR
-#define 	USBDM
+#define 	SIMULATOR
+//#define 		USBDM
 #define		STK_BAS 		0xE000E010
 #define		STK_CTRL		((volatile unsigned char *) (STK_BAS))
 #define		STK_COUNTFLAG	((volatile unsigned char *) (STK_BAS + 0x2))
@@ -51,7 +51,8 @@
 #define SevenDigitDisplay ((volatile unsigned char*) GPIOD_BASE + 0x14)
 
 
-#define MAX_POINTS 20
+#define MAX_POINTS 28 // Raised from 20
+#define PADDLE_DISTANCE_FROM_GOAL 50
 
 // 					STRUCTS					//
 typedef unsigned char uint8_t;
@@ -64,7 +65,7 @@ typedef struct tPoint{
 
 typedef struct tGeometry{
 	int numpoints;		//Amount of points composing the object (max)
-	int	sizex;			//Width
+	int sizex;			//Width
 	int sizey;			//Height
 	POINT px[MAX_POINTS];
 } GEOMETRY, *PGEOMETRY; 
@@ -75,7 +76,7 @@ typedef struct tObj{
 	int posx,posy;
 	void (* draw)(struct tObj *);
 	void (* clear)(struct tObj *);
-	void (* move)(struct tObj *);
+	void (* move)(struct tObj *, struct tObj *);
 	void (* set_speed)(struct tObj *, int, int);
 } OBJECT, *POBJECT;
 
@@ -313,7 +314,7 @@ void clear_object(POBJECT o){
 	}
 }
 
-void move_object(POBJECT o){
+void move_ball(POBJECT o, POBJECT dummy){
 	clear_object(o);
 	int newx = o->posx + o->dx;
 	int newy = o->posy + o->dy;
@@ -340,8 +341,57 @@ void move_object(POBJECT o){
 	draw_object(o);
 }
 
+
+
+
+
 static GEOMETRY ball_geometry = { 12,4,4,{{0,1},{0,2},{1,0},{1,1},{1,2},{1,3},{2,0},{2,1},{2,2},{2,3},{3,1},{3,2}} };
-static OBJECT ball = { &ball_geometry, 0, 0, 1, 1, draw_object, clear_object, move_object, set_object_speed};
+static OBJECT ball = { &ball_geometry, 0, 0, 64, 32, draw_object, clear_object, move_ball, set_object_speed};
+
+uint8_t collision_with_ball(POBJECT o, int newY, POBJECT ball){
+	
+	if (  ((ball->posx + ball->geo->sizex) >= o->posx &&
+		  ball->posx < (o->posx + o->geo->sizex)) && 
+		  ((ball->posy + ball->geo->sizey) >= newY &&
+		   ball->posy < (newY + o->geo->sizey))   ) {
+			return 1;
+		   }
+	return 0;
+}
+
+void move_paddle(POBJECT o, POBJECT ball){
+	clear_object(o);
+	
+	int newy = o->posy + o->dy;
+	
+	if(collision_with_ball(o, newy, ball)){
+		if(o->posx < 64){
+			ball->dx = -(ball->dx);
+			ball->posx = PADDLE_DISTANCE_FROM_GOAL + 2;
+		}else{
+			ball->dx = (ball->dx)*(-1);
+			ball->posx = 128 - (PADDLE_DISTANCE_FROM_GOAL + 2+4+2);
+		}	
+		
+	}
+
+	else if(newy < 1){
+		o->dy = -o->dy;
+		o->posy = 1;
+	}
+	else if(newy > 64 - o->geo->sizey){
+		o->dy = -o->dy;
+		o->posy = 64 - o->geo->sizey;
+	}else{
+		o->posy = newy;
+	}
+	draw_object(o);
+}
+
+static GEOMETRY paddle_geometry = {28, 2, 14, {{0,0},{0,1},{0,2},{0,3},{0,4},{0,5},{0,6},{0,7},{0,8},{0,9},{0,10},{0,11},{0,12},{0,13},{1,0},{1,1},{1,2},{1,3},{1,4},{1,5},{1,6},{1,7},{1,8},{1,9},{1,10},{1,11},{1,12},{1,13}}	};
+static OBJECT paddle_left = {&paddle_geometry, 0, 0, PADDLE_DISTANCE_FROM_GOAL, (32-7), draw_object, clear_object, move_paddle, set_object_speed};
+static OBJECT paddle_right = {&paddle_geometry, 0, 0, (128 - PADDLE_DISTANCE_FROM_GOAL), (32-7), draw_object, clear_object, move_paddle, set_object_speed};
+
 
 unsigned char keyb(){
 	char column;
@@ -396,21 +446,26 @@ void init_app(void){
 }
 
 void main(void){
-	POBJECT p = &ball;
+	POBJECT b = &ball;
+	POBJECT p_left = &paddle_left;
+	POBJECT p_right = &paddle_right;
 	init_app();
 	graphic_initialize();
 #ifndef SIMULATOR
 	graphic_clear_screen();
 #endif
 	while(1){
-		p->move(p);
+		b->dx = 3;
+		b->move(b, b);
+		p_left->move(p_left, b);
+		p_right->move(p_right, b);
 		delay_milli(40);
 		uint8_t c = keyb();
 		switch(c){
-			case 6: p->set_speed(p,2,0);break;
-			case 4: p->set_speed(p,-2,0);break;
-			case 2: p->set_speed(p,0,-2);break;
-			case 8: p->set_speed(p,0,2);break;
+			case 6: b->set_speed(b,2,0);break;
+			case 4: b->set_speed(b,-2,0);break;
+			case 2: b->set_speed(b,0,-2);break;
+			case 8: b->set_speed(b,0,2);break;
 		}
 	}
 }

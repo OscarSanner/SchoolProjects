@@ -1,5 +1,5 @@
 [{
-  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Pong.c",
-  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong",
-  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Pong.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Pong.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+  "file": "C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Pong.c",
+  "directory": "C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong",
+  "command": "clang  -c C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Pong.c -o C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Pong.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
  }]
