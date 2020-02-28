@@ -5,14 +5,14 @@
 ## Debug
 ProjectName            :=systick_irq
 ConfigurationName      :=Debug
-WorkspacePath          :=C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar
-ProjectPath            :=C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar/systick_irq
+WorkspacePath          :=C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/OscarsLabbar
+ProjectPath            :=C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/OscarsLabbar/systick_irq
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=osann
+User                   :=olofs
 Date                   :=25/02/2020
 CodeLitePath           :=C:/cseapp/CodeLite
 LinkerName             :=$(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-g++.exe
@@ -106,7 +106,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/systick_irq.c$(ObjectSuffix): systick_irq.c $(IntermediateDirectory)/systick_irq.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/OscarsLabbar/systick_irq/systick_irq.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/systick_irq.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/OscarsLabbar/systick_irq/systick_irq.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/systick_irq.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/systick_irq.c$(DependSuffix): systick_irq.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/systick_irq.c$(ObjectSuffix) -MF$(IntermediateDirectory)/systick_irq.c$(DependSuffix) -MM systick_irq.c
 

@@ -5,56 +5,33 @@
 Disassembly of section .text:
 
 20000000 <startup>:
-
-
-__attribute__((naked)) __attribute__((section (".start_section")) )
-void startup ( void )
-{
-__asm__ volatile(" LDR R0,=0x2001C000\n");		/* set stack */
 20000000:	4802      	ldr	r0, [pc, #8]	; (2000000c <startup+0xc>)
-__asm__ volatile(" MOV SP,R0\n");
 20000002:	4685      	mov	sp, r0
-__asm__ volatile(" BL main\n");					/* call main */
 20000004:	f000 f86c 	bl	200000e0 <main>
-__asm__ volatile(".L1: B .L1\n");				/* never return */
 20000008:	e7fe      	b.n	20000008 <startup+0x8>
-}
 2000000a:	46c0      	nop			; (mov r8, r8)
 2000000c:	2001c000 	andcs	ip, r1, r0
 
 20000010 <systic_irq_handler>:
-
-
-void systic_irq_handler(){
 20000010:	b580      	push	{r7, lr}
 20000012:	af00      	add	r7, sp, #0
-	* STK_CTRL = 0;
 20000014:	4b0a      	ldr	r3, [pc, #40]	; (20000040 <systic_irq_handler+0x30>)
 20000016:	2200      	movs	r2, #0
 20000018:	701a      	strb	r2, [r3, #0]
-	delay_count = delay_count - 1;
 2000001a:	4b0a      	ldr	r3, [pc, #40]	; (20000044 <systic_irq_handler+0x34>)
 2000001c:	681b      	ldr	r3, [r3, #0]
 2000001e:	1e5a      	subs	r2, r3, #1
 20000020:	4b08      	ldr	r3, [pc, #32]	; (20000044 <systic_irq_handler+0x34>)
 20000022:	601a      	str	r2, [r3, #0]
-	if(delay_count > 0){
 20000024:	4b07      	ldr	r3, [pc, #28]	; (20000044 <systic_irq_handler+0x34>)
 20000026:	681b      	ldr	r3, [r3, #0]
 20000028:	2b00      	cmp	r3, #0
 2000002a:	dd02      	ble.n	20000032 <systic_irq_handler+0x22>
-		delay_1micro();
 2000002c:	f000 f828 	bl	20000080 <delay_1micro>
-	}else{
-		systic_flag = 1;
-	}
-}
 20000030:	e002      	b.n	20000038 <systic_irq_handler+0x28>
-		systic_flag = 1;
 20000032:	4b05      	ldr	r3, [pc, #20]	; (20000048 <systic_irq_handler+0x38>)
 20000034:	2201      	movs	r2, #1
 20000036:	601a      	str	r2, [r3, #0]
-}
 20000038:	46c0      	nop			; (mov r8, r8)
 2000003a:	46bd      	mov	sp, r7
 2000003c:	bd80      	pop	{r7, pc}
@@ -64,23 +41,17 @@ void systic_irq_handler(){
 20000048:	20000120 	andcs	r0, r0, r0, lsr #2
 
 2000004c <init_app>:
-
-void init_app(){
 2000004c:	b580      	push	{r7, lr}
 2000004e:	af00      	add	r7, sp, #0
-	* GPIOD_MODER = 0x55555555;
 20000050:	4b05      	ldr	r3, [pc, #20]	; (20000068 <init_app+0x1c>)
 20000052:	4a06      	ldr	r2, [pc, #24]	; (2000006c <init_app+0x20>)
 20000054:	601a      	str	r2, [r3, #0]
-	* SCB_VTOR = 0x2001C000;
 20000056:	4b06      	ldr	r3, [pc, #24]	; (20000070 <init_app+0x24>)
 20000058:	4a06      	ldr	r2, [pc, #24]	; (20000074 <init_app+0x28>)
 2000005a:	601a      	str	r2, [r3, #0]
-	* ((void (**) (void)) 0x2001C03C) = systic_irq_handler;
 2000005c:	4b06      	ldr	r3, [pc, #24]	; (20000078 <init_app+0x2c>)
 2000005e:	4a07      	ldr	r2, [pc, #28]	; (2000007c <init_app+0x30>)
 20000060:	601a      	str	r2, [r3, #0]
-}
 20000062:	46c0      	nop			; (mov r8, r8)
 20000064:	46bd      	mov	sp, r7
 20000066:	bd80      	pop	{r7, pc}
@@ -92,27 +63,20 @@ void init_app(){
 2000007c:	20000011 	andcs	r0, r0, r1, lsl r0
 
 20000080 <delay_1micro>:
-
-void delay_1micro(){
 20000080:	b580      	push	{r7, lr}
 20000082:	af00      	add	r7, sp, #0
-	* STK_CTRL = 0;
 20000084:	4b07      	ldr	r3, [pc, #28]	; (200000a4 <delay_1micro+0x24>)
 20000086:	2200      	movs	r2, #0
 20000088:	701a      	strb	r2, [r3, #0]
-	* STK_LOAD = (168 - 1);
 2000008a:	4b07      	ldr	r3, [pc, #28]	; (200000a8 <delay_1micro+0x28>)
 2000008c:	22a7      	movs	r2, #167	; 0xa7
 2000008e:	601a      	str	r2, [r3, #0]
-	* STK_VAL = 0;
 20000090:	4b06      	ldr	r3, [pc, #24]	; (200000ac <delay_1micro+0x2c>)
 20000092:	2200      	movs	r2, #0
 20000094:	601a      	str	r2, [r3, #0]
-	* STK_CTRL = 7;
 20000096:	4b03      	ldr	r3, [pc, #12]	; (200000a4 <delay_1micro+0x24>)
 20000098:	2207      	movs	r2, #7
 2000009a:	701a      	strb	r2, [r3, #0]
-}
 2000009c:	46c0      	nop			; (mov r8, r8)
 2000009e:	46bd      	mov	sp, r7
 200000a0:	bd80      	pop	{r7, pc}
@@ -122,32 +86,22 @@ void delay_1micro(){
 200000ac:	e000e018 	and	lr, r0, r8, lsl r0
 
 200000b0 <delay>:
-
-void delay(unsigned int count){
 200000b0:	b580      	push	{r7, lr}
 200000b2:	b082      	sub	sp, #8
 200000b4:	af00      	add	r7, sp, #0
 200000b6:	6078      	str	r0, [r7, #4]
-	if(count == 0){
 200000b8:	687b      	ldr	r3, [r7, #4]
 200000ba:	2b00      	cmp	r3, #0
 200000bc:	d008      	beq.n	200000d0 <delay+0x20>
-		return;
-	}
-	delay_count = count;
 200000be:	687a      	ldr	r2, [r7, #4]
 200000c0:	4b05      	ldr	r3, [pc, #20]	; (200000d8 <delay+0x28>)
 200000c2:	601a      	str	r2, [r3, #0]
-	systic_flag = 0;
 200000c4:	4b05      	ldr	r3, [pc, #20]	; (200000dc <delay+0x2c>)
 200000c6:	2200      	movs	r2, #0
 200000c8:	601a      	str	r2, [r3, #0]
-	delay_1micro();
 200000ca:	f7ff ffd9 	bl	20000080 <delay_1micro>
 200000ce:	e000      	b.n	200000d2 <delay+0x22>
-		return;
 200000d0:	46c0      	nop			; (mov r8, r8)
-}
 200000d2:	46bd      	mov	sp, r7
 200000d4:	b002      	add	sp, #8
 200000d6:	bd80      	pop	{r7, pc}
@@ -155,47 +109,29 @@ void delay(unsigned int count){
 200000dc:	20000120 	andcs	r0, r0, r0, lsr #2
 
 200000e0 <main>:
-	
-															   
-void main(void){
 200000e0:	b580      	push	{r7, lr}
 200000e2:	af00      	add	r7, sp, #0
-	init_app();
 200000e4:	f7ff ffb2 	bl	2000004c <init_app>
-	while (1){
-	* GPIOD_ODR_LOW = 0;
 200000e8:	4b0a      	ldr	r3, [pc, #40]	; (20000114 <main+0x34>)
 200000ea:	2200      	movs	r2, #0
 200000ec:	701a      	strb	r2, [r3, #0]
-	delay(DELAY_COUNT);
 200000ee:	2064      	movs	r0, #100	; 0x64
 200000f0:	f7ff ffde 	bl	200000b0 <delay>
-	* GPIOD_ODR_LOW = 0x0F;
 200000f4:	4b07      	ldr	r3, [pc, #28]	; (20000114 <main+0x34>)
 200000f6:	220f      	movs	r2, #15
 200000f8:	701a      	strb	r2, [r3, #0]
-	while(1){
-		if(systic_flag == 1){
 200000fa:	4b07      	ldr	r3, [pc, #28]	; (20000118 <main+0x38>)
 200000fc:	681b      	ldr	r3, [r3, #0]
 200000fe:	2b01      	cmp	r3, #1
 20000100:	d003      	beq.n	2000010a <main+0x2a>
-			break;
-		}
-		* GPIOD_ODR_HIGH = 0xF;
 20000102:	4b06      	ldr	r3, [pc, #24]	; (2000011c <main+0x3c>)
 20000104:	220f      	movs	r2, #15
 20000106:	701a      	strb	r2, [r3, #0]
-		if(systic_flag == 1){
 20000108:	e7f7      	b.n	200000fa <main+0x1a>
-			break;
 2000010a:	46c0      	nop			; (mov r8, r8)
-	}
-	* GPIOD_ODR_LOW = 0; 
 2000010c:	4b01      	ldr	r3, [pc, #4]	; (20000114 <main+0x34>)
 2000010e:	2200      	movs	r2, #0
 20000110:	701a      	strb	r2, [r3, #0]
-	* GPIOD_ODR_LOW = 0;
 20000112:	e7e9      	b.n	200000e8 <main+0x8>
 20000114:	40020c14 	andmi	r0, r2, r4, lsl ip
 20000118:	20000120 	andcs	r0, r0, r0, lsr #2

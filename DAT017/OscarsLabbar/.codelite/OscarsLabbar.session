@@ -1,65 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Session Name="C:\Users\osann\Documents\GitProjects\SchoolProjects\DAT017\OscarsLabbar\OscarsLabbar.workspace">
-  <int Value="2" Name="m_selectedTab"/>
-  <wxString Value="C:\Users\osann\Documents\GitProjects\SchoolProjects\DAT017\OscarsLabbar\OscarsLabbar.workspace" Name="m_workspaceName"/>
+<Session Name="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\OscarsLabbar\OscarsLabbar.workspace">
+  <int Value="0" Name="m_selectedTab"/>
+  <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\OscarsLabbar\OscarsLabbar.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="C:\Users\osann\Documents\GitProjects\C\ExampleExercises\main.c" Name="FileName"/>
-      <int Value="48" Name="FirstVisibleLine"/>
-      <int Value="63" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\osann\Documents\GitProjects\SchoolProjects\DAT017\OscarsLabbar\autopong\autopong.c" Name="FileName"/>
-      <int Value="126" Name="FirstVisibleLine"/>
-      <int Value="249" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds">
-        <IntVectorItem Value="91"/>
-        <IntVectorItem Value="101"/>
-        <IntVectorItem Value="111"/>
-        <IntVectorItem Value="118"/>
-        <IntVectorItem Value="123"/>
-        <IntVectorItem Value="127"/>
-        <IntVectorItem Value="160"/>
-        <IntVectorItem Value="182"/>
-        <IntVectorItem Value="203"/>
-        <IntVectorItem Value="210"/>
-        <IntVectorItem Value="218"/>
-        <IntVectorItem Value="223"/>
-        <IntVectorItem Value="237"/>
-        <IntVectorItem Value="288"/>
-      </IntVector>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\osann\Documents\GitProjects\SchoolProjects\DAT017\OscarsLabbar\ballWithKeypad\ballWithKeypad.c" Name="FileName"/>
-      <int Value="385" Name="FirstVisibleLine"/>
-      <int Value="300" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds">
-        <IntVectorItem Value="111"/>
-        <IntVectorItem Value="128"/>
-      </IntVector>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\osann\Documents\GitProjects\SchoolProjects\DAT017\OscarsLabbar\fourPointTwo\startup.c" Name="FileName"/>
-      <int Value="60" Name="FirstVisibleLine"/>
-      <int Value="63" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\osann\Documents\GitProjects\SchoolProjects\DAT017\OscarsLabbar\getsetpsr\getsetpsr.c" Name="FileName"/>
+      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\OscarsLabbar\systick_irq\systick_irq.c" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="31" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\osann\Documents\GitProjects\SchoolProjects\DAT017\OscarsLabbar\graphicdisplay\graphicdisplay.c" Name="FileName"/>
-      <int Value="117" Name="FirstVisibleLine"/>
-      <int Value="286" Name="CurrentLine"/>
+      <int Value="38" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

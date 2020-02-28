@@ -1,2 +1,2 @@
--IC:\Users\osann\Documents\GitProjects\SchoolProjects\DAT017\OscarsLabbar\fivePointThree
+-IC:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\OscarsLabbar\fivePointThree
 -DSIMULATOR
