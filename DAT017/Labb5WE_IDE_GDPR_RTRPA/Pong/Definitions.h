@@ -41,9 +41,17 @@
 #define GPIOD_MODER ((volatile unsigned long*) GPIOD_BASE)
 #define GPIOD_PUPDR ((volatile unsigned long*) GPIOD_BASE + 0x0C)
 #define GPIOD_OTYPER ((volatile unsigned short*) GPIOD_BASE + 4)
+
+
 #define KeypadIn ((volatile unsigned char*) GPIOD_BASE + 0x11)
 #define KeypadOut ((volatile unsigned char*) GPIOD_BASE + 0x15)
-#define SevenDigitDisplay ((volatile unsigned char*) GPIOD_BASE + 0x14)
+
+#define GPIOD_IDR_HIGH ((volatile unsigned char*) GPIOD_BASE + 0x11)
+#define GPIOD_ODR_HIGH ((volatile unsigned char*) GPIOD_BASE + 0x15)
+#define GPIOD_IDR_LOW ((volatile unsigned char*) GPIOD_BASE + 0x10)
+#define GPIOD_ODR_LOW ((volatile unsigned char*) GPIOD_BASE + 0x14)
+
+
 
 #define MAX_POINTS 28 // Raised from 20
 #define PADDLE_DISTANCE_FROM_GOAL 50

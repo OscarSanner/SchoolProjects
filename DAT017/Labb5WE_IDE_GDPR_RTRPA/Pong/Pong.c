@@ -36,7 +36,7 @@ void init_app(void){
 	* portModer = 0x55555555;
 	* GPIOD_MODER = 0x55005500;
 	* GPIOD_PUPDR = 0x00AA00AA;
-	* GPIOD_OTYPER = 0x0;	
+	* GPIOD_OTYPER = 0x0;
 }
 
 #ifndef TEST
@@ -49,8 +49,8 @@ void main(void){
 	graphic_initialize();
 	b->dx = 1;
 	b->dy = 1;
-	p_left->dy = 1;
-	p_right->dy = 1;
+	//p_left->dy = 1;
+	//p_right->dy = 1;
 	
 
 #ifndef SIMULATOR
@@ -61,12 +61,17 @@ void main(void){
 		p_left->move(p_left, b);
 		p_right->move(p_right, b);
 		delay_milli(40);
-		uint8_t c = keybHigh();
-		switch(c){
-			case 6: b->set_speed(b,2,0);break;
-			case 4: b->set_speed(b,-2,0);break;
-			case 2: b->set_speed(b,0,-2);break;
-			case 8: b->set_speed(b,0,2);break;
+		char p_l_key = keybHigh();
+		char p_r_key = keybLow();
+    	switch(p_l_key){
+			case 2: p_left->set_speed(p_left,0,-10);break;
+			case 5: p_left->set_speed(p_left,0,10);break;
+			default: p_left->set_speed(p_left,0,0);break;
+		}
+		switch(p_r_key){
+			case 2: p_right->set_speed(p_right,0,-10);break;
+			case 5: p_right->set_speed(p_right,0,10);break;
+			default: p_right->set_speed(p_right,0,0);break;
 		}
 	}
 }
@@ -74,8 +79,6 @@ void main(void){
 #endif
 
 #ifdef TEST
-void main(){
-	delay_250ns();
-}
+
 #endif
 
