@@ -5,15 +5,15 @@
 ## Debug
 ProjectName            :=Pong
 ConfigurationName      :=Debug
-WorkspacePath          :=C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/Labb5WE_IDE_GDPR_RTRPA
-ProjectPath            :=C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/Labb5WE_IDE_GDPR_RTRPA/Pong
+WorkspacePath          :=C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/Labb5WE_IDE_GDPR_RTRPA
+ProjectPath            :=C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/Labb5WE_IDE_GDPR_RTRPA/Pong
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=olofs
-Date                   :=28/02/2020
+User                   :=osann
+Date                   :=29/02/2020
 CodeLitePath           :=C:/cseapp/CodeLite
 LinkerName             :=$(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-g++.exe
 SharedObjectLinkerName :=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi-g++.exe -shared -fPIC
@@ -106,7 +106,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/Pong.c$(ObjectSuffix): Pong.c $(IntermediateDirectory)/Pong.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/olofs/Documents/git_projects/SchoolProjects/DAT017/Labb5WE_IDE_GDPR_RTRPA/Pong/Pong.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Pong.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/osann/Documents/GitProjects/SchoolProjects/DAT017/Labb5WE_IDE_GDPR_RTRPA/Pong/Pong.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Pong.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Pong.c$(DependSuffix): Pong.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Pong.c$(ObjectSuffix) -MF$(IntermediateDirectory)/Pong.c$(DependSuffix) -MM Pong.c
 

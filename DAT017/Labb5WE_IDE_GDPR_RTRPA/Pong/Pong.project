@@ -134,6 +134,12 @@ monitor restart</PostConnectCommands>
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="GameLogic.h"/>
+    <File Name="KeybDrivers.h"/>
+    <File Name="GraphicDrivers.h"/>
+    <File Name="Delays.h"/>
+    <File Name="Structures.h"/>
+    <File Name="Definitions.h"/>
     <File Name="Pong.c"/>
   </VirtualDirectory>
   <VirtualDirectory Name="resources">

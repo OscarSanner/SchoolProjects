@@ -1,5 +1,29 @@
 [{
-  "file": "C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Pong.c",
-  "directory": "C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong",
-  "command": "clang  -c C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Pong.c -o C:\\Users\\olofs\\Documents\\git_projects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Pong.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\KeybDrivers.h",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\KeybDrivers.h -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\KeybDrivers.h.o  -I. -I.  -g  -O0  -W"
+ }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\GameLogic.h",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\GameLogic.h -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\GameLogic.h.o  -I. -I.  -g  -O0  -W"
+ }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Pong.c",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Pong.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Pong.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Definitions.h",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Definitions.h -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Definitions.h.o  -I. -I.  -g  -O0  -W"
+ }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\GraphicDrivers.h",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\GraphicDrivers.h -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\GraphicDrivers.h.o  -I. -I.  -g  -O0  -W"
+ }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Structures.h",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Structures.h -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Structures.h.o  -I. -I.  -g  -O0  -W"
+ }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Delays.h",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Delays.h -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\Labb5WE_IDE_GDPR_RTRPA\\Pong\\Delays.h.o  -I. -I.  -g  -O0  -W"
  }]
