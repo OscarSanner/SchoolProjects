@@ -41,10 +41,10 @@ void init_app(void){
 }
 
 void win_state(){
-	switch(player_left_points){
-		case 5: 
-		default: 
-	}
+	//switch(player_left_points){
+		//case 5: 
+		//default: 
+	//}
 	while(1);
 }
 

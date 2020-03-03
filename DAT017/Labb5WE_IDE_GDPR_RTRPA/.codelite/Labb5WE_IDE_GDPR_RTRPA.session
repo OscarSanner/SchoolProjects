@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Labb5WE_IDE_GDPR_RTRPA.workspace">
-  <int Value="0" Name="m_selectedTab"/>
+  <int Value="7" Name="m_selectedTab"/>
   <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Labb5WE_IDE_GDPR_RTRPA.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
       <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\Pong.c" Name="FileName"/>
-      <int Value="15" Name="FirstVisibleLine"/>
-      <int Value="44" Name="CurrentLine"/>
+      <int Value="25" Name="FirstVisibleLine"/>
+      <int Value="46" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
@@ -19,28 +19,28 @@
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\KeybDrivers.h" Name="FileName"/>
-      <int Value="9" Name="FirstVisibleLine"/>
+      <int Value="51" Name="FirstVisibleLine"/>
       <int Value="53" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\Definitions.h" Name="FileName"/>
-      <int Value="24" Name="FirstVisibleLine"/>
+      <int Value="46" Name="FirstVisibleLine"/>
       <int Value="48" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\AsciiDrivers.h" Name="FileName"/>
-      <int Value="122" Name="FirstVisibleLine"/>
+      <int Value="126" Name="FirstVisibleLine"/>
       <int Value="128" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\Delays.h" Name="FileName"/>
-      <int Value="15" Name="FirstVisibleLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
       <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
@@ -49,6 +49,13 @@
       <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\GameLogic.h" Name="FileName"/>
       <int Value="3" Name="FirstVisibleLine"/>
       <int Value="24" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\Images\PlayerLeftWins.xbm" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
