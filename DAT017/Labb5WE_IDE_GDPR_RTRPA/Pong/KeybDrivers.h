@@ -51,7 +51,7 @@ unsigned char keybHigh(){
 		activateRowHigh(row);
 		column = readColumnHigh();
 		
-		if (column != -1){
+		if (column != 4){
 			key = getKeyValue(row, column);
 			return key;
 		}

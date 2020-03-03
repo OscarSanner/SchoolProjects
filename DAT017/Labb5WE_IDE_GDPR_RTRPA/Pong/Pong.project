@@ -134,6 +134,7 @@ monitor restart</PostConnectCommands>
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="AsciiDrivers.h"/>
     <File Name="GameLogic.h"/>
     <File Name="KeybDrivers.h"/>
     <File Name="GraphicDrivers.h"/>

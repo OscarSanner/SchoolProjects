@@ -1,5 +1,5 @@
-static uint8_t player_1_points;
-static uint8_t player_2_points; 
+static uint8_t player_right_points = 0;
+static uint8_t player_left_points = 0; 
 
 void set_object_speed(POBJECT o, int speedx, int speedy){
 	o->dx = speedx;
@@ -14,12 +14,16 @@ void move_ball(POBJECT o, POBJECT dummy){
 	if(newx < 1){
 		o->posx = 64;
 		o->posy = 32;
-		player_2_points++;
+		player_right_points++;
+		ascii_gotoxy(15,2);
+		ascii_write_char(player_right_points + 48);
 	}
 	else if((newx + o->geo->sizex) > 128){
 		o->posx = 64;
 		o->posy = 32;
-		player_1_points++;
+		player_left_points++;
+		ascii_gotoxy(14,1);
+		ascii_write_char(player_left_points + 48);
 	}
 	else if(newy < 1){
 		o->dy = -o->dy;

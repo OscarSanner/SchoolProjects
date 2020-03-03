@@ -9,6 +9,7 @@
 #include "GraphicDrivers.h"
 #include "KeybDrivers.h"
 #include "GameLogic.h"
+#include "AsciiDrivers.h"
 
 
 __attribute__((naked)) __attribute__((section (".start_section")) )
@@ -39,6 +40,16 @@ void init_app(void){
 	* GPIOD_OTYPER = 0x0;
 }
 
+void win_state(){
+	switch(player_left_points){
+		case 5: 
+		default: 
+	}
+	while(1);
+}
+
+
+
 #ifndef TEST
 void main(void){
 	POBJECT b = &ball;
@@ -46,9 +57,10 @@ void main(void){
 	POBJECT p_left = &paddle_left;
 	POBJECT p_right = &paddle_right;
 	init_app();
+	ascii_playerscore_init();
 	graphic_initialize();
-	b->dx = 1;
-	b->dy = 1;
+	b->dx = 15;
+	b->dy = 15;
 	//p_left->dy = 1;
 	//p_right->dy = 1;
 	
@@ -57,20 +69,20 @@ void main(void){
 	graphic_clear_screen();
 #endif
 	while(1){
-		b->move(b, 0);
+		b->move(b, b);
 		p_left->move(p_left, b);
 		p_right->move(p_right, b);
 		delay_milli(40);
 		char p_l_key = keybHigh();
 		char p_r_key = keybLow();
-    	switch(p_l_key){
-			case 2: p_left->set_speed(p_left,0,-10);break;
-			case 5: p_left->set_speed(p_left,0,10);break;
+    	switch(p_l_key){																				//PD8-15
+			case 2: p_left->set_speed(p_left,0,-20);break;
+			case 5: p_left->set_speed(p_left,0,20);break;
 			default: p_left->set_speed(p_left,0,0);break;
 		}
-		switch(p_r_key){
-			case 2: p_right->set_speed(p_right,0,-10);break;
-			case 5: p_right->set_speed(p_right,0,10);break;
+		switch(p_r_key){																				//PD0-7
+			case 2: p_right->set_speed(p_right,0,-20);break;
+			case 5: p_right->set_speed(p_right,0,20);break;
 			default: p_right->set_speed(p_right,0,0);break;
 		}
 	}
