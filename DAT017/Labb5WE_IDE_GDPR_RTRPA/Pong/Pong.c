@@ -11,6 +11,13 @@
 #include "GameLogic.h"
 #include "AsciiDrivers.h"
 
+#include "PlayerLeftWins.xbm"
+#include "PlayerLeftWinsWithText.xbm"
+#include "PlayerRightWins.xbm"
+#include "PlayerRightWinsWithText.xbm"
+#include "StartmenuWithText.xbm"
+#include "Startmenu.xbm"
+
 
 __attribute__((naked)) __attribute__((section (".start_section")) )
 void startup ( void ){
@@ -41,16 +48,45 @@ void init_app(void){
 }
 
 void win_state(){
-	//switch(player_left_points){
-		//case 5: 
-		//default: 
-	//}
-	while(1);
+	clear_backBuffer();
+	while(1){
+			if(player_left_points == 5){
+			for (int i = 0; i < 1024; i++ ){
+					backBuffer[i] |= PlayerLeftWinsWithText_bits[i];
+			}
+			graphic_draw_screen();
+			clear_backBuffer();
+			delay_mikro(10);
+			for (int i = 0; i < 1024; i++ ){
+					backBuffer[i] |= PlayerLeftWins_bits[i];
+			}
+			graphic_draw_screen();
+			clear_backBuffer();
+		}else{
+			for (int i = 0; i < 1024; i++ ){
+					backBuffer[i] |= PlayerRightWinsWithText_bits[i];
+			}
+			graphic_draw_screen();
+			clear_backBuffer();
+			delay_mikro(10);
+			for (int i = 0; i < 1024; i++ ){
+					backBuffer[i] |= PlayerRightWins_bits[i];
+			}
+			graphic_draw_screen();
+			clear_backBuffer();
+		}
+		signed char check1 = keybHigh();
+		signed char check2 = keybLow();
+		
+		if ( ( check1 != -1) || ( check2 != -1) ){
+			break;
+		} else {continue;}
+	}
 }
 
 
 
-#ifndef TEST
+#ifdef OLD_PIXEL
 void main(void){
 	POBJECT b = &ball;
 	POBJECT b2 = &ball;
@@ -90,7 +126,50 @@ void main(void){
 
 #endif
 
-#ifdef TEST
+#ifndef OLD_PIXEL
+void main(void){
+	POBJECT b = &ball;
+	POBJECT b2 = &ball;
+	POBJECT p_left = &paddle_left;
+	POBJECT p_right = &paddle_right;
+	init_app();
+	ascii_playerscore_init();
+	graphic_initialize();
+	b->dx = 15;
+	b->dy = 15;
+	//p_left->dy = 1;
+	//p_right->dy = 1;
+	
+
+#ifndef SIMULATOR
+	graphic_clear_screen();
+#endif
+	while(1){
+		clear_backBuffer();
+		b->move(b, b);
+		p_left->move(p_left, b);
+		p_right->move(p_right, b);
+		char p_l_key = keybHigh();
+		char p_r_key = keybLow();
+    	switch(p_l_key){																				//PD8-15
+			case 2: p_left->set_speed(p_left,0,-20);break;
+			case 5: p_left->set_speed(p_left,0,20);break;
+			default: p_left->set_speed(p_left,0,0);break;
+		}
+		switch(p_r_key){																				//PD0-7
+			case 2: p_right->set_speed(p_right,0,-20);break;
+			case 5: p_right->set_speed(p_right,0,20);break;
+			default: p_right->set_speed(p_right,0,0);break;
+		}
+		graphic_draw_screen();
+		delay_milli(40);
+		if(player_left_points == 5 || player_right_points == 5){
+			win_state();
+			player_left_points = 0;
+			player_right_points = 0;
+		}
+	}
+}
 
 #endif
 

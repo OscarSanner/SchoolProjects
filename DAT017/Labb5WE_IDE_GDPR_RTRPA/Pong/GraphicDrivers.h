@@ -1,3 +1,6 @@
+static uint8_t backBuffer[1024]; // 128 * 64 / 8
+
+
 void graphic_ctrl_bit_set(uint8_t x){
 	* portOdrLow |= (x & ~B_SELECT);
 	* portOdrLow &= ~B_SELECT;
@@ -127,6 +130,7 @@ void graphic_clear_screen(){
 	}
 }
 
+#ifdef OLD_PIXEL
 void pixel(uint8_t x, uint8_t y, uint8_t set){
 	if((x > 128)||(y > 64)||(x < 1)||(y < 1)){return;}
 	uint8_t mask, controller, x_real, data_holder;
@@ -165,6 +169,39 @@ void pixel(uint8_t x, uint8_t y, uint8_t set){
 	}
 	graphic_write_data(mask, controller);
 }
+#endif
+
+#ifndef OLD_PIXEL
+void pixel(int x, int y, int set) {
+	uint8_t mask;
+	int index = 0;
+	if( (x > 128 ) || (x < 1) || (y > 64) || (y < 1) ) return;
+		mask = 1 << ((y-1)%8);
+	if(x > 64) {
+		x -= 65;
+		index = 512;
+	}
+	index += x + ((y-1)/8)*64;
+	backBuffer[index] |= mask;
+}
+
+void graphic_draw_screen(void) {
+	uint8_t i, j, controller, c;
+	unsigned int k = 0;
+	for(c = 0; c < 2; c++) {
+		controller = (c == 0) ? B_CS1 : B_CS2;
+		for(j = 0; j < 8; j++) {
+			graphic_write_command(LCD_SET_PAGE | j, controller);
+			graphic_write_command(LCD_SET_ADD | 0, controller);
+			for(i = 0; i <= 63; i++, k++) {
+				graphic_write_data(backBuffer[k], controller);
+			}
+		}
+	}
+}
+
+#endif
+
 
 void draw_object(POBJECT o){
 	for(int t = 0; t < o->geo->numpoints +0; t++){
@@ -175,5 +212,42 @@ void draw_object(POBJECT o){
 void clear_object(POBJECT o){
 	for(int t = 0; t < o->geo->numpoints; t++){
 		pixel(o->geo->px[t].x + o->posx, o->geo->px[t].y + o->posy, 0);
+	}
+	
+
+}
+
+void clear_backBuffer() {
+int i;
+for (i = 0; i < 1024; i++)
+backBuffer[i] = 0;
+}
+
+typedef struct{
+	unsigned char width;
+	unsigned char height;
+	unsigned char* data;
+} sprite;
+
+static void load_sprite(sprite* s, unsigned char* data, int width, int height){
+	s->width = width;
+	s->height = height;
+	s->data = data;
+}
+
+void draw_sprite(sprite* s, int x, int y, int set) {
+	int i,j,k, width_in_bytes;
+	if (s->width % 8 == 0)
+		width_in_bytes = s->width / 8;
+	else
+		width_in_bytes = s->width / 8 + 1;
+	for (i = 0; i < s->height; i++){
+		for (j = 0; j < width_in_bytes; j++) {
+			unsigned char byte = s->data[i * width_in_bytes + j];
+			for (k =0; k < 8; k++) {
+				if (byte & (1 << k))
+					pixel(8 * j + k + x + 1, i + y + 1, set);
+			}
+		}
 	}
 }

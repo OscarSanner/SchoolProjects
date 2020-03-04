@@ -1,5 +1,5 @@
-static uint8_t player_right_points = 0;
-static uint8_t player_left_points = 0; 
+static uint8_t player_right_points = 4;
+static uint8_t player_left_points = 5; 
 
 void set_object_speed(POBJECT o, int speedx, int speedy){
 	o->dx = speedx;
@@ -7,7 +7,9 @@ void set_object_speed(POBJECT o, int speedx, int speedy){
 }
 
 void move_ball(POBJECT o, POBJECT dummy){
+#ifdef OLD_PIXEL
 	clear_object(o);
+#endif
 	int newx = o->posx + o->dx;
 	int newy = o->posy + o->dy;
 	
@@ -52,7 +54,9 @@ uint8_t collision_with_ball(POBJECT o, int newY, POBJECT ball){
 }
 
 void move_paddle(POBJECT o, POBJECT ball){
+#ifdef OLD_PIXEL
 	clear_object(o);
+#endif
 	
 	int newy = o->posy + o->dy;
 	

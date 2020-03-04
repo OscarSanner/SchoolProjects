@@ -1,6 +1,7 @@
 #define 	SIMULATOR
 //#define 		USBDM
 //#define		TEST
+// #define OLD_PIXEL
 
 #define		STK_BAS 		0xE000E010
 #define		STK_CTRL		((volatile unsigned char *) (STK_BAS))
