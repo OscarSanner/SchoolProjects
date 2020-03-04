@@ -1,129 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Session Name="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Labb5WE_IDE_GDPR_RTRPA.workspace">
+<Session Name="C:\Users\osann\Documents\GitProjects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Labb5WE_IDE_GDPR_RTRPA.workspace">
   <int Value="0" Name="m_selectedTab"/>
-  <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Labb5WE_IDE_GDPR_RTRPA.workspace" Name="m_workspaceName"/>
+  <wxString Value="C:\Users\osann\Documents\GitProjects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Labb5WE_IDE_GDPR_RTRPA.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\Pong.c" Name="FileName"/>
-      <int Value="42" Name="FirstVisibleLine"/>
-      <int Value="57" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\GraphicDrivers.h" Name="FileName"/>
-      <int Value="166" Name="FirstVisibleLine"/>
-      <int Value="195" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\KeybDrivers.h" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="59" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\Definitions.h" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="3" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\AsciiDrivers.h" Name="FileName"/>
-      <int Value="126" Name="FirstVisibleLine"/>
-      <int Value="128" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\Delays.h" Name="FileName"/>
-      <int Value="5" Name="FirstVisibleLine"/>
-      <int Value="35" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\GameLogic.h" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="1" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\Images\PlayerLeftWins.xbm" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
+      <wxString Value="C:\Users\osann\Documents\GitProjects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\Pong.c" Name="FileName"/>
+      <int Value="234" Name="FirstVisibleLine"/>
       <int Value="18" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\Images\PlayerRightWins.xbm" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <wxString Value="C:\Users\osann\Documents\GitProjects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\Definitions.h" Name="FileName"/>
+      <int Value="42" Name="FirstVisibleLine"/>
+      <int Value="58" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\Images\PlayerLeftWinsWithText.xbm" Name="FileName"/>
+      <wxString Value="C:\Users\osann\Documents\GitProjects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\GameLogic.h" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="24" Name="CurrentLine"/>
+      <int Value="18" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
   </TabInfoArray>
   <SerializedObject Name="m_breakpoints">
-    <long Value="3" Name="Count"/>
-    <SerializedObject Name="Breakpoint0">
-      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\Pong.c" Name="file"/>
-      <int Value="51" Name="lineno"/>
-      <wxString Value="" Name="function_name"/>
-      <wxString Value="" Name="memory_address"/>
-      <int Value="1" Name="bp_type"/>
-      <int Value="0" Name="watchpoint_type"/>
-      <wxString Value="" Name="watchpt_data"/>
-      <CData Name="commandlist"/>
-      <bool Value="0" Name="regex"/>
-      <bool Value="0" Name="is_temp"/>
-      <bool Value="1" Name="is_enabled"/>
-      <int Value="0" Name="ignore_number"/>
-      <wxString Value="" Name="conditions"/>
-      <int Value="0" Name="origin"/>
-    </SerializedObject>
-    <SerializedObject Name="Breakpoint1">
-      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\Pong.c" Name="file"/>
-      <int Value="57" Name="lineno"/>
-      <wxString Value="" Name="function_name"/>
-      <wxString Value="" Name="memory_address"/>
-      <int Value="1" Name="bp_type"/>
-      <int Value="0" Name="watchpoint_type"/>
-      <wxString Value="" Name="watchpt_data"/>
-      <CData Name="commandlist"/>
-      <bool Value="0" Name="regex"/>
-      <bool Value="0" Name="is_temp"/>
-      <bool Value="1" Name="is_enabled"/>
-      <int Value="0" Name="ignore_number"/>
-      <wxString Value="" Name="conditions"/>
-      <int Value="0" Name="origin"/>
-    </SerializedObject>
-    <SerializedObject Name="Breakpoint2">
-      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\Labb5WE_IDE_GDPR_RTRPA\Pong\Pong.c" Name="file"/>
-      <int Value="81" Name="lineno"/>
-      <wxString Value="" Name="function_name"/>
-      <wxString Value="" Name="memory_address"/>
-      <int Value="1" Name="bp_type"/>
-      <int Value="0" Name="watchpoint_type"/>
-      <wxString Value="" Name="watchpt_data"/>
-      <CData Name="commandlist"/>
-      <bool Value="0" Name="regex"/>
-      <bool Value="0" Name="is_temp"/>
-      <bool Value="1" Name="is_enabled"/>
-      <int Value="0" Name="ignore_number"/>
-      <wxString Value="" Name="conditions"/>
-      <int Value="0" Name="origin"/>
-    </SerializedObject>
+    <long Value="0" Name="Count"/>
   </SerializedObject>
   <wxString Value="*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.inc;*.mm;*.m;*.xrc;*.plist;*.txt" Name="m_findInFilesMask"/>
 </Session>

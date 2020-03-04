@@ -47,75 +47,150 @@ void init_app(void){
 	* GPIOD_OTYPER = 0x0;
 }
 
-void win_state(){
-	clear_backBuffer();
+void intro_state(){
+	sprite noText;
+	sprite text;
+	
+	load_sprite(&noText, Startmenu_bits, Startmenu_width, Startmenu_height);
+	load_sprite(&text, StartmenuWithText_bits, StartmenuWithText_width, StartmenuWithText_height);
+	
+	int keyboardHighInput;
+	int keyboardLowInput;
+	
 	while(1){
-			if(player_left_points == 5){
-			for (int i = 0; i < 1024; i++ ){
-					backBuffer[i] |= PlayerLeftWinsWithText_bits[i];
-			}
-			graphic_draw_screen();
-			clear_backBuffer();
-			delay_mikro(10);
-			for (int i = 0; i < 1024; i++ ){
-					backBuffer[i] |= PlayerLeftWins_bits[i];
-			}
-			graphic_draw_screen();
-			clear_backBuffer();
-		}else{
-			for (int i = 0; i < 1024; i++ ){
-					backBuffer[i] |= PlayerRightWinsWithText_bits[i];
-			}
-			graphic_draw_screen();
-			clear_backBuffer();
-			delay_mikro(10);
-			for (int i = 0; i < 1024; i++ ){
-					backBuffer[i] |= PlayerRightWins_bits[i];
-			}
-			graphic_draw_screen();
-			clear_backBuffer();
-		}
-		signed char check1 = keybHigh();
-		signed char check2 = keybLow();
+		clear_backBuffer();
 		
-		if ( ( check1 != -1) || ( check2 != -1) ){
+		draw_sprite(&noText, 0, 0, 1);
+		graphic_draw_screen();
+		clear_backBuffer();
+		delay_milli(50);
+			
+		keyboardHighInput = keybHigh();
+		keyboardLowInput = keybLow();
+		
+		if((keyboardHighInput != 255) || (keyboardLowInput != 255)){
 			break;
-		} else {continue;}
+		}
+						
+		draw_sprite(&text, 0, 0, 1);
+		graphic_draw_screen();
+		delay_milli(50);
+		
+		keyboardHighInput = keybHigh();
+		keyboardLowInput = keybLow();
+		
+		if((keyboardHighInput != 255) || (keyboardLowInput != 255)){
+			break;
+		}
 	}
 }
 
+void win_state(){
+	sprite pRightWin;
+	sprite pRightWinText;
+	sprite pLeftWin;
+	sprite pLeftWinText;
+	
+	load_sprite(&pRightWin, PlayerRightWins_bits, PlayerRightWins_width, PlayerRightWins_height);
+	load_sprite(&pRightWinText, PlayerRightWinsWithText_bits, PlayerRightWinsWithText_width, PlayerRightWinsWithText_height);
+	load_sprite(&pLeftWin, PlayerLeftWins_bits, PlayerLeftWins_width, PlayerLeftWins_height);
+	load_sprite(&pLeftWinText, PlayerLeftWinsWithText_bits, PlayerLeftWinsWithText_width, PlayerLeftWinsWithText_height);
+	
+	int keyboardHighInput;
+	int keyboardLowInput;
+		
+	while(1){
+		clear_backBuffer();
+
+		if(player_left_points == 5){
+			draw_sprite(&pLeftWin, 0, 0, 1);
+			graphic_draw_screen();
+			clear_backBuffer();
+			delay_milli(50);
+			
+			keyboardHighInput = keybHigh();
+			keyboardLowInput = keybLow();
+		
+			if((keyboardHighInput != 255) || (keyboardLowInput != 255)){
+				break;
+			}
+			
+			draw_sprite(&pLeftWinText, 0, 0, 1);
+			graphic_draw_screen();
+			delay_milli(50);
+		}
+	
+		if(player_right_points == 5){
+			draw_sprite(&pRightWin, 0, 0, 1);
+			graphic_draw_screen();
+			clear_backBuffer();
+			delay_milli(50);
+			
+			keyboardHighInput = keybHigh();
+			keyboardLowInput = keybLow();
+		
+			if((keyboardHighInput != 255) || (keyboardLowInput != 255)){
+				break;
+			}
+			
+			draw_sprite(&pRightWinText, 0, 0, 1);
+			graphic_draw_screen();
+			delay_milli(50);
+		}
+		
+		keyboardHighInput = keybHigh();
+		keyboardLowInput = keybLow();
+		
+		if((keyboardHighInput != -1) || (keyboardLowInput != -1)){
+			break;
+		}
+	}
+}
+
+int boolean_input(){
+	uint8_t keyboardHighInput = keybHigh();
+	uint8_t keyboardLowInput = keybLow();
+		
+	if((keyboardHighInput != -1) || (keyboardLowInput != -1)){
+		return 1;
+	}
+	return 0;
+}
 
 
 #ifdef OLD_PIXEL
 void main(void){
 	POBJECT b = &ball;
-	POBJECT b2 = &ball;
 	POBJECT p_left = &paddle_left;
 	POBJECT p_right = &paddle_right;
+	
 	init_app();
 	ascii_playerscore_init();
 	graphic_initialize();
+	
 	b->dx = 15;
 	b->dy = 15;
-	//p_left->dy = 1;
-	//p_right->dy = 1;
 	
-
 #ifndef SIMULATOR
 	graphic_clear_screen();
 #endif
 	while(1){
+		
 		b->move(b, b);
 		p_left->move(p_left, b);
 		p_right->move(p_right, b);
+		
 		delay_milli(40);
+		
 		char p_l_key = keybHigh();
 		char p_r_key = keybLow();
-    	switch(p_l_key){																				//PD8-15
+    	
+		switch(p_l_key){																				//PD8-15
 			case 2: p_left->set_speed(p_left,0,-20);break;
 			case 5: p_left->set_speed(p_left,0,20);break;
 			default: p_left->set_speed(p_left,0,0);break;
 		}
+		
 		switch(p_r_key){																				//PD0-7
 			case 2: p_right->set_speed(p_right,0,-20);break;
 			case 5: p_right->set_speed(p_right,0,20);break;
@@ -128,42 +203,54 @@ void main(void){
 
 #ifndef OLD_PIXEL
 void main(void){
+	
 	POBJECT b = &ball;
-	POBJECT b2 = &ball;
 	POBJECT p_left = &paddle_left;
 	POBJECT p_right = &paddle_right;
+
 	init_app();
 	ascii_playerscore_init();
 	graphic_initialize();
+
 	b->dx = 15;
 	b->dy = 15;
-	//p_left->dy = 1;
-	//p_right->dy = 1;
-	
 
 #ifndef SIMULATOR
 	graphic_clear_screen();
 #endif
+
+	intro_state();
+	
 	while(1){
+		
 		clear_backBuffer();
+		
 		b->move(b, b);
 		p_left->move(p_left, b);
 		p_right->move(p_right, b);
+		
 		char p_l_key = keybHigh();
 		char p_r_key = keybLow();
+		
     	switch(p_l_key){																				//PD8-15
 			case 2: p_left->set_speed(p_left,0,-20);break;
 			case 5: p_left->set_speed(p_left,0,20);break;
 			default: p_left->set_speed(p_left,0,0);break;
 		}
+		
 		switch(p_r_key){																				//PD0-7
 			case 2: p_right->set_speed(p_right,0,-20);break;
 			case 5: p_right->set_speed(p_right,0,20);break;
 			default: p_right->set_speed(p_right,0,0);break;
 		}
+		
 		graphic_draw_screen();
 		delay_milli(40);
-		if(player_left_points == 5 || player_right_points == 5){
+		
+		uint8_t leftPoints = player_left_points;
+		uint8_t rightPoints = player_right_points;
+		
+		if(leftPoints == 5 || rightPoints == 5){
 			win_state();
 			player_left_points = 0;
 			player_right_points = 0;
