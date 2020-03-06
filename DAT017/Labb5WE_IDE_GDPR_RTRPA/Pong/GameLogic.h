@@ -1,5 +1,5 @@
-static uint8_t player_right_points = 4;
-static uint8_t player_left_points = 5; 
+static uint8_t player_right_points = 0;
+static uint8_t player_left_points = 0; 
 
 void set_object_speed(POBJECT o, int speedx, int speedy){
 	o->dx = speedx;

@@ -1,2 +1,2 @@
--IC:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\asciidisplay
+-IC:\Users\osann\Documents\GitProjects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\asciidisplay
 -DSIMULATOR

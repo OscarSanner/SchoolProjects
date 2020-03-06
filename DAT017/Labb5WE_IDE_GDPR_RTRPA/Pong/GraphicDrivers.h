@@ -177,8 +177,8 @@ void pixel(int x, int y, int set) {
 	int index = 0;
 	if( (x > 128 ) || (x < 1) || (y > 64) || (y < 1) ) return;
 		mask = 1 << ((y-1)%8);
-	if(x > 64) {
-		x -= 65;
+	if(x >= 64) {
+		x -= 64;
 		index = 512;
 	}
 	index += x + ((y-1)/8)*64;

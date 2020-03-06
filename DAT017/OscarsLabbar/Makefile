@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ systick_irq - Debug ]----------"
-	@cd "systick_irq" && "$(MAKE)" -f  "systick_irq.mk" && "$(MAKE)" -f  "systick_irq.mk" PostBuild
+	@echo "----------Building project:[ fivePointFour - Debug ]----------"
+	@cd "fivePointFive" && "$(MAKE)" -f  "fivePointFour.mk" && "$(MAKE)" -f  "fivePointFour.mk" PostBuild
 clean:
-	@echo "----------Cleaning project:[ systick_irq - Debug ]----------"
-	@cd "systick_irq" && "$(MAKE)" -f  "systick_irq.mk" clean
+	@echo "----------Cleaning project:[ fivePointFour - Debug ]----------"
+	@cd "fivePointFive" && "$(MAKE)" -f  "fivePointFour.mk" clean

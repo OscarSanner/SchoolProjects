@@ -1,5 +1,5 @@
 // #define SIMULATOR
-// #define USBDM
+#define USBDM
 
 #define	STK_BAS 0xE000E010
 #define	STK_CTRL ((volatile unsigned char *) (STK_BAS))
@@ -32,15 +32,6 @@ __asm__ volatile(" BL main\n");					/* call main */
 __asm__ volatile(".L1: B .L1\n");				/* never return */
 }
 
-void init_app(void){
-	#ifdef USBDM
-		* ((unsigned long *) 0x40023830) = 0x18;
-		__asm__ volatile(" LDR R0, =0x08000209\n");
-		__asm__ volatile(" BLX R0 \n");
-	#endif
-	
-	* portModer = 0x55555555;
-}
 
 
 
@@ -151,7 +142,7 @@ void ascii_init (void) {
 	ascii_command(0x38);
 	ascii_command(0x0E);
 	ascii_command(0x01);
-	ascii_command(0x04);
+	ascii_command(0x06);
 }
 
 void ascii_gotoxy (int x, int y) {
@@ -173,7 +164,15 @@ void ascii_write_char (unsigned char c) {
 
 
 
-
+void init_app(void){
+	#ifdef USBDM
+		* ((unsigned long *) 0x40023830) = 0x18;
+		__asm__ volatile(" LDR R0, =0x08000209\n");
+		__asm__ volatile(" BLX R0 \n");
+	#endif
+	
+	* portModer = 0x55555555;
+}
 
 void main(void) {
 	char *s;

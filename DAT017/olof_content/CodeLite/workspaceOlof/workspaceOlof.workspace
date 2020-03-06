@@ -5,7 +5,7 @@
   <Project Name="Week1" Path="Week1/Week1.project" Active="No"/>
   <Project Name="keypad" Path="keypad/keypad.project" Active="No"/>
   <Project Name="delay" Path="delay/delay.project" Active="No"/>
-  <Project Name="asciidisplay" Path="asciidisplay/asciidisplay.project" Active="No"/>
+  <Project Name="asciidisplay" Path="asciidisplay/asciidisplay.project" Active="Yes"/>
   <Project Name="delayFIXED" Path="delayFIXED/delayFIXED.project" Active="No"/>
   <Project Name="graphicdisplay" Path="graphicdisplay/graphicdisplay.project" Active="No"/>
   <Project Name="autopong" Path="autopong/autopong.project" Active="No"/>
@@ -15,7 +15,7 @@
   <Project Name="unaligned" Path="unaligned/unaligned.project" Active="No"/>
   <Project Name="flipflop_irq" Path="flipflop_irq/flipflop_irq.project" Active="No"/>
   <Project Name="flipflop_irq_ack" Path="flipflop_irq_ack/flipflop_irq_ack.project" Active="No"/>
-  <Project Name="flipflop_irq_vectored" Path="flipflop_irq_vectored/flipflop_irq_vectored.project" Active="Yes"/>
+  <Project Name="flipflop_irq_vectored" Path="flipflop_irq_vectored/flipflop_irq_vectored.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>

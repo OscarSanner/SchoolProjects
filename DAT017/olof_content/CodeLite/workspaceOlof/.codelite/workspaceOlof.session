@@ -1,33 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Session Name="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\workspaceOlof.workspace">
-  <int Value="1" Name="m_selectedTab"/>
-  <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\workspaceOlof.workspace" Name="m_workspaceName"/>
+<Session Name="C:\Users\osann\Documents\GitProjects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\workspaceOlof.workspace">
+  <int Value="0" Name="m_selectedTab"/>
+  <wxString Value="C:\Users\osann\Documents\GitProjects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\workspaceOlof.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\systick_irq\systick_irq.c" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="5" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\flipflop_irq\flipflop_irq.c" Name="FileName"/>
-      <int Value="12" Name="FirstVisibleLine"/>
-      <int Value="45" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\flipflop_irq_ack\flipflop_irq_ack.c" Name="FileName"/>
-      <int Value="2" Name="FirstVisibleLine"/>
-      <int Value="4" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\flipflop_irq_vectored\flipflop_irq_vectored.c" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="23" Name="CurrentLine"/>
+      <wxString Value="C:\Users\osann\Documents\GitProjects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\asciidisplay\asciidisplay.c" Name="FileName"/>
+      <int Value="95" Name="FirstVisibleLine"/>
+      <int Value="97" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

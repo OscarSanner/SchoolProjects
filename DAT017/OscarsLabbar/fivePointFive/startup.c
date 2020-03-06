@@ -3,6 +3,8 @@
  *
  */
  
+#define USBDM
+
 #define STK_CTRL (volatile unsigned long*)0xE000E010 
 #define STK_LOAD (volatile unsigned long*)0xE000E014 
 #define STK_VAL (volatile unsigned long*)0xE000E018 
@@ -38,14 +40,6 @@ __asm__ volatile(" LDR R0,=0x2001C000\n");		/* set stack */
 __asm__ volatile(" MOV SP,R0\n");
 __asm__ volatile(" BL main\n");					/* call main */
 __asm__ volatile(".L1: B .L1\n");				/* never return */
-}
-
-void init_app(){
-	#ifdef USBDM
-	((unsigned long*) 0x40023830) = 0x18;
-	__asm volatile(" LDR R0,=0x08000209 \n BLX R0 \n");
-	#endif
-	* portModer = 0x55555555;
 }
 
 void delay_250ns(){
@@ -153,7 +147,7 @@ void ascii_init(){
 	ascii_command(0x38);
 	ascii_command(0x0E);
 	ascii_command(0x01);
-	ascii_command(0x04);
+	ascii_command(0x06);
 }
 
 void ascii_gotoxy(int x, int y){
@@ -171,6 +165,14 @@ void ascii_write_char(unsigned char c){
 	delayMikro(8);
 	ascii_write_data(c);
 	delayMikro(50);
+}
+
+void init_app(){
+	#ifdef USBDM
+	*((unsigned long*) 0x40023830) = 0x18;
+	__asm volatile(" LDR R0,=0x08000209 \n BLX R0 \n");
+	#endif
+	* portModer = 0x55555555;
 }
 
 void main(void){

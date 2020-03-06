@@ -17,6 +17,7 @@
 #include "PlayerRightWinsWithText.xbm"
 #include "StartmenuWithText.xbm"
 #include "Startmenu.xbm"
+#include "copyright.xbm"
 
 
 __attribute__((naked)) __attribute__((section (".start_section")) )
@@ -47,6 +48,76 @@ void init_app(void){
 	* GPIOD_OTYPER = 0x0;
 }
 
+/*
+void player_left_up(POBJECT paddle){
+	int column;
+	activateRowHigh(0);
+	column = readColumnHigh();
+	if (column == 0){
+		paddle->dy = 10;
+	}else{
+		return 0;
+	}
+}
+*/
+
+void player_left_movement(POBJECT paddle){
+	int column;
+	activateRowHigh(1);
+	column = readColumnHigh();
+	if (column == 0){
+		paddle->dy = 3;
+		return;
+	}	
+	activateRowHigh(0);
+	column = readColumnHigh();
+	if (column == 0){
+		paddle->dy = -3;
+	}else{
+		paddle->dy = 0;
+	}
+}
+
+/*void player_right_up(POBJECT paddle){
+	int column;
+	activateRowHigh(2);
+	column = readColumnHigh();
+	if (column == 3){
+		paddle->dy = 10;
+	}else{
+		return 0;
+	}
+}
+ */
+ 
+void player_right_movement(POBJECT paddle){
+	int column;
+	activateRowHigh(3);
+	column = readColumnHigh();
+	if (column == 3){
+		paddle->dy = 3;
+		return;
+	}
+	activateRowHigh(2);
+	column = readColumnHigh();
+	if (column == 3){
+		paddle->dy = -3;
+	}else{
+		paddle->dy = 0;
+	}
+}
+
+
+void disp_copyright(){
+	sprite copyright;
+	load_sprite(&copyright, copyright_bits, copyright_width, copyright_height);
+	
+	draw_sprite(&copyright, 1,1,1);
+	graphic_draw_screen();
+	clear_backBuffer();
+	delay_milli(3000);
+}
+
 void intro_state(){
 	sprite noText;
 	sprite text;
@@ -63,23 +134,21 @@ void intro_state(){
 		draw_sprite(&noText, 0, 0, 1);
 		graphic_draw_screen();
 		clear_backBuffer();
-		delay_milli(50);
+		delay_milli(1000);
 			
 		keyboardHighInput = keybHigh();
-		keyboardLowInput = keybLow();
 		
-		if((keyboardHighInput != 255) || (keyboardLowInput != 255)){
+		if(keyboardHighInput != 255){
 			break;
 		}
 						
 		draw_sprite(&text, 0, 0, 1);
 		graphic_draw_screen();
-		delay_milli(50);
+		delay_milli(1000);
 		
 		keyboardHighInput = keybHigh();
-		keyboardLowInput = keybLow();
 		
-		if((keyboardHighInput != 255) || (keyboardLowInput != 255)){
+		if(keyboardHighInput != 255){
 			break;
 		}
 	}
@@ -106,42 +175,39 @@ void win_state(){
 			draw_sprite(&pLeftWin, 0, 0, 1);
 			graphic_draw_screen();
 			clear_backBuffer();
-			delay_milli(50);
+			delay_milli(1000);
 			
 			keyboardHighInput = keybHigh();
-			keyboardLowInput = keybLow();
 		
-			if((keyboardHighInput != 255) || (keyboardLowInput != 255)){
+			if(keyboardHighInput != 255){
 				break;
 			}
 			
 			draw_sprite(&pLeftWinText, 0, 0, 1);
 			graphic_draw_screen();
-			delay_milli(50);
+			delay_milli(1000);
 		}
 	
 		if(player_right_points == 5){
 			draw_sprite(&pRightWin, 0, 0, 1);
 			graphic_draw_screen();
 			clear_backBuffer();
-			delay_milli(50);
+			delay_milli(1000);
 			
 			keyboardHighInput = keybHigh();
-			keyboardLowInput = keybLow();
 		
-			if((keyboardHighInput != 255) || (keyboardLowInput != 255)){
+			if(keyboardHighInput != 255){
 				break;
 			}
 			
 			draw_sprite(&pRightWinText, 0, 0, 1);
 			graphic_draw_screen();
-			delay_milli(50);
+			delay_milli(1000);
 		}
 		
 		keyboardHighInput = keybHigh();
-		keyboardLowInput = keybLow();
 		
-		if((keyboardHighInput != -1) || (keyboardLowInput != -1)){
+		if(keyboardHighInput != 255){
 			break;
 		}
 	}
@@ -168,8 +234,8 @@ void main(void){
 	ascii_playerscore_init();
 	graphic_initialize();
 	
-	b->dx = 15;
-	b->dy = 15;
+	b->dx = 3;
+	b->dy = 3;
 	
 #ifndef SIMULATOR
 	graphic_clear_screen();
@@ -209,16 +275,17 @@ void main(void){
 	POBJECT p_right = &paddle_right;
 
 	init_app();
-	ascii_playerscore_init();
 	graphic_initialize();
+	ascii_playerscore_init();
+	
 
-	b->dx = 15;
-	b->dy = 15;
+	b->dx = 5;
+	b->dy = 5;
 
 #ifndef SIMULATOR
 	graphic_clear_screen();
 #endif
-
+	disp_copyright();
 	intro_state();
 	
 	while(1){
@@ -229,6 +296,7 @@ void main(void){
 		p_left->move(p_left, b);
 		p_right->move(p_right, b);
 		
+		/*
 		char p_l_key = keybHigh();
 		char p_r_key = keybLow();
 		
@@ -243,6 +311,10 @@ void main(void){
 			case 5: p_right->set_speed(p_right,0,20);break;
 			default: p_right->set_speed(p_right,0,0);break;
 		}
+		*/
+		
+		player_left_movement(p_left);
+		player_right_movement(p_right);
 		
 		graphic_draw_screen();
 		delay_milli(40);

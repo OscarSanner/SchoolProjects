@@ -106,7 +106,7 @@ void ascii_init(){
 	ascii_command(0x38);
 	ascii_command(0x0E);
 	ascii_command(0x01);
-	ascii_command(0x04);
+	ascii_command(0x06);
 }
 
 void ascii_gotoxy(int x, int y){
@@ -120,7 +120,9 @@ void ascii_gotoxy(int x, int y){
 }
 
 void ascii_write_char(unsigned char c){
-	while(ascii_read_status() & 0x80 == 0x80){}
+	while((ascii_read_status() & 0x80) == 0x80){
+		
+	}
 	delay_mikro(8);
 	ascii_write_data(c);
 	delay_mikro(50);
@@ -135,14 +137,15 @@ void ascii_playerscore_init(void){
 	ascii_gotoxy(1,1);
 	s = test1;
 	while(*s){
-		ascii_write_char(*s++);
+		ascii_write_char(*s);
+		*s++;
 	}
 	ascii_gotoxy(1,2);
 	s=test2;
 	while(*s){
-		ascii_write_char(*s++);
+		ascii_write_char(*s);
+		*s++;
 	}
-	return 0;
 }
 
 

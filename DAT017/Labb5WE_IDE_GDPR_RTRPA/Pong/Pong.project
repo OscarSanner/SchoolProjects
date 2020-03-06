@@ -134,6 +134,7 @@ monitor restart</PostConnectCommands>
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="copyright.xbm"/>
     <File Name="Images/StartmenuWithText.xbm"/>
     <File Name="Images/Startmenu.xbm"/>
     <File Name="Images/PlayerRightWinsWithText.xbm"/>

@@ -1,1 +1,1 @@
--IC:\Users\olofs\Documents\git_projects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\systick_irq
+-IC:\Users\osann\Documents\GitProjects\SchoolProjects\DAT017\olof_content\CodeLite\workspaceOlof\systick_irq

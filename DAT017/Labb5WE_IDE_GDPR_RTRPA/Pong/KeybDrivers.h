@@ -1,6 +1,6 @@
 
 
-void activateRowHigh(int row){
+void activateRowHigh(int row){	
 	switch(row){
 		case 0: * GPIOD_ODR_HIGH = 0x10; break;
 		case 1: * GPIOD_ODR_HIGH = 0x20; break;

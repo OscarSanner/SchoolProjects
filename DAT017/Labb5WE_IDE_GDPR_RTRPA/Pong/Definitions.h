@@ -1,5 +1,5 @@
-#define 	SIMULATOR
-//#define 		USBDM
+//#define 	SIMULATOR
+#define 		USBDM
 //#define		TEST
 // #define OLD_PIXEL
 
@@ -55,7 +55,7 @@
 
 
 #define MAX_POINTS 28 // Raised from 20
-#define PADDLE_DISTANCE_FROM_GOAL 50
+#define PADDLE_DISTANCE_FROM_GOAL 10
 #define WIN_POINTS 5
 
 typedef unsigned char uint8_t;
