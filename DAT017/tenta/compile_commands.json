@@ -1,0 +1,17 @@
+[{
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\tenta\\upp3\\startup.c",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\tenta\\upp3",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\tenta\\upp3\\startup.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\tenta\\upp3\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\tenta\\uppg5\\startup.c",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\tenta\\uppg5",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\tenta\\uppg5\\startup.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\tenta\\uppg5\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\tenta\\TestTenta\\startup.c",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\tenta\\TestTenta",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\tenta\\TestTenta\\startup.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\tenta\\TestTenta\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\tenta\\tentaMer\\main.c",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\tenta\\tentaMer",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\tenta\\tentaMer\\main.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\tenta\\tentaMer\\main.c.o  -I. -I.  -g  -O0  -Wall"
+ }]

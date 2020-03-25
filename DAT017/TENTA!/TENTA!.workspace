@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="TENTA!" Database="" Version="10.0.0">
+  <Project Name="uppg1" Path="uppg1/uppg1.project" Active="No"/>
+  <Project Name="uppg2" Path="uppg2/uppg2.project" Active="No"/>
+  <Project Name="uppg3" Path="uppg3/uppg3.project" Active="No"/>
+  <Project Name="uppg4" Path="uppg4/uppg4.project" Active="No"/>
+  <Project Name="uppg5" Path="uppg5/uppg5.project" Active="Yes"/>
+  <Project Name="uppg6" Path="uppg6/uppg6.project" Active="No"/>
+  <Project Name="uppg7" Path="uppg7/uppg7.project" Active="No"/>
+  <Project Name="uppg8" Path="uppg8/uppg8.project" Active="No"/>
+  <Project Name="uppg9" Path="uppg9/uppg9.project" Active="No"/>
+  <Project Name="uppg910" Path="uppg10/uppg10.project" Active="No"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="uppg1" ConfigName="Debug"/>
+      <Project Name="uppg2" ConfigName="Debug"/>
+      <Project Name="uppg3" ConfigName="Debug"/>
+      <Project Name="uppg4" ConfigName="Debug"/>
+      <Project Name="uppg5" ConfigName="Debug"/>
+      <Project Name="uppg6" ConfigName="Debug"/>
+      <Project Name="uppg7" ConfigName="Debug"/>
+      <Project Name="uppg8" ConfigName="Debug"/>
+      <Project Name="uppg9" ConfigName="Debug"/>
+      <Project Name="uppg910" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="uppg1" ConfigName="Release"/>
+      <Project Name="uppg2" ConfigName="Release"/>
+      <Project Name="uppg3" ConfigName="Release"/>
+      <Project Name="uppg4" ConfigName="Release"/>
+      <Project Name="uppg5" ConfigName="Release"/>
+      <Project Name="uppg6" ConfigName="Release"/>
+      <Project Name="uppg7" ConfigName="Release"/>
+      <Project Name="uppg8" ConfigName="Release"/>
+      <Project Name="uppg9" ConfigName="Release"/>
+      <Project Name="uppg910" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>

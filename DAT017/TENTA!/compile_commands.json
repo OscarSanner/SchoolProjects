@@ -1,0 +1,41 @@
+[{
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg10\\uppg10.c",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg10",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg10\\uppg10.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg10\\uppg10.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg9\\uppg9.c",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg9",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg9\\uppg9.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg9\\uppg9.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg8\\uppg8.c",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg8",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg8\\uppg8.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg8\\uppg8.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg7\\uppg7.c",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg7",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg7\\uppg7.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg7\\uppg7.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg5\\uppg5.c",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg5",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg5\\uppg5.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg5\\uppg5.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg1\\uppg1.c",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg1",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg1\\uppg1.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg1\\uppg1.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg3\\uppg3.c",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg3",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg3\\uppg3.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg3\\uppg3.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg2\\uppg2.c",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg2",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg2\\uppg2.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg2\\uppg2.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg4\\uppg4.c",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg4",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg4\\uppg4.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg4\\uppg4.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
+  "file": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg6\\uppg6.c",
+  "directory": "C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg6",
+  "command": "clang  -c C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg6\\uppg6.c -o C:\\Users\\osann\\Documents\\GitProjects\\SchoolProjects\\DAT017\\TENTA!\\uppg6\\uppg6.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }]
