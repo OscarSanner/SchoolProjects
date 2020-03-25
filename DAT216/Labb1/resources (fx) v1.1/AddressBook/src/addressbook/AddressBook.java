@@ -18,9 +18,10 @@ public class AddressBook extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("address_book.fxml"), bundle);
         
         Scene scene = new Scene(root, 600, 400);
-        
+
         stage.setTitle(bundle.getString("application.name"));
         stage.setScene(scene);
+        stage.setMinWidth(585);
         stage.show();
     }
 
