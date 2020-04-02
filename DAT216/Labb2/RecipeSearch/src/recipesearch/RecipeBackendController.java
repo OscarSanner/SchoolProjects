@@ -20,8 +20,6 @@ public class RecipeBackendController {
     private List<String> cuisineList = new ArrayList<>(Arrays.asList("Sverige", "Grekland", "Indien", "Asien", "Afrika", "Frankrike"));
     private List<String> ingredientList = new ArrayList<>(Arrays.asList("Kött", "Fisk", "Kyckling", "Vegetarisk"));
     private List<String> difficultyList = new ArrayList<>(Arrays.asList("Lätt", "Mellan", "Svår"));
-    private List<Integer> timeList = new ArrayList<>(Arrays.asList(10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150));
-
 
     public List<Recipe> getRecipes() {
         return RecipeDatabase.getSharedInstance().search(new SearchFilter(this.difficulty, this.maxTime, this.cuisine, this.maxPrice, this.mainIngredient));
@@ -53,14 +51,14 @@ public class RecipeBackendController {
 
     public void setMaxPrice(int maxPrice) {
         if (maxPrice <= 0) {
-            this.maxPrice = maxPrice;
-        } else {
             this.maxPrice = 0;
+        } else {
+            this.maxPrice = maxPrice;
         }
     }
 
     public void setMaxTime(int maxTime) {
-        if (timeList.contains(maxTime)) {
+        if ((maxTime >= 10) && (maxTime <= 150)) {
             this.maxTime = maxTime;
         } else {
             this.maxTime = 0;
