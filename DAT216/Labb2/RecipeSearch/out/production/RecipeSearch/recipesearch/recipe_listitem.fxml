@@ -12,6 +12,29 @@
             <Image url="@resources/logo.png" />
          </image>
       </ImageView>
-      <Label fx:id="recipeCardLabel" layoutX="104.0" layoutY="8.0" text="Label" />
+      <Label fx:id="recipeCardLabel" layoutX="104.0" layoutY="8.0" text="Receptnamn" />
+      <ImageView fx:id="recipeCardType" fitHeight="20.0" fitWidth="20.0" layoutX="104.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/icon_main_veg.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="recipeCardDifficulty" fitHeight="20.0" fitWidth="60.0" layoutX="129.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/icon_difficulty_hard.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="195.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/icon_time.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="recipeCardTime" layoutX="217.0" layoutY="32.0" text="Tid" />
+      <Label fx:id="recipeCardCost" layoutX="339.0" layoutY="32.0" text="Kostnad" />
+      <Label fx:id="recipeCardDescription" layoutX="104.0" layoutY="59.0" prefHeight="34.0" prefWidth="385.0" text="Description" />
+      <ImageView fx:id="recipeCardCountry" fitHeight="17.0" fitWidth="29.0" layoutX="69.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/icon_flag_sweden.png" />
+         </image>
+      </ImageView>
    </children>
 </fx:root>

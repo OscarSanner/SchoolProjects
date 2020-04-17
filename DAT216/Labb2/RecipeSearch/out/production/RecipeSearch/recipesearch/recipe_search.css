@@ -1,2 +1,40 @@
+@font-face {
+    src: url("/RecipeSearch/resources/AvenirBook.ttf");
+}
+
+@font-face {
+    src: url("/RecipeSearch/resources/PhosphateInline.ttf");
+}
+
+@font-face {
+    src: url("/RecipeSearch/resources/SignPainterHouseScriptRegular.ttf");
+}
 
 
+
+.text-normal{
+     -fx-font-size: 13px;
+     -fx-font-family: "Avenir Book";
+}
+
+.text-small{
+     -fx-font-size: 11px;
+     -fx-font-family: "Avenir Book";
+}
+
+.text-large{
+     -fx-font-size: 15px;
+     -fx-font-family: "Avenir";
+}
+
+#logo{
+    -fx-font-size: 48px;
+    -fx-font-family: "PhosphateInline";
+}
+
+#logo-twirl{
+    -fx-font-size: 64px;
+    -fx-font-family: "SignPainter HouseScript";
+    -fx-text-fill: #FFAC33;
+    -fx-rotate: -20;
+}

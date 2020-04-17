@@ -3,13 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="b04177fb-4d76-4dc4-990e-3e7c9ee72e7b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeBackendController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeBackendController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeSearch.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeSearch.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeListItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeListItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$6.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/recipe_listitem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/recipe_listitem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/recipe_search.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/recipe_search.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/recipe_search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/recipe_search.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recipesearch/RecipeBackendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/recipesearch/RecipeBackendController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/recipesearch/RecipeListItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/recipesearch/RecipeListItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/recipesearch/RecipeSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/recipesearch/RecipeSearchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/recipesearch/recipe_listitem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/recipesearch/recipe_listitem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recipesearch/recipe_search.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/recipesearch/recipe_search.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/recipesearch/recipe_search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/recipesearch/recipe_search.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,45 +180,49 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585640794696" />
-    <state width="1046" height="347" key="GridCell.Tab.0.bottom" timestamp="1585861128287">
+    <state width="1059" height="347" key="GridCell.Tab.0.bottom" timestamp="1587118130761">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1046" height="347" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585861128287" />
-    <state width="1046" height="347" key="GridCell.Tab.0.center" timestamp="1585861128287">
+    <state width="1059" height="347" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587118130761" />
+    <state width="1059" height="347" key="GridCell.Tab.0.center" timestamp="1587118130761">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1046" height="347" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585861128287" />
-    <state width="1046" height="347" key="GridCell.Tab.0.left" timestamp="1585861128287">
+    <state width="1059" height="347" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587118130761" />
+    <state width="1059" height="347" key="GridCell.Tab.0.left" timestamp="1587118130761">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1046" height="347" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585861128287" />
-    <state width="1046" height="347" key="GridCell.Tab.0.right" timestamp="1585861128287">
+    <state width="1059" height="347" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587118130761" />
+    <state width="1059" height="347" key="GridCell.Tab.0.right" timestamp="1587118130761">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1046" height="347" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585861128287" />
-    <state width="1046" height="347" key="GridCell.Tab.1.bottom" timestamp="1585861128288">
+    <state width="1059" height="347" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587118130761" />
+    <state width="1059" height="347" key="GridCell.Tab.1.bottom" timestamp="1587118130762">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1046" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585861128288" />
-    <state width="1046" height="347" key="GridCell.Tab.1.center" timestamp="1585861128288">
+    <state width="1059" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587118130762" />
+    <state width="1059" height="347" key="GridCell.Tab.1.center" timestamp="1587118130761">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1046" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585861128288" />
-    <state width="1046" height="347" key="GridCell.Tab.1.left" timestamp="1585861128288">
+    <state width="1059" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587118130761" />
+    <state width="1059" height="347" key="GridCell.Tab.1.left" timestamp="1587118130761">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1046" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585861128288" />
-    <state width="1046" height="347" key="GridCell.Tab.1.right" timestamp="1585861128288">
+    <state width="1059" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587118130761" />
+    <state width="1059" height="347" key="GridCell.Tab.1.right" timestamp="1587118130762">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1046" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585861128288" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1585640816447">
+    <state width="1059" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587118130762" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1587114033833">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585640816447" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1585740044249">
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587114033833" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1586425860614">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585740044249" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586425860614" />
+    <state x="1030" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1587116481676">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1030" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1587116481676" />
   </component>
 </project>
