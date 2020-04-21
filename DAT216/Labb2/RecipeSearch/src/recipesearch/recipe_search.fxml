@@ -19,16 +19,6 @@
    <children>
       <StackPane prefHeight="500.0" prefWidth="800.0">
          <children>
-            <AnchorPane fx:id="recipeDetailPane" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #FF0000;">
-               <children>
-                  <ImageView fx:id="recipeImageView" fitHeight="250.0" fitWidth="250.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label fx:id="recipeNameLabel" layoutX="273.0" layoutY="25.0" prefHeight="44.0" prefWidth="298.0" text="RecipeName">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="closeRecipeButton" layoutX="739.0" layoutY="13.0" mnemonicParsing="false" onAction="#closeRecipeView" text="Stäng" />
-               </children></AnchorPane>
             <SplitPane fx:id="searchPane" dividerPositions="0.35" prefHeight="160.0" prefWidth="200.0">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -93,6 +83,29 @@
                   </AnchorPane>
               </items>
             </SplitPane>
+            <AnchorPane fx:id="recipeDetailPane" prefHeight="500.0" prefWidth="800.0" styleClass="lightbox-background">
+               <children>
+                  <AnchorPane layoutX="38.0" layoutY="38.0" prefHeight="425.0" prefWidth="725.0" style="-fx-background-color: #D0D0D0;" styleClass="lightbox">
+                     <children>
+                        <Button fx:id="closeRecipeButton" layoutX="664.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeRecipeView" text="Stäng" />
+                        <Label fx:id="recipeNameLabel" layoutX="200.0" layoutY="17.0" prefHeight="44.0" prefWidth="298.0" text="RecipeName">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="recipeImageView" fitHeight="200.0" fitWidth="175.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/logo.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="33.0" fitWidth="48.0" layoutX="132.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/icon_flag_sweden.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
          </children>
       </StackPane>
    </children>
