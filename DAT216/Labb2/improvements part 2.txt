@@ -1,0 +1,28 @@
+Problem från förra labben som ännu inte är åtgärdade:
+
+	1. Om man skickar in ett värde över 2147483647, eller under - 2147483648, i maxpris, så kraschar aplikationen. Detta är troligen bundet till det faktum att en int i Java endast är 32 bitar, och signerad.
+	Alltså har denne ett maxvärde på 2147483647.
+
+		Lösning till 1:
+		Fånga out of bounds exceptionet och hantera det  
+
+
+
+	2. Om man drar i fönstret så förloras en del funktionalitet fort. Vi anser att komponenter bör vara förankrade annorlunda. Om fönstret blir förlitet försvinner skrollbars
+	etc, kappar på skärmen komms inte åt. Om fönstret blir förstort så ändras ingenting, allt är fortfarande lika stort, men ramen blir större. Vi anser också att detta 
+	bör lösas delvis genom att vissa storlekar begränsas. En av dessa är split panen, en annan är själva fönstret.
+
+		Lösning till 2:
+		Sätt in en max och en min storlek på fönstret och sedan anpassa enligt "liquid layout"-designmönstret. T.ex. Om man förstrorar fönstret så förlängs listan
+		och skrollbaren blir mindre. 
+
+Nyfunna problem från labb 3:
+
+1. Man skulle kunna implementera en sökruta som man kan skriva i för att få fram specifika recept. En välkänd design med mycket förbättringsmöjligheter med hintar av bland annat "forginving format".
+2. Man skulle kunna använda en snyggare feedback i form av en transformation från det lilla receptkortet till detaljvyn, i form av en animation. Likt t.ex. MacOS fönsteranimationer.
+3. Man skulle kunna färgkoda (rött till grönt) tid, svårighet och pris, destu högre dessa värden är, destu rödare blir textfärgen/iconen. Samma princip kan användas på slidern och eventuellt spinnern.
+4. Man kanske skulle vilja kunna lägga till sina egna recept. Då kanske man skulle kunna ha en snygg toolbar som har knappar för detta (och tillhörande settings). Detta är funktioner som t.ex. återfinns i labb 1.
+5. Man skall alltid ha settings. Låta användaren customiza programmet till viss del efter sina behov och preferenser.
+6. Det skall finnas en "Share on LinkedIn" knapp, så att man kan visa framtida arbetsgivare vad man gillar att äta.
+
+
