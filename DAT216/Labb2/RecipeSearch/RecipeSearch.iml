@@ -9,6 +9,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="lib" level="application" />
-    <orderEntry type="library" name="lab2-backend" level="application" />
+    <orderEntry type="library" exported="" name="lab2-backend" level="application" />
   </component>
 </module>

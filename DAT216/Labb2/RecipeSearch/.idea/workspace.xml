@@ -2,14 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b04177fb-4d76-4dc4-990e-3e7c9ee72e7b" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/recipe_listitem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/recipe_listitem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeSearch.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeSearch.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/META-INF/RecipeSearch.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeBackendController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeBackendController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeListItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeListItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$7$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$7$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$8$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$8$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/recipe_search.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/recipe_search.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/recipe_search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/recipe_search.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recipesearch/recipe_listitem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/recipesearch/recipe_listitem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recipesearch/RecipeSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/recipesearch/RecipeSearchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/recipesearch/recipe_search.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/recipesearch/recipe_search.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/recipesearch/recipe_search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/recipesearch/recipe_search.fxml" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,28 +80,42 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/lab2-backend.jar!/" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.build.tools" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="recipesearch" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
+    <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="RecipeSearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="recipesearch.RecipeSearch" />
       <module name="RecipeSearch" />
-      <option name="VM_PARAMETERS" value="--module-path C:\Users\olofs\Documents\java_devel\javafx-sdk-13.0.1\lib --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\Oscar\Documents\JavaLibs\openjfx-14_windows-x64_bin-sdk\javafx-sdk-14\lib --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="recipesearch.*" />
@@ -132,18 +163,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -154,11 +173,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1521793807673</updated>
+      <workItem from="1587475747147" duration="6399000" />
     </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585641360543">
@@ -213,5 +247,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1030" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1587116481676" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/recipesearch/RecipeSearchController.java</url>
+          <line>213</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

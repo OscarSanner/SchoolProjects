@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -20,6 +21,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.transform.Shear;
 import javafx.util.Callback;
+import se.chalmers.ait.dat215.lab2.Ingredient;
 import se.chalmers.ait.dat215.lab2.Recipe;
 import se.chalmers.ait.dat215.lab2.RecipeDatabase;
 
@@ -53,9 +55,32 @@ public class RecipeSearchController implements Initializable {
     @FXML
     protected Button closeRecipeButton;
     @FXML
+    protected ImageView closeImageView;
+    @FXML
     protected AnchorPane recipeDetailPane;
     @FXML
     protected SplitPane searchPane;
+
+    @FXML
+    protected ImageView recipeFlag;
+    @FXML
+    protected TextArea recipeIngredients;
+    @FXML
+    protected TextArea recipeSmallDescription;
+    @FXML
+    protected TextArea recipeDescription;
+    @FXML
+    protected ImageView recipeMainIngredient;
+    @FXML
+    protected ImageView recipeDifficulty;
+    @FXML
+    protected Label recipeTime;
+    @FXML
+    protected Label recipePrice;
+    @FXML
+    protected Label recipePortions;
+
+
 
     ToggleGroup difficultyToggleGroup;
 
@@ -170,7 +195,26 @@ public class RecipeSearchController implements Initializable {
 
     private void populateRecipeDetailView(Recipe recipe) {
         recipeNameLabel.setText(recipe.getName());
-        recipeImageView.setImage(recipe.getFXImage());
+        recipeImageView.setImage(getSquareImage(recipe.getFXImage()));
+        recipeFlag.setImage(getCuisineImage(recipe.getCuisine()));
+        recipePortions.setText(recipe.getServings() + " portioner");
+        recipeSmallDescription.setText(recipe.getDescription());
+        recipeDescription.setText(recipe.getInstruction());
+        recipeIngredients.setText(getIngredientsAsString(recipe));
+
+        recipeDifficulty.setImage(getDifficultyImage(recipe.getDifficulty()));
+        recipePrice.setText(recipe.getPrice() + " kr");
+        recipeTime.setText(recipe.getTime() + " minuter");
+        recipeMainIngredient.setImage(getMainIngredientImage(recipe.getMainIngredient()));
+
+    }
+
+    private String getIngredientsAsString(Recipe recipe){
+        StringBuilder str = new StringBuilder();
+        for(Ingredient ing : recipe.getIngredients()){
+            str.append(ing.getAmount()).append(" ").append(ing.getUnit()).append(" ").append(ing.getName()).append("\n");
+        }
+        return str.toString();
     }
 
     private void updateRecipeList() {
@@ -180,6 +224,29 @@ public class RecipeSearchController implements Initializable {
             recipeFlowPane.getChildren().add(recipeListItemMap.get(r.getName()));
 
         }
+    }
+
+    @FXML
+    public void closeButtonMouseEntered(){
+        closeImageView.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "RecipeSearch/resources/icon_close_hover.png")));
+    }
+
+    @FXML
+    public void closeButtonMousePressed(){
+        closeImageView.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "RecipeSearch/resources/icon_close_pressed.png")));
+    }
+
+    @FXML
+    public void closeButtonMouseExited(){
+        closeImageView.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "RecipeSearch/resources/icon_close.png")));
+    }
+
+    @FXML
+    public void mouseTrap(Event event){
+        event.consume();
     }
 
     private void populateMainIngredientComboBox() {

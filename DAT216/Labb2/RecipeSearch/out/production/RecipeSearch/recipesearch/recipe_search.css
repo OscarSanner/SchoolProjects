@@ -28,7 +28,7 @@
 }
 
 .text-recipeheader{
-    -fx-font-size: 18px;
+    -fx-font-size: 24px;
     -fx-font-weight: bold;
     -fx-font-family: "Avenir Book";
 }
@@ -65,5 +65,17 @@
 }
 
 .lightbox {
+    -fx-background-color: -fx-background;
+}
+
+.boldtext{
+    -fx-font-weight: bolder;
+}
+
+.text-area .content {
+    -fx-background-color: -fx-background;
+}
+
+.text-area  {
     -fx-background-color: -fx-background;
 }
