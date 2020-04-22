@@ -2,31 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b04177fb-4d76-4dc4-990e-3e7c9ee72e7b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeSearch.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeSearch.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/META-INF/RecipeSearch.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeBackendController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeBackendController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeListItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeListItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$7$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$7$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$8$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$8$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/RecipeSearchController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/recipe_search.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/recipe_search.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/recipe_search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RecipeSearch/recipesearch/recipe_search.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recipesearch/RecipeSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/recipesearch/RecipeSearchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/recipesearch/recipe_search.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/recipesearch/recipe_search.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/recipesearch/recipe_search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/recipesearch/recipe_search.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../improvements part 2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../improvements part 2.txt" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,18 +75,6 @@
       <recent name="recipesearch" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
@@ -115,7 +85,7 @@
     <configuration name="RecipeSearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="recipesearch.RecipeSearch" />
       <module name="RecipeSearch" />
-      <option name="VM_PARAMETERS" value="--module-path C:\Users\Oscar\Documents\JavaLibs\openjfx-14_windows-x64_bin-sdk\javafx-sdk-14\lib --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\olofs\Documents\java_devel\javafx-sdk-13.0.1\lib --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="recipesearch.*" />
@@ -163,6 +133,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -188,37 +170,39 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585641360543">
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587553904699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585641360543" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587553904699" />
     <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1585640794696">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585640794696" />
-    <state width="1111" height="103" key="GridCell.Tab.0.bottom" timestamp="1587475448468">
+    <state width="1877" height="206" key="GridCell.Tab.0.bottom" timestamp="1587555604727">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1111" height="103" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587475448468" />
-    <state width="1111" height="103" key="GridCell.Tab.0.center" timestamp="1587475448467">
+    <state width="1877" height="206" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587555604727" />
+    <state width="1877" height="206" key="GridCell.Tab.0.center" timestamp="1587555604727">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1111" height="103" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587475448467" />
-    <state width="1111" height="103" key="GridCell.Tab.0.left" timestamp="1587475448466">
+    <state width="1877" height="206" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587555604727" />
+    <state width="1877" height="206" key="GridCell.Tab.0.left" timestamp="1587555604727">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1111" height="103" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587475448466" />
-    <state width="1111" height="103" key="GridCell.Tab.0.right" timestamp="1587475448467">
+    <state width="1877" height="206" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587555604727" />
+    <state width="1877" height="206" key="GridCell.Tab.0.right" timestamp="1587555604727">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1111" height="103" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587475448467" />
+    <state width="1877" height="206" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587555604727" />
     <state width="1059" height="347" key="GridCell.Tab.1.bottom" timestamp="1587118130762">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -239,10 +223,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587114033833" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1586425860614">
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1587553827441">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586425860614" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587553827441" />
     <state x="1030" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1587116481676">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -253,7 +237,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/recipesearch/RecipeSearchController.java</url>
-          <line>213</line>
+          <line>280</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

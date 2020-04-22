@@ -24,5 +24,3 @@ Nyfunna problem från labb 3:
 4. Man kanske skulle vilja kunna lägga till sina egna recept. Då kanske man skulle kunna ha en snygg toolbar som har knappar för detta (och tillhörande settings). Detta är funktioner som t.ex. återfinns i labb 1.
 5. Man skall alltid ha settings. Låta användaren customiza programmet till viss del efter sina behov och preferenser.
 6. Det skall finnas en "Share on LinkedIn" knapp, så att man kan visa framtida arbetsgivare vad man gillar att äta.
-
-
